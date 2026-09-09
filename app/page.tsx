@@ -95,7 +95,7 @@ export default function Home() {
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <p className="eyebrow"><span /> Türkiye için dijital büyüme stüdyosu</p>
-          <h1>Görünmek için değil,<br /><em>tercih edilmek için.</em></h1>
+          <h1><span>Görünmek için değil,</span><em>tercih edilmek için.</em></h1>
           <p className="lead">Markanızın web, e-ticaret, görünürlük ve güvenlik altyapısını tek bir büyüme sistemi olarak tasarlıyoruz.</p>
           <div className="hero-actions">
             <a className="button primary" href="#iletisim">Bir proje başlatın <ArrowUpRight size={18} /></a>
