@@ -1,0 +1,55 @@
+/* Olivon brand refinements: hero sphere as brand mark + mobile hero typography */
+.brand-mark {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 0 !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 214, 185, .98) 0 3%, rgba(255, 145, 116, .92) 10%, transparent 31%),
+    radial-gradient(circle at 34% 28%, #ff846d 0%, #dc5948 41%, #7e2d27 72%, #211314 100%);
+  box-shadow:
+    inset -8px -10px 18px rgba(18, 8, 10, .38),
+    inset 7px 8px 17px rgba(255, 172, 142, .22),
+    0 0 22px rgba(255, 107, 81, .22);
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(255,255,255,.12), transparent 38%, rgba(0,0,0,.18));
+  pointer-events: none;
+}
+
+.footer-brand-lockup .brand-mark {
+  width: 42px;
+  height: 42px;
+}
+
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: clamp(42px, 11.8vw, 64px) !important;
+    line-height: .98 !important;
+    letter-spacing: -.055em !important;
+  }
+
+  .hero h1 > span,
+  .hero h1 > em {
+    display: block;
+    width: 100%;
+  }
+
+  .hero h1 > em {
+    margin-top: .08em;
+    line-height: 1.02;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: clamp(39px, 11vw, 50px) !important;
+  }
+}
