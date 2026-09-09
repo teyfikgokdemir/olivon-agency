@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: "Dijital hizmetler",
@@ -19,7 +20,7 @@ const serviceGroups = [
 ];
 
 export default function ServicesPage(){return <main className="inner-page services-page">
-<header className="inner-nav shell"><Link className="brand" href="/"><span className="brand-mark">O</span><span>OLIVON</span></Link><Link href="/">Ana sayfa</Link></header>
+<SiteHeader />
 <section className="inner-hero shell services-hero"><p className="section-index">UZMANLIKLAR</p><h1>Her şeyi yapmak değil,<br/><em>doğru sistemleri birlikte çalıştırmak.</em></h1><p>İhtiyacınız olan disiplini tek başına değil, markanızın ticari hedefi içindeki rolüyle ele alıyoruz.</p></section>
 <section className="service-detail-grid shell">{serviceGroups.map(group=><article className="service-detail-card" key={group.title}><span className="service-card-eyebrow">{group.eyebrow}</span><h2>{group.title}</h2><p>{group.intro}</p><ul>{group.items.map(item=><li key={item}><CheckCircle2 size={16}/>{item}</li>)}</ul><Link href={group.href}>Uzmanlığı incele <ArrowUpRight size={16}/></Link></article>)}</section>
 <section className="service-cta shell"><p className="section-index">DOĞRU BAŞLANGIÇ</p><h2>Önce ihtiyacı netleştirir, sonra doğru sistemi kurarız.</h2><a href="mailto:info@olivon.com.tr">Projenizi anlatın <ArrowUpRight size={18}/></a></section><SiteFooter/></main>}
