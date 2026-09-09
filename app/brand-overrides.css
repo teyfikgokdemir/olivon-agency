@@ -1,20 +1,18 @@
 /* Olivon refinements — preserve the established site palette. */
-.brand-mark {
-  position: relative;
-  flex: 0 0 auto;
-  overflow: hidden;
-  border: 0 !important;
-  color: transparent !important;
-  font-size: 0 !important;
-  background:
-    radial-gradient(circle at 30% 24%, rgba(255, 214, 185, .98) 0 3%, rgba(255, 145, 116, .92) 10%, transparent 31%),
-    radial-gradient(circle at 34% 28%, #ff846d 0%, #dc5948 41%, #7e2d27 72%, #211314 100%);
-  box-shadow: inset -8px -10px 18px rgba(18,8,10,.38), inset 7px 8px 17px rgba(255,172,142,.22), 0 0 22px rgba(255,107,81,.22);
-  transition: transform .45s cubic-bezier(.2,.75,.25,1), box-shadow .45s ease;
-}
+.brand-mark { position:relative; flex:0 0 auto; overflow:hidden; border:0!important; color:transparent!important; font-size:0!important; background:radial-gradient(circle at 30% 24%,rgba(255,214,185,.98) 0 3%,rgba(255,145,116,.92) 10%,transparent 31%),radial-gradient(circle at 34% 28%,#ff846d 0%,#dc5948 41%,#7e2d27 72%,#211314 100%); box-shadow:inset -8px -10px 18px rgba(18,8,10,.38),inset 7px 8px 17px rgba(255,172,142,.22),0 0 22px rgba(255,107,81,.22); transition:transform .45s cubic-bezier(.2,.75,.25,1),box-shadow .45s ease; }
 .brand:hover .brand-mark { transform:scale(1.06) rotate(-4deg); }
 .brand-mark::after { content:""; position:absolute; inset:0; border-radius:50%; background:linear-gradient(145deg,rgba(255,255,255,.12),transparent 38%,rgba(0,0,0,.18)); pointer-events:none; }
 .footer-brand-lockup .brand-mark { width:42px; height:42px; }
+
+/* Homepage is the editorial showcase; detailed ikas scope now lives under Services. */
+main:not(.inner-page) .ikas-detail { display:none; }
+main:not(.inner-page) .manifesto { padding-bottom:84px; }
+main:not(.inner-page) .services { padding-top:84px; padding-bottom:92px; }
+main:not(.inner-page) .profit-lab { margin-top:22px; margin-bottom:88px; }
+main:not(.inner-page) .systems { margin-top:0; }
+main:not(.inner-page) .process { padding-top:92px; padding-bottom:92px; }
+main:not(.inner-page) .security { margin-top:72px; margin-bottom:96px; }
+main:not(.inner-page) .work-preview { padding-top:92px; padding-bottom:92px; }
 
 /* Micro-interactions only; global visual colors remain defined by globals.css. */
 .nav-links a { position:relative; }
@@ -24,29 +22,30 @@
 .service-row:hover .service-arrow { transform:translate(4px,-3px); }
 
 @media (max-width:900px) {
-  .hero { padding-top:54px !important; }
-  .hero h1 { font-size:clamp(42px,11.8vw,64px) !important; line-height:.98 !important; letter-spacing:-.055em !important; margin-top:27px !important; }
-  .hero h1 > span,.hero h1 > em { display:block; width:100%; }
-  .hero h1 > em { margin-top:.08em; line-height:1.02; }
+  .hero { padding-top:54px!important; }
+  .hero h1 { font-size:clamp(42px,11.8vw,64px)!important; line-height:.98!important; letter-spacing:-.055em!important; margin-top:27px!important; }
+  .hero h1>span,.hero h1>em { display:block; width:100%; }
+  .hero h1>em { margin-top:.08em; line-height:1.02; }
   .lead { max-width:32rem; }
   .hero-stage { margin-top:20px; }
+  main:not(.inner-page) .manifesto,main:not(.inner-page) .services,main:not(.inner-page) .process,main:not(.inner-page) .work-preview { padding-block:72px!important; }
+  main:not(.inner-page) .profit-lab,main:not(.inner-page) .security { margin-block:64px!important; }
 }
 
 @media (max-width:560px) {
-  .shell { width:calc(100% - 32px) !important; }
-  .hero { padding-top:38px !important; padding-bottom:52px !important; }
-  .hero h1 { font-size:clamp(39px,11.1vw,52px) !important; letter-spacing:-.052em !important; margin-bottom:24px !important; }
-  .lead { font-size:17px !important; line-height:1.58 !important; }
-  .hero-actions { margin-top:30px !important; }
-  .hero-stage { height:410px !important; }
-  .core { width:158px !important; height:158px !important; }
-  .core span { font-size:23px !important; }
-  .signal-card { width:132px !important; padding:13px !important; }
-  .signal-card strong { font-size:12px !important; }
-  .manifesto,.services,.closing { padding-block:88px !important; }
-  .section-head { margin-bottom:50px !important; }
+  .shell { width:calc(100% - 32px)!important; }
+  .hero { padding-top:38px!important; padding-bottom:52px!important; }
+  .hero h1 { font-size:clamp(39px,11.1vw,52px)!important; letter-spacing:-.052em!important; margin-bottom:24px!important; }
+  .lead { font-size:17px!important; line-height:1.58!important; }
+  .hero-actions { margin-top:30px!important; }
+  .hero-stage { height:410px!important; }
+  .core { width:158px!important; height:158px!important; }
+  .core span { font-size:23px!important; }
+  .signal-card { width:132px!important; padding:13px!important; }
+  .signal-card strong { font-size:12px!important; }
+  .manifesto,.services,.closing { padding-block:76px!important; }
+  .section-head { margin-bottom:44px!important; }
+  main:not(.inner-page) .process,main:not(.inner-page) .work-preview { padding-block:70px!important; }
 }
 
-@media (prefers-reduced-motion:reduce) {
-  .brand-mark,.service-arrow,.nav-links a::after { transition:none !important; }
-}
+@media (prefers-reduced-motion:reduce) { .brand-mark,.service-arrow,.nav-links a::after { transition:none!important; } }
