@@ -86,11 +86,11 @@ export default function Home() {
     <main>
       <nav className="nav shell" aria-label="Ana menü">
         <a className="brand" href="#top" aria-label="Olivon ana sayfa"><span className="brand-mark">O</span><span>OLIVON</span></a>
-        <div className="nav-links"><a href="#cozumler">Çözümler</a><a href="#yaklasim">Yaklaşım</a><a href="/referanslar">Referanslar</a><a href="#guvenlik">Güvenlik</a><a href="#iletisim">İletişim</a></div>
+        <div className="nav-links"><a href="/hizmetler">Hizmetler</a><a href="#yaklasim">Yaklaşım</a><a href="/referanslar">Referanslar</a><a href="#guvenlik">Güvenlik</a><a href="#iletisim">İletişim</a></div>
         <a className="nav-cta" href="#iletisim">Projenizi konuşalım <ArrowUpRight size={16} /></a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menüyü aç" aria-expanded={menuOpen}>{menuOpen ? <X /> : <Menu />}</button>
       </nav>
-      {menuOpen && <div className="mobile-menu"><a onClick={() => setMenuOpen(false)} href="#cozumler">Çözümler</a><a onClick={() => setMenuOpen(false)} href="#yaklasim">Yaklaşım</a><a onClick={() => setMenuOpen(false)} href="/referanslar">Referanslar</a><a onClick={() => setMenuOpen(false)} href="#guvenlik">Güvenlik</a><a onClick={() => setMenuOpen(false)} href="#iletisim">İletişim</a></div>}
+      {menuOpen && <div className="mobile-menu"><a onClick={() => setMenuOpen(false)} href="/hizmetler">Hizmetler</a><a onClick={() => setMenuOpen(false)} href="#yaklasim">Yaklaşım</a><a onClick={() => setMenuOpen(false)} href="/referanslar">Referanslar</a><a onClick={() => setMenuOpen(false)} href="#guvenlik">Güvenlik</a><a onClick={() => setMenuOpen(false)} href="#iletisim">İletişim</a></div>}
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
@@ -118,13 +118,13 @@ export default function Home() {
 
       <section className="manifesto shell" id="yaklasim">
         <p className="section-index">BİZİM YAKLAŞIMIMIZ</p>
-        <h2>Bir web sitesi teslim etmiyoruz.<br /><span>İşleyen bir dijital merkez kuruyoruz.</span></h2>
+        <h2>Bir web sitesi teslim etmiyoruz. <span>İşleyen bir dijital merkez kuruyoruz.</span></h2>
         <p>Her karar; güveni, satın alma isteğini ve uzun vadeli yönetilebilirliği artırmak için alınır. Görsel dil kadar altyapıyı, hız kadar içeriği, dönüşüm kadar güvenliği önemseriz.</p>
       </section>
 
       <section className="services shell" id="cozumler">
         <div className="section-head">
-          <div><p className="section-index">UZMANLIKLAR</p><h2>Birbirini güçlendiren<br />dijital çözümler.</h2></div>
+          <div><p className="section-index">UZMANLIKLAR</p><h2>Birbirini güçlendiren dijital çözümler.</h2></div>
           <p>Dağınık hizmetler yerine aynı hedefe çalışan, ölçülebilir ve ölçeklenebilir bir yapı.</p>
         </div>
         <div className="service-list">
@@ -164,8 +164,8 @@ export default function Home() {
       </section>
 
       <section className="ikas-detail shell">
-        <div className="section-head">
-          <div><p className="section-index">İKAS KURULUM & DESTEK</p><h2>ikas mağazanızı satışa hazır<br />bir sisteme dönüştürüyoruz.</h2></div>
+        <div className="section-head ikas-head">
+          <div><p className="section-index">İKAS KURULUM & DESTEK</p><h2>ikas mağazanızı satışa hazır bir sisteme dönüştürüyoruz.</h2></div>
           <p>Partner olduğumuz ikas altyapısında sadece tema kurmuyoruz; strateji, içerik, görsel, entegrasyon ve operasyon tarafını birlikte düzenliyoruz.</p>
         </div>
         <div className="ikas-grid">
@@ -185,7 +185,7 @@ export default function Home() {
       </section>
 
       <section className="process shell" id="surec">
-        <div className="section-head"><div><p className="section-index">ÇALIŞMA BİÇİMİ</p><h2>Net kararlar.<br />Görünür ilerleme.</h2></div><p>İlk görüşmeden yayına kadar ne yaptığımızı, neden yaptığımızı ve sıradaki adımı bilirsiniz.</p></div>
+        <div className="section-head"><div><p className="section-index">ÇALIŞMA BİÇİMİ</p><h2>Net kararlar. Görünür ilerleme.</h2></div><p>İlk görüşmeden yayına kadar ne yaptığımızı, neden yaptığımızı ve sıradaki adımı bilirsiniz.</p></div>
         <div className="process-grid">{process.map(([no, title, text]) => <article key={no}><span>{no}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
 
