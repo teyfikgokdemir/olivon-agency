@@ -7,15 +7,49 @@ import { Switch } from "@/components/ui/switch";
 import { SiteFooter } from "@/components/site-footer";
 
 const services = [
-  "E-ticaret sistemleri",
-  "Web tasarım & geliştirme",
-  "SEO, GEO, AEO & AIO",
-  "Dijital reklam yönetimi",
-  "Yapay zekâ otomasyonları",
-  "Siber güvenlik çözümleri",
+  ["E-ticaret sistemleri", "Shopify, ikas ve WooCommerce altyapılarında kurulum, tema düzenleme, ödeme, kargo, ERP ve pazaryeri entegrasyonları."],
+  ["ikas web sitesi kurulumu ve desteği", "Strateji, grafik desteği, front-end/back-end geliştirme, sabit sayfalar, ürün-kategori girişi ve düzenli check-up."],
+  ["Web tasarım & geliştirme", "Kurumsal web sitesi, landing page, hız optimizasyonu, dönüşüm odaklı arayüz ve sürdürülebilir teknik mimari."],
+  ["SEO, GEO, AEO & AIO", "Google, yapay zekâ cevap motorları ve yerel aramalarda görünürlük için teknik, içerik ve otorite çalışmaları."],
+  ["Dijital reklam & marka pazarlama", "Meta, Google ve pazaryeri kampanyalarında ölçüm, kreatif, teklif stratejisi ve kârlılık kontrolü."],
+  ["Güvenlik sistemleri", "Cloudflare, WAF, DDoS, bot kontrolü, erişim politikaları ve web varlıklarını koruyan güvenlik kurgusu."],
 ];
 
 const platforms = ["Shopify Partner", "ikas Partner", "WooCommerce", "Cloudflare", "Google", "Meta"];
+
+const ikasServices = [
+  ["Strateji", "Ürün, hedef kitle, kategori yapısı ve satış hedeflerine göre ikas yol haritasını çıkarırız."],
+  ["Görsel destek", "Ürün görseli, slider, banner ve kampanya tasarımlarını kurumsal kimliğe uygun şekilde yayına alırız."],
+  ["Kargo entegrasyonu", "Çalışacağınız kargo şirketleriyle sipariş akışını hızlı ve güvenli çalışacak şekilde bağlarız."],
+  ["E-ihracat çözümleri", "Yurt dışı satış planı, dil/para birimi, lojistik ve pazaryeri adımlarını partner yapılarla kurgularız."],
+  ["Front-end ve back-end", "Tema düzenleme, özel alanlar, performans ve ihtiyaç duyulan teknik geliştirmeleri tamamlarız."],
+  ["Sabit sayfalar", "Hakkımızda, iletişim, sözleşmeler, SSS, kampanya ve landing page metin/tasarımlarını hazırlarız."],
+  ["Sanal POS entegrasyonu", "Banka veya ödeme altyapılarıyla ödeme alma süreçlerini doğru şekilde yapılandırırız."],
+  ["Check-up", "Mevcut ikas sitenizi site içi/site dışı analiz eder, uygulanabilir bir iyileştirme raporu sunarız."],
+  ["Kategori ve ürün girişi", "Kategori ağacı, ürün içeriği ve SEO uyumlu yayına alma sürecini yönetiriz."],
+  ["Pazaryeri entegrasyonu", "Trendyol, Hepsiburada, N11, Amazon, Beymen, Çiçeksepeti, Pazarama ve Etsy bağlantılarını planlarız."],
+  ["ERP entegrasyonu", "E-ticaret altyapınız, stok, muhasebe ve pazaryeri operasyonlarınız arasında sağlıklı veri akışı kurarız."],
+  ["Tema düzenleme & satış işlemleri", "ikas tema düzenleme, kampanya alanları, ürün vitrinleri ve satışa hazır sayfa akışlarını optimize ederiz."],
+];
+
+const references = [
+  ["Öykü Baby Store", "https://oykubabystore.com.tr/"],
+  ["Bailas Kids", "https://bailaskids.com/"],
+  ["Favorim Kids", "https://favorimkids.com/"],
+  ["Sporfit Korse", "https://sporfitkorse.com/"],
+  ["Velista", "https://velista.com.tr/"],
+  ["Hiranur", "https://hiranur.com.tr/"],
+  ["Bohem Kids", "https://bohemkids.com/"],
+  ["Nully Moda", "https://nullymoda.com/"],
+  ["Glory Wears", "https://glorywears.com/"],
+  ["By Derya Avcı", "https://byderyaavci.com/"],
+  ["Miladeren Butik", "https://miladerenbutik.com/"],
+  ["Kayseri As Tesisat", "https://kayseriastesisat.com.tr/"],
+  ["Ayfa Tesisat", "https://www.ayfatesisat.com/"],
+  ["Ejder Dekorasyon", "https://ejderdekorasyon.com/"],
+  ["IGM Women", "https://igmwomen.com/"],
+  ["Formtime Shopping", "https://formtimeshopping.com/"],
+];
 
 const process = [
   ["01", "Teşhis", "İş modelini, hedef müşteriyi ve büyümeyi yavaşlatan noktaları netleştiririz."],
@@ -50,6 +84,8 @@ export default function Home() {
 
   const maxProfit = Math.max(...scenarios.map(item => item.profit), 1);
   const money = (value: number) => new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 }).format(value) + " TL";
+  const formatNumber = (value: number) => new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 }).format(Number.isFinite(value) ? value : 0);
+  const parseNumber = (value: string) => Number(value.replace(/[^\d]/g, "")) || 0;
 
   useEffect(() => {
     setCookieBanner(!localStorage.getItem("olivon-cookie-consent"));
@@ -99,18 +135,18 @@ export default function Home() {
       </section>
 
       <section className="manifesto shell" id="yaklasim">
-        <p className="section-index">01 — BİZİM YAKLAŞIMIMIZ</p>
+        <p className="section-index">BİZİM YAKLAŞIMIMIZ</p>
         <h2>Bir web sitesi teslim etmiyoruz.<br /><span>İşleyen bir dijital merkez kuruyoruz.</span></h2>
         <p>Her karar; güveni, satın alma isteğini ve uzun vadeli yönetilebilirliği artırmak için alınır. Görsel dil kadar altyapıyı, hız kadar içeriği, dönüşüm kadar güvenliği önemseriz.</p>
       </section>
 
       <section className="services shell" id="cozumler">
         <div className="section-head">
-          <div><p className="section-index">02 — UZMANLIKLAR</p><h2>Birbirini güçlendiren<br />dijital çözümler.</h2></div>
+          <div><p className="section-index">UZMANLIKLAR</p><h2>Birbirini güçlendiren<br />dijital çözümler.</h2></div>
           <p>Dağınık hizmetler yerine aynı hedefe çalışan, ölçülebilir ve ölçeklenebilir bir yapı.</p>
         </div>
         <div className="service-list">
-          {services.map((service, i) => <a href="#iletisim" className="service-row" key={service}><span className="service-number">0{i + 1}</span><h3>{service}</h3><span className="service-arrow"><ArrowUpRight /></span></a>)}
+          {services.map(([service, detail]) => <a href="#iletisim" className="service-row" key={service}><span className="service-number">OLIVON</span><span><h3>{service}</h3><p>{detail}</p></span><span className="service-arrow"><ArrowUpRight /></span></a>)}
         </div>
       </section>
 
@@ -127,11 +163,11 @@ export default function Home() {
         </div>
         <div className="calculator">
           <div className="calculator-inputs">
-            <label><span>Aylık satış</span><div><input type="number" value={revenue} onChange={e => setRevenue(Number(e.target.value))} /><small>TL</small></div></label>
-            <label><span>Ortalama sepet</span><div><input type="number" value={averageOrder} onChange={e => setAverageOrder(Number(e.target.value))} /><small>TL</small></div></label>
+            <label><span>Aylık satış</span><div><input inputMode="numeric" value={formatNumber(revenue)} onChange={e => setRevenue(parseNumber(e.target.value))} /><small>TL</small></div></label>
+            <label><span>Ortalama sepet</span><div><input inputMode="numeric" value={formatNumber(averageOrder)} onChange={e => setAverageOrder(parseNumber(e.target.value))} /><small>TL</small></div></label>
             <label><span>Brüt ürün marjı</span><div><input type="number" value={grossMargin} onChange={e => setGrossMargin(Number(e.target.value))} /><small>%</small></div></label>
             <label><span>Reklam gideri</span><div><input type="number" value={adRate} onChange={e => setAdRate(Number(e.target.value))} /><small>%</small></div></label>
-            <label><span>Sipariş başı kargo</span><div><input type="number" value={shipping} onChange={e => setShipping(Number(e.target.value))} /><small>TL</small></div></label>
+            <label><span>Sipariş başı kargo</span><div><input inputMode="numeric" value={formatNumber(shipping)} onChange={e => setShipping(parseNumber(e.target.value))} /><small>TL</small></div></label>
             <label><span>Pazaryeri komisyonu</span><div><input type="number" value={marketCommission} onChange={e => setMarketCommission(Number(e.target.value))} /><small>%</small></div></label>
           </div>
           <div className="scenario-results">
@@ -142,6 +178,16 @@ export default function Home() {
             </div>)}
           </div>
           <div className="calculator-foot"><span>Altyapı ve ödeme giderleri varsayımsaldır, proje analizinde güncellenir.</span><a href="#iletisim">Size özel analiz <ArrowUpRight size={15} /></a></div>
+        </div>
+      </section>
+
+      <section className="ikas-detail shell">
+        <div className="section-head">
+          <div><p className="section-index">İKAS KURULUM & DESTEK</p><h2>ikas mağazanızı satışa hazır<br />bir sisteme dönüştürüyoruz.</h2></div>
+          <p>Partner olduğumuz ikas altyapısında sadece tema kurmuyoruz; strateji, içerik, görsel, entegrasyon ve operasyon tarafını birlikte düzenliyoruz.</p>
+        </div>
+        <div className="ikas-grid">
+          {ikasServices.map(([title, text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}
         </div>
       </section>
 
@@ -157,21 +203,25 @@ export default function Home() {
       </section>
 
       <section className="process shell" id="surec">
-        <div className="section-head"><div><p className="section-index">03 — ÇALIŞMA BİÇİMİ</p><h2>Net kararlar.<br />Görünür ilerleme.</h2></div><p>İlk görüşmeden yayına kadar ne yaptığımızı, neden yaptığımızı ve sıradaki adımı bilirsiniz.</p></div>
+        <div className="section-head"><div><p className="section-index">ÇALIŞMA BİÇİMİ</p><h2>Net kararlar.<br />Görünür ilerleme.</h2></div><p>İlk görüşmeden yayına kadar ne yaptığımızı, neden yaptığımızı ve sıradaki adımı bilirsiniz.</p></div>
         <div className="process-grid">{process.map(([no, title, text]) => <article key={no}><span>{no}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
 
       <section className="security shell" id="guvenlik">
         <div className="security-icon"><ShieldCheck /></div>
-        <p className="section-index">04 — DİJİTAL GÜVENLİK</p>
+        <p className="section-index">DİJİTAL GÜVENLİK</p>
         <h2>Güven, tasarımdan önce<br />altyapıda başlar.</h2>
         <p>Cloudflare güvenlik katmanları, saldırı yüzeyi azaltma, erişim politikaları, bot ve trafik kontrolüyle dijital varlıklarınızı koruyoruz.</p>
         <div className="security-tags"><span>WAF</span><span>DDoS</span><span>ZERO TRUST</span><span>BOT CONTROL</span><span>MONITORING</span></div>
       </section>
 
       <section className="work-preview shell">
-        <div><p className="section-index">05 — SEÇİLİ ÇALIŞMALAR</p><h2>İşi, yaklaşımı ve sonucu birlikte göstereceğiz.</h2></div>
-        <div className="work-placeholder"><span>REFERANSLAR HAZIRLANIYOR</span><strong>Gerçek projeler yakında burada.</strong><p>Her vaka; ihtiyaç, çözüm, teknik kapsam ve yayındaki sonuçlarıyla sunulacak.</p></div>
+        <div><p className="section-index">SEÇİLİ ÇALIŞMALAR</p><h2>Farklı sektörlerde satışa, güvene ve görünürlüğe dokunan işler.</h2></div>
+        <div className="reference-panel">
+          <span>REFERANS HAVUZU</span>
+          <div className="reference-cloud">{references.map(([reference, url]) => <a href={url} target="_blank" rel="noreferrer" key={reference}>{reference}</a>)}</div>
+          <p>Detaylı vaka anlatımlarını; hedef, çözüm, kullanılan altyapı ve sonuç diliyle ayrıca zenginleştireceğiz.</p>
+        </div>
       </section>
 
       <section className="closing shell" id="iletisim">
