@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowUpRight, BarChart3, Cookie, Menu, ShieldCheck, Sparkles, X } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Switch } from "@/components/ui/switch";
+import { SiteFooter } from "@/components/site-footer";
 
 const services = [
   "E-ticaret sistemleri",
@@ -118,7 +119,10 @@ export default function Home() {
           <p className="section-index">CANLI SENARYO / KÂRLILIK LABORATUVARI</p>
           <h2>Satış aynı.<br /><em>Kalan para farklı.</em></h2>
           <p>Rakamlarınızı girin; pazaryeri ile kendi e-ticaret altyapınız arasındaki tahmini aylık kâr farkını anında görün.</p>
-          <div className="partner-proof"><span>SHOPIFY<br /><strong>PARTNER</strong></span><span>ikas<br /><strong>PARTNER</strong></span></div>
+          <div className="partner-proof">
+            <a href="https://www.shopify.com" target="_blank" rel="noreferrer"><img src="/partners/shopify.svg" alt="Shopify" /><strong>RESMİ ÇÖZÜM ORTAĞI</strong></a>
+            <a href="https://ikas.com" target="_blank" rel="noreferrer"><img src="/partners/ikas.svg" alt="ikas" /><strong>RESMİ ÇÖZÜM ORTAĞI</strong></a>
+          </div>
           <div className="assumption-note">Bu bir ön değerlendirme aracıdır. Vergi, iade, personel ve kategoriye özel giderler dahil değildir.</div>
         </div>
         <div className="calculator">
@@ -175,7 +179,7 @@ export default function Home() {
         <h2>Markanızın dijitaldeki<br /><em>en güçlü halini</em> kuralım.</h2>
         <a className="button primary" href="mailto:info@olivon.com.tr">Projenizi anlatın <ArrowUpRight size={18} /></a>
       </section>
-      <footer className="shell"><span>© 2026 OLIVON</span><span>Türkiye</span><span>Strateji · Tasarım · Teknoloji</span></footer>
+      <SiteFooter />
 
       {cookieBanner && <aside className="cookie-banner" aria-label="Çerez bildirimi">
         <div className="cookie-symbol"><Cookie /></div>
