@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FloatingActions } from "@/components/floating-actions";
 import "./globals.css";
+import "./brand-overrides.css";
 
 export const metadata: Metadata = {
   title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
