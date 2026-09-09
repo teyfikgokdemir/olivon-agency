@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FloatingActions } from "@/components/floating-actions";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">{children}<FloatingActions /></body>
     </html>
   );
 }

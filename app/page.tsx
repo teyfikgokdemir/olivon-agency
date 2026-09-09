@@ -5,6 +5,7 @@ import { ArrowUpRight, BarChart3, Cookie, Menu, ShieldCheck, Sparkles, X } from 
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Switch } from "@/components/ui/switch";
 import { SiteFooter } from "@/components/site-footer";
+import { referenceProjects } from "@/lib/references";
 
 const services = [
   ["E-ticaret sistemleri", "Shopify, ikas ve WooCommerce altyapılarında kurulum, tema düzenleme, ödeme, kargo, ERP ve pazaryeri entegrasyonları."],
@@ -30,25 +31,6 @@ const ikasServices = [
   ["Pazaryeri entegrasyonu", "Trendyol, Hepsiburada, N11, Amazon, Beymen, Çiçeksepeti, Pazarama ve Etsy bağlantılarını planlarız."],
   ["ERP entegrasyonu", "E-ticaret altyapınız, stok, muhasebe ve pazaryeri operasyonlarınız arasında sağlıklı veri akışı kurarız."],
   ["Tema düzenleme & satış işlemleri", "ikas tema düzenleme, kampanya alanları, ürün vitrinleri ve satışa hazır sayfa akışlarını optimize ederiz."],
-];
-
-const references = [
-  ["Öykü Baby Store", "https://oykubabystore.com.tr/"],
-  ["Bailas Kids", "https://bailaskids.com/"],
-  ["Favorim Kids", "https://favorimkids.com/"],
-  ["Sporfit Korse", "https://sporfitkorse.com/"],
-  ["Velista", "https://velista.com.tr/"],
-  ["Hiranur", "https://hiranur.com.tr/"],
-  ["Bohem Kids", "https://bohemkids.com/"],
-  ["Nully Moda", "https://nullymoda.com/"],
-  ["Glory Wears", "https://glorywears.com/"],
-  ["By Derya Avcı", "https://byderyaavci.com/"],
-  ["Miladeren Butik", "https://miladerenbutik.com/"],
-  ["Kayseri As Tesisat", "https://kayseriastesisat.com.tr/"],
-  ["Ayfa Tesisat", "https://www.ayfatesisat.com/"],
-  ["Ejder Dekorasyon", "https://ejderdekorasyon.com/"],
-  ["IGM Women", "https://igmwomen.com/"],
-  ["Formtime Shopping", "https://formtimeshopping.com/"],
 ];
 
 const process = [
@@ -104,11 +86,11 @@ export default function Home() {
     <main>
       <nav className="nav shell" aria-label="Ana menü">
         <a className="brand" href="#top" aria-label="Olivon ana sayfa"><span className="brand-mark">O</span><span>OLIVON</span></a>
-        <div className="nav-links"><a href="#cozumler">Çözümler</a><a href="#yaklasim">Yaklaşım</a><a href="#surec">Süreç</a><a href="#guvenlik">Güvenlik</a><a href="#iletisim">İletişim</a></div>
+        <div className="nav-links"><a href="#cozumler">Çözümler</a><a href="#yaklasim">Yaklaşım</a><a href="/referanslar">Referanslar</a><a href="#guvenlik">Güvenlik</a><a href="#iletisim">İletişim</a></div>
         <a className="nav-cta" href="#iletisim">Projenizi konuşalım <ArrowUpRight size={16} /></a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menüyü aç" aria-expanded={menuOpen}>{menuOpen ? <X /> : <Menu />}</button>
       </nav>
-      {menuOpen && <div className="mobile-menu"><a onClick={() => setMenuOpen(false)} href="#cozumler">Çözümler</a><a onClick={() => setMenuOpen(false)} href="#yaklasim">Yaklaşım</a><a onClick={() => setMenuOpen(false)} href="#surec">Süreç</a><a onClick={() => setMenuOpen(false)} href="#guvenlik">Güvenlik</a><a onClick={() => setMenuOpen(false)} href="#iletisim">İletişim</a></div>}
+      {menuOpen && <div className="mobile-menu"><a onClick={() => setMenuOpen(false)} href="#cozumler">Çözümler</a><a onClick={() => setMenuOpen(false)} href="#yaklasim">Yaklaşım</a><a onClick={() => setMenuOpen(false)} href="/referanslar">Referanslar</a><a onClick={() => setMenuOpen(false)} href="#guvenlik">Güvenlik</a><a onClick={() => setMenuOpen(false)} href="#iletisim">İletişim</a></div>}
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
@@ -219,8 +201,11 @@ export default function Home() {
         <div><p className="section-index">SEÇİLİ ÇALIŞMALAR</p><h2>Farklı sektörlerde satışa, güvene ve görünürlüğe dokunan işler.</h2></div>
         <div className="reference-panel">
           <span>REFERANS HAVUZU</span>
-          <div className="reference-cloud">{references.map(([reference, url]) => <a href={url} target="_blank" rel="noreferrer" key={reference}>{reference}</a>)}</div>
-          <p>Detaylı vaka anlatımlarını; hedef, çözüm, kullanılan altyapı ve sonuç diliyle ayrıca zenginleştireceğiz.</p>
+          <div className="featured-reference-grid">
+            {referenceProjects.filter(project => project.featured).map(project => <a className="featured-reference-card" href={project.url} target="_blank" rel="noreferrer" key={project.domain}><img src={project.image} alt={`${project.name} web sitesi ekran görüntüsü`} /><span>{project.domain}</span><strong>{project.name}</strong></a>)}
+          </div>
+          <div className="reference-cloud">{referenceProjects.slice(3).map(project => <a href={project.url} target="_blank" rel="noreferrer" key={project.domain}>{project.name}</a>)}</div>
+          <a className="reference-page-link" href="/referanslar">Tüm referans kurgusunu incele <ArrowUpRight size={16} /></a>
         </div>
       </section>
 
