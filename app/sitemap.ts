@@ -6,9 +6,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/hizmetler`, lastModified: now, changeFrequency: "weekly", priority: .9 },
+    { url: `${base}/ikas`, lastModified: now, changeFrequency: "weekly", priority: .95 },
     { url: `${base}/hizmetler/e-ticaret`, lastModified: now, changeFrequency: "monthly", priority: .9 },
     { url: `${base}/hizmetler/web-tasarim`, lastModified: now, changeFrequency: "monthly", priority: .9 },
     { url: `${base}/hizmetler/seo-geo-aeo-aio`, lastModified: now, changeFrequency: "weekly", priority: .9 },
+    { url: `${base}/hizmetler/ai-otomasyon`, lastModified: now, changeFrequency: "monthly", priority: .85 },
     { url: `${base}/referanslar`, lastModified: now, changeFrequency: "monthly", priority: .8 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: .8 },
     { url: `${base}/gizlilik-politikasi`, lastModified: now, changeFrequency: "yearly", priority: .2 },
