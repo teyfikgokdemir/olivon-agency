@@ -4,7 +4,6 @@
 .brand-mark::after { content:""; position:absolute; inset:0; border-radius:50%; background:linear-gradient(145deg,rgba(255,255,255,.12),transparent 38%,rgba(0,0,0,.18)); pointer-events:none; }
 .footer-brand-lockup .brand-mark { width:42px; height:42px; }
 
-/* Homepage is the editorial showcase; detailed ikas scope now lives under Services. */
 main:not(.inner-page) .ikas-detail { display:none; }
 main:not(.inner-page) .manifesto { padding-bottom:84px; }
 main:not(.inner-page) .services { padding-top:84px; padding-bottom:92px; }
@@ -14,32 +13,50 @@ main:not(.inner-page) .process { padding-top:92px; padding-bottom:92px; }
 main:not(.inner-page) .security { margin-top:72px; margin-bottom:96px; }
 main:not(.inner-page) .work-preview { padding-top:92px; padding-bottom:92px; }
 
-/* Premium dropdown navigation. */
+/* Full navigation shared by inner pages. */
+.site-header { min-height:116px; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:34px; border-bottom:1px solid rgba(255,239,228,.11); position:relative; z-index:80; }
+.site-nav { display:flex; align-items:center; justify-content:center; gap:28px; }
+.site-nav>a,.nav-dropdown>a { color:rgba(247,242,237,.74); text-decoration:none; font-size:13px; transition:color .2s ease; }
+.site-nav>a:hover,.nav-dropdown>a:hover { color:#fff7f2; }
+.nav-dropdown { position:relative; }
+.nav-dropdown>a { display:flex; align-items:center; gap:5px; }
+.nav-dropdown-panel { position:absolute; top:calc(100% + 18px); left:50%; width:290px; transform:translate(-50%,10px); padding:10px; border:1px solid rgba(255,143,112,.18); border-radius:16px; background:rgba(17,12,10,.97); box-shadow:0 24px 60px rgba(0,0,0,.42); backdrop-filter:blur(18px); opacity:0; visibility:hidden; pointer-events:none; transition:.2s ease; }
+.nav-dropdown-panel-ikas { width:245px; }
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:focus-within .nav-dropdown-panel { opacity:1; visibility:visible; pointer-events:auto; transform:translate(-50%,0); }
+.nav-dropdown-panel a { display:block; padding:11px 12px; border-radius:10px; color:rgba(247,242,237,.82); text-decoration:none; font-size:13px; }
+.nav-dropdown-panel a:hover { background:rgba(255,107,81,.08); color:#fff7f2; }
+.site-mobile-menu { display:none; }
+.site-mobile-menu>summary { list-style:none; cursor:pointer; border:1px solid rgba(255,239,228,.14); border-radius:999px; padding:10px 15px; font-size:12px; }
+.site-mobile-menu>summary::-webkit-details-marker { display:none; }
+.site-mobile-panel { position:absolute; top:88px; left:0; right:0; padding:18px; border:1px solid rgba(255,143,112,.16); border-radius:18px; background:rgba(17,12,10,.98); box-shadow:0 22px 60px rgba(0,0,0,.45); display:grid; gap:6px; }
+.site-mobile-panel>a,.site-mobile-panel summary,.site-mobile-panel details div a { color:rgba(247,242,237,.88); text-decoration:none; font-size:14px; padding:9px 4px; }
+.site-mobile-panel details { border-bottom:1px solid rgba(255,255,255,.07); padding-bottom:6px; }
+.site-mobile-panel details summary { cursor:pointer; list-style:none; }
+.site-mobile-panel details div { display:grid; padding:0 0 7px 12px; }
+.site-mobile-panel details div a { opacity:.7; font-size:13px; }
+
+/* Existing homepage dropdown navigation. */
 .nav-links { align-items:center; }
 .nav-group { position:relative; display:flex; align-items:center; }
 .nav-group-trigger { display:flex; align-items:center; gap:6px; background:none; border:0; color:inherit; font:inherit; cursor:pointer; padding:0; }
 .nav-group-trigger::after { content:"⌄"; font-size:12px; line-height:1; opacity:.58; transform:translateY(-1px); transition:transform .22s ease,opacity .22s ease; }
 .nav-group:hover .nav-group-trigger::after,.nav-group:focus-within .nav-group-trigger::after { transform:translateY(1px) rotate(180deg); opacity:1; }
-.nav-dropdown { position:absolute; top:calc(100% + 22px); left:50%; width:310px; transform:translate(-50%,10px); padding:12px; border:1px solid rgba(255,143,112,.18); border-radius:18px; background:rgba(17,12,10,.96); box-shadow:0 22px 60px rgba(0,0,0,.38),inset 0 1px rgba(255,255,255,.025); backdrop-filter:blur(18px); opacity:0; visibility:hidden; pointer-events:none; transition:opacity .2s ease,transform .2s ease,visibility .2s ease; z-index:60; }
-.nav-group:hover .nav-dropdown,.nav-group:focus-within .nav-dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translate(-50%,0); }
-.nav-dropdown a { display:block; padding:12px 13px; border-radius:11px; color:rgba(247,242,237,.82); font-size:13px; line-height:1.25; letter-spacing:-.01em; transition:background .2s ease,color .2s ease,transform .2s ease; }
-.nav-dropdown a:hover { background:rgba(255,107,81,.075); color:#fff7f2; transform:translateX(2px); }
-.nav-dropdown a::after { display:none!important; }
-.nav-dropdown small { display:block; margin-top:4px; color:rgba(247,242,237,.42); font-size:10px; letter-spacing:.06em; text-transform:uppercase; }
+.nav-dropdown-home { position:absolute; top:calc(100% + 22px); left:50%; width:310px; transform:translate(-50%,10px); padding:12px; border:1px solid rgba(255,143,112,.18); border-radius:18px; background:rgba(17,12,10,.96); box-shadow:0 22px 60px rgba(0,0,0,.38),inset 0 1px rgba(255,255,255,.025); backdrop-filter:blur(18px); opacity:0; visibility:hidden; pointer-events:none; transition:opacity .2s ease,transform .2s ease,visibility .2s ease; z-index:60; }
 
-/* Service cards: editorial hierarchy instead of numbered tiles. */
 .service-card-eyebrow { display:block; margin-bottom:20px; color:var(--coral-soft)!important; font-size:10px!important; font-weight:700!important; letter-spacing:.12em!important; line-height:1.35!important; text-transform:uppercase; }
 .service-detail-card>h2 { text-transform:none; letter-spacing:-.035em; }
-
-/* Micro-interactions only. */
-.nav-links a { position:relative; }
-.nav-links>a::after { content:""; position:absolute; left:0; right:100%; bottom:-9px; height:1px; background:currentColor; opacity:.55; transition:right .28s ease; }
-.nav-links>a:hover::after { right:0; }
 .service-arrow { transition:transform .32s ease,border-color .32s ease; }
 .service-row:hover .service-arrow { transform:translate(4px,-3px); }
 
+@media (max-width:1050px) {
+  .site-header { grid-template-columns:auto 1fr auto; gap:18px; }
+  .site-nav { gap:18px; }
+  .site-nav>a,.nav-dropdown>a { font-size:12px; }
+}
 @media (max-width:900px) {
-  .nav-group { display:none; }
+  .site-header { min-height:88px; grid-template-columns:auto 1fr auto; }
+  .site-nav,.site-header>.nav-cta { display:none; }
+  .site-mobile-menu { display:block; justify-self:end; }
   .hero { padding-top:54px!important; }
   .hero h1 { font-size:clamp(42px,11.8vw,64px)!important; line-height:.98!important; letter-spacing:-.055em!important; margin-top:27px!important; }
   .hero h1>span,.hero h1>em { display:block; width:100%; }
@@ -48,13 +65,7 @@ main:not(.inner-page) .work-preview { padding-top:92px; padding-bottom:92px; }
   .hero-stage { margin-top:20px; }
   main:not(.inner-page) .manifesto,main:not(.inner-page) .services,main:not(.inner-page) .process,main:not(.inner-page) .work-preview { padding-block:72px!important; }
   main:not(.inner-page) .profit-lab,main:not(.inner-page) .security { margin-block:64px!important; }
-  .mobile-menu details { width:100%; border-bottom:1px solid rgba(255,255,255,.07); padding-bottom:8px; }
-  .mobile-menu summary { list-style:none; cursor:pointer; padding:10px 0; }
-  .mobile-menu summary::-webkit-details-marker { display:none; }
-  .mobile-submenu { display:grid; gap:3px; padding:0 0 8px 14px; }
-  .mobile-submenu a { font-size:14px; opacity:.72; padding:6px 0; }
 }
-
 @media (max-width:560px) {
   .shell { width:calc(100% - 32px)!important; }
   .hero { padding-top:38px!important; padding-bottom:52px!important; }
@@ -70,5 +81,4 @@ main:not(.inner-page) .work-preview { padding-top:92px; padding-bottom:92px; }
   .section-head { margin-bottom:44px!important; }
   main:not(.inner-page) .process,main:not(.inner-page) .work-preview { padding-block:70px!important; }
 }
-
-@media (prefers-reduced-motion:reduce) { .brand-mark,.service-arrow,.nav-links a::after,.nav-dropdown,.nav-dropdown a,.nav-group-trigger::after { transition:none!important; } }
+@media (prefers-reduced-motion:reduce) { .brand-mark,.service-arrow,.nav-dropdown-panel { transition:none!important; } }
