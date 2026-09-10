@@ -77,6 +77,7 @@ export default function Home() {
     setAnalytics(value.analytics);
     setMarketing(value.marketing);
     localStorage.setItem("olivon-cookie-consent", JSON.stringify(value));
+    window.dispatchEvent(new CustomEvent("olivon-consent-change", { detail: value }));
     setCookieBanner(false);
     setCookiePanel(false);
   };
