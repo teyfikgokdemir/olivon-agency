@@ -7,6 +7,7 @@ import "./nav-hotfix.css";
 import "./services-v2.css";
 import "./references-v2.css";
 import "./blog-v2.css";
+import "./blog-index-v2.css";
 import "./global-header-fix.css";
 
 const siteUrl = "https://olivon.com.tr";
