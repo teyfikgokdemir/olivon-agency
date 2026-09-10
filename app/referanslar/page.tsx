@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { referenceProjects } from "@/lib/references";
 
 export default function ReferencesPage() {
@@ -8,21 +9,21 @@ export default function ReferencesPage() {
 
   return (
     <main className="inner-page references-page">
-      <nav className="inner-nav shell"><a className="brand" href="/"><span className="brand-mark">O</span><span>OLIVON</span></a><a href="/">Ana sayfa</a></nav>
+      <SiteHeader />
       <section className="inner-hero shell references-hero">
         <p className="section-index">REFERANSLAR</p>
         <h1>Gerçek markalar.<br /><em>Canlı dijital vitrinler.</em></h1>
-        <p>İlk etapta seçili projeleri hero ekran görüntüsü, domain ve iş kapsamı ile sunuyoruz. Detaylı vaka analizlerini sonraki içeriklerle genişleteceğiz.</p>
+        <p>Seçili projeleri canlı site görüntüleri, domain ve iş kapsamı ile sunuyoruz.</p>
       </section>
       <section className="reference-showcase shell">
-        {featured.map((project, index) => (
+        {featured.map(project => (
           <article className="reference-case" key={project.domain}>
             <div className="reference-browser">
               <div><span /><span /><span /><em>{project.domain}</em></div>
               <img src={project.image} alt={`${project.name} web sitesi hero ekran görüntüsü`} />
             </div>
             <div className="reference-copy">
-              <span>0{index + 1} / {project.category}</span>
+              <span>{project.category}</span>
               <h2>{project.name}</h2>
               <p>{project.scope}</p>
               <a href={project.url} target="_blank" rel="noreferrer">Siteyi görüntüle <ArrowUpRight size={17} /></a>
