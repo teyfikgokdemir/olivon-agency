@@ -3,7 +3,7 @@ import { ArrowUpRight, Mail, MapPin, MessageCircle, CheckCircle2 } from "lucide-
 import { SiteFooter } from "@/components/site-footer";
 import { ContactForm } from "@/components/contact-form";
 import { StructuredData } from "@/components/structured-data";
-import { breadcrumbSchema } from "@/lib/seo";
+import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "İletişim | Web Tasarım, E-Ticaret, SEO & ikas Projeleri",
@@ -33,22 +33,7 @@ const jsonLd = {
   name: "Olivon İletişim",
   url: "https://olivon.com.tr/iletisim",
   description: "Olivon web tasarım, e-ticaret, ikas, SEO, AI görünürlüğü ve dijital güvenlik projeleri için iletişim sayfası.",
-  mainEntity: {
-    "@type": "ProfessionalService",
-    name: "Olivon",
-    url: "https://olivon.com.tr",
-    email: "info@olivon.com.tr",
-    areaServed: {
-      "@type": "Country",
-      name: "Türkiye",
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Kayseri",
-      addressCountry: "TR",
-    },
-    sameAs: [],
-  },
+  mainEntity: { "@id": `${SITE_URL}/#organization` },
 };
 
 export default function ContactPage() {
