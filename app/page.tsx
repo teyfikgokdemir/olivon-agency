@@ -94,7 +94,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-stage hero-stage-photo" aria-hidden="true">
-          <img src="/images/hero/olivon-hero-main.webp" alt="" />
+          <img src="/images/hero/olivon-hero-main.webp" alt="" width="1672" height="941" fetchPriority="high" decoding="async" />
         </div>
         <div className="hero-foot"><span>STRATEJİ</span><span>TASARIM</span><span>TEKNOLOJİ</span><span>GÜVENLİK</span></div>
       </section>
