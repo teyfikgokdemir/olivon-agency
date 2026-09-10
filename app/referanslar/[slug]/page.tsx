@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const item = caseStudies.find(entry => entry.slug === slug);
   if (!item) return {};
   return {
-    title: `${item.name} Vaka Çalışması | E-Ticaret Projesi | Olivon`,
+    title: `${item.name} Vaka Çalışması | E-Ticaret Projesi`,
     description: `${item.name} için gerçekleştirilen ${item.category.toLocaleLowerCase("tr-TR")} odaklı e-ticaret çalışmasının problem, kapsam, sonuç ve teknoloji özeti.`,
     alternates: { canonical: `/referanslar/${item.slug}` },
     openGraph: {
