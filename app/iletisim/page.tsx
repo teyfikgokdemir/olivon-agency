@@ -6,7 +6,7 @@ import { StructuredData } from "@/components/structured-data";
 import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "İletişim | Web Tasarım, E-Ticaret, SEO & ikas Projeleri | Olivon",
+  title: "İletişim | Web Tasarım, E-Ticaret, SEO & ikas Projeleri",
   description: "Web tasarım, e-ticaret, ikas kurulum, Shopify, WooCommerce, SEO, GEO, AEO, AIO ve dijital güvenlik projeleriniz için Olivon ile iletişime geçin.",
   alternates: { canonical: "/iletisim" },
   openGraph: {
