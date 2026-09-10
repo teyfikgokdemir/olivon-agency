@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
+export const metadata: Metadata = { title: "Kullanım Koşulları", description: "Olivon web sitesi içerikleri, fikri mülkiyet, hesaplama araçları, dış bağlantılar ve hizmet kapsamına ilişkin kullanım koşulları.", alternates: { canonical: "/kullanim-kosullari" } };
 export default function Page(){return <LegalPage title="Kullanım Koşulları" intro="Bu web sitesini kullanarak aşağıdaki temel koşulları kabul etmiş olursunuz.">
   <section><h2>Bilgilendirme amacı</h2><p>Sitedeki içerikler genel bilgilendirme niteliğindedir. Hizmet kapsamı, süre, ücret ve sorumluluklar ancak taraflar arasında yazılı teklif veya sözleşmeyle kesinleşir.</p></section>
   <section><h2>Fikri mülkiyet</h2><p>Olivon markası, tasarım sistemi, metinler ve özgün içerikler üzerindeki haklar saklıdır. Yazılı izin olmadan ticari amaçla çoğaltılamaz veya yanıltıcı biçimde kullanılamaz.</p></section>
