@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { FloatingActions } from "@/components/floating-actions";
 import { SiteHeader } from "@/components/site-header";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { CookieConsent } from "@/components/cookie-consent";
 import { StructuredData } from "@/components/structured-data";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import "./globals.css";
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="root-site-header"><SiteHeader /></div>
         {children}
         <FloatingActions />
+        <CookieConsent />
         <GoogleAnalytics />
       </body>
     </html>
