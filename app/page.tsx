@@ -180,7 +180,7 @@ export default function Home() {
       <section className="security shell" id="guvenlik">
         <div className="security-icon"><ShieldCheck /></div>
         <p className="section-index">DİJİTAL GÜVENLİK</p>
-        <h2>Güven, tasarımdan önce<br />altyapıda başlar.</h2>
+        <h2>Güven, tasarımdan<br />önce altyapıda<br />başlar.</h2>
         <p>Cloudflare güvenlik katmanları, saldırı yüzeyi azaltma, erişim politikaları, bot ve trafik kontrolüyle dijital varlıklarınızı koruyoruz.</p>
         <div className="security-tags"><span>WAF</span><span>DDoS</span><span>ZERO TRUST</span><span>BOT CONTROL</span><span>MONITORING</span></div>
       </section>
