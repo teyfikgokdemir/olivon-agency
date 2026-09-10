@@ -12,55 +12,84 @@ declare global {
 
 const GA_ID = "G-VJ2PP2LG1N";
 
-function hasAnalyticsConsent() {
+type ConsentState = {
+  analytics?: boolean;
+  marketing?: boolean;
+};
+
+function getConsent(): ConsentState {
   try {
     const raw = localStorage.getItem("olivon-cookie-consent");
-    if (!raw) return false;
-    const consent = JSON.parse(raw);
-    return consent?.analytics === true;
+    return raw ? JSON.parse(raw) : {};
   } catch {
-    return false;
+    return {};
   }
 }
 
-function loadGa() {
-  if (!GA_ID || document.getElementById("olivon-ga4")) return;
-
+function ensureGtag() {
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(...args: unknown[]) {
+  window.gtag = window.gtag || function gtag(...args: unknown[]) {
     window.dataLayer.push(args);
   };
+}
 
-  window.gtag("js", new Date());
-  window.gtag("config", GA_ID, {
+function applyConsent(consent: ConsentState) {
+  ensureGtag();
+  window.gtag?.("consent", "update", {
+    analytics_storage: consent.analytics ? "granted" : "denied",
+    ad_storage: consent.marketing ? "granted" : "denied",
+    ad_user_data: consent.marketing ? "granted" : "denied",
+    ad_personalization: consent.marketing ? "granted" : "denied",
+  });
+}
+
+function loadGa() {
+  ensureGtag();
+
+  if (!document.getElementById("olivon-ga4")) {
+    const script = document.createElement("script");
+    script.id = "olivon-ga4";
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
+  }
+
+  window.gtag?.("js", new Date());
+  window.gtag?.("config", GA_ID, {
     send_page_view: false,
     anonymize_ip: true,
   });
-
-  const script = document.createElement("script");
-  script.id = "olivon-ga4";
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-  document.head.appendChild(script);
 }
 
 export function GoogleAnalytics() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const activate = () => {
-      if (!hasAnalyticsConsent()) return;
-      loadGa();
+    ensureGtag();
+
+    window.gtag?.("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500,
+    });
+
+    loadGa();
+    applyConsent(getConsent());
+
+    const onConsentChange = (event: Event) => {
+      const detail = (event as CustomEvent<ConsentState>).detail || getConsent();
+      applyConsent(detail);
     };
 
-    activate();
-    window.addEventListener("olivon-consent-change", activate);
-    return () => window.removeEventListener("olivon-consent-change", activate);
+    window.addEventListener("olivon-consent-change", onConsentChange);
+    return () => window.removeEventListener("olivon-consent-change", onConsentChange);
   }, []);
 
   useEffect(() => {
-    if (!GA_ID || !hasAnalyticsConsent()) return;
-    loadGa();
+    const consent = getConsent();
+    if (!consent.analytics) return;
 
     const timer = window.setTimeout(() => {
       window.gtag?.("event", "page_view", {
