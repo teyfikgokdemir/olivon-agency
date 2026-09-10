@@ -37,7 +37,7 @@ export function SiteHeader() {
           <div className="nav-dropdown">
             <a className="nav-dropdown-trigger" href="/ikas">ikas <ChevronDown size={14} /></a>
             <div className="nav-panel ikas-panel">
-              {ikasMenuItems.map(item => <a href="/ikas" key={item}>{item}</a>)}
+              {ikasMenuItems.map(item => <a href={`/ikas#${item.slug}`} key={item.slug}>{item.label}</a>)}
             </div>
           </div>
 
@@ -67,7 +67,7 @@ export function SiteHeader() {
           <button className="mobile-accordion-trigger" onClick={() => setIkasOpen(value => !value)} aria-expanded={ikasOpen}>
             ikas <ChevronDown size={18} />
           </button>
-          {ikasOpen && <div className="mobile-submenu">{ikasMenuItems.map(item => <a onClick={close} href="/ikas" key={item}>{item}</a>)}</div>}
+          {ikasOpen && <div className="mobile-submenu">{ikasMenuItems.map(item => <a onClick={close} href={`/ikas#${item.slug}`} key={item.slug}>{item.label}</a>)}</div>}
 
           <a onClick={close} href="/referanslar">Referanslar</a>
           <a onClick={close} href="/blog">Blog</a>
