@@ -12,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/hizmetler/web-tasarim`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/hizmetler/seo-geo-aeo-aio`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/hizmetler/ai-otomasyon`, lastModified: updated, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/hizmetler/dijital-reklam`, lastModified: updated, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/hizmetler/dijital-guvenlik`, lastModified: updated, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/referanslar`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/referanslar/oyku-baby-store`, lastModified: updated, changeFrequency: "monthly", priority: 0.82 },
     { url: `${base}/referanslar/bailas-kids`, lastModified: updated, changeFrequency: "monthly", priority: 0.82 },
