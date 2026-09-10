@@ -60,7 +60,18 @@ export function GoogleAnalytics() {
     loadGa();
     applyConsent(getConsent());
 
-    const onConsentChange = (event: Event) => applyConsent((event as CustomEvent<ConsentState>).detail || getConsent());
+    const onConsentChange = (event: Event) => {
+      const consent = (event as CustomEvent<ConsentState>).detail || getConsent();
+      applyConsent(consent);
+      if (consent.analytics) {
+        window.setTimeout(() => track("page_view", {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname + window.location.search,
+          consent_activation: true,
+        }), 0);
+      }
+    };
     const onCustomEvent = (event: Event) => {
       const detail = (event as CustomEvent<{ name: string; params?: Record<string, unknown> }>).detail;
       if (detail?.name) track(detail.name, detail.params || {});
