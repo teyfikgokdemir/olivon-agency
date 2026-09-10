@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const GA_ID = "G-VJ2PP2LG1N";
 
 function hasAnalyticsConsent() {
   try {
