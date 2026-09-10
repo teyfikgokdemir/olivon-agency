@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { articles } from "@/lib/articles";
@@ -23,7 +22,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     <section className="related-articles shell">
       <p className="section-index">OKUMAYA DEVAM EDİN</p>
       <h2>İlginizi çekebilecek diğer yazılar</h2>
-      <div>{related.map(item => <Link href={`/blog/${item.slug}`} key={item.slug}><img src={item.image} alt={`${item.title} blog görseli`} /><span>{item.category}</span><strong>{item.title}</strong><em>{item.date} <ArrowUpRight size={16} /></em></Link>)}</div>
+      <div>{related.map(item => <a href={`/blog/${item.slug}`} key={item.slug}><img src={item.image} alt={`${item.title} blog görseli`} /><span>{item.category}</span><strong>{item.title}</strong><em>{item.date} <ArrowUpRight size={16} /></em></a>)}</div>
     </section>
     <SiteFooter />
   </main>;
