@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
-  title: "Sık Sorulan Sorular | Web, E-Ticaret, ikas, SEO & AI | Olivon",
+  title: "Sık Sorulan Sorular | Web, E-Ticaret, ikas, SEO & AI",
   description: "Web tasarım, e-ticaret, ikas, Shopify, WooCommerce, SEO, GEO, AEO, AIO, dijital güvenlik, süreç ve proje kapsamı hakkında sık sorulan sorular.",
   alternates: { canonical: "/sss" },
   openGraph: {
