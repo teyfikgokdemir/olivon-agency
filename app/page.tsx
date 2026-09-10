@@ -93,12 +93,8 @@ export default function Home() {
             <a className="button ghost" href="#cozumler">Uzmanlıkları keşfedin</a>
           </div>
         </div>
-        <div className="hero-stage" aria-hidden="true">
-          <div className="orbit orbit-one" /><div className="orbit orbit-two" />
-          <div className="signal-card card-one"><span>Strateji</span><strong>Doğru konum</strong></div>
-          <div className="signal-card card-two"><span>Deneyim</span><strong>Net yolculuk</strong></div>
-          <div className="signal-card card-three"><span>Sistem</span><strong>Ölçülen büyüme</strong></div>
-          <div className="core"><span>OLIVON</span><small>DIGITAL SYSTEMS</small></div>
+        <div className="hero-stage hero-stage-photo" aria-hidden="true">
+          <img src="/images/hero/olivon-hero-main.webp" alt="" />
         </div>
         <div className="hero-foot"><span>STRATEJİ</span><span>TASARIM</span><span>TEKNOLOJİ</span><span>GÜVENLİK</span></div>
       </section>
