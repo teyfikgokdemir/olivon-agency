@@ -1,0 +1,5 @@
+Contact: mailto:info@olivon.com.tr
+Canonical: https://olivon.com.tr/.well-known/security.txt
+Preferred-Languages: tr, en
+Policy: https://olivon.com.tr/hizmetler/dijital-guvenlik
+Expires: 2027-09-10T00:00:00.000Z
