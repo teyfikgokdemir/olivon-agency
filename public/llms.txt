@@ -1,21 +1,31 @@
 # Olivon
 
-> Olivon; web tasarım, e-ticaret, ikas kurulum ve destek, SEO, GEO, AEO, AIO, yapay zekâ görünürlüğü ve dijital güvenlik alanlarında Türkiye genelinde hizmet veren dijital büyüme ajansıdır.
+> Olivon; Kayseri merkezli, Türkiye genelinde web tasarım, e-ticaret, ikas kurulum ve destek, SEO, GEO, AEO, AIO, AI otomasyon ve dijital güvenlik alanlarında çalışan dijital büyüme stüdyosudur.
 
 ## Ana Sayfalar
 
-- [Ana Sayfa](https://olivon.com.tr/): Olivon'un dijital büyüme yaklaşımı, hizmetleri, referansları ve iletişim bilgileri.
-- [Hizmetler](https://olivon.com.tr/hizmetler): Web, e-ticaret, görünürlük, reklam ve dijital güvenlik hizmetleri.
-- [ikas Partner Hizmetleri](https://olivon.com.tr/ikas): ikas kurulumu, tasarım, entegrasyon, check-up ve teknik destek.
-- [Referanslar](https://olivon.com.tr/referanslar): Olivon tarafından geliştirilen ve desteklenen projeler.
-- [Blog](https://olivon.com.tr/blog): E-ticaret, web, SEO, yapay zekâ görünürlüğü ve güvenlik içerikleri.
+- [Ana Sayfa](https://olivon.com.tr/): Olivon'un dijital büyüme yaklaşımı, hizmetleri, kârlılık aracı, vaka çalışmaları ve çalışma modeli.
+- [Hizmetler](https://olivon.com.tr/hizmetler): Web, e-ticaret, görünürlük, otomasyon, reklam ve dijital güvenlik hizmetleri.
+- [ikas Kurulum ve Destek](https://olivon.com.tr/ikas): ikas mağaza kurulumu, tasarım, ürün-kategori, POS, kargo, ERP, pazaryeri, e-ihracat ve check-up.
+- [Referanslar ve Vaka Çalışmaları](https://olivon.com.tr/referanslar): Canlı projeler ve yayınlanabilir vaka özetleri.
+- [Hakkımızda](https://olivon.com.tr/hakkimizda): Olivon'un çalışma modeli, uzmanlık çerçevesi ve kalite prensipleri.
+- [Fiyatlandırma ve Çalışma Modeli](https://olivon.com.tr/fiyatlandirma): Check-up, kurulum/yeniden yapılandırma ve sürekli destek kapsamlarının nasıl fiyatlandırıldığı.
+- [Sık Sorulan Sorular](https://olivon.com.tr/sss): Hizmet, süreç, platform, SEO/AI ve güvenlik soruları.
+- [İletişim](https://olivon.com.tr/iletisim): Proje briefi, çalışma alanları ve doğrudan iletişim.
+- [Blog](https://olivon.com.tr/blog): E-ticaret, web, SEO, yapay zekâ görünürlüğü ve güvenlik rehberleri.
 
-## Uzmanlıklar
+## Uzmanlık Sayfaları
 
-- [E-ticaret Sistemleri](https://olivon.com.tr/hizmetler/e-ticaret): Shopify, ikas ve WooCommerce altyapıları, ödeme, kargo ve pazaryeri entegrasyonları.
-- [Web Tasarım ve Geliştirme](https://olivon.com.tr/hizmetler/web-tasarim): Kurumsal web sitesi, landing page, mobil deneyim ve performans.
-- [SEO, GEO, AEO ve AIO](https://olivon.com.tr/hizmetler/seo-geo-aeo-aio): Klasik arama ve yapay zekâ destekli arama sistemlerinde görünürlük.
-- [AI Otomasyon](https://olivon.com.tr/hizmetler/ai-otomasyon): Yapay zekâ destekli otomasyon ve iş akışları.
+- [E-ticaret Sistemleri](https://olivon.com.tr/hizmetler/e-ticaret): Shopify, ikas ve WooCommerce; ödeme, kargo, ERP, pazaryeri ve dönüşüm mimarisi.
+- [Web Tasarım ve Geliştirme](https://olivon.com.tr/hizmetler/web-tasarim): Kurumsal web, landing page, mobil UX, performans ve dönüşüm.
+- [SEO, GEO, AEO ve AIO](https://olivon.com.tr/hizmetler/seo-geo-aeo-aio): Teknik SEO, içerik, schema/entity sinyalleri ve Google/AI destekli arama görünürlüğü.
+- [AI Otomasyon](https://olivon.com.tr/hizmetler/ai-otomasyon): İnsan kontrolünü koruyan operasyon, içerik ve veri iş akışları.
+
+## Seçili Vaka Çalışmaları
+
+- [Öykü Baby Store](https://olivon.com.tr/referanslar/oyku-baby-store)
+- [Bailas Kids](https://olivon.com.tr/referanslar/bailas-kids)
+- [Favorim Kids](https://olivon.com.tr/referanslar/favorim-kids)
 
 ## Seçili Rehberler
 
@@ -27,5 +37,5 @@
 
 ## İletişim
 
-- [İletişim](https://olivon.com.tr/#iletisim)
+- [Proje İletişimi](https://olivon.com.tr/iletisim)
 - E-posta: info@olivon.com.tr
