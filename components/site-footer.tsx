@@ -7,12 +7,12 @@ export function SiteFooter() {
     <footer className="mega-footer">
       <div className="shell footer-cta">
         <div><p>YENİ BİR PROJE Mİ VAR?</p><h2>Markanız için daha güçlü<br /><em>bir dijital sistem</em> kuralım.</h2></div>
-        <a className="footer-mail" href="mailto:info@olivon.com.tr"><span>Projeyi konuşalım</span><strong>info@olivon.com.tr</strong><ArrowUpRight /></a>
+        <a className="footer-mail" href="/iletisim"><span>Projeyi konuşalım</span><strong>info@olivon.com.tr</strong><ArrowUpRight /></a>
       </div>
       <div className="shell footer-grid">
         <div className="footer-brand"><div className="footer-brand-lockup"><span className="brand-mark">O</span><strong>OLIVON</strong></div><p>Strateji, tasarım, e-ticaret, büyüme ve güvenliği tek sistemde buluşturan bağımsız dijital ajans.</p><div className="footer-partners"><img src="/partners/shopify.svg" alt="Shopify çözüm ortağı" /><img src="/partners/ikas.svg" alt="ikas çözüm ortağı" /></div></div>
         <div><h3>Uzmanlıklar</h3>{serviceLinks.map(link => <a href="/hizmetler" key={link}>{link}</a>)}</div>
-        <div><h3>Keşfedin</h3><a href="/#yaklasim">Yaklaşım</a><a href="/#surec">Çalışma süreci</a><a href="/#karlilik">Kârlılık laboratuvarı</a><a href="/blog">Blog</a><a href="/#iletisim">İletişim</a></div>
+        <div><h3>Keşfedin</h3><a href="/#yaklasim">Yaklaşım</a><a href="/#surec">Çalışma süreci</a><a href="/#karlilik">Kârlılık laboratuvarı</a><a href="/blog">Blog</a><a href="/sss">SSS</a><a href="/iletisim">İletişim</a></div>
         <div><h3>Yasal</h3><a href="/gizlilik-politikasi">Gizlilik politikası</a><a href="/kvkk">KVKK aydınlatma metni</a><a href="/cerez-politikasi">Çerez politikası</a><a href="/kullanim-kosullari">Kullanım koşulları</a></div>
       </div>
       <div className="shell footer-premium-band">
