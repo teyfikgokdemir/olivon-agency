@@ -1,40 +1,39 @@
-import Link from "next/link";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 
 export function SiteHeader() {
   return (
     <header className="site-header shell">
-      <Link className="brand" href="/" aria-label="Olivon ana sayfa"><span className="brand-mark">O</span><span>OLIVON</span></Link>
+      <a className="brand" href="/" aria-label="Olivon ana sayfa"><span className="brand-mark">O</span><span>OLIVON</span></a>
       <nav className="site-nav" aria-label="Ana menü">
         <div className="nav-dropdown">
-          <Link href="/hizmetler">Hizmetler <ChevronDown size={14} /></Link>
+          <a href="/hizmetler">Hizmetler <ChevronDown size={14} /></a>
           <div className="nav-dropdown-panel">
-            <Link href="/hizmetler/web-tasarim">Web tasarım & geliştirme</Link>
-            <Link href="/hizmetler/e-ticaret">E-ticaret sistemleri</Link>
-            <Link href="/hizmetler/seo-geo-aeo-aio">Arama görünürlüğü</Link>
-            <Link href="/hizmetler/ai-otomasyon">AI otomasyon & iş akışları</Link>
-            <Link href="/hizmetler">Tüm uzmanlıklar</Link>
+            <a href="/hizmetler/web-tasarim">Web tasarım & geliştirme</a>
+            <a href="/hizmetler/e-ticaret">E-ticaret sistemleri</a>
+            <a href="/hizmetler/seo-geo-aeo-aio">Arama görünürlüğü</a>
+            <a href="/hizmetler/ai-otomasyon">AI otomasyon & iş akışları</a>
+            <a href="/hizmetler">Tüm uzmanlıklar</a>
           </div>
         </div>
         <div className="nav-dropdown">
-          <Link href="/ikas">ikas <ChevronDown size={14} /></Link>
+          <a href="/ikas">ikas <ChevronDown size={14} /></a>
           <div className="nav-dropdown-panel nav-dropdown-panel-ikas">
-            <Link href="/ikas">ikas Partner hizmetleri</Link>
-            <Link href="/ikas#entegrasyonlar">Entegrasyonlar</Link>
-            <Link href="/ikas#check-up">ikas Check-up</Link>
+            <a href="/ikas">ikas Partner hizmetleri</a>
+            <a href="/ikas#entegrasyonlar">Entegrasyonlar</a>
+            <a href="/ikas#check-up">ikas Check-up</a>
           </div>
         </div>
-        <Link href="/#yaklasim">Yaklaşım</Link>
-        <Link href="/referanslar">Referanslar</Link>
-        <Link href="/blog">Blog</Link>
+        <a href="/#yaklasim">Yaklaşım</a>
+        <a href="/referanslar">Referanslar</a>
+        <a href="/blog">Blog</a>
       </nav>
-      <Link className="nav-cta" href="/#iletisim">Projenizi konuşalım <ArrowUpRight size={16} /></Link>
+      <a className="nav-cta" href="/#iletisim">Projenizi konuşalım <ArrowUpRight size={16} /></a>
       <details className="site-mobile-menu">
         <summary>Menü</summary>
         <div className="site-mobile-panel">
-          <details><summary>Hizmetler</summary><div><Link href="/hizmetler/web-tasarim">Web tasarım & geliştirme</Link><Link href="/hizmetler/e-ticaret">E-ticaret sistemleri</Link><Link href="/hizmetler/seo-geo-aeo-aio">Arama görünürlüğü</Link><Link href="/hizmetler/ai-otomasyon">AI otomasyon</Link><Link href="/hizmetler">Tüm uzmanlıklar</Link></div></details>
-          <details><summary>ikas</summary><div><Link href="/ikas">ikas Partner hizmetleri</Link><Link href="/ikas#entegrasyonlar">Entegrasyonlar</Link><Link href="/ikas#check-up">ikas Check-up</Link></div></details>
-          <Link href="/#yaklasim">Yaklaşım</Link><Link href="/referanslar">Referanslar</Link><Link href="/blog">Blog</Link><Link href="/#iletisim">İletişim</Link>
+          <details><summary>Hizmetler</summary><div><a href="/hizmetler/web-tasarim">Web tasarım & geliştirme</a><a href="/hizmetler/e-ticaret">E-ticaret sistemleri</a><a href="/hizmetler/seo-geo-aeo-aio">Arama görünürlüğü</a><a href="/hizmetler/ai-otomasyon">AI otomasyon</a><a href="/hizmetler">Tüm uzmanlıklar</a></div></details>
+          <details><summary>ikas</summary><div><a href="/ikas">ikas Partner hizmetleri</a><a href="/ikas#entegrasyonlar">Entegrasyonlar</a><a href="/ikas#check-up">ikas Check-up</a></div></details>
+          <a href="/#yaklasim">Yaklaşım</a><a href="/referanslar">Referanslar</a><a href="/blog">Blog</a><a href="/#iletisim">İletişim</a>
         </div>
       </details>
     </header>
