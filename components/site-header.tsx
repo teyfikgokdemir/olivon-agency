@@ -27,7 +27,7 @@ export function SiteHeader() {
             <a className="nav-dropdown-trigger" href="/hizmetler">Hizmetler <ChevronDown size={14} /></a>
             <div className="nav-panel services-panel">
               {serviceGroups.map(service => (
-                <a href={`/hizmetler#${service.slug}`} key={service.slug}>
+                <a href={service.href} key={service.slug}>
                   <strong>{service.title}</strong><span>{service.intro}</span>
                 </a>
               ))}
@@ -43,7 +43,7 @@ export function SiteHeader() {
 
           <a href="/referanslar">Referanslar</a>
           <a href="/blog">Blog</a>
-          <a href="/#guvenlik">Güvenlik</a>
+          <a href="/hizmetler/dijital-guvenlik">Güvenlik</a>
         </div>
 
         <a className="nav-cta" href="/iletisim">Projenizi konuşalım</a>
@@ -60,7 +60,7 @@ export function SiteHeader() {
           </button>
           {servicesOpen && (
             <div className="mobile-submenu">
-              {serviceGroups.map(service => <a onClick={close} href={`/hizmetler#${service.slug}`} key={service.slug}>{service.title}</a>)}
+              {serviceGroups.map(service => <a onClick={close} href={service.href} key={service.slug}>{service.title}</a>)}
             </div>
           )}
 
@@ -71,7 +71,7 @@ export function SiteHeader() {
 
           <a onClick={close} href="/referanslar">Referanslar</a>
           <a onClick={close} href="/blog">Blog</a>
-          <a onClick={close} href="/#guvenlik">Güvenlik</a>
+          <a onClick={close} href="/hizmetler/dijital-guvenlik">Güvenlik</a>
           <a onClick={close} href="/iletisim">İletişim</a>
         </div>
       )}
