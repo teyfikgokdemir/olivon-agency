@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, Mail, MapPin, MessageCircle, CheckCircle2 } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
+import { ContactForm } from "@/components/contact-form";
+import { StructuredData } from "@/components/structured-data";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "İletişim | Web Tasarım, E-Ticaret, SEO & ikas Projeleri | Olivon",
@@ -51,7 +54,7 @@ const jsonLd = {
 export default function ContactPage() {
   return (
     <main className="inner-page contact-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <StructuredData data={[jsonLd, breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"İletişim",path:"/iletisim"}])]} />
       <section className="inner-hero shell contact-hero">
         <p className="section-index">İLETİŞİM</p>
         <h1>Projenizi konuşalım.<br /><em>Doğru sistemi birlikte kuralım.</em></h1>
@@ -85,6 +88,8 @@ export default function ContactPage() {
         <div><span>03</span><h3>Uygulama planını kurarız</h3><p>Tasarım, geliştirme, içerik, entegrasyon ve ölçüm adımlarını aynı yol haritasında toplarız.</p></div>
       </section>
 
+      <section className="shell"><ContactForm /></section>
+
       <section className="contact-seo-copy shell">
         <p className="section-index">OLIVON DİJİTAL AJANS</p>
         <h2>Web, e-ticaret ve görünürlük projelerinde tek merkezden ilerleyin.</h2>
@@ -95,6 +100,7 @@ export default function ContactPage() {
           <a href="/hizmetler/web-tasarim">Web tasarım</a>
           <a href="/hizmetler/seo-geo-aeo-aio">SEO & AI görünürlüğü</a>
           <a href="/sss">Sık sorulan sorular</a>
+          <a href="/fiyatlandirma">Fiyatlandırma yaklaşımı</a>
         </div>
       </section>
       <SiteFooter />
