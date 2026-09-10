@@ -10,18 +10,18 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  ["Strateji", "Ürün, hedef kitle, kategori yapısı ve satış hedeflerine göre ikas yol haritasını çıkarırız."],
-  ["Görsel destek", "Ürün görseli, slider, banner ve kampanya tasarımlarını kurumsal kimliğe uygun şekilde yayına alırız."],
-  ["Kargo entegrasyonu", "Çalışacağınız kargo şirketleriyle sipariş akışını hızlı ve güvenli çalışacak şekilde bağlarız."],
-  ["E-ihracat çözümleri", "Yurt dışı satış planı, dil ve para birimi, lojistik ve pazaryeri adımlarını kurgularız."],
-  ["Front-end & back-end", "Tema düzenleme, özel alanlar, performans ve ihtiyaç duyulan teknik geliştirmeleri tamamlarız."],
-  ["Sabit sayfalar", "Hakkımızda, iletişim, sözleşmeler, SSS, kampanya ve landing page içeriklerini hazırlarız."],
-  ["Sanal POS entegrasyonu", "Banka veya ödeme altyapılarıyla ödeme alma süreçlerini doğru şekilde yapılandırırız."],
-  ["ikas check-up", "Mevcut mağazanızı teknik, içerik, UX ve satış akışı açısından analiz ederek uygulanabilir iyileştirme planı çıkarırız."],
-  ["Kategori & ürün girişi", "Kategori ağacı, ürün içeriği ve SEO uyumlu yayına alma sürecini yönetiriz."],
-  ["Pazaryeri entegrasyonu", "Trendyol, Hepsiburada, N11, Amazon, Beymen, Çiçeksepeti, Pazarama ve Etsy bağlantılarını planlarız."],
-  ["ERP entegrasyonu", "E-ticaret altyapınız, stok, muhasebe ve pazaryeri operasyonlarınız arasında sağlıklı veri akışı kurarız."],
-  ["Tema & satış optimizasyonu", "Tema, kampanya alanları, ürün vitrinleri ve satın alma akışını satışa hazır hale getiririz."],
+  { slug: "strateji", title: "Strateji", text: "Ürün, hedef kitle, kategori yapısı ve satış hedeflerine göre ikas yol haritasını çıkarırız." },
+  { slug: "gorsel-destek", title: "Görsel destek", text: "Ürün görseli, slider, banner ve kampanya tasarımlarını kurumsal kimliğe uygun şekilde yayına alırız." },
+  { slug: "kargo-entegrasyonu", title: "Kargo entegrasyonu", text: "Çalışacağınız kargo şirketleriyle sipariş akışını hızlı ve güvenli çalışacak şekilde bağlarız." },
+  { slug: "e-ihracat-cozumleri", title: "E-ihracat çözümleri", text: "Yurt dışı satış planı, dil ve para birimi, lojistik ve pazaryeri adımlarını kurgularız." },
+  { slug: "front-end-back-end", title: "Front-end & back-end", text: "Tema düzenleme, özel alanlar, performans ve ihtiyaç duyulan teknik geliştirmeleri tamamlarız." },
+  { slug: "sabit-sayfalar", title: "Sabit sayfalar", text: "Hakkımızda, iletişim, sözleşmeler, SSS, kampanya ve landing page içeriklerini hazırlarız." },
+  { slug: "sanal-pos-entegrasyonu", title: "Sanal POS entegrasyonu", text: "Banka veya ödeme altyapılarıyla ödeme alma süreçlerini doğru şekilde yapılandırırız." },
+  { slug: "ikas-check-up", title: "ikas check-up", text: "Mevcut mağazanızı teknik, içerik, UX ve satış akışı açısından analiz ederek uygulanabilir iyileştirme planı çıkarırız." },
+  { slug: "kategori-urun-girisi", title: "Kategori & ürün girişi", text: "Kategori ağacı, ürün içeriği ve SEO uyumlu yayına alma sürecini yönetiriz." },
+  { slug: "pazaryeri-entegrasyonu", title: "Pazaryeri entegrasyonu", text: "Trendyol, Hepsiburada, N11, Amazon, Beymen, Çiçeksepeti, Pazarama ve Etsy bağlantılarını planlarız." },
+  { slug: "erp-entegrasyonu", title: "ERP entegrasyonu", text: "E-ticaret altyapınız, stok, muhasebe ve pazaryeri operasyonlarınız arasında sağlıklı veri akışı kurarız." },
+  { slug: "tema-satis-optimizasyonu", title: "Tema & satış optimizasyonu", text: "Tema, kampanya alanları, ürün vitrinleri ve satın alma akışını satışa hazır hale getiririz." },
 ];
 
 export default function IkasPage() {
@@ -38,10 +38,10 @@ export default function IkasPage() {
       </section>
       <section className="service-detail-grid shell">
         {services.map((service, index) => (
-          <article className="service-detail-card" key={service[0]}>
+          <article className="service-detail-card" id={service.slug} key={service.slug}>
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <h2>{service[0]}</h2>
-            <p>{service[1]}</p>
+            <h2>{service.title}</h2>
+            <p>{service.text}</p>
             <ul><li><CheckCircle2 size={16} />ikas partner desteği</li></ul>
           </article>
         ))}
