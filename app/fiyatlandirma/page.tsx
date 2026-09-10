@@ -5,7 +5,7 @@ import { StructuredData } from "@/components/structured-data";
 import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Fiyatlandırma & Çalışma Modeli | Olivon",
+  title: "Fiyatlandırma & Çalışma Modeli",
   description: "Olivon web, e-ticaret, ikas, SEO ve dijital büyüme projelerinde fiyatlandırmanın nasıl belirlendiğini, kapsam seviyelerini ve teklif sürecini inceleyin.",
   alternates: { canonical: "/fiyatlandirma" },
 };
