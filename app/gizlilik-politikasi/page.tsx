@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
+export const metadata: Metadata = { title: "Gizlilik Politikası", description: "Olivon gizlilik politikası; iletişim, güvenlik, analitik ve hizmet süreçlerinde kişisel verilerin hangi amaçlarla işlendiğini açıklar.", alternates: { canonical: "/gizlilik-politikasi" } };
 export default function Page(){return <LegalPage title="Gizlilik Politikası" intro="Olivon, ziyaretçilerinin ve müşteri adaylarının kişisel verilerine saygı duyar; verileri yalnızca açık, sınırlı ve meşru amaçlarla işler.">
   <section><h2>Toplanan bilgiler</h2><p>İletişim formlarında paylaştığınız ad, e-posta, telefon, şirket ve proje bilgileri; güvenlik kayıtları, cihaz ve anonim kullanım verileri işlenebilir. Talep edilmeyen özel nitelikli kişisel verileri paylaşmamanızı öneririz.</p></section>
   <section><h2>Kullanım amaçları</h2><p>Bilgiler taleplerinizi yanıtlamak, hizmet kapsamı oluşturmak, site güvenliğini sağlamak, yasal yükümlülükleri yerine getirmek ve izniniz varsa deneyimi ölçmek amacıyla kullanılır.</p></section>
