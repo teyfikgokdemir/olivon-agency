@@ -1,0 +1,22 @@
+/* One persistent navigation system across all routes. Loaded last on purpose. */
+.root-site-header{position:relative;z-index:10000;width:100%;}
+.root-site-header>.site-header{display:grid!important;position:relative!important;z-index:10001!important;overflow:visible!important;}
+
+/* Suppress every legacy/page-local header. Root header is the only navigation source. */
+.root-site-header+main>.nav,
+.root-site-header+main>.site-header,
+.root-site-header+main>.inner-nav{display:none!important;}
+
+/* Keep dropdowns above every page hero/overlay. */
+.root-site-header .site-nav,
+.root-site-header .nav-dropdown{position:relative!important;z-index:10002!important;overflow:visible!important;}
+.root-site-header .nav-dropdown-panel{z-index:10050!important;}
+.root-site-header .site-mobile-menu,
+.root-site-header .site-mobile-panel{z-index:10050!important;}
+
+@media(max-width:900px){
+  .root-site-header>.site-header{display:grid!important;min-height:82px!important;}
+  .root-site-header .site-nav,
+  .root-site-header .site-header>.nav-cta{display:none!important;}
+  .root-site-header .site-mobile-menu{display:block!important;}
+}
