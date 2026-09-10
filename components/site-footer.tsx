@@ -14,7 +14,7 @@ export function SiteFooter() {
   return (
     <footer className="mega-footer">
       <div className="shell footer-cta">
-        <div><p>YENİ BİR PROJE Mİ VAR?</p><h2>Markanız için daha güçlü<br /><em>bir dijital sistem</em> kuralım.</h2></div>
+        <div><p>YENİ BİR PROJE Mİ VAR?</p><h2>Markanız için daha güçlü{" "}<br /><em>bir dijital sistem</em>{" "}kuralım.</h2></div>
         <a className="footer-mail" href="/iletisim"><span>Projeyi konuşalım</span><strong>info@olivon.com.tr</strong><ArrowUpRight /></a>
       </div>
       <div className="shell footer-grid">
