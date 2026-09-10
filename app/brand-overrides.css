@@ -187,3 +187,92 @@ main:not(.inner-page) .hero-foot{
   main:not(.inner-page) .hero h1{font-size:clamp(40px,11.8vw,52px)!important}
   main:not(.inner-page) .hero .lead{font-size:16px!important;line-height:1.55!important}
 }
+
+
+/* FINAL homepage hero: artwork fills the complete hero viewport */
+body main:not(.inner-page) .hero{
+  width:100vw!important;
+  max-width:none!important;
+  min-height:calc(100svh - 84px)!important;
+  margin:0 calc(50% - 50vw)!important;
+  padding:
+    clamp(72px,8vh,110px)
+    max(32px,calc((100vw - 1380px)/2 + 32px))
+    clamp(86px,9vh,120px)!important;
+  border:0!important;
+  border-radius:0!important;
+  background:#0b0908!important;
+  overflow:hidden!important;
+}
+body main:not(.inner-page) .hero-stage-photo{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+}
+body main:not(.inner-page) .hero-stage-photo img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+}
+body main:not(.inner-page) .hero:before{
+  inset:0!important;
+  background:linear-gradient(
+    90deg,
+    rgba(6,5,5,.90) 0%,
+    rgba(6,5,5,.78) 25%,
+    rgba(6,5,5,.42) 47%,
+    rgba(6,5,5,.10) 68%,
+    rgba(6,5,5,.04) 100%
+  )!important;
+}
+body main:not(.inner-page) .hero-copy{
+  width:min(720px,48%)!important;
+}
+body main:not(.inner-page) .hero-foot{
+  left:max(32px,calc((100vw - 1380px)/2 + 32px))!important;
+  right:auto!important;
+  width:min(430px,42vw)!important;
+}
+
+@media(max-width:900px){
+  body main:not(.inner-page) .hero{
+    min-height:760px!important;
+    padding:58px 24px 48px!important;
+    align-items:flex-end!important;
+  }
+  body main:not(.inner-page) .hero-copy{
+    width:100%!important;
+    max-width:650px!important;
+  }
+  body main:not(.inner-page) .hero-stage-photo img{
+    object-position:62% center!important;
+  }
+  body main:not(.inner-page) .hero:before{
+    background:linear-gradient(
+      180deg,
+      rgba(6,5,5,.08) 0%,
+      rgba(6,5,5,.12) 34%,
+      rgba(6,5,5,.62) 62%,
+      rgba(6,5,5,.96) 100%
+    )!important;
+  }
+}
+@media(max-width:560px){
+  body main:not(.inner-page) .hero{
+    min-height:680px!important;
+    padding:42px 18px 34px!important;
+  }
+  body main:not(.inner-page) .hero-stage-photo img{
+    object-position:66% center!important;
+  }
+}
