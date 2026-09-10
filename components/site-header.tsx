@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { ikasMenuItems, serviceGroups } from "@/lib/site-data";
@@ -10,42 +9,70 @@ export function SiteHeader() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [ikasOpen, setIkasOpen] = useState(false);
 
-  const close = () => setOpen(false);
+  const close = () => {
+    setOpen(false);
+    setServicesOpen(false);
+    setIkasOpen(false);
+  };
 
   return (
     <header className="site-header">
       <nav className="nav shell" aria-label="Ana menü">
-        <Link className="brand" href="/" aria-label="Olivon ana sayfa"><span className="brand-mark">O</span><span>OLIVON</span></Link>
+        <a className="brand" href="/" aria-label="Olivon ana sayfa">
+          <span className="brand-mark">O</span><span>OLIVON</span>
+        </a>
+
         <div className="nav-links">
           <div className="nav-dropdown">
-            <Link href="/hizmetler">Hizmetler <ChevronDown size={14} /></Link>
+            <a className="nav-dropdown-trigger" href="/hizmetler">Hizmetler <ChevronDown size={14} /></a>
             <div className="nav-panel services-panel">
-              {serviceGroups.map(service => <Link href={`/hizmetler#${service.slug}`} key={service.slug}><strong>{service.title}</strong><span>{service.intro}</span></Link>)}
+              {serviceGroups.map(service => (
+                <a href={`/hizmetler#${service.slug}`} key={service.slug}>
+                  <strong>{service.title}</strong><span>{service.intro}</span>
+                </a>
+              ))}
             </div>
           </div>
+
           <div className="nav-dropdown">
-            <Link href="/#ikas">ikas <ChevronDown size={14} /></Link>
+            <a className="nav-dropdown-trigger" href="/ikas">ikas <ChevronDown size={14} /></a>
             <div className="nav-panel ikas-panel">
-              {ikasMenuItems.map(item => <Link href="/#ikas" key={item}>{item}</Link>)}
+              {ikasMenuItems.map(item => <a href="/ikas" key={item}>{item}</a>)}
             </div>
           </div>
-          <Link href="/referanslar">Referanslar</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/#guvenlik">Güvenlik</Link>
+
+          <a href="/referanslar">Referanslar</a>
+          <a href="/blog">Blog</a>
+          <a href="/#guvenlik">Güvenlik</a>
         </div>
-        <Link className="nav-cta" href="/#iletisim">Projenizi konuşalım</Link>
-        <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Menüyü aç" aria-expanded={open}>{open ? <X /> : <Menu />}</button>
+
+        <a className="nav-cta" href="/#iletisim">Projenizi konuşalım</a>
+
+        <button className="menu-button" onClick={() => setOpen(value => !value)} aria-label={open ? "Menüyü kapat" : "Menüyü aç"} aria-expanded={open}>
+          {open ? <X /> : <Menu />}
+        </button>
       </nav>
+
       {open && (
-        <div className="mobile-menu">
-          <button onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen}>Hizmetler <ChevronDown size={18} /></button>
-          {servicesOpen && <div className="mobile-submenu">{serviceGroups.map(service => <Link onClick={close} href={`/hizmetler#${service.slug}`} key={service.slug}>{service.title}</Link>)}</div>}
-          <button onClick={() => setIkasOpen(!ikasOpen)} aria-expanded={ikasOpen}>ikas <ChevronDown size={18} /></button>
-          {ikasOpen && <div className="mobile-submenu">{ikasMenuItems.map(item => <Link onClick={close} href="/#ikas" key={item}>{item}</Link>)}</div>}
-          <Link onClick={close} href="/referanslar">Referanslar</Link>
-          <Link onClick={close} href="/blog">Blog</Link>
-          <Link onClick={close} href="/#guvenlik">Güvenlik</Link>
-          <Link onClick={close} href="/#iletisim">İletişim</Link>
+        <div className="mobile-menu" role="dialog" aria-label="Mobil menü">
+          <button className="mobile-accordion-trigger" onClick={() => setServicesOpen(value => !value)} aria-expanded={servicesOpen}>
+            Hizmetler <ChevronDown size={18} />
+          </button>
+          {servicesOpen && (
+            <div className="mobile-submenu">
+              {serviceGroups.map(service => <a onClick={close} href={`/hizmetler#${service.slug}`} key={service.slug}>{service.title}</a>)}
+            </div>
+          )}
+
+          <button className="mobile-accordion-trigger" onClick={() => setIkasOpen(value => !value)} aria-expanded={ikasOpen}>
+            ikas <ChevronDown size={18} />
+          </button>
+          {ikasOpen && <div className="mobile-submenu">{ikasMenuItems.map(item => <a onClick={close} href="/ikas" key={item}>{item}</a>)}</div>}
+
+          <a onClick={close} href="/referanslar">Referanslar</a>
+          <a onClick={close} href="/blog">Blog</a>
+          <a onClick={close} href="/#guvenlik">Güvenlik</a>
+          <a onClick={close} href="/#iletisim">İletişim</a>
         </div>
       )}
     </header>
