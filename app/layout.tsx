@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FloatingActions } from "@/components/floating-actions";
 import { SiteHeader } from "@/components/site-header";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import "./globals.css";
 import "./brand-overrides.css";
 import "./nav-hotfix.css";
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="root-site-header"><SiteHeader /></div>
         {children}
         <FloatingActions />
+        <GoogleAnalytics />
       </body>
     </html>
   );
