@@ -20,6 +20,8 @@
 - [Web Tasarım ve Geliştirme](https://olivon.com.tr/hizmetler/web-tasarim): Kurumsal web, landing page, mobil UX, performans ve dönüşüm.
 - [SEO, GEO, AEO ve AIO](https://olivon.com.tr/hizmetler/seo-geo-aeo-aio): Teknik SEO, içerik, schema/entity sinyalleri ve Google/AI destekli arama görünürlüğü.
 - [AI Otomasyon](https://olivon.com.tr/hizmetler/ai-otomasyon): İnsan kontrolünü koruyan operasyon, içerik ve veri iş akışları.
+- [Dijital Reklam ve Marka Pazarlama](https://olivon.com.tr/hizmetler/dijital-reklam): Meta, Google ve pazaryeri kampanyalarında ölçüm, kreatif ve kârlılık odaklı yönetim.
+- [Dijital Güvenlik](https://olivon.com.tr/hizmetler/dijital-guvenlik): Cloudflare, WAF, DDoS, bot kontrolü, erişim ve web sürekliliği.
 
 ## Seçili Vaka Çalışmaları
 
