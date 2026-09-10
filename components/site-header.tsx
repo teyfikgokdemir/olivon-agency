@@ -46,7 +46,7 @@ export function SiteHeader() {
           <a href="/#guvenlik">Güvenlik</a>
         </div>
 
-        <a className="nav-cta" href="/#iletisim">Projenizi konuşalım</a>
+        <a className="nav-cta" href="/iletisim">Projenizi konuşalım</a>
 
         <button className="menu-button" onClick={() => setOpen(value => !value)} aria-label={open ? "Menüyü kapat" : "Menüyü aç"} aria-expanded={open}>
           {open ? <X /> : <Menu />}
@@ -72,7 +72,7 @@ export function SiteHeader() {
           <a onClick={close} href="/referanslar">Referanslar</a>
           <a onClick={close} href="/blog">Blog</a>
           <a onClick={close} href="/#guvenlik">Güvenlik</a>
-          <a onClick={close} href="/#iletisim">İletişim</a>
+          <a onClick={close} href="/iletisim">İletişim</a>
         </div>
       )}
     </header>
