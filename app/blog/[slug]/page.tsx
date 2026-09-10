@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: article.excerpt,
       url: `/blog/${article.slug}`,
       images: [{ url: article.image, alt: article.title }],
+      publishedTime: article.dateISO,
     },
   };
 }
@@ -44,6 +45,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     author: { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
     inLanguage: "tr-TR",
+    datePublished: article.dateISO,
+    dateModified: article.dateISO,
   };
 
   return <main className="inner-page">
