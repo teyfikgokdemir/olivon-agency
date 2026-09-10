@@ -37,7 +37,7 @@ export default function ReferencesPage() {
             <article className="reference-case" key={project.domain}>
               <div className="reference-browser">
                 <div><span /><span /><span /><em>{project.domain}</em></div>
-                <img src={project.image} alt={`${project.name} e-ticaret sitesi ekran görüntüsü`} loading={index === 0 ? "eager" : "lazy"} decoding="async" />
+                <img src={project.image} alt={`${project.name} e-ticaret sitesi ekran görüntüsü`} loading="lazy" decoding="async" />
               </div>
               <div className="reference-copy">
                 <span>{project.category}</span>
