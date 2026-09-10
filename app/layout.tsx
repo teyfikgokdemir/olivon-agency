@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { FloatingActions } from "@/components/floating-actions";
-import { GlobalSiteHeader } from "@/components/global-site-header";
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 import "./brand-overrides.css";
 import "./nav-hotfix.css";
 import "./services-v2.css";
+import "./global-header-fix.css";
 
 const siteUrl = "https://olivon.com.tr";
 
@@ -88,7 +89,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-        <GlobalSiteHeader />
+        <div className="root-site-header"><SiteHeader /></div>
         {children}
         <FloatingActions />
       </body>
