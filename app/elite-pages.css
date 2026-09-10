@@ -44,3 +44,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 .service-card-link{display:inline-flex;align-items:center;gap:7px;margin:0 26px 26px;color:var(--coral-soft);text-decoration:none;font-size:13px;font-weight:700}
 .service-card-link:hover{text-decoration:underline;text-underline-offset:4px}
+
+.not-found{min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:90px}
+.not-found h1{font-size:clamp(48px,6vw,92px);line-height:.98;letter-spacing:-.06em;max-width:1100px;margin:20px 0 24px}
+.not-found h1 em{font-family:Georgia,serif;font-weight:400;color:var(--coral-soft)}
+.not-found>p:not(.section-index){max-width:720px;color:#aaa09a;font-size:18px;line-height:1.7}
+.not-found>div{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+@media(max-width:600px){.not-found{padding-top:90px}.not-found>div{display:grid}.not-found .button{width:100%}}
