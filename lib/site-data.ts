@@ -44,12 +44,12 @@ export const serviceGroups = [
 ];
 
 export const ikasMenuItems = [
-  "Strateji",
-  "Görsel destek",
-  "Kargo entegrasyonu",
-  "E-ihracat çözümleri",
-  "Front-end ve back-end",
-  "Sabit sayfalar",
-  "Sanal POS entegrasyonu",
-  "Pazaryeri entegrasyonu",
+  { label: "Strateji", slug: "strateji" },
+  { label: "Görsel destek", slug: "gorsel-destek" },
+  { label: "Kargo entegrasyonu", slug: "kargo-entegrasyonu" },
+  { label: "E-ihracat çözümleri", slug: "e-ihracat-cozumleri" },
+  { label: "Front-end ve back-end", slug: "front-end-back-end" },
+  { label: "Sabit sayfalar", slug: "sabit-sayfalar" },
+  { label: "Sanal POS entegrasyonu", slug: "sanal-pos-entegrasyonu" },
+  { label: "Pazaryeri entegrasyonu", slug: "pazaryeri-entegrasyonu" },
 ];
