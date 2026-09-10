@@ -7,34 +7,32 @@ export default function ReferencesPage() {
   const rest = referenceProjects.filter(project => !project.featured);
 
   return (
-    <main className="inner-page references-page references-v2">
-      <section className="inner-hero shell references-hero references-hero-v2">
+    <main className="inner-page references-page">
+      <section className="inner-hero shell references-hero">
         <p className="section-index">REFERANSLAR</p>
         <h1>Gerçek markalar.<br /><em>Canlı dijital vitrinler.</em></h1>
-        <p>Farklı marka karakterlerini tek bir kalıba sokmadan; satış, güven ve kullanıcı deneyimi odağında geliştirdiğimiz seçili işler.</p>
+        <p>İlk etapta seçili projeleri hero ekran görüntüsü, domain ve iş kapsamı ile sunuyoruz. Detaylı vaka analizlerini sonraki içeriklerle genişleteceğiz.</p>
       </section>
-
-      <section className="references-featured shell" aria-label="Seçili referanslar">
+      <section className="reference-showcase shell">
         {featured.map(project => (
-          <article className="reference-feature-card" key={project.domain}>
-            <a className="reference-feature-media" href={project.url} target="_blank" rel="noreferrer" aria-label={`${project.name} web sitesini görüntüle`}>
-              <img src={project.image} alt={`${project.name} web sitesi ana sayfa görünümü`} loading="eager" />
-              <span className="reference-live-tag">CANLI PROJE</span>
-            </a>
-            <div className="reference-feature-copy">
+          <article className="reference-case" key={project.domain}>
+            <div className="reference-browser">
+              <div><span /><span /><span /><em>{project.domain}</em></div>
+              <img src={project.image} alt={`${project.name} web sitesi hero ekran görüntüsü`} />
+            </div>
+            <div className="reference-copy">
               <span>{project.category}</span>
               <h2>{project.name}</h2>
               <p>{project.scope}</p>
-              <a href={project.url} target="_blank" rel="noreferrer">Siteyi görüntüle <ArrowUpRight size={16} /></a>
+              <a href={project.url} target="_blank" rel="noreferrer">Siteyi görüntüle <ArrowUpRight size={17} /></a>
             </div>
           </article>
         ))}
       </section>
-
-      <section className="reference-directory reference-directory-v2 shell">
-        <div className="reference-directory-head"><p className="section-index">DİĞER ÇALIŞMALAR</p><h2>Farklı sektörler.<br/><em>Aynı kalite standardı.</em></h2><p>Her projede marka dili, satış modeli ve kullanıcı ihtiyacına göre ayrı bir sistem kuruyoruz.</p></div>
-        <div className="directory-grid directory-grid-v2">
-          {rest.map(project => <a href={project.url} target="_blank" rel="noreferrer" key={project.domain}><span className="directory-category">{project.category}</span><strong>{project.name}</strong><span>{project.domain}</span><em>{project.scope}</em><b>Projeyi aç <ArrowUpRight size={14}/></b></a>)}
+      <section className="reference-directory shell">
+        <div><p className="section-index">DİĞER ÇALIŞMALAR</p><h2>Sektör fark etmeksizin satışa ve güvene çalışan dijital merkezler.</h2></div>
+        <div className="directory-grid">
+          {rest.map(project => <a href={project.url} target="_blank" rel="noreferrer" key={project.domain}><strong>{project.name}</strong><span>{project.domain}</span><em>{project.scope}</em></a>)}
         </div>
       </section>
       <SiteFooter />

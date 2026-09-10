@@ -5,6 +5,8 @@ export const articles = [
     date: "9 Eylül 2026",
     title: "Pazaryeri mi, kendi e-ticaret siteniz mi?",
     excerpt: "Komisyon, müşteri verisi, reklam maliyeti ve marka kontrolünü birlikte değerlendiren karar çerçevesi.",
+    image: "/images/blog/pazaryeri-kendi-site.webp",
+    inlineImage: "/images/blog/pazaryeri-kendi-site-detail.webp",
     sections: [
       ["Soruyu satıştan önce kârlılık belirler", "Pazaryerleri markalara hazır trafik, tanınmış ödeme akışı ve kullanıcı güveni sunar. Bu yüzden özellikle yeni başlayan markalar için hızlı satış almak cazip görünür. Fakat tabloyu yalnızca ciro üzerinden okumak yanıltıcıdır. Komisyon, zorunlu kampanya katılımı, reklam maliyeti, iade oranı, kargo şartları ve fiyat rekabeti hesaba katıldığında bazı ürünlerde yüksek satış hacmi düşük net kâra dönüşebilir. Kendi e-ticaret siteniz ise trafik üretme sorumluluğunu size verir; buna karşılık müşteri verisi, marka algısı, tekrar satın alma ve fiyat kontrolü üzerinde çok daha güçlü bir alan açar."],
       ["Gerçek maliyet tablosunu çıkarın", "Doğru karar için ürün maliyeti, pazaryeri komisyonu, ödeme kuruluşu kesintisi, reklam gideri, kargo, paketleme, iade, yazılım, personel ve operasyon yükünü sipariş başına hesaplamak gerekir. Bir platformun aylık paket ücreti düşük diye toplam maliyetinin düşük olduğunu varsaymak doğru değildir. Aynı şekilde pazaryeri komisyonu yüksek diye pazaryerini tamamen dışlamak da doğru olmayabilir. Önemli olan her kanalın net katkısını ayrı görmek ve hangi ürün grubunun hangi kanalda daha sağlıklı büyüdüğünü ölçmektir."],
@@ -19,6 +21,8 @@ export const articles = [
     date: "7 Eylül 2026",
     title: "Shopify, ikas ve WooCommerce nasıl seçilir?",
     excerpt: "Platform isimlerinden önce ekip, operasyon, büyüme planı ve toplam sahip olma maliyetini değerlendirin.",
+    image: "/images/blog/platform-secimi.webp",
+    inlineImage: "/images/blog/platform-secimi-detail.webp",
     sections: [
       ["En iyi platform diye tek bir cevap yoktur", "Shopify, ikas ve WooCommerce farklı ihtiyaçlara güçlü cevaplar verir. Shopify yönetilebilir altyapısı, uygulama ekosistemi ve uluslararası satış kabiliyetiyle öne çıkar. ikas Türkiye pazarına yakın operasyon ihtiyaçları, hızlı kurulum yapısı ve yerel e-ticaret alışkanlıklarına uygun çözümleriyle güçlüdür. WooCommerce ise WordPress esnekliği, içerik yönetimi ve özelleştirme özgürlüğü isteyen markalar için avantaj sağlar. Bu nedenle karar platformun popülerliğine göre değil, markanın gerçek operasyonuna göre verilmelidir."],
       ["Ekip kapasitesi toplam maliyeti değiştirir", "Teknik özgürlük ancak onu yönetecek ekip varsa avantajdır. WooCommerce çok esnek olabilir; fakat güncelleme, güvenlik, eklenti uyumu, hız ve bakım süreçleri düzenli takip ister. Shopify ve ikas daha yönetilebilir bir yapı sunabilir; ancak uygulama, abonelik, tema ve entegrasyon maliyetleri doğru planlanmalıdır. Küçük ekipler için sade yönetim büyük avantajken, özel ihtiyaçları yoğun olan markalar için geliştirilebilir yapı daha doğru olabilir."],
@@ -33,6 +37,8 @@ export const articles = [
     date: "4 Eylül 2026",
     title: "Yapay zekâ aramalarında markanız nasıl anlaşılır?",
     excerpt: "Görünürlük artık sıralamadan ibaret değil; marka, hizmet ve uzmanlık ilişkilerinin açık olması gerekiyor.",
+    image: "/images/blog/ai-arama-gorunurlugu.webp",
+    inlineImage: "/images/blog/ai-arama-gorunurlugu-detail.webp",
     sections: [
       ["Varlık netliği yeni temeldir", "Arama deneyimi yalnızca klasik sonuç sayfasından ibaret değil. Kullanıcılar artık Google, yapay zekâ cevap motorları, harita sonuçları, sosyal platformlar ve pazaryerleri arasında karar veriyor. Bu ortamda markanızın kim olduğu, nerede hizmet verdiği, hangi konuda uzmanlaştığı ve hangi kanallardan doğrulanabildiği net olmalıdır. Marka adı, hizmetler, lokasyon, iletişim bilgileri, referanslar ve içerik dili farklı yerlerde çelişirse sistemler markanızı güvenilir biçimde anlamakta zorlanır."],
       ["Sayfalar cevap üretmeye uygun olmalı", "SEO uyumlu sayfa yalnızca anahtar kelime geçen sayfa değildir. İyi bir sayfa kullanıcının gerçek sorusuna net cevap verir, ardından karar vermesi için yeterli derinlik sunar. Örneğin ikas web sitesi kurulumu arayan biri yalnızca fiyat görmek istemez; süreç, teslim kapsamı, entegrasyonlar, ürün girişi, kargo, ödeme, destek ve yayına alma adımlarını da anlamak ister. Yapay zekâ sistemleri de bu açık ve düzenli bilgileri daha kolay yorumlar."],
@@ -47,6 +53,8 @@ export const articles = [
     date: "1 Eylül 2026",
     title: "E-ticaret sitesi için güvenlik kontrol listesi",
     excerpt: "WAF’tan erişim yetkilerine kadar satış sürekliliğini koruyan temel güvenlik katmanları.",
+    image: "/images/blog/e-ticaret-guvenlik.webp",
+    inlineImage: "/images/blog/e-ticaret-guvenlik-detail.webp",
     sections: [
       ["Güvenlik satış sürekliliğidir", "E-ticaret güvenliği yalnızca saldırı olursa gündeme alınacak teknik bir konu değildir. Site yavaşladığında, ödeme akışı bozulduğunda, bot trafik stokları etkilediğinde veya yönetici paneli risk altına girdiğinde doğrudan satış kaybı yaşanır. Bu yüzden güvenlik; tasarım, hız, altyapı ve operasyonla birlikte düşünülmelidir. Premium bir mağaza yalnızca güzel görünen değil, kesintiye dayanıklı olan mağazadır."],
       ["Saldırı yüzeyini küçültün", "Kullanılmayan eklentiler, eski temalar, gereksiz yönetici hesapları, açık test sayfaları ve zayıf şifreler en sık risk kaynaklarıdır. Yönetim panelleri çok faktörlü kimlik doğrulama, rol bazlı yetki ve gerektiğinde IP veya erişim politikalarıyla sınırlandırılmalıdır. Her kullanıcıya tam yetki vermek operasyonu kolaylaştırıyor gibi görünür; fakat hata ve ihlal riskini büyütür."],
@@ -61,6 +69,8 @@ export const articles = [
     date: "28 Ağustos 2026",
     title: "Dönüşüm odaklı web sitesi gerçekten ne demek?",
     excerpt: "Daha fazla düğme değil; teklif, güven ve karar yolculuğunun doğru sırada sunulması.",
+    image: "/images/blog/donusum-odakli-web.webp",
+    inlineImage: "/images/blog/donusum-odakli-web-detail.webp",
     sections: [
       ["İlk ekranın tek görevi vardır", "Ziyaretçi siteye girdiğinde birkaç saniye içinde kimin için ne yaptığınızı, neden farklı olduğunuzu ve bir sonraki adımın ne olduğunu anlamalıdır. Büyük başlık güzel olabilir; fakat teklif net değilse dönüşüm üretmez. Ajans sitelerinde özellikle hizmet dili, referanslar, uzmanlık ve iletişim akışı ilk andan itibaren güven vermelidir. Kullanıcı tasarımın yapay durduğunu hissederse daha okumadan uzaklaşabilir."],
       ["Dönüşüm daha fazla buton demek değildir", "Her yere teklif al, hemen ara, WhatsApp’a yaz gibi butonlar koymak dönüşüm stratejisi değildir. Dönüşüm, ziyaretçinin karar vermesini kolaylaştıran doğru sıralamadır. Önce ne yaptığınızı anlar, sonra örnekleri görür, ardından süreci ve güven sinyallerini değerlendirir, en sonunda iletişime geçer. Bu yolculuk doğal akmadığında site kalabalık görünür ama ikna gücü düşer."],
