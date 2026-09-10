@@ -1,6 +1,107 @@
-/* One persistent navigation system across all routes. Loaded last on purpose. */
-.root-site-header{position:sticky;top:0;z-index:10000;width:100%;background:linear-gradient(180deg,rgba(11,9,8,.96),rgba(11,9,8,.88));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,239,228,.055)}
-.root-site-header>.site-header{display:grid!important;position:relative!important;z-index:10001!important;overflow:visible!important;}
-.root-site-header+main>.nav,.root-site-header+main>.site-header,.root-site-header+main>.inner-nav{display:none!important;}
-.root-site-header .site-nav,.root-site-header .nav-dropdown{position:relative!important;z-index:10002!important;overflow:visible!important}.root-site-header .nav-dropdown-panel{z-index:10050!important}.root-site-header .site-mobile-menu,.root-site-header .site-mobile-panel{z-index:10050!important}
-@media(max-width:900px){.root-site-header>.site-header{display:grid!important;min-height:76px!important}.root-site-header .site-nav,.root-site-header .site-header>.nav-cta{display:none!important}.root-site-header .site-mobile-menu{display:block!important}}
+/* Single authoritative header system */
+.root-site-header{
+  position:sticky;
+  top:0;
+  z-index:10000;
+  width:100%;
+  background:rgba(11,9,8,.94);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,239,228,.07);
+}
+.root-site-header>.site-header{
+  display:block!important;
+  width:100%!important;
+  min-height:0!important;
+  position:relative!important;
+  z-index:10001!important;
+  overflow:visible!important;
+  border:0!important;
+}
+.root-site-header .nav{
+  width:min(1380px,calc(100% - 64px))!important;
+  height:84px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:32px!important;
+  border:0!important;
+  overflow:visible!important;
+}
+.root-site-header .brand{
+  flex:0 0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  white-space:nowrap!important;
+}
+.root-site-header .nav-links{
+  flex:1 1 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:30px!important;
+  min-width:0!important;
+}
+.root-site-header .nav-links>a,
+.root-site-header .nav-dropdown-trigger{
+  font-size:14px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+.root-site-header .nav-cta{
+  flex:0 0 auto!important;
+  white-space:nowrap!important;
+  line-height:1!important;
+  padding:14px 20px!important;
+}
+.root-site-header .nav-dropdown{position:relative!important}
+.root-site-header .nav-panel{z-index:10050!important}
+.root-site-header .menu-button{display:none!important}
+.root-site-header .mobile-menu{z-index:10060!important}
+
+@media(max-width:1050px){
+  .root-site-header .nav{width:min(100% - 36px,1380px)!important;gap:20px!important}
+  .root-site-header .nav-links{gap:18px!important}
+  .root-site-header .nav-links>a,
+  .root-site-header .nav-dropdown-trigger{font-size:13px!important}
+  .root-site-header .nav-cta{padding:12px 16px!important;font-size:13px!important}
+}
+
+@media(max-width:900px){
+  .root-site-header .nav{
+    width:min(100% - 32px,1380px)!important;
+    height:70px!important;
+  }
+  .root-site-header .nav-links,
+  .root-site-header .nav-cta{display:none!important}
+  .root-site-header .menu-button{
+    display:grid!important;
+    place-items:center!important;
+    width:44px!important;
+    height:44px!important;
+    padding:0!important;
+    border:1px solid rgba(255,239,228,.14)!important;
+    border-radius:50%!important;
+    background:rgba(17,12,10,.66)!important;
+    color:#f7f2ed!important;
+  }
+  .root-site-header .mobile-menu{
+    position:fixed!important;
+    top:70px!important;
+    left:12px!important;
+    right:12px!important;
+    bottom:auto!important;
+    display:grid!important;
+    align-content:start!important;
+    max-height:calc(100dvh - 82px)!important;
+    overflow:auto!important;
+    padding:8px 18px 16px!important;
+    border:1px solid rgba(255,143,112,.17)!important;
+    border-radius:18px!important;
+    background:rgba(13,10,9,.99)!important;
+    box-shadow:0 30px 90px rgba(0,0,0,.58)!important;
+  }
+}
