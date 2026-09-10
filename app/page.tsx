@@ -12,7 +12,8 @@ const services = [
   { title:"Web tasarım & geliştirme", detail:"Kurumsal web sitesi, landing page, mobil UX, performans, erişilebilirlik ve dönüşüm odaklı arayüz.", href:"/hizmetler/web-tasarim" },
   { title:"SEO, GEO, AEO & AIO", detail:"Teknik SEO, içerik, yapılandırılmış veri, entity sinyalleri ve Google/AI destekli arama görünürlüğü.", href:"/hizmetler/seo-geo-aeo-aio" },
   { title:"AI otomasyon", detail:"Tekrarlayan operasyon, içerik ve veri süreçlerini insan kontrolünü koruyan iş akışlarına dönüştürme.", href:"/hizmetler/ai-otomasyon" },
-  { title:"Dijital güvenlik", detail:"Cloudflare, WAF, DDoS, bot kontrolü, erişim politikaları ve satış sürekliliğini koruyan güvenlik katmanları.", href:"/hizmetler#dijital-guvenlik" },
+  { title:"Dijital reklam & marka pazarlama", detail:"Meta, Google ve pazaryeri kampanyalarında ölçüm, kreatif, teklif stratejisi ve kârlılık kontrolü.", href:"/hizmetler/dijital-reklam" },
+  { title:"Dijital güvenlik", detail:"Cloudflare, WAF, DDoS, bot kontrolü, erişim politikaları ve satış sürekliliğini koruyan güvenlik katmanları.", href:"/hizmetler/dijital-guvenlik" },
 ];
 
 const platforms = ["Shopify", "ikas", "WooCommerce", "Cloudflare", "Google", "Meta"];
