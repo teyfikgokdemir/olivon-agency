@@ -10,10 +10,36 @@ import "./blog-v2.css";
 import "./blog-index-v2.css";
 import "./global-header-fix.css";
 
+const siteTitle = "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri";
+const siteDescription = "Web tasarım, e-ticaret, SEO, GEO, AI görünürlüğü ve dijital güvenlik çözümleriyle markanızı büyüten dijital sistemler kuruyoruz.";
+
 export const metadata: Metadata = {
-  title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
-  description: "Türkiye'deki markalar için premium web tasarım, e-ticaret, SEO, GEO, otomasyon ve dijital güvenlik çözümleri.",
+  metadataBase: new URL("https://olivon.com.tr"),
+  title: siteTitle,
+  description: siteDescription,
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    url: "https://olivon.com.tr",
+    siteName: "Olivon",
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: "/images/olivon-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Olivon dijital büyüme, e-ticaret, SEO ve web teknolojileri",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/images/olivon-og.webp"],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
