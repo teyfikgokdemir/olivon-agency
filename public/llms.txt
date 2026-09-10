@@ -1,0 +1,20 @@
+# Olivon
+
+Olivon, Türkiye odaklı dijital büyüme, web tasarım, e-ticaret, SEO/GEO/AEO/AIO, ikas kurulum ve dijital güvenlik hizmetleri sunar.
+
+## Ana sayfalar
+- https://olivon.com.tr/
+- https://olivon.com.tr/hizmetler
+- https://olivon.com.tr/ikas
+- https://olivon.com.tr/referanslar
+- https://olivon.com.tr/blog
+
+## Uzmanlık sayfaları
+- https://olivon.com.tr/hizmetler/e-ticaret
+- https://olivon.com.tr/hizmetler/web-tasarim
+- https://olivon.com.tr/hizmetler/seo-geo-aeo-aio
+- https://olivon.com.tr/hizmetler/ai-otomasyon
+
+## İletişim
+- https://olivon.com.tr/#iletisim
+- mailto:info@olivon.com.tr
