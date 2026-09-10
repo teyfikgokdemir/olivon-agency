@@ -2,13 +2,14 @@ export const SITE_URL = "https://olivon.com.tr";
 
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["Organization", "ProfessionalService"],
   "@id": `${SITE_URL}/#organization`,
   name: "Olivon",
   url: SITE_URL,
   logo: `${SITE_URL}/favicon.svg`,
   image: `${SITE_URL}/images/olivon-og.webp`,
   email: "info@olivon.com.tr",
+  contactPoint: { "@type": "ContactPoint", contactType: "sales", email: "info@olivon.com.tr", availableLanguage: ["tr"] },
   description: "Web tasarım, e-ticaret, ikas, SEO, GEO, AEO, AIO, AI otomasyon ve dijital güvenlik alanlarında çalışan dijital büyüme stüdyosu.",
   address: {
     "@type": "PostalAddress",
