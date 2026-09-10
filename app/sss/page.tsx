@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
+import { StructuredData } from "@/components/structured-data";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Sık Sorulan Sorular | Web, E-Ticaret, ikas, SEO & AI",
@@ -42,7 +44,7 @@ const faqSchema = {
 export default function FaqPage() {
   return (
     <main className="inner-page faq-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <StructuredData data={[faqSchema, breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"SSS",path:"/sss"}])]} />
       <section className="inner-hero shell faq-hero">
         <p className="section-index">SIK SORULAN SORULAR</p>
         <h1>Karar vermeden önce<br /><em>bilmeniz gerekenler.</em></h1>
