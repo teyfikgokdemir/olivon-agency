@@ -28,6 +28,7 @@ export default function ServicesPage() {
             <img src={group.image} alt={`${group.title} hizmet görseli`} loading="lazy" decoding="async" />
             <h2>{group.title}</h2><p>{group.intro}</p>
             <ul>{group.items.map(item => <li key={item}><CheckCircle2 size={16} />{item}</li>)}</ul>
+            <a className="service-card-link" href={group.href}>Hizmeti detaylı inceleyin <ArrowUpRight size={15}/></a>
           </article>
         ))}
       </section>
