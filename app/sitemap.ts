@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/hizmetler/ai-otomasyon`, lastModified: "2026-09-10", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/referanslar`, lastModified: "2026-09-10", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog`, lastModified: "2026-09-09", changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/iletisim`, lastModified: "2026-09-10", changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/sss`, lastModified: "2026-09-10", changeFrequency: "monthly", priority: 0.8 },
 
     { url: `${base}/blog/pazaryeri-mi-kendi-e-ticaret-siteniz-mi`, lastModified: "2026-09-09", changeFrequency: "monthly", priority: 0.75 },
     { url: `${base}/blog/shopify-ikas-woocommerce-nasil-secilir`, lastModified: "2026-09-07", changeFrequency: "monthly", priority: 0.75 },
