@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { FloatingActions } from "@/components/floating-actions";
 import "./globals.css";
 import "./brand-overrides.css";
+import "./nav-hotfix.css";
 
 const siteUrl = "https://olivon.com.tr";
 
