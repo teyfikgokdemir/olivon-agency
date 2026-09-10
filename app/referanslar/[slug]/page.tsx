@@ -50,7 +50,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <p>Bu vaka, yayınlanabilir proje kapsamını ve nitel sonucu gösterir. Müşteriye ait gizli ticari veriler ve doğrulanamayan performans rakamları kullanılmamıştır.</p>
     </section>
     <section className="case-visual shell">
-      <img src={item.image} alt={`${item.name} web sitesi ekran görüntüsü`} />
+      <img src={item.image} alt={`${item.name} web sitesi ekran görüntüsü`} loading="lazy" decoding="async" />
       <a href={item.url} target="_blank" rel="noreferrer">Canlı siteyi görüntüle <ArrowUpRight size={17}/></a>
     </section>
     <section className="case-story shell">
