@@ -1,6 +1,7 @@
 export const serviceGroups = [
   {
     slug: "e-ticaret-sistemleri",
+    href: "/hizmetler/e-ticaret",
     title: "E-ticaret sistemleri",
     intro: "Shopify, ikas ve WooCommerce altyapılarında satışa hazır, yönetilebilir ve büyümeye açık mağazalar kurarız.",
     image: "/images/services/e-ticaret-sistemleri.webp?v=20260910-2",
@@ -8,6 +9,7 @@ export const serviceGroups = [
   },
   {
     slug: "ikas-kurulum-destek",
+    href: "/ikas",
     title: "ikas kurulum & destek",
     intro: "ikas partner yapısıyla mağazanızı strateji, görsel, içerik ve operasyon tarafıyla birlikte ele alırız.",
     image: "/images/services/ikas-kurulum-destek.webp?v=20260910-2",
@@ -15,6 +17,7 @@ export const serviceGroups = [
   },
   {
     slug: "web-tasarim-gelistirme",
+    href: "/hizmetler/web-tasarim",
     title: "Web tasarım & geliştirme",
     intro: "Kurumsal web siteleri, landing page’ler ve dönüşüm odaklı arayüzleri marka algısını güçlendirecek şekilde tasarlarız.",
     image: "/images/services/web-tasarim-gelistirme.webp?v=20260910-2",
@@ -22,6 +25,7 @@ export const serviceGroups = [
   },
   {
     slug: "seo-geo-aeo-aio",
+    href: "/hizmetler/seo-geo-aeo-aio",
     title: "SEO, GEO, AEO & AIO",
     intro: "Google’da, yerel aramalarda ve yapay zekâ cevap motorlarında doğru anlaşılmanız için içerik ve teknik temel kurarız.",
     image: "/images/services/seo-geo-aeo-aio.webp?v=20260910-2",
@@ -29,6 +33,7 @@ export const serviceGroups = [
   },
   {
     slug: "dijital-reklam-marka",
+    href: "/hizmetler/dijital-reklam",
     title: "Dijital reklam & marka pazarlama",
     intro: "Meta, Google ve pazaryeri kampanyalarını trafik değil; kârlılık, veri ve marka güveni üzerinden yönetiriz.",
     image: "/images/services/dijital-reklam-marka.webp?v=20260910-2",
@@ -36,6 +41,7 @@ export const serviceGroups = [
   },
   {
     slug: "dijital-guvenlik",
+    href: "/hizmetler/dijital-guvenlik",
     title: "Dijital güvenlik",
     intro: "Cloudflare, WAF, bot kontrolü, erişim politikaları ve izleme kurgusuyla web varlıklarınızı daha güvenli hale getiririz.",
     image: "/images/services/dijital-guvenlik.webp?v=20260910-2",
