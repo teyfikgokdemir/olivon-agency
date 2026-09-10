@@ -30,6 +30,7 @@
   border:0;
 }
 .services-page .service-detail-card{
+  scroll-margin-top:110px;
   min-width:0;
   min-height:0;
   padding:0;
