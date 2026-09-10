@@ -10,6 +10,7 @@ import "./references-v2.css";
 import "./blog-v2.css";
 import "./blog-index-v2.css";
 import "./global-header-fix.css";
+import "./contact-faq.css";
 
 const siteTitle = "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri";
 const siteDescription = "Web tasarım, e-ticaret, SEO, GEO, AI görünürlüğü ve dijital güvenlik çözümleriyle markanızı büyüten dijital sistemler kuruyoruz.";
