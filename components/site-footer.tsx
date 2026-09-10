@@ -6,6 +6,8 @@ const serviceLinks = [
   ["ikas kurulum & destek","/ikas"],
   ["SEO, GEO, AEO & AIO","/hizmetler/seo-geo-aeo-aio"],
   ["AI otomasyon","/hizmetler/ai-otomasyon"],
+  ["Dijital reklam","/hizmetler/dijital-reklam"],
+  ["Dijital güvenlik","/hizmetler/dijital-guvenlik"],
 ];
 
 export function SiteFooter() {
