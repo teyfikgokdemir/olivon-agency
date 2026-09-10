@@ -1,20 +1,31 @@
 # Olivon
 
-Olivon, Türkiye odaklı dijital büyüme, web tasarım, e-ticaret, SEO/GEO/AEO/AIO, ikas kurulum ve dijital güvenlik hizmetleri sunar.
+> Olivon; web tasarım, e-ticaret, ikas kurulum ve destek, SEO, GEO, AEO, AIO, yapay zekâ görünürlüğü ve dijital güvenlik alanlarında Türkiye genelinde hizmet veren dijital büyüme ajansıdır.
 
-## Ana sayfalar
-- https://olivon.com.tr/
-- https://olivon.com.tr/hizmetler
-- https://olivon.com.tr/ikas
-- https://olivon.com.tr/referanslar
-- https://olivon.com.tr/blog
+## Ana Sayfalar
 
-## Uzmanlık sayfaları
-- https://olivon.com.tr/hizmetler/e-ticaret
-- https://olivon.com.tr/hizmetler/web-tasarim
-- https://olivon.com.tr/hizmetler/seo-geo-aeo-aio
-- https://olivon.com.tr/hizmetler/ai-otomasyon
+- [Ana Sayfa](https://olivon.com.tr/): Olivon'un dijital büyüme yaklaşımı, hizmetleri, referansları ve iletişim bilgileri.
+- [Hizmetler](https://olivon.com.tr/hizmetler): Web, e-ticaret, görünürlük, reklam ve dijital güvenlik hizmetleri.
+- [ikas Partner Hizmetleri](https://olivon.com.tr/ikas): ikas kurulumu, tasarım, entegrasyon, check-up ve teknik destek.
+- [Referanslar](https://olivon.com.tr/referanslar): Olivon tarafından geliştirilen ve desteklenen projeler.
+- [Blog](https://olivon.com.tr/blog): E-ticaret, web, SEO, yapay zekâ görünürlüğü ve güvenlik içerikleri.
+
+## Uzmanlıklar
+
+- [E-ticaret Sistemleri](https://olivon.com.tr/hizmetler/e-ticaret): Shopify, ikas ve WooCommerce altyapıları, ödeme, kargo ve pazaryeri entegrasyonları.
+- [Web Tasarım ve Geliştirme](https://olivon.com.tr/hizmetler/web-tasarim): Kurumsal web sitesi, landing page, mobil deneyim ve performans.
+- [SEO, GEO, AEO ve AIO](https://olivon.com.tr/hizmetler/seo-geo-aeo-aio): Klasik arama ve yapay zekâ destekli arama sistemlerinde görünürlük.
+- [AI Otomasyon](https://olivon.com.tr/hizmetler/ai-otomasyon): Yapay zekâ destekli otomasyon ve iş akışları.
+
+## Seçili Rehberler
+
+- [Pazaryeri mi, kendi e-ticaret siteniz mi?](https://olivon.com.tr/blog/pazaryeri-mi-kendi-e-ticaret-siteniz-mi)
+- [Shopify, ikas ve WooCommerce nasıl seçilir?](https://olivon.com.tr/blog/shopify-ikas-woocommerce-nasil-secilir)
+- [Yapay zekâ aramalarında markanız nasıl anlaşılır?](https://olivon.com.tr/blog/yapay-zeka-aramalarinda-marka-gorunurlugu)
+- [E-ticaret sitesi için güvenlik kontrol listesi](https://olivon.com.tr/blog/e-ticaret-sitesinde-guvenlik-kontrol-listesi)
+- [Dönüşüm odaklı web sitesi gerçekten ne demek?](https://olivon.com.tr/blog/donusum-odakli-web-sitesi-ne-demek)
 
 ## İletişim
-- https://olivon.com.tr/#iletisim
-- mailto:info@olivon.com.tr
+
+- [İletişim](https://olivon.com.tr/#iletisim)
+- E-posta: info@olivon.com.tr
