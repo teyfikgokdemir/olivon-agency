@@ -276,3 +276,14 @@ body main:not(.inner-page) .hero-foot{
     object-position:66% center!important;
   }
 }
+
+
+/* Mobile security heading spacing */
+@media(max-width:560px){
+  .security h2{
+    font-size:clamp(44px,12.2vw,58px)!important;
+    line-height:1.08!important;
+    letter-spacing:-.045em!important;
+    max-width:100%!important;
+  }
+}
