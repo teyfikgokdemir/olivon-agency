@@ -45,6 +45,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="tr">
+      <head>
+        <link rel="preload" as="image" href="/images/hero/olivon-hero-main.webp" type="image/webp" fetchPriority="high" />
+      </head>
       <body className="antialiased">
         <div className="root-site-header"><SiteHeader /></div>
         {children}
