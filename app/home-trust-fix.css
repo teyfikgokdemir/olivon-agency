@@ -1,0 +1,111 @@
+/* Homepage spacing + trust navigation refinement */
+main:not(.inner-page) .work-preview {
+  padding-top: 92px !important;
+  padding-bottom: 54px !important;
+}
+
+main:not(.inner-page) .home-trust {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
+  gap: 72px;
+  align-items: end;
+  padding: 64px 0 72px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+main:not(.inner-page) .home-trust > div:first-child {
+  max-width: 760px;
+}
+
+main:not(.inner-page) .home-trust h2 {
+  margin: 14px 0 0;
+  max-width: 760px;
+  font-size: clamp(34px, 3.35vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  font-weight: 500;
+}
+
+main:not(.inner-page) .home-trust > div:last-child {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+main:not(.inner-page) .home-trust > div:last-child a {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 4px;
+  border-bottom: 1px solid var(--line);
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -.015em;
+  transition: color .22s ease, padding .22s ease, background .22s ease;
+}
+
+main:not(.inner-page) .home-trust > div:last-child a svg {
+  flex: 0 0 auto;
+  color: var(--coral-soft);
+  transition: transform .22s ease;
+}
+
+main:not(.inner-page) .home-trust > div:last-child a:hover {
+  color: var(--coral-soft);
+  padding-left: 14px;
+  padding-right: 10px;
+  background: linear-gradient(90deg, rgba(255,107,81,.07), transparent 72%);
+}
+
+main:not(.inner-page) .home-trust > div:last-child a:hover svg {
+  transform: translate(3px,-3px);
+}
+
+main:not(.inner-page) .closing {
+  padding-top: 104px;
+}
+
+@media (max-width: 900px) {
+  main:not(.inner-page) .work-preview {
+    padding-bottom: 40px !important;
+  }
+
+  main:not(.inner-page) .home-trust {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 52px 0 58px;
+  }
+
+  main:not(.inner-page) .home-trust h2 {
+    font-size: clamp(32px, 7vw, 46px);
+  }
+}
+
+@media (max-width: 560px) {
+  main:not(.inner-page) .work-preview {
+    padding-bottom: 28px !important;
+  }
+
+  main:not(.inner-page) .home-trust {
+    gap: 30px;
+    padding: 42px 0 48px;
+  }
+
+  main:not(.inner-page) .home-trust h2 {
+    font-size: 30px;
+    line-height: 1.08;
+  }
+
+  main:not(.inner-page) .home-trust > div:last-child a {
+    min-height: 62px;
+    font-size: 16px;
+  }
+
+  main:not(.inner-page) .closing {
+    padding-top: 78px;
+  }
+}
