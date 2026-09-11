@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const base = "https://olivon.com.tr";
-const updated = "2026-09-10";
+const updated = "2026-09-11";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -22,14 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/fiyatlandirma`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/iletisim`, lastModified: updated, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/sss`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/blog`, lastModified: "2026-09-09", changeFrequency: "weekly", priority: 0.82 },
-
+    { url: `${base}/blog`, lastModified: updated, changeFrequency: "weekly", priority: 0.82 },
     { url: `${base}/blog/pazaryeri-mi-kendi-e-ticaret-siteniz-mi`, lastModified: "2026-09-09", changeFrequency: "monthly", priority: 0.76 },
     { url: `${base}/blog/shopify-ikas-woocommerce-nasil-secilir`, lastModified: "2026-09-07", changeFrequency: "monthly", priority: 0.76 },
     { url: `${base}/blog/yapay-zeka-aramalarinda-marka-gorunurlugu`, lastModified: "2026-09-04", changeFrequency: "monthly", priority: 0.76 },
     { url: `${base}/blog/e-ticaret-sitesinde-guvenlik-kontrol-listesi`, lastModified: "2026-09-01", changeFrequency: "monthly", priority: 0.76 },
     { url: `${base}/blog/donusum-odakli-web-sitesi-ne-demek`, lastModified: "2026-08-28", changeFrequency: "monthly", priority: 0.76 },
-
     { url: `${base}/gizlilik-politikasi`, lastModified: updated, changeFrequency: "yearly", priority: 0.2 },
     { url: `${base}/kvkk`, lastModified: updated, changeFrequency: "yearly", priority: 0.2 },
     { url: `${base}/cerez-politikasi`, lastModified: updated, changeFrequency: "yearly", priority: 0.2 },
