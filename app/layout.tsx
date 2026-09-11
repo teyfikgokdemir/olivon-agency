@@ -3,6 +3,7 @@ import Script from "next/script";
 import { FloatingActions } from "@/components/floating-actions";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
+import "./home-trust-fix.css";
 
 export const metadata: Metadata = {
   title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
