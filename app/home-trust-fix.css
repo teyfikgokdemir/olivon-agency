@@ -53,35 +53,62 @@ main:not(.inner-page) .home-proof p {
   line-height: 1.6 !important;
 }
 
-/* Process: stop the heading from becoming a full-viewport billboard. */
+/* Process: harden the heading area against legacy global heading rules. */
 main:not(.inner-page) .process {
   padding-top: 92px !important;
   padding-bottom: 92px !important;
+  overflow: hidden !important;
 }
 
 main:not(.inner-page) .process .section-head {
   display: grid !important;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .55fr) !important;
-  gap: 64px !important;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr) !important;
+  column-gap: clamp(40px, 5vw, 84px) !important;
+  row-gap: 24px !important;
   align-items: end !important;
   margin-bottom: 54px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+main:not(.inner-page) .process .section-head > div {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+main:not(.inner-page) .process .section-head .section-index {
+  text-align: left !important;
+  margin: 0 0 18px !important;
 }
 
 main:not(.inner-page) .process .section-head h2 {
-  margin: 16px 0 0 !important;
-  max-width: 760px !important;
-  font-size: clamp(42px, 4.1vw, 64px) !important;
-  line-height: 1.02 !important;
-  letter-spacing: -.052em !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 820px !important;
+  margin: 0 !important;
+  font-size: clamp(42px, 3.7vw, 62px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -.048em !important;
   font-weight: 500 !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  text-wrap: balance !important;
 }
 
 main:not(.inner-page) .process .section-head > p {
-  margin: 0 !important;
-  max-width: 430px !important;
+  position: static !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 420px !important;
+  margin: 0 0 5px !important;
   color: #aaa09a !important;
   font-size: 17px !important;
   line-height: 1.65 !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  justify-self: end !important;
 }
 
 main:not(.inner-page) .process-grid {
@@ -158,6 +185,22 @@ main:not(.inner-page) .home-trust > div:last-child a:hover svg {
 
 main:not(.inner-page) .closing {
   padding-top: 100px !important;
+}
+
+@media (max-width: 1100px) {
+  main:not(.inner-page) .process .section-head {
+    grid-template-columns: 1fr !important;
+  }
+
+  main:not(.inner-page) .process .section-head h2 {
+    max-width: 900px !important;
+    font-size: clamp(40px, 5.5vw, 58px) !important;
+  }
+
+  main:not(.inner-page) .process .section-head > p {
+    justify-self: start !important;
+    max-width: 620px !important;
+  }
 }
 
 @media (max-width: 900px) {
