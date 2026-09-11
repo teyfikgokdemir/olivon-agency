@@ -31,6 +31,7 @@ export default function RootLayout({
             gtag('config', 'G-VJ2PP2LG1N');
           `}
         </Script>
+        <Script src="https://teyfikgokdemir.com/cansu-source-beacon.js" data-site="olivon-agency" strategy="afterInteractive" />
         <SiteHeader />{children}<FloatingActions />
       </body>
     </html>
