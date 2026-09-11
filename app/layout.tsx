@@ -6,8 +6,29 @@ import "./globals.css";
 import "./home-trust-fix.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://olivon.com.tr"),
   title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
   description: "Türkiye'deki markalar için premium web tasarım, e-ticaret, SEO, GEO, otomasyon ve dijital güvenlik çözümleri.",
+  applicationName: "Olivon",
+  authors: [{ name: "Olivon", url: "https://olivon.com.tr" }],
+  creator: "Olivon",
+  publisher: "Olivon",
+  formatDetection: { email: false, address: false, telephone: false },
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    siteName: "Olivon",
+    title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
+    description: "Web, e-ticaret, SEO, GEO, AEO, AIO, otomasyon, dijital reklam ve güvenlik hizmetlerini tek büyüme sistemi içinde yönetin.",
+    url: "https://olivon.com.tr",
+    images: [{ url: "/images/olivon-og.webp", width: 1200, height: 630, alt: "Olivon dijital büyüme stüdyosu" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
+    description: "Web, e-ticaret, görünürlük, otomasyon, reklam ve güvenlik için bütünleşik dijital büyüme sistemi.",
+    images: ["/images/olivon-og.webp"],
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
