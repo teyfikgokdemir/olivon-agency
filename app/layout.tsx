@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
   title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
   description: "Türkiye'deki markalar için premium web tasarım, e-ticaret, SEO, GEO, otomasyon ve dijital güvenlik çözümleri.",
+  alternates: { canonical: "/" },
   applicationName: "Olivon",
   authors: [{ name: "Olivon", url: "https://olivon.com.tr" }],
   creator: "Olivon",
