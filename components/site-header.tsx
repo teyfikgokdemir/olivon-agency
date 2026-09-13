@@ -48,7 +48,10 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="site-header">
+    <header
+      className="site-header"
+      style={{ backdropFilter: "none", WebkitBackdropFilter: "none" }}
+    >
       <nav className="nav shell" aria-label="Ana menü">
         <a className="brand" href="/" aria-label="Olivon ana sayfa" onClick={close}>
           <span className="brand-mark">O</span><span>OLIVON</span>
