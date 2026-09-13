@@ -57,12 +57,22 @@ export function breadcrumbSchema(items: Array<{ name: string; path: string }>) {
 }
 
 export function serviceSchema(name: string, description: string, path: string) {
+  const pageUrl = `${SITE_URL}${path}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${pageUrl}#service`,
     name,
+    serviceType: name,
     description,
-    url: `${SITE_URL}${path}`,
+    url: pageUrl,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+    },
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "Country", name: "Türkiye" },
   };
