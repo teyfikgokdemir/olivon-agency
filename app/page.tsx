@@ -214,7 +214,6 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <div className="reference-cloud">{referenceProjects.slice(3).map(project => <a href={project.url} target="_blank" rel="noreferrer" key={project.domain}>{project.name}</a>)}</div>
           <a className="reference-page-link" href="/referanslar">Tüm referansları ve vaka çalışmalarını inceleyin <ArrowUpRight size={16} /></a>
         </div>
       </section>
