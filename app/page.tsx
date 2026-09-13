@@ -1,6 +1,5 @@
 import { ArrowUpRight, BarChart3, ShieldCheck, Sparkles } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
-import { ProfitLab } from "@/components/profit-lab";
 import { StructuredData } from "@/components/structured-data";
 import { referenceProjects } from "@/lib/references";
 import { caseStudies } from "@/lib/case-studies";
@@ -38,6 +37,33 @@ const process = [
   ["Mimari", "Teslim kapsamını, içerik yapısını, teknoloji kararlarını ve ölçüm planını netleştiririz."],
   ["Üretim", "Tasarım, geliştirme ve entegrasyonları aynı kalite standardıyla uygularız."],
   ["Gelişim", "Yayından sonra davranış, performans ve dönüşüm verileriyle iyileştirme öncelikleri çıkarırız."],
+];
+
+const valuePrograms = [
+  {
+    index:"01",
+    kicker:"TİCARET ALTYAPISI",
+    title:"Kur",
+    description:"Markanın kendi dijital merkezini; satış, ödeme, ürün, içerik ve entegrasyon akışları birlikte çalışacak şekilde kuruyoruz.",
+    tags:["Shopify","ikas","WooCommerce","POS","ERP"],
+    href:"/hizmetler/e-ticaret",
+  },
+  {
+    index:"02",
+    kicker:"BÜYÜME SİSTEMİ",
+    title:"Büyüt",
+    description:"Arama görünürlüğü, içerik, ölçüm, reklam ve dönüşüm optimizasyonunu birbirinden kopuk işler yerine aynı büyüme sistemi içinde yönetiyoruz.",
+    tags:["SEO","GEO","AEO","AIO","GA4","Meta"],
+    href:"/hizmetler/seo-geo-aeo-aio",
+  },
+  {
+    index:"03",
+    kicker:"SÜREKLİLİK & GÜVEN",
+    title:"Koru",
+    description:"Performans, erişim, Cloudflare güvenlik katmanları ve kritik operasyon kontrolleriyle dijital merkezin satışa devam etmesini koruyoruz.",
+    tags:["Cloudflare","WAF","DDoS","Bot Control","Monitoring"],
+    href:"/hizmetler/dijital-guvenlik",
+  },
 ];
 
 export default function Home() {
@@ -98,7 +124,27 @@ export default function Home() {
         </div>
       </section>
 
-      <ProfitLab />
+      <section className="value-programs shell" aria-label="Olivon çalışma modeli">
+        <div className="value-programs-intro">
+          <p className="section-index">OLIVON MODELİ</p>
+          <h2>Kur.<em>Büyüt. Koru.</em></h2>
+          <p>Premium ajansların program ve engagement odaklı anlatımından ilhamla, hizmet listesini değil markanın dijital sisteminde yarattığımız üç temel değeri öne çıkarıyoruz.</p>
+        </div>
+        <div className="value-programs-list">
+          {valuePrograms.map(program => (
+            <a className="value-program" href={program.href} key={program.title}>
+              <span className="value-program-index">{program.index}</span>
+              <div className="value-program-copy">
+                <span className="value-program-kicker">{program.kicker}</span>
+                <h3>{program.title}</h3>
+                <p>{program.description}</p>
+                <div className="value-program-tags">{program.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
+              </div>
+              <span className="value-program-arrow"><ArrowUpRight size={20}/></span>
+            </a>
+          ))}
+        </div>
+      </section>
 
       <section className="ikas-detail shell" id="ikas">
         <div className="section-head ikas-head">
