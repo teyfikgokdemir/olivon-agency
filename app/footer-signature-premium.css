@@ -1,0 +1,36 @@
+/* Premium footer wordmark refinement. */
+.mega-footer .footer-signature{
+  align-items:end;
+  gap:28px;
+}
+.mega-footer .footer-signature > span{
+  display:inline-block;
+  letter-spacing:.035em!important;
+  padding-right:.035em;
+  color:transparent!important;
+  background:linear-gradient(100deg,#f7eee8 0%,#f2d9cf 28%,#ff9a7e 56%,#d85a47 78%,#8f342b 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  text-shadow:0 10px 42px rgba(255,107,81,.07);
+}
+.mega-footer .footer-signature > small{
+  margin-bottom:20px;
+}
+
+@media(max-width:900px){
+  .mega-footer .footer-signature > span{
+    letter-spacing:.03em!important;
+  }
+}
+
+@media(max-width:560px){
+  .mega-footer .footer-signature{
+    gap:12px;
+  }
+  .mega-footer .footer-signature > span{
+    letter-spacing:.025em!important;
+  }
+  .mega-footer .footer-signature > small{
+    margin-bottom:8px;
+  }
+}
