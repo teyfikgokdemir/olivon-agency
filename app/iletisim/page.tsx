@@ -68,9 +68,9 @@ export default function ContactPage() {
       </section>
 
       <section className="contact-process shell">
-        <div><span>01</span><h3>İhtiyacı netleştiririz</h3><p>Hedef, mevcut altyapı, operasyon ve büyüme beklentisini birlikte değerlendiririz.</p></div>
-        <div><span>02</span><h3>Doğru kapsamı çıkarırız</h3><p>Gereksiz kalemleri ayırır, gerçekten ihtiyaç duyulan çözüm setini belirleriz.</p></div>
-        <div><span>03</span><h3>Uygulama planını kurarız</h3><p>Tasarım, geliştirme, içerik, entegrasyon ve ölçüm adımlarını aynı yol haritasında toplarız.</p></div>
+        <div><h3>İhtiyacı netleştiririz</h3><p>Hedef, mevcut altyapı, operasyon ve büyüme beklentisini birlikte değerlendiririz.</p></div>
+        <div><h3>Doğru kapsamı çıkarırız</h3><p>Gereksiz kalemleri ayırır, gerçekten ihtiyaç duyulan çözüm setini belirleriz.</p></div>
+        <div><h3>Uygulama planını kurarız</h3><p>Tasarım, geliştirme, içerik, entegrasyon ve ölçüm adımlarını aynı yol haritasında toplarız.</p></div>
       </section>
 
       <section className="shell"><ContactForm /></section>
