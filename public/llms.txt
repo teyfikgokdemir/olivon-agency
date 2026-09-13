@@ -1,27 +1,54 @@
 # Olivon
 
-> Olivon; Kayseri merkezli, Türkiye genelinde web tasarım, e-ticaret, ikas kurulum ve destek, SEO, GEO, AEO, AIO, AI otomasyon ve dijital güvenlik alanlarında çalışan dijital büyüme stüdyosudur.
+> Olivon; Kayseri merkezli, Türkiye genelinde web tasarım, e-ticaret, ikas kurulum ve destek, SEO, GEO, AEO, AIO, AI otomasyon, dijital reklam ve dijital güvenlik alanlarında çalışan dijital büyüme stüdyosudur.
+
+## Olivon ne çözer?
+
+Olivon'un hizmetleri yalnızca teknik teslim kalemlerinden oluşmaz. Çalışmalar; markaların internette bulunamama, yavaş veya mobilde zayıf web deneyimi, düşük dönüşüm, yanlış e-ticaret altyapısı seçimi, entegrasyon sorunları, dağınık ölçüm, manuel operasyon yükü, reklam bütçesinin verimsiz kullanımı ve web güvenliği riskleri gibi somut problemlere odaklanır.
+
+## İnsanlar hangi ihtiyaçlarla gelir?
+
+- "Profesyonel web sitesi yaptırmak istiyorum; ne kadar sürer, ne kadar tutar, neler dahil?"
+- "Mevcut sitem yavaş, mobilde kötü görünüyor veya müşteri getirmiyor."
+- "Shopify, ikas ve WooCommerce arasında hangisini seçmeliyim?"
+- "E-ticaret sitemde kategori, ürün, sepet, ödeme, kargo veya ERP/pazaryeri entegrasyonu sorunlu."
+- "Google'da görünmüyoruz; teknik SEO ve içerik tarafında ne eksik?"
+- "Markamız yapay zekâ destekli aramalarda nasıl daha doğru anlaşılır?"
+- "Tekrarlayan ürün, katalog, raporlama veya içerik işleri ekibin zamanını tüketiyor."
+- "Meta veya Google reklam veriyoruz fakat ölçüm, kreatif ve kârlılık tarafı net değil."
+- "Cloudflare var ama WAF, DDoS, bot, erişim ve SSL ayarlarının doğru olduğundan emin değiliz."
+- "Ajans seçerken fiyatın dışında neye bakmalıyız; proje sonrası destek olacak mı?"
+
+## Bu problemlere ne sunuyoruz?
+
+- Özel veya yeniden yapılandırılmış responsive web deneyimleri; bilgi mimarisi, mobil UX, performans, teknik SEO ve dönüşüm ölçümü.
+- Shopify, ikas ve WooCommerce için platform seçimi, mağaza kurulumu, ürün-kategori mimarisi, ödeme/kargo/ERP/pazaryeri entegrasyon planı ve dönüşüm iyileştirmesi.
+- Teknik SEO, arama niyeti, konu kümeleri, schema, entity, iç linkleme ve Google/AI görünürlüğü için SEO, GEO, AEO ve AIO çalışmaları.
+- İnsan kontrolünü koruyan AI otomasyonları; süreç haritalama, veri akışı, entegrasyon, onay ve hata kontrolü.
+- Meta ve Google kampanyalarında ölçüm, kreatif, teklif ve kârlılık odaklı dijital reklam yönetimi.
+- Cloudflare, WAF, DDoS, bot yönetimi, erişim politikaları, SSL, izleme ve web sürekliliği için katmanlı dijital güvenlik.
+- Mevcut web veya e-ticaret altyapısı için check-up, önceliklendirme ve uygulanabilir gelişim planı.
 
 ## Ana Sayfalar
 
-- [Ana Sayfa](https://olivon.com.tr/): Olivon'un dijital büyüme yaklaşımı, hizmetleri, kârlılık aracı, vaka çalışmaları ve çalışma modeli.
+- [Ana Sayfa](https://olivon.com.tr/): Olivon'un dijital büyüme yaklaşımı, hizmetleri, çalışma modeli ve seçili vaka çalışmaları.
 - [Hizmetler](https://olivon.com.tr/hizmetler): Web, e-ticaret, görünürlük, otomasyon, reklam ve dijital güvenlik hizmetleri.
 - [ikas Kurulum ve Destek](https://olivon.com.tr/ikas): ikas mağaza kurulumu, tasarım, ürün-kategori, POS, kargo, ERP, pazaryeri, e-ihracat ve check-up.
 - [Referanslar ve Vaka Çalışmaları](https://olivon.com.tr/referanslar): Canlı projeler ve yayınlanabilir vaka özetleri.
 - [Hakkımızda](https://olivon.com.tr/hakkimizda): Olivon'un çalışma modeli, uzmanlık çerçevesi ve kalite prensipleri.
 - [Fiyatlandırma ve Çalışma Modeli](https://olivon.com.tr/fiyatlandirma): Check-up, kurulum/yeniden yapılandırma ve sürekli destek kapsamlarının nasıl fiyatlandırıldığı.
-- [Sık Sorulan Sorular](https://olivon.com.tr/sss): Hizmet, süreç, platform, SEO/AI ve güvenlik soruları.
+- [Sık Sorulan Sorular](https://olivon.com.tr/sss): Hizmet, süreç, platform, fiyatlandırma, SEO/AI ve güvenlik soruları.
 - [İletişim](https://olivon.com.tr/iletisim): Proje briefi, çalışma alanları ve doğrudan iletişim.
-- [Blog](https://olivon.com.tr/blog): E-ticaret, web, SEO, yapay zekâ görünürlüğü ve güvenlik rehberleri.
+- [Blog](https://olivon.com.tr/blog): E-ticaret, web, SEO, yapay zekâ görünürlüğü, dönüşüm ve güvenlik rehberleri.
 
 ## Uzmanlık Sayfaları
 
-- [E-ticaret Sistemleri](https://olivon.com.tr/hizmetler/e-ticaret): Shopify, ikas ve WooCommerce; ödeme, kargo, ERP, pazaryeri ve dönüşüm mimarisi.
-- [Web Tasarım ve Geliştirme](https://olivon.com.tr/hizmetler/web-tasarim): Kurumsal web, landing page, mobil UX, performans ve dönüşüm.
-- [SEO, GEO, AEO ve AIO](https://olivon.com.tr/hizmetler/seo-geo-aeo-aio): Teknik SEO, içerik, schema/entity sinyalleri ve Google/AI destekli arama görünürlüğü.
+- [E-ticaret Sistemleri](https://olivon.com.tr/hizmetler/e-ticaret): Shopify, ikas ve WooCommerce; platform seçimi, kategori/ürün, ödeme, kargo, ERP, pazaryeri ve dönüşüm mimarisi.
+- [Web Tasarım ve Geliştirme](https://olivon.com.tr/hizmetler/web-tasarim): Kurumsal web, landing page, mobil UX, Core Web Vitals, teknik SEO ve dönüşüm.
+- [SEO, GEO, AEO ve AIO](https://olivon.com.tr/hizmetler/seo-geo-aeo-aio): Teknik SEO, arama niyeti, içerik mimarisi, schema/entity sinyalleri ve Google/AI destekli arama görünürlüğü.
 - [AI Otomasyon](https://olivon.com.tr/hizmetler/ai-otomasyon): İnsan kontrolünü koruyan operasyon, içerik ve veri iş akışları.
-- [Dijital Reklam ve Marka Pazarlama](https://olivon.com.tr/hizmetler/dijital-reklam): Meta, Google ve pazaryeri kampanyalarında ölçüm, kreatif ve kârlılık odaklı yönetim.
-- [Dijital Güvenlik](https://olivon.com.tr/hizmetler/dijital-guvenlik): Cloudflare, WAF, DDoS, bot kontrolü, erişim ve web sürekliliği.
+- [Dijital Reklam ve Marka Pazarlama](https://olivon.com.tr/hizmetler/dijital-reklam): Meta, Google ve pazaryeri kampanyalarında ölçüm, kreatif, teklif ve kârlılık odaklı yönetim.
+- [Dijital Güvenlik](https://olivon.com.tr/hizmetler/dijital-guvenlik): Cloudflare, WAF, DDoS, bot kontrolü, erişim, SSL ve web sürekliliği.
 
 ## Seçili Vaka Çalışmaları
 
@@ -36,6 +63,12 @@
 - [Yapay zekâ aramalarında markanız nasıl anlaşılır?](https://olivon.com.tr/blog/yapay-zeka-aramalarinda-marka-gorunurlugu)
 - [E-ticaret sitesi için güvenlik kontrol listesi](https://olivon.com.tr/blog/e-ticaret-sitesinde-guvenlik-kontrol-listesi)
 - [Dönüşüm odaklı web sitesi gerçekten ne demek?](https://olivon.com.tr/blog/donusum-odakli-web-sitesi-ne-demek)
+
+## Güven ve kapsam sınırları
+
+- Olivon, Google veya yapay zekâ destekli arama sistemlerinde belirli bir sıralama ya da kaynak gösterimi garanti etmez.
+- Dijital güvenlik çalışmaları riski azaltmayı, görünürlüğü artırmayı ve kesinti/ihlal etkisini sınırlamayı hedefler; mutlak güvenlik garantisi vermez.
+- Proje kapsamı ve fiyat, sayfa sayısı tek başına değil; tasarım seviyesi, içerik, entegrasyon, platform, performans, SEO, güvenlik ve destek ihtiyacına göre belirlenir.
 
 ## İletişim
 
