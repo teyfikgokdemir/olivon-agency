@@ -22,7 +22,10 @@ import "./inner-pages-premium.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
-  title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
+  title: {
+    default: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
+    template: "%s | Olivon",
+  },
   description: "Türkiye'deki markalar için premium web tasarım, e-ticaret, SEO, GEO, otomasyon ve dijital güvenlik çözümleri.",
   alternates: { canonical: "/" },
   applicationName: "Olivon",
@@ -66,6 +69,27 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-VJ2PP2LG1N');
+          `}
+        </Script>
+        <Script id="olivon-conversion-events" strategy="afterInteractive">
+          {`
+            document.addEventListener('click', function(event) {
+              var link = event.target && event.target.closest ? event.target.closest('a') : null;
+              if (!link || typeof window.gtag !== 'function') return;
+              var href = link.getAttribute('href') || '';
+              var eventName = '';
+              if (/wa\.me|whatsapp/i.test(href)) eventName = 'whatsapp_click';
+              else if (href.indexOf('mailto:') === 0) eventName = 'email_click';
+              else if (href.indexOf('tel:') === 0) eventName = 'phone_click';
+              else if (href === '/iletisim' || href.indexOf('/iletisim?') === 0) eventName = 'contact_cta_click';
+              else if (href.indexOf('/referanslar') === 0) eventName = 'case_study_click';
+              else if (href.indexOf('/hizmetler/') === 0 || href === '/hizmetler') eventName = 'service_detail_click';
+              if (!eventName) return;
+              window.gtag('event', eventName, {
+                link_url: href,
+                link_text: (link.textContent || '').trim().slice(0, 80)
+              });
+            }, { passive: true });
           `}
         </Script>
         <Script src="https://teyfikgokdemir.com/cansu-source-beacon.js" data-site="olivon-agency" strategy="afterInteractive" />
