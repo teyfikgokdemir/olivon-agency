@@ -32,20 +32,57 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   const item = caseStudies.find(entry => entry.slug === slug);
   if (!item) notFound();
 
-  const schema = {
+  const pageUrl = `${SITE_URL}/referanslar/${item.slug}`;
+  const pageId = `${pageUrl}#webpage`;
+  const caseId = `${pageUrl}#case-study`;
+  const imageUrl = item.image ? `${SITE_URL}${item.image.split("?")[0]}` : undefined;
+
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": pageId,
+    url: pageUrl,
+    name: `${item.name} Vaka Çalışması`,
+    description: item.summary,
+    inLanguage: "tr-TR",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": caseId },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+
+  const caseSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "@id": `${SITE_URL}/referanslar/${item.slug}#case-study`,
+    "@id": caseId,
     name: `${item.name} vaka çalışması`,
-    url: `${SITE_URL}/referanslar/${item.slug}`,
+    url: pageUrl,
     description: item.summary,
+    inLanguage: "tr-TR",
+    mainEntityOfPage: { "@id": pageId },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
     creator: { "@id": `${SITE_URL}/#organization` },
-    about: { "@type": "Organization", name: item.name, url: item.url },
-    ...(item.image ? { image: `${SITE_URL}${item.image.split("?")[0]}` } : {}),
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    about: {
+      "@type": "Organization",
+      name: item.name,
+      url: item.url,
+    },
+    ...(imageUrl ? {
+      image: {
+        "@type": "ImageObject",
+        url: imageUrl,
+        contentUrl: imageUrl,
+        caption: `${item.name} e-ticaret projesi`,
+      },
+    } : {}),
   };
 
   return <main className="inner-page case-page">
-    <StructuredData data={[schema, breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Referanslar",path:"/referanslar"},{name:item.name,path:`/referanslar/${item.slug}`}])]} />
+    <StructuredData data={[
+      pageSchema,
+      caseSchema,
+      breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Referanslar",path:"/referanslar"},{name:item.name,path:`/referanslar/${item.slug}`}])
+    ]} />
     <section className="inner-hero shell case-hero">
       <p className="section-index">VAKA ÇALIŞMASI · {item.category.toUpperCase()}</p>
       <h1>{item.name}<br/><em>{item.summary}</em></h1>
