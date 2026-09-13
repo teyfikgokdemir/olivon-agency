@@ -25,15 +25,18 @@
 .platform-track span::before{
   content:"";width:27px;height:27px;flex:0 0 27px;background-repeat:no-repeat;background-position:center;background-size:contain;opacity:1;
 }
-/* Local partner wordmarks keep their actual brand artwork. */
 .platform-track span:nth-child(6n+1)::before{background-image:url('/partners/shopify.svg');width:78px;height:30px;flex-basis:78px}
-.platform-track span:nth-child(6n+2)::before{background-image:url('/partners/ikas.svg');width:68px;height:28px;flex-basis:68px}
-/* Other ecosystem marks use their native brand colors. */
+.platform-track span:nth-child(6n+2)::before{
+  width:68px;height:28px;flex-basis:68px;
+  background-image:none!important;
+  background-color:#ff8068;
+  -webkit-mask:url('/partners/ikas.svg') center/contain no-repeat;
+  mask:url('/partners/ikas.svg') center/contain no-repeat;
+}
 .platform-track span:nth-child(6n+3)::before{background-image:url('https://cdn.simpleicons.org/woocommerce/96588A')}
 .platform-track span:nth-child(6n+4)::before{background-image:url('https://cdn.simpleicons.org/cloudflare/F38020')}
 .platform-track span:nth-child(6n+5)::before{background-image:url('https://www.gstatic.com/images/branding/product/2x/googleg_48dp.png')}
 .platform-track span:nth-child(6n+6)::before{background-image:url('https://cdn.simpleicons.org/meta/0866FF')}
-/* Shopify and ikas SVGs already contain the full wordmark, so don't repeat their names. */
 .platform-track span:nth-child(6n+1),.platform-track span:nth-child(6n+2){font-size:0!important}
 .platform-track span::selection{background:var(--coral);color:#160b09}
 
