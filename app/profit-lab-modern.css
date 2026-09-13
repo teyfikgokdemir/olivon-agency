@@ -1,0 +1,124 @@
+/* Profitability lab — guided, touch-friendly scenario controls */
+.calculator-modern{
+  position:relative;
+  overflow:hidden;
+}
+.calculator-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:0 0 22px;
+  margin-bottom:24px;
+  border-bottom:1px solid var(--line);
+  color:#aaa09a;
+  font-size:12px;
+}
+.calculator-toolbar>div{display:flex;align-items:center;gap:9px;color:var(--foreground);font-weight:700}
+.calculator-toolbar svg{color:var(--coral-soft)}
+.calculator-sliders{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:18px 26px!important;
+}
+.profit-slider-field{
+  display:block;
+  min-width:0;
+  padding:18px 18px 14px;
+  border:1px solid rgba(255,239,228,.11);
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.012));
+  transition:border-color .22s ease,transform .22s ease,background .22s ease;
+}
+.profit-slider-field:focus-within{
+  border-color:rgba(255,143,112,.42);
+  background:linear-gradient(180deg,rgba(255,107,81,.055),rgba(255,255,255,.012));
+}
+.profit-slider-topline{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+  color:#a99d96;
+  font-size:13px;
+}
+.profit-slider-topline>strong{
+  display:flex;
+  align-items:baseline;
+  gap:5px;
+  color:#fff8f3;
+  font-size:21px;
+  line-height:1;
+  letter-spacing:-.035em;
+  white-space:nowrap;
+}
+.profit-slider-topline strong small{color:#9e918a;font-size:10px;font-weight:600;letter-spacing:.04em}
+.profit-slider-field input[type="range"]{
+  --slider-progress:50%;
+  width:100%;
+  height:26px;
+  margin:0;
+  padding:0;
+  appearance:none;
+  -webkit-appearance:none;
+  background:transparent;
+  cursor:pointer;
+  touch-action:pan-y;
+}
+.profit-slider-field input[type="range"]::-webkit-slider-runnable-track{
+  height:5px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--coral) 0 var(--slider-progress),rgba(255,255,255,.11) var(--slider-progress) 100%);
+}
+.profit-slider-field input[type="range"]::-webkit-slider-thumb{
+  appearance:none;
+  -webkit-appearance:none;
+  width:22px;
+  height:22px;
+  margin-top:-8.5px;
+  border:4px solid #130e0c;
+  border-radius:50%;
+  background:#ff9479;
+  box-shadow:0 0 0 1px rgba(255,148,121,.48),0 4px 18px rgba(255,107,81,.28);
+}
+.profit-slider-field input[type="range"]::-moz-range-track{height:5px;border-radius:999px;background:rgba(255,255,255,.11)}
+.profit-slider-field input[type="range"]::-moz-range-progress{height:5px;border-radius:999px;background:var(--coral)}
+.profit-slider-field input[type="range"]::-moz-range-thumb{width:16px;height:16px;border:4px solid #130e0c;border-radius:50%;background:#ff9479;box-shadow:0 0 0 1px rgba(255,148,121,.48)}
+.profit-slider-field input[type="range"]:focus-visible{outline:2px solid rgba(255,143,112,.7);outline-offset:6px;border-radius:999px}
+.profit-slider-scale{display:flex;justify-content:space-between;margin-top:1px;color:#766d68;font-size:9px}
+.profit-highlight{
+  display:grid;
+  grid-template-columns:auto auto 1fr;
+  align-items:baseline;
+  gap:8px 18px;
+  margin:28px 0 6px;
+  padding:22px 24px;
+  border:1px solid rgba(255,143,112,.22);
+  border-radius:20px;
+  background:radial-gradient(circle at 90% 20%,rgba(255,107,81,.12),transparent 36%),rgba(255,107,81,.035);
+}
+.profit-highlight>span{grid-column:1/-1;color:#aa9f98;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.profit-highlight strong{font-size:18px;color:#fff8f3}
+.profit-highlight em{font-style:normal;font-size:27px;font-weight:800;color:var(--coral-soft);letter-spacing:-.04em}
+.profit-highlight small{justify-self:end;color:#a99d96;font-size:12px;text-align:right}
+.scenario.is-best .scenario-head span,.scenario.is-best small{color:var(--coral-soft)!important}
+.scenario.is-best .profit-bar i{box-shadow:0 0 24px rgba(255,107,81,.28)}
+
+@media(max-width:900px){
+  .calculator-sliders{grid-template-columns:1fr!important}
+  .profit-highlight{grid-template-columns:1fr auto}
+  .profit-highlight>small{grid-column:1/-1;justify-self:start;text-align:left}
+}
+@media(max-width:560px){
+  .calculator-toolbar{align-items:flex-start;flex-direction:column;gap:7px;margin-bottom:18px;padding-bottom:17px}
+  .profit-slider-field{padding:16px 14px 12px;border-radius:16px}
+  .profit-slider-topline{margin-bottom:14px}
+  .profit-slider-topline>strong{font-size:19px}
+  .profit-slider-field input[type="range"]{height:32px}
+  .profit-slider-field input[type="range"]::-webkit-slider-thumb{width:26px;height:26px;margin-top:-10.5px}
+  .profit-highlight{grid-template-columns:1fr;padding:18px;margin-top:22px}
+  .profit-highlight strong{font-size:17px}
+  .profit-highlight em{font-size:25px}
+  .profit-highlight>small{grid-column:auto}
+}
