@@ -54,10 +54,10 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <a href={item.url} target="_blank" rel="noreferrer">Canlı siteyi görüntüle <ArrowUpRight size={17}/></a>
     </section>
     <section className="case-story shell">
-      <article><span>01</span><h2>Başlangıç problemi</h2><p>{item.challenge}</p></article>
-      <article><span>02</span><h2>Yapılan çalışma</h2><ul>{item.work.map(x=><li key={x}><CheckCircle2 size={16}/>{x}</li>)}</ul></article>
-      <article><span>03</span><h2>Ortaya çıkan sonuç</h2><p>{item.outcome}</p></article>
-      <article><span>04</span><h2>Kanıt & şeffaflık</h2><p>{item.evidence}</p></article>
+      <article><h2>Başlangıç problemi</h2><p>{item.challenge}</p></article>
+      <article><h2>Yapılan çalışma</h2><ul>{item.work.map(x=><li key={x}><CheckCircle2 size={16}/>{x}</li>)}</ul></article>
+      <article><h2>Ortaya çıkan sonuç</h2><p>{item.outcome}</p></article>
+      <article><h2>Kanıt & şeffaflık</h2><p>{item.evidence}</p></article>
     </section>
     <section className="case-tech shell"><p className="section-index">TEKNOLOJİ & KAPSAM</p><div>{item.technology.map(x=><span key={x}>{x}</span>)}</div></section>
     <section className="service-cta shell"><p className="section-index">BENZER BİR PROJE</p><h2>Kendi markanız için kapsamı ve doğru başlangıç noktasını birlikte belirleyelim.</h2><a href="/iletisim">Projenizi anlatın <ArrowUpRight size={18}/></a></section>
