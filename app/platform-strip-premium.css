@@ -1,25 +1,24 @@
-/* Premium platform marquee — near-black glass strip with native brand colors. */
+/* Premium platform marquee — transparent continuation of the hero. */
 .platform-strip{
   position:relative;
   overflow:hidden;
-  border-top:1px solid rgba(255,255,255,.055)!important;
-  border-bottom:1px solid rgba(255,255,255,.07)!important;
-  background:rgba(7,7,7,.88)!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.018);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
 }
 .platform-strip::before,.platform-strip::after{
-  content:"";position:absolute;top:0;bottom:0;width:8vw;min-width:40px;z-index:2;pointer-events:none;
+  content:none!important;
+  display:none!important;
 }
-.platform-strip::before{left:0;background:linear-gradient(90deg,#080706 12%,rgba(8,7,6,0))}
-.platform-strip::after{right:0;background:linear-gradient(270deg,#080706 12%,rgba(8,7,6,0))}
 .platform-track{align-items:stretch!important}
 .platform-track span{
   min-width:220px!important;height:68px!important;padding:0 30px!important;
   display:flex!important;align-items:center!important;justify-content:center!important;gap:13px!important;
   text-align:center!important;line-height:1!important;color:#eee7e2!important;
-  border-right:1px solid rgba(255,255,255,.055)!important;
+  border:0!important;
+  background:transparent!important;
   font-size:11px!important;font-weight:650!important;letter-spacing:.045em!important;white-space:nowrap;
 }
 .platform-track span::before{
