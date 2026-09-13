@@ -41,4 +41,18 @@ export const caseStudies = [
     evidence: "Kamuya açık canlı mağaza üzerinden sunum ve akış incelenebilir. Finansal ve analitik sonuçlar müşteri mahremiyeti nedeniyle yayınlanmıyor.",
     technology: ["E-ticaret altyapısı", "Responsive arayüz", "İçerik ve vitrin mimarisi"],
   },
+  {
+    slug: "recep-bozkurt",
+    name: "Recep Bozkurt",
+    domain: "recepbozkurt.com",
+    url: "https://recepbozkurt.com/",
+    image: null,
+    category: "WooCommerce e-ticaret",
+    summary: "WooCommerce altyapısı, ürün-kategori kurgusu ve satış akışını tek sistemde birleştiren uçtan uca e-ticaret kurulumu.",
+    challenge: "Markanın dijital satış kanalını; ürünlerin düzenli yönetildiği, mobilde güven veren ve sipariş sürecini taşıyabilecek bir WooCommerce yapısı üzerinde kurmak.",
+    work: ["WooCommerce altyapı kurulumu", "Ürün ve kategori mimarisi", "Sepet ve satış akışı", "Mobil arayüz ve yayına alma"],
+    outcome: "Markanın kendi alan adı üzerinde ürün yönetimi, alışveriş ve sipariş akışını tek merkezde yürütebildiği, geliştirmeye açık bir e-ticaret kanalı devreye alındı.",
+    evidence: "Projenin canlı mağazası recepbozkurt.com üzerinden altyapı ve kullanıcı akışı incelenebilir. Satış tutarı ve dönüşüm oranı gibi özel ticari metrikler yayınlanmıyor.",
+    technology: ["WordPress", "WooCommerce", "Responsive e-ticaret arayüzü", "Ürün/kategori ve satış akışı"],
+  },
 ] as const;

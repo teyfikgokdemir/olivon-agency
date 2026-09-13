@@ -80,17 +80,22 @@ export default function ReferencesPage() {
       <section className="reference-directory shell">
         <div><p className="section-index">DİĞER ÇALIŞMALAR</p><h2>Farklı sektörlerde web, e-ticaret ve marka deneyimi projeleri.</h2></div>
         <div className="directory-grid">
-          {rest.map(project => (
-            <a href={project.url} target="_blank" rel="noreferrer" key={project.domain}>
-              <div className="directory-brand-line">
-                <span className="directory-brand-mark"><img src={brandMarkUrl(project.domain)} alt="" width="32" height="32" loading="lazy" /></span>
-                <span className="directory-category">{project.category}</span>
-              </div>
-              <strong>{project.name}</strong>
-              <span>{project.domain}</span>
-              <em>{project.scope}</em>
-            </a>
-          ))}
+          {rest.map(project => {
+            const caseItem = caseStudies.find(item => item.domain === project.domain);
+            const href = caseItem ? `/referanslar/${caseItem.slug}` : project.url;
+            return (
+              <a href={href} target={caseItem ? undefined : "_blank"} rel={caseItem ? undefined : "noreferrer"} key={project.domain}>
+                <div className="directory-brand-line">
+                  <span className="directory-brand-mark"><img src={brandMarkUrl(project.domain)} alt="" width="32" height="32" loading="lazy" /></span>
+                  <span className="directory-category">{project.category}</span>
+                </div>
+                <strong>{project.name}</strong>
+                <span>{project.domain}</span>
+                <em>{project.scope}</em>
+                {caseItem && <b>Vaka çalışmasını incele <ArrowUpRight size={14}/></b>}
+              </a>
+            );
+          })}
         </div>
       </section>
       <SiteFooter />

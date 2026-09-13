@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: `${item.name} | Olivon Vaka Çalışması`,
       description: item.summary,
       url: `/referanslar/${item.slug}`,
-      images: [{ url: item.image.split("?")[0], alt: `${item.name} e-ticaret projesi` }],
+      ...(item.image ? { images: [{ url: item.image.split("?")[0], alt: `${item.name} e-ticaret projesi` }] } : {}),
     },
   };
 }
@@ -35,11 +35,13 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   const schema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
+    "@id": `${SITE_URL}/referanslar/${item.slug}#case-study`,
     name: `${item.name} vaka çalışması`,
     url: `${SITE_URL}/referanslar/${item.slug}`,
     description: item.summary,
     creator: { "@id": `${SITE_URL}/#organization` },
     about: { "@type": "Organization", name: item.name, url: item.url },
+    ...(item.image ? { image: `${SITE_URL}${item.image.split("?")[0]}` } : {}),
   };
 
   return <main className="inner-page case-page">
@@ -49,10 +51,16 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <h1>{item.name}<br/><em>{item.summary}</em></h1>
       <p>Bu vaka, yayınlanabilir proje kapsamını ve nitel sonucu gösterir. Müşteriye ait gizli ticari veriler ve doğrulanamayan performans rakamları kullanılmamıştır.</p>
     </section>
-    <section className="case-visual shell">
-      <img src={item.image} alt={`${item.name} web sitesi ekran görüntüsü`} loading="lazy" decoding="async" />
-      <a href={item.url} target="_blank" rel="noreferrer">Canlı siteyi görüntüle <ArrowUpRight size={17}/></a>
-    </section>
+    {item.image ? (
+      <section className="case-visual shell">
+        <img src={item.image} alt={`${item.name} web sitesi ekran görüntüsü`} loading="lazy" decoding="async" />
+        <a href={item.url} target="_blank" rel="noreferrer">Canlı siteyi görüntüle <ArrowUpRight size={17}/></a>
+      </section>
+    ) : (
+      <div className="section-inline-cta shell">
+        <a href={item.url} target="_blank" rel="noreferrer">Canlı projeyi görüntüle <ArrowUpRight size={17}/></a>
+      </div>
+    )}
     <section className="case-story shell">
       <article><h2>Başlangıç problemi</h2><p>{item.challenge}</p></article>
       <article><h2>Yapılan çalışma</h2><ul>{item.work.map(x=><li key={x}><CheckCircle2 size={16}/>{x}</li>)}</ul></article>

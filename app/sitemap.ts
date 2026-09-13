@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/referanslar/oyku-baby-store`, lastModified: updated, changeFrequency: "monthly", priority: 0.82 },
     { url: `${base}/referanslar/bailas-kids`, lastModified: updated, changeFrequency: "monthly", priority: 0.82 },
     { url: `${base}/referanslar/favorim-kids`, lastModified: updated, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${base}/referanslar/recep-bozkurt`, lastModified: "2026-09-13", changeFrequency: "monthly", priority: 0.82 },
     { url: `${base}/hakkimizda`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/fiyatlandirma`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/iletisim`, lastModified: updated, changeFrequency: "monthly", priority: 0.85 },
