@@ -19,6 +19,7 @@ import "./security-premium.css";
 import "./footer-signature-premium.css";
 import "./visibility-system.css";
 import "./inner-pages-premium.css";
+import "./inner-pages-mobile-final.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
