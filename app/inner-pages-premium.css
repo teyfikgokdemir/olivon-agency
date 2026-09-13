@@ -91,6 +91,37 @@
 .inner-page .related-articles>div{gap:14px!important}
 .inner-page .related-articles a{min-height:290px!important;border-radius:18px!important}
 
+/* Contact / FAQ */
+.inner-page .contact-grid{gap:14px!important;margin-bottom:18px!important}
+.inner-page .contact-primary,.inner-page .contact-scope{padding:30px!important;border-radius:20px!important}
+.inner-page .contact-icon{width:46px!important;height:46px!important;border-radius:14px!important;margin-bottom:22px!important}
+.inner-page .contact-primary h2,.inner-page .contact-scope h2,.inner-page .contact-seo-copy h2,.inner-page .faq-topic-links h2{font-size:clamp(28px,2.8vw,42px)!important;line-height:1.04!important;margin:14px 0!important}
+.inner-page .contact-main-link{font-size:clamp(20px,2vw,28px)!important;margin:20px 0 18px!important}
+.inner-page .contact-process{gap:12px!important;margin-bottom:64px!important}
+.inner-page .contact-process>div{padding:22px!important;border-radius:18px!important}
+.inner-page .contact-process h3{font-size:21px!important;margin:0 0 8px!important}
+.inner-page .contact-process p{font-size:14px!important;margin:0!important;line-height:1.55!important}
+.inner-page .contact-seo-copy{padding-top:22px!important;padding-bottom:74px!important}
+.inner-page .faq-list{gap:9px!important;margin-bottom:64px!important}
+.inner-page .faq-list details{border-radius:16px!important}
+.inner-page .faq-list summary{grid-template-columns:minmax(0,1fr) 24px!important;gap:14px!important;padding:19px 22px!important}
+.inner-page .faq-list summary h2{font-size:clamp(19px,1.7vw,25px)!important;line-height:1.18!important}
+.inner-page .faq-list details>div{padding:0 56px 20px 22px!important}
+.inner-page .faq-list details p{font-size:15px!important;line-height:1.65!important}
+.inner-page .faq-topic-links{padding-bottom:74px!important}
+.inner-page .faq-topic-links>div{gap:9px!important;margin-top:22px!important}
+.inner-page .faq-topic-links a{padding:15px 17px!important;border-radius:14px!important;font-size:14px!important}
+
+/* References */
+.inner-page .reference-showcase{gap:22px!important;margin-bottom:76px!important}
+.inner-page .reference-case{gap:22px!important;padding:16px!important;border-radius:22px!important}
+.inner-page .reference-copy h2{font-size:clamp(28px,3vw,44px)!important;margin:10px 0 12px!important}
+.inner-page .reference-copy p{font-size:14.5px!important;line-height:1.6!important}
+.inner-page .reference-directory{padding-block:70px!important}
+.inner-page .reference-directory>div:first-child h2{font-size:clamp(32px,3.4vw,50px)!important;line-height:1.04!important}
+.inner-page .directory-grid{gap:10px!important}
+.inner-page .directory-grid a{min-height:150px!important;padding:18px!important;border-radius:16px!important}
+
 /* Shared rhythm */
 .inner-page .section-index{font-size:10px!important;letter-spacing:.16em!important}
 .inner-page .section-head{margin-bottom:42px!important}
@@ -138,6 +169,16 @@
   .inner-page .article-detail h1,.inner-page .legal-content h1{font-size:40px!important}
   .inner-page .article-grid{grid-template-columns:1fr!important;margin-bottom:64px!important}
   .inner-page .related-articles>div{grid-template-columns:1fr!important}
+  .inner-page .contact-primary,.inner-page .contact-scope{padding:22px!important}
+  .inner-page .contact-process{grid-template-columns:1fr!important;gap:9px!important;margin-bottom:52px!important}
+  .inner-page .contact-process>div{padding:18px!important}
+  .inner-page .faq-list{margin-bottom:52px!important}
+  .inner-page .faq-list summary{padding:17px 18px!important}
+  .inner-page .faq-list details>div{padding:0 44px 18px 18px!important}
+  .inner-page .faq-topic-links>div{grid-template-columns:1fr!important}
+  .inner-page .reference-showcase{gap:16px!important;margin-bottom:58px!important}
+  .inner-page .reference-case{padding:12px!important;gap:16px!important}
+  .inner-page .reference-directory{padding-block:54px!important}
 }
 
 @media(max-width:390px){
@@ -147,4 +188,5 @@
   .inner-page .about-scope h2,
   .inner-page .pricing-clarity h2,
   .inner-page .service-essentials-head h2{font-size:30px!important}
+  .inner-page .contact-primary h2,.inner-page .contact-scope h2,.inner-page .contact-seo-copy h2,.inner-page .faq-topic-links h2{font-size:28px!important}
 }
