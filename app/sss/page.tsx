@@ -54,7 +54,7 @@ export default function FaqPage() {
       <section className="faq-list shell">
         {faqs.map(([question, answer], index) => (
           <details key={question} open={index === 0}>
-            <summary><span>{String(index + 1).padStart(2, "0")}</span><h2>{question}</h2><i>+</i></summary>
+            <summary><h2>{question}</h2><i>+</i></summary>
             <div><p>{answer}</p></div>
           </details>
         ))}
