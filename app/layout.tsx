@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { FloatingActions } from "@/components/floating-actions";
 import { SiteHeader } from "@/components/site-header";
+import { StructuredData } from "@/components/structured-data";
+import { organizationSchema, websiteSchema } from "@/lib/seo";
 import "./globals.css";
 import "./elite-pages.css";
 import "./services-v2.css";
@@ -64,6 +66,7 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className="antialiased">
+        <StructuredData data={[organizationSchema, websiteSchema]} />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-VJ2PP2LG1N" strategy="afterInteractive" />
         <Script id="olivon-ga4" strategy="afterInteractive">
           {`
