@@ -27,12 +27,18 @@ const areas = [
   "Dijital güvenlik",
 ];
 
+const pageUrl = `${SITE_URL}/iletisim`;
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
+  "@id": `${pageUrl}#webpage`,
   name: "Olivon İletişim",
-  url: "https://olivon.com.tr/iletisim",
+  url: pageUrl,
   description: "Olivon web tasarım, e-ticaret, ikas, SEO, AI görünürlüğü ve dijital güvenlik projeleri için iletişim sayfası.",
+  inLanguage: "tr-TR",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
   mainEntity: { "@id": `${SITE_URL}/#organization` },
 };
 
