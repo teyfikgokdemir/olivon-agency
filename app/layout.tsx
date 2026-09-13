@@ -9,6 +9,7 @@ import "./home-programs.css";
 import "./desktop-qa.css";
 import "./brand-orb.css";
 import "./platform-strip-premium.css";
+import "./security-premium.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
