@@ -43,20 +43,17 @@ function SliderField({ label, value, min, max, step, unit, formatter, onChange }
 
 export function ProfitLab() {
   const [revenue, setRevenue] = useState(500000);
-  const [marketCommission, setMarketCommission] = useState(20);
-  const [marketServiceCost, setMarketServiceCost] = useState(2);
-  const [ownedStoreCost, setOwnedStoreCost] = useState(4);
+  const [marketplaceCost, setMarketplaceCost] = useState(20);
+  const ownedStoreCost = 4;
 
   const result = useMemo(() => {
-    const marketplaceRate = marketCommission + marketServiceCost;
-    const marketplaceFees = revenue * (marketplaceRate / 100);
+    const marketplaceFees = revenue * (marketplaceCost / 100);
     const ownedStoreFees = revenue * (ownedStoreCost / 100);
     const marketplaceRemainder = revenue - marketplaceFees;
     const ownedStoreRemainder = revenue - ownedStoreFees;
     const advantage = ownedStoreRemainder - marketplaceRemainder;
 
     return {
-      marketplaceRate,
       marketplaceFees,
       ownedStoreFees,
       marketplaceRemainder,
@@ -64,7 +61,7 @@ export function ProfitLab() {
       advantage,
       advantageRate: revenue > 0 ? (advantage / revenue) * 100 : 0,
     };
-  }, [revenue, marketCommission, marketServiceCost, ownedStoreCost]);
+  }, [revenue, marketplaceCost]);
 
   const number = (value: number) => new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 }).format(value);
   const money = (value: number) => `${number(value)} TL`;
@@ -75,9 +72,8 @@ export function ProfitLab() {
         name: "profit_calculator_complete",
         params: {
           revenue,
-          marketplace_commission: marketCommission,
-          marketplace_service_cost: marketServiceCost,
-          owned_store_cost: ownedStoreCost,
+          marketplace_total_cost: marketplaceCost,
+          owned_store_cost_assumption: ownedStoreCost,
         },
       },
     }));
@@ -87,57 +83,61 @@ export function ProfitLab() {
     <section className="profit-lab shell profit-lab-simple" id="karlilik">
       <div className="profit-intro">
         <p className="section-index">PAZARYERİ Mİ, KENDİ MAĞAZANIZ MI?</p>
-        <h2>Satış aynı.<br /><em>Kesinti farklı.</em></h2>
-        <p>Aynı ciroda yalnızca satış kanalına bağlı kesintileri karşılaştırın. Pazaryeri komisyon ve hizmet giderlerini; kendi mağazanızdaki ödeme ve altyapı maliyetiyle yan yana görün.</p>
+        <h2>Satış aynı.<br /><em>Kalan farklı.</em></h2>
+        <p>İki ayarla farkı görün: aylık cironuz ve pazaryerindeki toplam kanal kesintisi. Reklam, kargo ve ürün maliyeti gibi ortak giderleri karşılaştırmaya katmıyoruz.</p>
 
         <div className="owned-platforms" aria-label="Kendi mağazanız için desteklenen altyapılar">
           <span>Shopify</span>
           <span>ikas</span>
-          <span>WordPress / WooCommerce</span>
+          <span>WooCommerce</span>
         </div>
 
         <div className="assumption-note">
-          Reklam, kargo, ürün maliyeti, personel ve vergi gibi iki modelde de oluşabilecek ortak giderler karşılaştırmaya dahil edilmez. Amaç yalnızca kanal maliyetinin etkisini göstermektir.
+          Varsayılan pazaryeri toplam kesintisi %20'dir. Bu oran komisyon + hizmet/işlem bedelleri için sadeleştirilmiş örnek değerdir ve kategoriye göre değişebilir.
         </div>
       </div>
 
-      <div className="calculator calculator-modern calculator-simple">
+      <div className="calculator calculator-modern calculator-simple calculator-elite">
         <div className="calculator-toolbar">
-          <div><SlidersHorizontal size={18} /><span>Senaryonuzu kaydırarak ayarlayın</span></div>
-          <span>Canlı karşılaştırma</span>
+          <div><SlidersHorizontal size={18} /><span>Senaryonuzu ayarlayın</span></div>
+          <span>2 adım · canlı sonuç</span>
         </div>
 
-        <div className="calculator-inputs calculator-sliders calculator-sliders-simple">
-          <SliderField label="Aylık satış" value={revenue} min={100000} max={5000000} step={50000} unit=" TL" formatter={number} onChange={setRevenue} />
-          <SliderField label="Pazaryeri komisyonu" value={marketCommission} min={5} max={35} step={1} unit="%" onChange={setMarketCommission} />
-          <SliderField label="Pazaryeri hizmet / işlem gideri" value={marketServiceCost} min={0} max={10} step={0.5} unit="%" onChange={setMarketServiceCost} />
-          <SliderField label="Kendi mağazanız ödeme + altyapı maliyeti" value={ownedStoreCost} min={1} max={10} step={0.5} unit="%" onChange={setOwnedStoreCost} />
+        <div className="calculator-inputs calculator-sliders calculator-sliders-focus">
+          <SliderField label="Aylık ciro" value={revenue} min={100000} max={5000000} step={50000} unit=" TL" formatter={number} onChange={setRevenue} />
+          <SliderField label="Pazaryeri toplam kesintisi" value={marketplaceCost} min={10} max={30} step={1} unit="%" onChange={setMarketplaceCost} />
         </div>
 
-        <div className="channel-comparison" aria-live="polite">
+        <div className="channel-comparison channel-comparison-elite" aria-live="polite">
           <article className="channel-card marketplace-card">
-            <div className="channel-card-head"><span><Store size={18} /> Pazaryeri</span><small>Toplam kesinti %{result.marketplaceRate.toFixed(1).replace(".0", "")}</small></div>
+            <div className="channel-card-head"><span><Store size={18} /> Pazaryeri</span><small>Toplam kesinti %{marketplaceCost}</small></div>
             <strong>{money(result.marketplaceRemainder)}</strong>
-            <p>Satış kanalı kesintileri sonrası kalan tutar</p>
-            <div className="channel-cost"><span>Kanal maliyeti</span><b>-{money(result.marketplaceFees)}</b></div>
+            <p>Cirodan kanal kesintileri sonrası kalan</p>
+            <div className="channel-cost"><span>Tahmini kanal maliyeti</span><b>-{money(result.marketplaceFees)}</b></div>
           </article>
 
           <article className="channel-card owned-card">
-            <div className="channel-card-head"><span><TrendingUp size={18} /> Kendi e-ticaret siteniz</span><small>Shopify · ikas · WooCommerce</small></div>
+            <div className="channel-card-head"><span><TrendingUp size={18} /> Kendi mağazanız</span><small>Örnek kanal maliyeti %{ownedStoreCost}</small></div>
             <strong>{money(result.ownedStoreRemainder)}</strong>
-            <p>Ödeme + altyapı maliyeti sonrası kalan tutar</p>
-            <div className="channel-cost"><span>Kanal maliyeti</span><b>-{money(result.ownedStoreFees)}</b></div>
+            <p>Ödeme + temel altyapı maliyeti sonrası kalan</p>
+            <div className="owned-card-platforms"><span>Shopify</span><span>ikas</span><span>WooCommerce</span></div>
+            <div className="channel-cost"><span>Tahmini kanal maliyeti</span><b>-{money(result.ownedStoreFees)}</b></div>
           </article>
         </div>
 
-        <div className="profit-advantage" aria-live="polite">
-          <span>Bu senaryoda kendi mağazanızın tahmini aylık kanal avantajı</span>
-          <strong>{money(result.advantage)}</strong>
-          <small>Cironun yaklaşık %{Math.max(0, result.advantageRate).toFixed(1).replace(".0", "")} kadarı satış kanalı maliyet farkından korunuyor.</small>
+        <div className="profit-advantage profit-advantage-elite" aria-live="polite">
+          <span>Aynı ciroda tahmini aylık kanal avantajı</span>
+          <strong>+{money(Math.max(0, result.advantage))}</strong>
+          <small>Cironun yaklaşık %{Math.max(0, result.advantageRate).toFixed(0)}'i pazaryeri kanal maliyeti farkından işletmenizde kalabilir.</small>
         </div>
 
+        <details className="profit-assumptions">
+          <summary>Hesaplama varsayımları</summary>
+          <p>Pazaryeri oranı; komisyon, hizmet ve işlem benzeri kanal kesintilerini tek oranda toplar. Kendi mağaza tarafında ödeme ve temel altyapı için örnek %4 oran kullanılır. Gerçek oranlar sözleşme, ödeme sağlayıcısı, platform paketi ve kategoriye göre değişebilir.</p>
+        </details>
+
         <div className="calculator-foot">
-          <span>Bu karşılaştırma finansal danışmanlık veya platform fiyat teklifi değildir; oranları kendi sözleşmelerinize göre ayarlayabilirsiniz.</span>
+          <span>Karşılaştırma finansal danışmanlık veya platform fiyat teklifi değildir; karar öncesi hızlı bir kanal maliyeti senaryosudur.</span>
           <a href="/iletisim?source=profit-lab" onClick={trackComplete}>Markanıza özel analiz <ArrowUpRight size={15} /></a>
         </div>
       </div>
