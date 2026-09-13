@@ -34,16 +34,32 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const article = articles.find(item => item.slug === slug);
   if (!article) notFound();
   const related = articles.filter(item => item.slug !== article.slug).slice(0, 3);
+  const articleUrl = `${SITE_URL}/blog/${article.slug}`;
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
+    "@id": `${articleUrl}#article`,
+    url: articleUrl,
     headline: article.title,
     description: article.excerpt,
-    image: `${SITE_URL}${article.image}`,
-    mainEntityOfPage: `${SITE_URL}/blog/${article.slug}`,
+    articleSection: article.category,
+    image: {
+      "@type": "ImageObject",
+      "@id": `${articleUrl}#primaryimage`,
+      url: `${SITE_URL}${article.image}`,
+      contentUrl: `${SITE_URL}${article.image}`,
+      caption: article.title,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+      url: articleUrl,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+    },
     author: { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
     inLanguage: "tr-TR",
     datePublished: article.dateISO,
     dateModified: article.dateISO,
