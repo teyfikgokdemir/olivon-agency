@@ -7,6 +7,7 @@ import "./home-trust-fix.css";
 import "./mobile-qa.css";
 import "./home-programs.css";
 import "./desktop-qa.css";
+import "./brand-orb.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
