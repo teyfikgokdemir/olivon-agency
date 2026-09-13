@@ -18,8 +18,16 @@ export function SiteHeader() {
   useEffect(() => {
     if (!open) return;
 
+    const scrollY = window.scrollY;
     const previousOverflow = document.body.style.overflow;
+    const previousPosition = document.body.style.position;
+    const previousTop = document.body.style.top;
+    const previousWidth = document.body.style.width;
+
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") close();
@@ -34,8 +42,12 @@ export function SiteHeader() {
 
     return () => {
       document.body.style.overflow = previousOverflow;
+      document.body.style.position = previousPosition;
+      document.body.style.top = previousTop;
+      document.body.style.width = previousWidth;
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("resize", onResize);
+      window.scrollTo(0, scrollY);
     };
   }, [open]);
 
