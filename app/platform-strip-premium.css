@@ -1,0 +1,60 @@
+/* Premium platform marquee — dark coral, optically centered across desktop and mobile. */
+.platform-strip{
+  position:relative;
+  overflow:hidden;
+  border-top:1px solid rgba(255,154,126,.14)!important;
+  border-bottom:1px solid rgba(255,154,126,.16)!important;
+  background:linear-gradient(180deg,#2a1511 0%,#22110e 100%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025),inset 0 -1px 0 rgba(0,0,0,.24);
+}
+.platform-strip::before,.platform-strip::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:8vw;
+  min-width:44px;
+  z-index:2;
+  pointer-events:none;
+}
+.platform-strip::before{left:0;background:linear-gradient(90deg,#22110e,transparent)}
+.platform-strip::after{right:0;background:linear-gradient(270deg,#22110e,transparent)}
+.platform-track{align-items:stretch!important}
+.platform-track span{
+  min-width:210px!important;
+  height:66px!important;
+  padding:0 32px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  line-height:1!important;
+  color:#f4d5ca!important;
+  border-right:1px solid rgba(255,154,126,.12)!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  letter-spacing:.12em!important;
+  text-transform:none;
+  white-space:nowrap;
+}
+.platform-track span::selection{background:var(--coral);color:#160b09}
+
+@media(max-width:900px){
+  .platform-track span{
+    min-width:150px!important;
+    height:58px!important;
+    padding:0 22px!important;
+    font-size:11px!important;
+    letter-spacing:.105em!important;
+  }
+}
+
+@media(max-width:560px){
+  .platform-track span{
+    min-width:142px!important;
+    height:56px!important;
+    padding:0 18px!important;
+    font-size:10.5px!important;
+    letter-spacing:.09em!important;
+  }
+}
