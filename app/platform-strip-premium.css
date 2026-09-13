@@ -1,4 +1,4 @@
-/* Premium platform marquee — dark coral, optically centered across desktop and mobile. */
+/* Premium platform marquee — dark coral with real brand marks. */
 .platform-strip{
   position:relative;
   overflow:hidden;
@@ -21,40 +21,65 @@
 .platform-strip::after{right:0;background:linear-gradient(270deg,#22110e,transparent)}
 .platform-track{align-items:stretch!important}
 .platform-track span{
-  min-width:210px!important;
+  min-width:218px!important;
   height:66px!important;
-  padding:0 32px!important;
+  padding:0 30px!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
+  gap:12px!important;
   text-align:center!important;
   line-height:1!important;
   color:#f4d5ca!important;
   border-right:1px solid rgba(255,154,126,.12)!important;
-  font-size:12px!important;
+  font-size:11px!important;
   font-weight:700!important;
-  letter-spacing:.12em!important;
-  text-transform:none;
+  letter-spacing:.075em!important;
   white-space:nowrap;
 }
+.platform-track span::before{
+  content:"";
+  width:25px;
+  height:25px;
+  flex:0 0 25px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  filter:brightness(0) invert(92%) sepia(11%) saturate(469%) hue-rotate(322deg) brightness(104%) contrast(91%);
+  opacity:.96;
+}
+.platform-track span:nth-child(6n+1)::before{background-image:url('/partners/shopify.svg');width:29px;height:29px;flex-basis:29px}
+.platform-track span:nth-child(6n+2)::before{background-image:url('/partners/ikas.svg');width:32px;height:25px;flex-basis:32px}
+.platform-track span:nth-child(6n+3)::before{background-image:url('https://cdn.simpleicons.org/woocommerce/f4d5ca')}
+.platform-track span:nth-child(6n+4)::before{background-image:url('https://cdn.simpleicons.org/cloudflare/f4d5ca')}
+.platform-track span:nth-child(6n+5)::before{background-image:url('https://cdn.simpleicons.org/google/f4d5ca')}
+.platform-track span:nth-child(6n+6)::before{background-image:url('https://cdn.simpleicons.org/meta/f4d5ca')}
 .platform-track span::selection{background:var(--coral);color:#160b09}
 
 @media(max-width:900px){
   .platform-track span{
-    min-width:150px!important;
+    min-width:168px!important;
     height:58px!important;
-    padding:0 22px!important;
-    font-size:11px!important;
-    letter-spacing:.105em!important;
+    padding:0 20px!important;
+    gap:9px!important;
+    font-size:10px!important;
+    letter-spacing:.055em!important;
   }
+  .platform-track span::before{width:22px;height:22px;flex-basis:22px}
+  .platform-track span:nth-child(6n+1)::before{width:25px;height:25px;flex-basis:25px}
+  .platform-track span:nth-child(6n+2)::before{width:28px;height:22px;flex-basis:28px}
 }
 
 @media(max-width:560px){
   .platform-track span{
-    min-width:142px!important;
-    height:56px!important;
-    padding:0 18px!important;
-    font-size:10.5px!important;
-    letter-spacing:.09em!important;
+    min-width:152px!important;
+    height:54px!important;
+    padding:0 16px!important;
+    gap:8px!important;
+    font-size:9.5px!important;
+    letter-spacing:.04em!important;
   }
+  .platform-track span::before{width:20px;height:20px;flex-basis:20px}
+  .platform-track span:nth-child(6n+1)::before{width:23px;height:23px;flex-basis:23px}
+  .platform-track span:nth-child(6n+2)::before{width:25px;height:20px;flex-basis:25px}
 }
