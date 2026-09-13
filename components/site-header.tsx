@@ -60,7 +60,7 @@ export function SiteHeader() {
         <div className="nav-links">
           <div className="nav-dropdown">
             <a className="nav-dropdown-trigger" href="/hizmetler">Hizmetler <ChevronDown size={14} /></a>
-            <div className="nav-panel services-panel">
+            <div className="nav-panel services-panel" style={{ top: "100%" }}>
               {serviceGroups.map(service => (
                 <a href={service.href} key={service.slug}>
                   <strong>{service.title}</strong><span>{service.intro}</span>
@@ -71,7 +71,7 @@ export function SiteHeader() {
 
           <div className="nav-dropdown">
             <a className="nav-dropdown-trigger" href="/ikas">ikas <ChevronDown size={14} /></a>
-            <div className="nav-panel ikas-panel">
+            <div className="nav-panel ikas-panel" style={{ top: "100%" }}>
               {ikasMenuItems.map(item => <a href={`/ikas#${item.slug}`} key={item.slug}>{item.label}</a>)}
             </div>
           </div>
