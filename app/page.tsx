@@ -1,4 +1,4 @@
-import { ArrowUpRight, BarChart3, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Sparkles } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { StructuredData } from "@/components/structured-data";
 import { referenceProjects } from "@/lib/references";
@@ -64,6 +64,13 @@ const valuePrograms = [
     tags:["Cloudflare","WAF","DDoS","Bot Control","Monitoring"],
     href:"/hizmetler/dijital-guvenlik",
   },
+];
+
+const visibilityPillars = [
+  ["SEO", "Teknik altyapı, içerik mimarisi ve arama niyetiyle Google görünürlüğünü güçlendirir."],
+  ["GEO", "Marka, hizmet ve uzmanlık sinyallerini üretken yapay zekâ motorlarının anlayabileceği yapıya dönüştürür."],
+  ["AEO", "Kullanıcı sorularına doğrudan cevap verebilen içerik, schema ve bilgi mimarisi kurar."],
+  ["AIO", "AI destekli arama, içerik keşfi ve marka referanslarında daha güçlü entity sinyalleri oluşturur."],
 ];
 
 export default function Home() {
@@ -157,14 +164,33 @@ export default function Home() {
         <div className="section-inline-cta"><a href="/ikas">ikas hizmet kapsamını inceleyin <ArrowUpRight size={16}/></a></div>
       </section>
 
-      <section className="systems shell">
-        <div className="system-card system-commerce">
-          <p className="section-index">TİCARET SİSTEMLERİ</p><h3>Satın almayı kolaylaştıran altyapı.</h3>
-          <div className="commerce-ui"><span className="mini-label">Dönüşüm akışı</span><div className="metric"><strong>Ürün</strong><i /></div><div className="metric"><strong>Sepet</strong><i /></div><div className="metric"><strong>Ödeme</strong><i /></div></div>
+      <section className="visibility-system shell" aria-labelledby="visibility-system-title">
+        <div className="visibility-system-head">
+          <div>
+            <p className="section-index">ARAMA & AI GÖRÜNÜRLÜĞÜ</p>
+            <h2 id="visibility-system-title">Aramada bulun. <em>Yapay zekâda anıl.</em> Ölçülebilir şekilde büyü.</h2>
+          </div>
+          <p>SEO, GEO, AEO ve AIO çalışmalarını ayrı taktikler olarak değil; teknik altyapı, içerik, entity sinyalleri, structured data ve ölçümü birbirine bağlayan tek görünürlük sistemi olarak ele alıyoruz.</p>
         </div>
-        <div className="system-card system-data">
-          <p className="section-index">ÖLÇÜM & PERFORMANS</p><h3>Kararları görünür kılan veri.</h3>
-          <div className="chart" aria-hidden="true"><BarChart3 /><span className="bar b1" /><span className="bar b2" /><span className="bar b3" /><span className="bar b4" /><span className="bar b5" /></div>
+        <div className="visibility-pillar-grid">
+          {visibilityPillars.map(([title, text], index) => (
+            <article className="visibility-pillar" key={title}>
+              <span className="visibility-pillar-index">0{index + 1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="visibility-flow" aria-label="Görünürlük sistemi akışı">
+          <span>Teknik altyapı</span><i />
+          <span>İçerik</span><i />
+          <span>Entity</span><i />
+          <span>Structured Data</span><i />
+          <span>Ölçüm</span>
+        </div>
+        <div className="visibility-system-foot">
+          <div className="visibility-outcomes" aria-label="Hedeflenen görünürlük yüzeyleri"><span>Google</span><span>AI Search</span><span>Featured Answers</span><span>Brand Discovery</span></div>
+          <a href="/hizmetler/seo-geo-aeo-aio">Arama ve AI görünürlüğünüzü inceleyelim <ArrowUpRight size={17}/></a>
         </div>
       </section>
 
