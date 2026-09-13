@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowUpRight, SlidersHorizontal } from "lucide-react";
+import { ArrowUpRight, SlidersHorizontal, Store, TrendingUp } from "lucide-react";
 
 type SliderFieldProps = {
   label: string;
@@ -43,27 +43,28 @@ function SliderField({ label, value, min, max, step, unit, formatter, onChange }
 
 export function ProfitLab() {
   const [revenue, setRevenue] = useState(500000);
-  const [averageOrder, setAverageOrder] = useState(1250);
-  const [grossMargin, setGrossMargin] = useState(48);
-  const [adRate, setAdRate] = useState(10);
-  const [shipping, setShipping] = useState(95);
   const [marketCommission, setMarketCommission] = useState(20);
+  const [marketServiceCost, setMarketServiceCost] = useState(2);
+  const [ownedStoreCost, setOwnedStoreCost] = useState(4);
 
-  const scenarios = useMemo(() => {
-    const orders = Math.max(1, revenue / Math.max(1, averageOrder));
-    const commonCost = revenue * (1 - grossMargin / 100) + revenue * (adRate / 100) + orders * shipping;
-    return [
-      { name: "Pazaryeri", fee: revenue * (marketCommission / 100), fixed: 0 },
-      { name: "Shopify", fee: revenue * .035, fixed: 2500 },
-      { name: "WooCommerce", fee: revenue * .032, fixed: 3500 },
-      { name: "ikas", fee: revenue * .0359, fixed: 3329 },
-    ].map((item) => ({ ...item, profit: revenue - commonCost - item.fee - item.fixed }));
-  }, [revenue, averageOrder, grossMargin, adRate, shipping, marketCommission]);
+  const result = useMemo(() => {
+    const marketplaceRate = marketCommission + marketServiceCost;
+    const marketplaceFees = revenue * (marketplaceRate / 100);
+    const ownedStoreFees = revenue * (ownedStoreCost / 100);
+    const marketplaceRemainder = revenue - marketplaceFees;
+    const ownedStoreRemainder = revenue - ownedStoreFees;
+    const advantage = ownedStoreRemainder - marketplaceRemainder;
 
-  const maxProfit = Math.max(...scenarios.map((item) => item.profit), 1);
-  const bestScenario = scenarios.reduce((best, current) => current.profit > best.profit ? current : best, scenarios[0]);
-  const marketplace = scenarios[0];
-  const advantage = Math.max(0, bestScenario.profit - marketplace.profit);
+    return {
+      marketplaceRate,
+      marketplaceFees,
+      ownedStoreFees,
+      marketplaceRemainder,
+      ownedStoreRemainder,
+      advantage,
+      advantageRate: revenue > 0 ? (advantage / revenue) * 100 : 0,
+    };
+  }, [revenue, marketCommission, marketServiceCost, ownedStoreCost]);
 
   const number = (value: number) => new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 }).format(value);
   const money = (value: number) => `${number(value)} TL`;
@@ -74,61 +75,69 @@ export function ProfitLab() {
         name: "profit_calculator_complete",
         params: {
           revenue,
-          average_order_value: averageOrder,
-          gross_margin: grossMargin,
           marketplace_commission: marketCommission,
+          marketplace_service_cost: marketServiceCost,
+          owned_store_cost: ownedStoreCost,
         },
       },
     }));
   };
 
   return (
-    <section className="profit-lab shell" id="karlilik">
+    <section className="profit-lab shell profit-lab-simple" id="karlilik">
       <div className="profit-intro">
-        <p className="section-index">CANLI SENARYO / KÂRLILIK LABORATUVARI</p>
-        <h2>Satış aynı.<br /><em>Kalan para farklı.</em></h2>
-        <p>Altı kısa ayarla senaryonuzu oluşturun. Rakam yazmak yerine kaydırın; sonuçlar anında güncellensin.</p>
-        <div className="partner-proof">
-          <a href="https://www.shopify.com" target="_blank" rel="noreferrer"><img src="/partners/shopify.svg" alt="Shopify" loading="lazy" /><strong>SHOPIFY EKOSİSTEMİ</strong></a>
-          <a href="https://ikas.com" target="_blank" rel="noreferrer"><img src="/partners/ikas.svg" alt="ikas" loading="lazy" /><strong>İKAS PARTNER DESTEĞİ</strong></a>
+        <p className="section-index">PAZARYERİ Mİ, KENDİ MAĞAZANIZ MI?</p>
+        <h2>Satış aynı.<br /><em>Kesinti farklı.</em></h2>
+        <p>Aynı ciroda yalnızca satış kanalına bağlı kesintileri karşılaştırın. Pazaryeri komisyon ve hizmet giderlerini; kendi mağazanızdaki ödeme ve altyapı maliyetiyle yan yana görün.</p>
+
+        <div className="owned-platforms" aria-label="Kendi mağazanız için desteklenen altyapılar">
+          <span>Shopify</span>
+          <span>ikas</span>
+          <span>WordPress / WooCommerce</span>
         </div>
-        <div className="assumption-note">Ön değerlendirme: vergi, iade, personel, uygulama/tema, bakım ve kategoriye özel giderler dahil değildir. Platform ücretleri ve oranlar projede güncel verilerle doğrulanır.</div>
+
+        <div className="assumption-note">
+          Reklam, kargo, ürün maliyeti, personel ve vergi gibi iki modelde de oluşabilecek ortak giderler karşılaştırmaya dahil edilmez. Amaç yalnızca kanal maliyetinin etkisini göstermektir.
+        </div>
       </div>
 
-      <div className="calculator calculator-modern">
+      <div className="calculator calculator-modern calculator-simple">
         <div className="calculator-toolbar">
-          <div><SlidersHorizontal size={18} /><span>Senaryonuzu ayarlayın</span></div>
-          <span>Sonuçlar canlı güncellenir</span>
+          <div><SlidersHorizontal size={18} /><span>Senaryonuzu kaydırarak ayarlayın</span></div>
+          <span>Canlı karşılaştırma</span>
         </div>
 
-        <div className="calculator-inputs calculator-sliders">
-          <SliderField label="Aylık satış" value={revenue} min={100000} max={3000000} step={50000} unit=" TL" formatter={number} onChange={setRevenue} />
-          <SliderField label="Ortalama sepet" value={averageOrder} min={300} max={5000} step={50} unit=" TL" formatter={number} onChange={setAverageOrder} />
-          <SliderField label="Brüt ürün marjı" value={grossMargin} min={20} max={80} step={1} unit="%" onChange={setGrossMargin} />
-          <SliderField label="Reklam gideri" value={adRate} min={0} max={35} step={1} unit="%" onChange={setAdRate} />
-          <SliderField label="Sipariş başı kargo" value={shipping} min={0} max={250} step={5} unit=" TL" formatter={number} onChange={setShipping} />
+        <div className="calculator-inputs calculator-sliders calculator-sliders-simple">
+          <SliderField label="Aylık satış" value={revenue} min={100000} max={5000000} step={50000} unit=" TL" formatter={number} onChange={setRevenue} />
           <SliderField label="Pazaryeri komisyonu" value={marketCommission} min={5} max={35} step={1} unit="%" onChange={setMarketCommission} />
+          <SliderField label="Pazaryeri hizmet / işlem gideri" value={marketServiceCost} min={0} max={10} step={0.5} unit="%" onChange={setMarketServiceCost} />
+          <SliderField label="Kendi mağazanız ödeme + altyapı maliyeti" value={ownedStoreCost} min={1} max={10} step={0.5} unit="%" onChange={setOwnedStoreCost} />
         </div>
 
-        <div className="profit-highlight" aria-live="polite">
-          <span>Bu senaryoda en yüksek tahmini katkı</span>
-          <strong>{bestScenario.name}</strong>
-          <em>{money(bestScenario.profit)}</em>
-          <small>{advantage > 0 ? `Pazaryerine göre yaklaşık ${money(advantage)} daha fazla aylık katkı.` : "Pazaryeri ile fark sınırlı görünüyor."}</small>
+        <div className="channel-comparison" aria-live="polite">
+          <article className="channel-card marketplace-card">
+            <div className="channel-card-head"><span><Store size={18} /> Pazaryeri</span><small>Toplam kesinti %{result.marketplaceRate.toFixed(1).replace(".0", "")}</small></div>
+            <strong>{money(result.marketplaceRemainder)}</strong>
+            <p>Satış kanalı kesintileri sonrası kalan tutar</p>
+            <div className="channel-cost"><span>Kanal maliyeti</span><b>-{money(result.marketplaceFees)}</b></div>
+          </article>
+
+          <article className="channel-card owned-card">
+            <div className="channel-card-head"><span><TrendingUp size={18} /> Kendi e-ticaret siteniz</span><small>Shopify · ikas · WooCommerce</small></div>
+            <strong>{money(result.ownedStoreRemainder)}</strong>
+            <p>Ödeme + altyapı maliyeti sonrası kalan tutar</p>
+            <div className="channel-cost"><span>Kanal maliyeti</span><b>-{money(result.ownedStoreFees)}</b></div>
+          </article>
         </div>
 
-        <div className="scenario-results" aria-live="polite">
-          {scenarios.map((item, index) => (
-            <div className={index === 0 ? "scenario marketplace" : item.name === bestScenario.name ? "scenario is-best" : "scenario"} key={item.name}>
-              <div className="scenario-head"><span>{item.name}</span><strong>{money(item.profit)}</strong></div>
-              <div className="profit-bar"><i style={{ width: `${Math.max(4, item.profit / maxProfit * 100)}%` }} /></div>
-              <small>{item.name === bestScenario.name ? "En güçlü senaryo" : "Tahmini aylık net katkı"}</small>
-            </div>
-          ))}
+        <div className="profit-advantage" aria-live="polite">
+          <span>Bu senaryoda kendi mağazanızın tahmini aylık kanal avantajı</span>
+          <strong>{money(result.advantage)}</strong>
+          <small>Cironun yaklaşık %{Math.max(0, result.advantageRate).toFixed(1).replace(".0", "")} kadarı satış kanalı maliyet farkından korunuyor.</small>
         </div>
 
         <div className="calculator-foot">
-          <span>Bu araç teklif veya finansal danışmanlık değildir; karşılaştırmalı ön senaryo üretir.</span>
+          <span>Bu karşılaştırma finansal danışmanlık veya platform fiyat teklifi değildir; oranları kendi sözleşmelerinize göre ayarlayabilirsiniz.</span>
           <a href="/iletisim?source=profit-lab" onClick={trackComplete}>Markanıza özel analiz <ArrowUpRight size={15} /></a>
         </div>
       </div>
