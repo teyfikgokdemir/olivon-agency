@@ -11,6 +11,7 @@ import "./brand-orb.css";
 import "./platform-strip-premium.css";
 import "./security-premium.css";
 import "./footer-signature-premium.css";
+import "./visibility-system.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
