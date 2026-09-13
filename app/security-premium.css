@@ -1,0 +1,113 @@
+/* Homepage security section — editorial image panel + real Cloudflare brand cue. */
+main:not(.inner-page) .security{
+  min-height:600px;
+  padding:76px 54% 70px 72px!important;
+  isolation:isolate;
+  background:linear-gradient(145deg,#16100e 0%,#0d0a09 62%,#0b0908 100%)!important;
+}
+main:not(.inner-page) .security::before{
+  content:"";
+  position:absolute;
+  top:28px;
+  right:28px;
+  bottom:28px;
+  width:44%;
+  border-radius:26px;
+  background:
+    linear-gradient(180deg,rgba(11,9,8,.06) 0%,rgba(11,9,8,.12) 54%,rgba(11,9,8,.56) 100%),
+    url('/images/services/dijital-guvenlik.webp') center/cover no-repeat;
+  border:1px solid rgba(255,255,255,.07);
+  box-shadow:0 22px 64px rgba(0,0,0,.34),inset 0 0 0 1px rgba(255,154,126,.03);
+  z-index:0;
+}
+main:not(.inner-page) .security::after{
+  content:"";
+  position:absolute;
+  right:12%;
+  top:17%;
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  border:1px solid rgba(255,137,108,.16);
+  box-shadow:0 0 0 38px rgba(255,107,81,.025),0 0 80px rgba(255,107,81,.08);
+  z-index:1;
+  pointer-events:none;
+}
+main:not(.inner-page) .security > *{position:relative;z-index:2}
+main:not(.inner-page) .security h2{max-width:650px!important;font-size:clamp(52px,4.6vw,76px)!important}
+main:not(.inner-page) .security>p{max-width:640px!important}
+main:not(.inner-page) .security-icon{
+  right:52px!important;
+  top:48px!important;
+  background:rgba(13,10,9,.72)!important;
+  border:1px solid rgba(255,154,126,.22);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 18px 48px rgba(0,0,0,.38)!important;
+}
+main:not(.inner-page) .security-icon svg{color:#ff7c61}
+main:not(.inner-page) .security-tags{
+  max-width:670px;
+  gap:9px!important;
+  margin-top:34px!important;
+  align-items:center;
+}
+main:not(.inner-page) .security-tags::before{
+  content:"Cloudflare";
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  padding:0 14px 0 42px;
+  border:1px solid rgba(243,128,32,.28);
+  border-radius:999px;
+  background-color:rgba(243,128,32,.07);
+  background-image:url('https://cdn.simpleicons.org/cloudflare/F38020');
+  background-repeat:no-repeat;
+  background-position:14px center;
+  background-size:18px 18px;
+  color:#f7e8df;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.09em;
+}
+main:not(.inner-page) .security-tags span{
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  padding:0 14px!important;
+  background:rgba(8,8,8,.34);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+@media(max-width:900px){
+  main:not(.inner-page) .security{
+    min-height:0;
+    padding:48px 28px 34px!important;
+  }
+  main:not(.inner-page) .security::before{
+    position:relative;
+    display:block;
+    top:auto;right:auto;bottom:auto;
+    width:100%;
+    height:320px;
+    margin-top:32px;
+    border-radius:20px;
+  }
+  main:not(.inner-page) .security::after{right:10%;top:auto;bottom:150px;width:110px;height:110px}
+  main:not(.inner-page) .security-icon{position:absolute!important;right:46px!important;top:46px!important;margin:0!important}
+  main:not(.inner-page) .security h2{max-width:760px!important;font-size:clamp(40px,7vw,58px)!important}
+}
+
+@media(max-width:560px){
+  main:not(.inner-page) .security{padding:34px 20px 22px!important}
+  main:not(.inner-page) .security h2{font-size:38px!important;line-height:1.02!important;max-width:92%!important}
+  main:not(.inner-page) .security>p{font-size:15px!important;line-height:1.55!important}
+  main:not(.inner-page) .security::before{height:230px;margin-top:24px;border-radius:17px;background-position:center}
+  main:not(.inner-page) .security::after{width:82px;height:82px;right:8%;bottom:102px;box-shadow:0 0 0 24px rgba(255,107,81,.02)}
+  main:not(.inner-page) .security-icon{width:48px!important;height:48px!important;right:30px!important;top:28px!important;border-radius:15px!important}
+  main:not(.inner-page) .security-icon svg{width:24px!important;height:24px!important}
+  main:not(.inner-page) .security-tags{margin-top:24px!important;gap:7px!important}
+  main:not(.inner-page) .security-tags::before,
+  main:not(.inner-page) .security-tags span{min-height:34px;font-size:9px!important;letter-spacing:.075em!important}
+}
