@@ -57,11 +57,18 @@
 .value-program-arrow{position:relative;z-index:1;display:flex;justify-content:flex-end;padding-top:3px;color:var(--coral-soft);transition:transform .24s ease}
 .value-program:hover .value-program-arrow{transform:translate(3px,-3px)}
 
+/* Homepage service rows: no decorative labels/numbers. */
+.services .service-row{grid-template-columns:minmax(0,1fr) 52px!important;gap:22px!important;min-height:112px!important}
+.services .service-row>span:first-child{min-width:0}
+.services .service-row h3{margin-bottom:8px!important}
+.services .service-row p{max-width:900px}
+
 @media(max-width:900px){
   .value-programs{grid-template-columns:1fr;gap:28px;padding-block:52px}
   .value-programs-intro{position:static;max-width:760px}
   .value-programs-intro h2{font-size:clamp(42px,7.6vw,60px)}
   .value-program{min-height:auto}
+  .services .service-row{grid-template-columns:minmax(0,1fr) 44px!important;gap:14px!important;min-height:auto!important;padding-block:22px!important}
 }
 
 @media(max-width:560px){
@@ -92,6 +99,7 @@
   .value-program-tags{gap:4px;margin-top:8px}
   .value-program-tags span{padding:4px 6px;font-size:7.5px}
   .value-program-arrow svg{width:15px;height:15px}
+  .services .service-row{grid-template-columns:minmax(0,1fr) 40px!important;gap:10px!important;padding-block:18px!important}
 }
 
 @media(max-width:370px){
