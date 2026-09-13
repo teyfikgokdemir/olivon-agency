@@ -41,7 +41,6 @@ const process = [
 
 const valuePrograms = [
   {
-    index:"01",
     kicker:"TİCARET ALTYAPISI",
     title:"Kur",
     description:"Markanın kendi dijital merkezini; satış, ödeme, ürün, içerik ve entegrasyon akışları birlikte çalışacak şekilde kuruyoruz.",
@@ -49,7 +48,6 @@ const valuePrograms = [
     href:"/hizmetler/e-ticaret",
   },
   {
-    index:"02",
     kicker:"BÜYÜME SİSTEMİ",
     title:"Büyüt",
     description:"Arama görünürlüğü, içerik, ölçüm, reklam ve dönüşüm optimizasyonunu birbirinden kopuk işler yerine aynı büyüme sistemi içinde yönetiyoruz.",
@@ -57,7 +55,6 @@ const valuePrograms = [
     href:"/hizmetler/seo-geo-aeo-aio",
   },
   {
-    index:"03",
     kicker:"SÜREKLİLİK & GÜVEN",
     title:"Koru",
     description:"Performans, erişim, Cloudflare güvenlik katmanları ve kritik operasyon kontrolleriyle dijital merkezin satışa devam etmesini koruyoruz.",
@@ -127,20 +124,19 @@ export default function Home() {
           <p>Ne yaptığımızı yalnızca başlıklarla değil; hizmet sayfalarında hedef müşteri, teslim kapsamı, süreç ve uygunluk çerçevesiyle açıklıyoruz.</p>
         </div>
         <div className="service-list">
-          {services.map(service => <a href={service.href} className="service-row" key={service.title}><span className="service-number">OLIVON</span><span><h3>{service.title}</h3><p>{service.detail}</p></span><span className="service-arrow"><ArrowUpRight /></span></a>)}
+          {services.map(service => <a href={service.href} className="service-row" key={service.title}><span><h3>{service.title}</h3><p>{service.detail}</p></span><span className="service-arrow"><ArrowUpRight /></span></a>)}
         </div>
       </section>
 
       <section className="value-programs shell" aria-label="Olivon çalışma modeli">
         <div className="value-programs-intro">
-          <p className="section-index">OLIVON MODELİ</p>
+          <p className="section-index">ÇALIŞMA MODELİ</p>
           <h2>Kur.<em>Büyüt. Koru.</em></h2>
           <p>Premium ajansların program ve engagement odaklı anlatımından ilhamla, hizmet listesini değil markanın dijital sisteminde yarattığımız üç temel değeri öne çıkarıyoruz.</p>
         </div>
         <div className="value-programs-list">
           {valuePrograms.map(program => (
             <a className="value-program" href={program.href} key={program.title}>
-              <span className="value-program-index">{program.index}</span>
               <div className="value-program-copy">
                 <span className="value-program-kicker">{program.kicker}</span>
                 <h3>{program.title}</h3>
@@ -173,9 +169,8 @@ export default function Home() {
           <p>SEO, GEO, AEO ve AIO çalışmalarını ayrı taktikler olarak değil; teknik altyapı, içerik, entity sinyalleri, structured data ve ölçümü birbirine bağlayan tek görünürlük sistemi olarak ele alıyoruz.</p>
         </div>
         <div className="visibility-pillar-grid">
-          {visibilityPillars.map(([title, text], index) => (
+          {visibilityPillars.map(([title, text]) => (
             <article className="visibility-pillar" key={title}>
-              <span className="visibility-pillar-index">0{index + 1}</span>
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
