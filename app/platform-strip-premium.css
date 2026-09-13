@@ -1,85 +1,51 @@
-/* Premium platform marquee — dark coral with real brand marks. */
+/* Premium platform marquee — near-black glass strip with native brand colors. */
 .platform-strip{
   position:relative;
   overflow:hidden;
-  border-top:1px solid rgba(255,154,126,.14)!important;
-  border-bottom:1px solid rgba(255,154,126,.16)!important;
-  background:linear-gradient(180deg,#2a1511 0%,#22110e 100%)!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.025),inset 0 -1px 0 rgba(0,0,0,.24);
+  border-top:1px solid rgba(255,255,255,.055)!important;
+  border-bottom:1px solid rgba(255,255,255,.07)!important;
+  background:rgba(7,7,7,.88)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.018);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
 }
 .platform-strip::before,.platform-strip::after{
-  content:"";
-  position:absolute;
-  top:0;
-  bottom:0;
-  width:8vw;
-  min-width:44px;
-  z-index:2;
-  pointer-events:none;
+  content:"";position:absolute;top:0;bottom:0;width:8vw;min-width:40px;z-index:2;pointer-events:none;
 }
-.platform-strip::before{left:0;background:linear-gradient(90deg,#22110e,transparent)}
-.platform-strip::after{right:0;background:linear-gradient(270deg,#22110e,transparent)}
+.platform-strip::before{left:0;background:linear-gradient(90deg,#080706 12%,rgba(8,7,6,0))}
+.platform-strip::after{right:0;background:linear-gradient(270deg,#080706 12%,rgba(8,7,6,0))}
 .platform-track{align-items:stretch!important}
 .platform-track span{
-  min-width:218px!important;
-  height:66px!important;
-  padding:0 30px!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:12px!important;
-  text-align:center!important;
-  line-height:1!important;
-  color:#f4d5ca!important;
-  border-right:1px solid rgba(255,154,126,.12)!important;
-  font-size:11px!important;
-  font-weight:700!important;
-  letter-spacing:.075em!important;
-  white-space:nowrap;
+  min-width:220px!important;height:68px!important;padding:0 30px!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;gap:13px!important;
+  text-align:center!important;line-height:1!important;color:#eee7e2!important;
+  border-right:1px solid rgba(255,255,255,.055)!important;
+  font-size:11px!important;font-weight:650!important;letter-spacing:.045em!important;white-space:nowrap;
 }
 .platform-track span::before{
-  content:"";
-  width:25px;
-  height:25px;
-  flex:0 0 25px;
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:contain;
-  filter:brightness(0) invert(92%) sepia(11%) saturate(469%) hue-rotate(322deg) brightness(104%) contrast(91%);
-  opacity:.96;
+  content:"";width:27px;height:27px;flex:0 0 27px;background-repeat:no-repeat;background-position:center;background-size:contain;opacity:1;
 }
-.platform-track span:nth-child(6n+1)::before{background-image:url('/partners/shopify.svg');width:29px;height:29px;flex-basis:29px}
-.platform-track span:nth-child(6n+2)::before{background-image:url('/partners/ikas.svg');width:32px;height:25px;flex-basis:32px}
-.platform-track span:nth-child(6n+3)::before{background-image:url('https://cdn.simpleicons.org/woocommerce/f4d5ca')}
-.platform-track span:nth-child(6n+4)::before{background-image:url('https://cdn.simpleicons.org/cloudflare/f4d5ca')}
-.platform-track span:nth-child(6n+5)::before{background-image:url('https://cdn.simpleicons.org/google/f4d5ca')}
-.platform-track span:nth-child(6n+6)::before{background-image:url('https://cdn.simpleicons.org/meta/f4d5ca')}
+/* Local partner wordmarks keep their actual brand artwork. */
+.platform-track span:nth-child(6n+1)::before{background-image:url('/partners/shopify.svg');width:78px;height:30px;flex-basis:78px}
+.platform-track span:nth-child(6n+2)::before{background-image:url('/partners/ikas.svg');width:68px;height:28px;flex-basis:68px}
+/* Other ecosystem marks use their native brand colors. */
+.platform-track span:nth-child(6n+3)::before{background-image:url('https://cdn.simpleicons.org/woocommerce/96588A')}
+.platform-track span:nth-child(6n+4)::before{background-image:url('https://cdn.simpleicons.org/cloudflare/F38020')}
+.platform-track span:nth-child(6n+5)::before{background-image:url('https://www.gstatic.com/images/branding/product/2x/googleg_48dp.png')}
+.platform-track span:nth-child(6n+6)::before{background-image:url('https://cdn.simpleicons.org/meta/0866FF')}
+/* Shopify and ikas SVGs already contain the full wordmark, so don't repeat their names. */
+.platform-track span:nth-child(6n+1),.platform-track span:nth-child(6n+2){font-size:0!important}
 .platform-track span::selection{background:var(--coral);color:#160b09}
 
 @media(max-width:900px){
-  .platform-track span{
-    min-width:168px!important;
-    height:58px!important;
-    padding:0 20px!important;
-    gap:9px!important;
-    font-size:10px!important;
-    letter-spacing:.055em!important;
-  }
-  .platform-track span::before{width:22px;height:22px;flex-basis:22px}
-  .platform-track span:nth-child(6n+1)::before{width:25px;height:25px;flex-basis:25px}
-  .platform-track span:nth-child(6n+2)::before{width:28px;height:22px;flex-basis:28px}
+  .platform-track span{min-width:172px!important;height:60px!important;padding:0 20px!important;gap:10px!important;font-size:10px!important}
+  .platform-track span::before{width:23px;height:23px;flex-basis:23px}
+  .platform-track span:nth-child(6n+1)::before{width:68px;height:27px;flex-basis:68px}
+  .platform-track span:nth-child(6n+2)::before{width:60px;height:25px;flex-basis:60px}
 }
-
 @media(max-width:560px){
-  .platform-track span{
-    min-width:152px!important;
-    height:54px!important;
-    padding:0 16px!important;
-    gap:8px!important;
-    font-size:9.5px!important;
-    letter-spacing:.04em!important;
-  }
-  .platform-track span::before{width:20px;height:20px;flex-basis:20px}
-  .platform-track span:nth-child(6n+1)::before{width:23px;height:23px;flex-basis:23px}
-  .platform-track span:nth-child(6n+2)::before{width:25px;height:20px;flex-basis:25px}
+  .platform-track span{min-width:150px!important;height:56px!important;padding:0 15px!important;gap:8px!important;font-size:9.5px!important}
+  .platform-track span::before{width:21px;height:21px;flex-basis:21px}
+  .platform-track span:nth-child(6n+1)::before{width:61px;height:24px;flex-basis:61px}
+  .platform-track span:nth-child(6n+2)::before{width:54px;height:23px;flex-basis:54px}
 }
