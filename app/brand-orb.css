@@ -1,130 +1,54 @@
-/* Olivon orb identity: favicon-derived mark for header + subtle hero motion */
-.site-header .brand{
-  gap:12px!important;
-}
+/* Olivon orb identity: favicon-derived mark for header + hero sunrise */
+.site-header .brand{gap:12px!important}
 .site-header .brand-mark{
-  position:relative!important;
-  width:38px!important;
-  height:38px!important;
-  flex:0 0 38px!important;
-  overflow:hidden!important;
-  border:0!important;
-  color:transparent!important;
-  font-size:0!important;
-  background:
-    radial-gradient(circle at 30% 24%,rgba(255,214,185,.98) 0 3%,rgba(255,145,116,.94) 10%,transparent 31%),
-    radial-gradient(circle at 34% 28%,#ff846d 0%,#dc5948 41%,#7e2d27 72%,#211314 100%)!important;
-  box-shadow:
-    inset -8px -10px 18px rgba(18,8,10,.38),
-    inset 7px 8px 17px rgba(255,172,142,.22),
-    0 0 22px rgba(255,107,81,.2)!important;
+  position:relative!important;width:38px!important;height:38px!important;flex:0 0 38px!important;
+  overflow:hidden!important;border:0!important;color:transparent!important;font-size:0!important;
+  background:radial-gradient(circle at 30% 24%,rgba(255,214,185,.98) 0 3%,rgba(255,145,116,.94) 10%,transparent 31%),radial-gradient(circle at 34% 28%,#ff846d 0%,#dc5948 41%,#7e2d27 72%,#211314 100%)!important;
+  box-shadow:inset -8px -10px 18px rgba(18,8,10,.38),inset 7px 8px 17px rgba(255,172,142,.22),0 0 22px rgba(255,107,81,.2)!important;
   animation:olivonOrbBreath 4.8s ease-in-out infinite;
 }
-.site-header .brand-mark::before{
-  content:"";
-  position:absolute;
-  inset:5px;
-  border:1px solid rgba(255,188,164,.24);
-  border-radius:50%;
-  animation:olivonOrbSpin 9s linear infinite;
-}
-.site-header .brand-mark::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-  background:linear-gradient(145deg,rgba(255,255,255,.14),transparent 38%,rgba(0,0,0,.2));
-  pointer-events:none;
-}
-.site-header .brand>span:last-child{
-  color:#ff8e73!important;
-  font-size:17px!important;
-  font-weight:800!important;
-  letter-spacing:.16em!important;
-  text-shadow:0 0 22px rgba(255,107,81,.12);
-  transition:color .25s ease,text-shadow .25s ease;
-}
-.site-header .brand:hover>span:last-child{
-  color:#ffb09a!important;
-  text-shadow:0 0 28px rgba(255,107,81,.25);
-}
+.site-header .brand-mark::before{content:"";position:absolute;inset:5px;border:1px solid rgba(255,188,164,.24);border-radius:50%;animation:olivonOrbSpin 9s linear infinite}
+.site-header .brand-mark::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(145deg,rgba(255,255,255,.14),transparent 38%,rgba(0,0,0,.2));pointer-events:none}
+.site-header .brand>span:last-child{color:#ff8e73!important;font-size:17px!important;font-weight:800!important;letter-spacing:.16em!important;text-shadow:0 0 22px rgba(255,107,81,.12);transition:color .25s ease,text-shadow .25s ease}
+.site-header .brand:hover>span:last-child{color:#ffb09a!important;text-shadow:0 0 28px rgba(255,107,81,.25)}
 
-/* Hero signature: keep the orb in the intentional negative space, not on top of the photography. */
+/* Remove repetitive OLIVON labels from homepage service rows. */
+main:not(.inner-page) .service-row{grid-template-columns:minmax(0,1fr) 60px!important}
+main:not(.inner-page) .service-number{display:none!important}
+main:not(.inner-page) .value-programs-intro .section-index{font-size:0!important}
+main:not(.inner-page) .value-programs-intro .section-index::after{content:"ÇALIŞMA MODELİ";font-size:12px;letter-spacing:.16em;color:#b9aca3;font-weight:700}
+
+/* Hero orb becomes a sunrise: one entrance rise + a low horizon glow. */
 body main:not(.inner-page) .hero-stage-photo::before,
+body main:not(.inner-page) .hero-stage-photo::after{content:"";position:absolute;pointer-events:none;border-radius:50%;z-index:2}
+body main:not(.inner-page) .hero-stage-photo::before{
+  width:520px;height:150px;left:50%;top:34px;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(255,105,79,.22) 0%,rgba(184,68,50,.09) 38%,rgba(255,107,81,0) 72%);
+  filter:blur(18px);opacity:.7;animation:olivonDawnGlow 7s ease-in-out infinite alternate;z-index:1
+}
 body main:not(.inner-page) .hero-stage-photo::after{
-  display:none!important;
-}
-body main:not(.inner-page) .hero-copy{
-  position:relative!important;
-}
-body main:not(.inner-page) .hero-copy::before,
-body main:not(.inner-page) .hero-copy::after{
-  content:"";
-  position:absolute;
-  pointer-events:none;
-  border-radius:50%;
-}
-body main:not(.inner-page) .hero-copy::before{
-  width:230px;
-  height:230px;
-  right:-142px;
-  top:-112px;
-  border:1px solid rgba(255,143,112,.18);
-  box-shadow:
-    0 0 0 44px rgba(255,143,112,.03),
-    0 0 0 88px rgba(255,143,112,.014);
-  animation:olivonHeroOrbit 15s linear infinite;
-  opacity:.78;
-  z-index:-1;
-}
-body main:not(.inner-page) .hero-copy::after{
-  width:92px;
-  height:92px;
-  right:-73px;
-  top:-43px;
-  background:
-    radial-gradient(circle at 29% 24%,rgba(255,214,185,.98) 0 4%,rgba(255,145,116,.95) 11%,transparent 31%),
-    radial-gradient(circle at 34% 28%,#ff846d 0%,#dc5948 42%,#7e2d27 72%,#211314 100%);
-  box-shadow:
-    inset -13px -15px 28px rgba(18,8,10,.42),
-    inset 11px 12px 22px rgba(255,172,142,.18),
-    0 0 58px rgba(255,107,81,.22);
-  animation:olivonHeroFloat 5.8s ease-in-out infinite;
-  opacity:.96;
-  z-index:-1;
+  width:112px;height:112px;left:50%;top:48px;
+  background:radial-gradient(circle at 30% 24%,rgba(255,224,197,.98) 0 4%,rgba(255,153,119,.97) 12%,transparent 31%),radial-gradient(circle at 34% 28%,#ff846d 0%,#dc5948 42%,#7e2d27 72%,#211314 100%);
+  box-shadow:inset -16px -18px 34px rgba(18,8,10,.4),inset 12px 14px 24px rgba(255,181,149,.2),0 0 58px rgba(255,107,81,.25),0 30px 110px rgba(255,87,60,.18);
+  animation:olivonSunrise 2.4s cubic-bezier(.18,.78,.22,1) both;
 }
 
-@keyframes olivonOrbBreath{
-  0%,100%{transform:scale(1);box-shadow:inset -8px -10px 18px rgba(18,8,10,.38),inset 7px 8px 17px rgba(255,172,142,.22),0 0 18px rgba(255,107,81,.16)}
-  50%{transform:scale(1.045);box-shadow:inset -8px -10px 18px rgba(18,8,10,.38),inset 7px 8px 17px rgba(255,172,142,.26),0 0 30px rgba(255,107,81,.3)}
-}
+@keyframes olivonOrbBreath{0%,100%{transform:scale(1);box-shadow:inset -8px -10px 18px rgba(18,8,10,.38),inset 7px 8px 17px rgba(255,172,142,.22),0 0 18px rgba(255,107,81,.16)}50%{transform:scale(1.045);box-shadow:inset -8px -10px 18px rgba(18,8,10,.38),inset 7px 8px 17px rgba(255,172,142,.26),0 0 30px rgba(255,107,81,.3)}}
 @keyframes olivonOrbSpin{to{transform:rotate(360deg)}}
-@keyframes olivonHeroOrbit{to{transform:rotate(360deg)}}
-@keyframes olivonHeroFloat{
-  0%,100%{transform:translateY(0) scale(1)}
-  50%{transform:translateY(-8px) scale(1.035)}
-}
+@keyframes olivonSunrise{0%{transform:translate(-50%,78px) scale(.78);opacity:0}45%{opacity:.96}100%{transform:translate(-50%,0) scale(1);opacity:.95}}
+@keyframes olivonDawnGlow{0%{opacity:.42;transform:translateX(-50%) scaleX(.88)}100%{opacity:.82;transform:translateX(-50%) scaleX(1.08)}}
 
-@media(max-width:1100px){
-  body main:not(.inner-page) .hero-copy::before{right:-96px;top:-82px;width:190px;height:190px}
-  body main:not(.inner-page) .hero-copy::after{right:-39px;top:-25px;width:76px;height:76px}
-}
 @media(max-width:900px){
   .site-header .brand-mark{width:34px!important;height:34px!important;flex-basis:34px!important}
   .site-header .brand>span:last-child{font-size:14px!important;letter-spacing:.14em!important}
-  body main:not(.inner-page) .hero-copy::before{width:150px;height:150px;right:2%;top:-42px;opacity:.52;box-shadow:0 0 0 30px rgba(255,143,112,.025)}
-  body main:not(.inner-page) .hero-copy::after{width:58px;height:58px;right:calc(2% + 46px);top:4px;opacity:.8}
+  main:not(.inner-page) .service-row{grid-template-columns:minmax(0,1fr) 46px!important}
+  body main:not(.inner-page) .hero-stage-photo::before{width:330px;height:112px;left:68%;top:22px;filter:blur(15px)}
+  body main:not(.inner-page) .hero-stage-photo::after{width:82px;height:82px;left:68%;top:38px;opacity:.88}
 }
 @media(max-width:560px){
-  .site-header .brand{gap:9px!important}
-  .site-header .brand-mark{width:32px!important;height:32px!important;flex-basis:32px!important}
-  .site-header .brand>span:last-child{font-size:13px!important;letter-spacing:.13em!important}
-  body main:not(.inner-page) .hero-copy::before{width:112px;height:112px;right:-4px;top:-30px;opacity:.4;box-shadow:0 0 0 22px rgba(255,143,112,.018)}
-  body main:not(.inner-page) .hero-copy::after{width:44px;height:44px;right:30px;top:4px;opacity:.68}
+  .site-header .brand{gap:9px!important}.site-header .brand-mark{width:32px!important;height:32px!important;flex-basis:32px!important}.site-header .brand>span:last-child{font-size:13px!important;letter-spacing:.13em!important}
+  main:not(.inner-page) .value-programs-intro .section-index::after{font-size:10px}
+  body main:not(.inner-page) .hero-stage-photo::before{width:220px;height:82px;left:72%;top:14px;opacity:.48;filter:blur(13px)}
+  body main:not(.inner-page) .hero-stage-photo::after{width:60px;height:60px;left:72%;top:24px;opacity:.82}
 }
-@media(prefers-reduced-motion:reduce){
-  .site-header .brand-mark,
-  .site-header .brand-mark::before,
-  body main:not(.inner-page) .hero-copy::before,
-  body main:not(.inner-page) .hero-copy::after{animation:none!important}
-}
+@media(prefers-reduced-motion:reduce){.site-header .brand-mark,.site-header .brand-mark::before,body main:not(.inner-page) .hero-stage-photo::before,body main:not(.inner-page) .hero-stage-photo::after{animation:none!important}}
