@@ -49,42 +49,49 @@
   text-shadow:0 0 28px rgba(255,107,81,.25);
 }
 
-/* Bring back the original dynamic sphere language without replacing the photographic hero. */
+/* Hero signature: keep the orb in the intentional negative space, not on top of the photography. */
 body main:not(.inner-page) .hero-stage-photo::before,
 body main:not(.inner-page) .hero-stage-photo::after{
+  display:none!important;
+}
+body main:not(.inner-page) .hero-copy{
+  position:relative!important;
+}
+body main:not(.inner-page) .hero-copy::before,
+body main:not(.inner-page) .hero-copy::after{
   content:"";
   position:absolute;
   pointer-events:none;
   border-radius:50%;
 }
-body main:not(.inner-page) .hero-stage-photo::before{
-  width:310px;
-  height:310px;
-  right:10%;
-  top:50%;
-  transform:translateY(-50%);
+body main:not(.inner-page) .hero-copy::before{
+  width:230px;
+  height:230px;
+  right:-142px;
+  top:-112px;
   border:1px solid rgba(255,143,112,.18);
   box-shadow:
-    0 0 0 54px rgba(255,143,112,.035),
-    0 0 0 108px rgba(255,143,112,.018);
+    0 0 0 44px rgba(255,143,112,.03),
+    0 0 0 88px rgba(255,143,112,.014);
   animation:olivonHeroOrbit 15s linear infinite;
-  z-index:1;
+  opacity:.78;
+  z-index:-1;
 }
-body main:not(.inner-page) .hero-stage-photo::after{
-  width:126px;
-  height:126px;
-  right:calc(10% + 92px);
-  top:50%;
-  transform:translateY(-50%);
+body main:not(.inner-page) .hero-copy::after{
+  width:92px;
+  height:92px;
+  right:-73px;
+  top:-43px;
   background:
     radial-gradient(circle at 29% 24%,rgba(255,214,185,.98) 0 4%,rgba(255,145,116,.95) 11%,transparent 31%),
     radial-gradient(circle at 34% 28%,#ff846d 0%,#dc5948 42%,#7e2d27 72%,#211314 100%);
   box-shadow:
-    inset -18px -20px 36px rgba(18,8,10,.42),
-    inset 14px 16px 28px rgba(255,172,142,.18),
-    0 0 72px rgba(255,107,81,.24);
+    inset -13px -15px 28px rgba(18,8,10,.42),
+    inset 11px 12px 22px rgba(255,172,142,.18),
+    0 0 58px rgba(255,107,81,.22);
   animation:olivonHeroFloat 5.8s ease-in-out infinite;
-  z-index:2;
+  opacity:.96;
+  z-index:-1;
 }
 
 @keyframes olivonOrbBreath{
@@ -92,31 +99,32 @@ body main:not(.inner-page) .hero-stage-photo::after{
   50%{transform:scale(1.045);box-shadow:inset -8px -10px 18px rgba(18,8,10,.38),inset 7px 8px 17px rgba(255,172,142,.26),0 0 30px rgba(255,107,81,.3)}
 }
 @keyframes olivonOrbSpin{to{transform:rotate(360deg)}}
-@keyframes olivonHeroOrbit{
-  0%{transform:translateY(-50%) rotate(0deg)}
-  100%{transform:translateY(-50%) rotate(360deg)}
-}
+@keyframes olivonHeroOrbit{to{transform:rotate(360deg)}}
 @keyframes olivonHeroFloat{
-  0%,100%{transform:translateY(-50%) translateY(0) scale(1)}
-  50%{transform:translateY(-50%) translateY(-10px) scale(1.035)}
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-8px) scale(1.035)}
 }
 
+@media(max-width:1100px){
+  body main:not(.inner-page) .hero-copy::before{right:-96px;top:-82px;width:190px;height:190px}
+  body main:not(.inner-page) .hero-copy::after{right:-39px;top:-25px;width:76px;height:76px}
+}
 @media(max-width:900px){
   .site-header .brand-mark{width:34px!important;height:34px!important;flex-basis:34px!important}
   .site-header .brand>span:last-child{font-size:14px!important;letter-spacing:.14em!important}
-  body main:not(.inner-page) .hero-stage-photo::before{width:220px;height:220px;right:8%;top:30%;box-shadow:0 0 0 38px rgba(255,143,112,.03),0 0 0 76px rgba(255,143,112,.015)}
-  body main:not(.inner-page) .hero-stage-photo::after{width:88px;height:88px;right:calc(8% + 66px);top:30%;opacity:.88}
+  body main:not(.inner-page) .hero-copy::before{width:150px;height:150px;right:2%;top:-42px;opacity:.52;box-shadow:0 0 0 30px rgba(255,143,112,.025)}
+  body main:not(.inner-page) .hero-copy::after{width:58px;height:58px;right:calc(2% + 46px);top:4px;opacity:.8}
 }
 @media(max-width:560px){
   .site-header .brand{gap:9px!important}
   .site-header .brand-mark{width:32px!important;height:32px!important;flex-basis:32px!important}
   .site-header .brand>span:last-child{font-size:13px!important;letter-spacing:.13em!important}
-  body main:not(.inner-page) .hero-stage-photo::before{width:160px;height:160px;right:-4%;top:24%;opacity:.5;box-shadow:0 0 0 30px rgba(255,143,112,.022)}
-  body main:not(.inner-page) .hero-stage-photo::after{width:64px;height:64px;right:calc(-4% + 48px);top:24%;opacity:.72}
+  body main:not(.inner-page) .hero-copy::before{width:112px;height:112px;right:-4px;top:-30px;opacity:.4;box-shadow:0 0 0 22px rgba(255,143,112,.018)}
+  body main:not(.inner-page) .hero-copy::after{width:44px;height:44px;right:30px;top:4px;opacity:.68}
 }
 @media(prefers-reduced-motion:reduce){
   .site-header .brand-mark,
   .site-header .brand-mark::before,
-  body main:not(.inner-page) .hero-stage-photo::before,
-  body main:not(.inner-page) .hero-stage-photo::after{animation:none!important}
+  body main:not(.inner-page) .hero-copy::before,
+  body main:not(.inner-page) .hero-copy::after{animation:none!important}
 }
