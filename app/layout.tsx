@@ -5,8 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 import "./home-trust-fix.css";
 import "./mobile-qa.css";
-import "./profit-lab-modern.css";
-import "./profit-lab-simple.css";
+import "./home-programs.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
