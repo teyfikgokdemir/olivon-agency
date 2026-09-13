@@ -14,6 +14,24 @@ type SliderFieldProps = {
   onChange: (value: number) => void;
 };
 
+const platformLogos = [
+  { name: "Shopify", src: "/partners/shopify.svg", className: "shopify-logo" },
+  { name: "ikas", src: "/partners/ikas.svg", className: "ikas-logo" },
+  { name: "WooCommerce", src: "https://woocommerce.com/wp-content/uploads/2025/01/Logo-White.png", className: "woocommerce-logo" },
+];
+
+function PlatformLogoRow({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className={compact ? "platform-logo-row is-compact" : "platform-logo-row"} aria-label="Kendi mağazanız için desteklenen altyapılar">
+      {platformLogos.map((platform) => (
+        <span className="platform-logo-item" key={platform.name} title={platform.name}>
+          <img className={platform.className} src={platform.src} alt={platform.name} loading="lazy" decoding="async" />
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function SliderField({ label, value, min, max, step, unit, formatter, onChange }: SliderFieldProps) {
   const progress = ((value - min) / (max - min)) * 100;
   const displayValue = formatter ? formatter(value) : String(value);
@@ -86,11 +104,7 @@ export function ProfitLab() {
         <h2>Satış aynı.<br /><em>Kalan farklı.</em></h2>
         <p>İki ayarla farkı görün: aylık cironuz ve pazaryerindeki toplam kanal kesintisi. Reklam, kargo ve ürün maliyeti gibi ortak giderleri karşılaştırmaya katmıyoruz.</p>
 
-        <div className="owned-platforms" aria-label="Kendi mağazanız için desteklenen altyapılar">
-          <span>Shopify</span>
-          <span>ikas</span>
-          <span>WooCommerce</span>
-        </div>
+        <PlatformLogoRow />
 
         <div className="assumption-note">
           Varsayılan pazaryeri toplam kesintisi %20'dir. Bu oran komisyon + hizmet/işlem bedelleri için sadeleştirilmiş örnek değerdir ve kategoriye göre değişebilir.
@@ -120,7 +134,7 @@ export function ProfitLab() {
             <div className="channel-card-head"><span><TrendingUp size={18} /> Kendi mağazanız</span><small>Örnek kanal maliyeti %{ownedStoreCost}</small></div>
             <strong>{money(result.ownedStoreRemainder)}</strong>
             <p>Ödeme + temel altyapı maliyeti sonrası kalan</p>
-            <div className="owned-card-platforms"><span>Shopify</span><span>ikas</span><span>WooCommerce</span></div>
+            <PlatformLogoRow compact />
             <div className="channel-cost"><span>Tahmini kanal maliyeti</span><b>-{money(result.ownedStoreFees)}</b></div>
           </article>
         </div>
