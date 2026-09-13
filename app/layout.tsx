@@ -4,6 +4,7 @@ import { FloatingActions } from "@/components/floating-actions";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 import "./home-trust-fix.css";
+import "./mobile-qa.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
