@@ -1,0 +1,135 @@
+/* Final inner-page mobile pass — compact, editorial and consistent with homepage. */
+@media (max-width: 760px){
+  .inner-page .inner-hero{padding-top:64px!important;padding-bottom:32px!important}
+  .inner-page .inner-hero h1,
+  .inner-page .about-hero h1,
+  .inner-page .pricing-hero h1,
+  .inner-page .references-hero h1,
+  .inner-page .contact-hero h1,
+  .inner-page .faq-hero h1{
+    font-size:clamp(34px,9.6vw,44px)!important;
+    line-height:1.01!important;
+    letter-spacing:-.048em!important;
+    margin:13px 0 15px!important;
+  }
+  .inner-page .inner-hero>p:last-child,
+  .inner-page .about-hero>p:last-child,
+  .inner-page .pricing-hero>p:last-child,
+  .inner-page .references-hero>p:last-child,
+  .inner-page .contact-hero>p:last-child,
+  .inner-page .faq-hero>p:last-child{
+    font-size:14.5px!important;
+    line-height:1.55!important;
+  }
+
+  /* Services + ikas */
+  .inner-page .service-detail-grid{gap:9px!important;margin-bottom:50px!important}
+  .inner-page .service-detail-card{border-radius:17px!important}
+  .inner-page .service-detail-card img{max-height:210px!important;object-fit:cover!important}
+  .inner-page .service-detail-card h2{font-size:25px!important;margin:18px 18px 9px!important}
+  .inner-page .service-detail-card p{margin:0 18px 14px!important;font-size:13.5px!important;line-height:1.52!important}
+  .inner-page .service-detail-card ul{margin:0 18px 18px!important}
+  .inner-page .service-detail-card li{font-size:12.5px!important;line-height:1.42!important}
+  .inner-page .service-card-link{margin:0 18px 18px!important;font-size:12px!important}
+  .inner-page .service-essentials{margin-bottom:50px!important}
+  .inner-page .service-essentials-head h2{font-size:29px!important}
+  .inner-page .service-essentials-grid{gap:8px!important;margin-top:18px!important}
+  .inner-page .service-essentials-grid article{padding:17px!important;border-radius:16px!important}
+  .inner-page .service-essentials-grid h3{font-size:20px!important;margin-bottom:12px!important}
+  .inner-page .service-essentials-grid li{font-size:13px!important}
+  .inner-page .service-duration{padding:13px 15px!important;font-size:13px!important}
+  .inner-page .service-cta{padding:24px 19px!important;margin-bottom:50px!important;border-radius:19px!important}
+  .inner-page .service-cta h2{font-size:29px!important;line-height:1.04!important;margin:12px 0 18px!important}
+  .inner-page .service-cta a{font-size:12.5px!important}
+
+  /* About */
+  .inner-page .about-manifesto{padding-block:22px!important;margin-bottom:44px!important;gap:14px!important}
+  .inner-page .about-manifesto h2{font-size:29px!important;line-height:1.05!important}
+  .inner-page .about-manifesto>p{font-size:13.5px!important;line-height:1.6!important}
+  .inner-page .about-principles{gap:8px!important;margin-bottom:48px!important}
+  .inner-page .about-principles article{padding:17px!important;border-radius:16px!important}
+  .inner-page .about-principles h2{font-size:21px!important;margin-bottom:10px!important}
+  .inner-page .about-principles p{font-size:13px!important;line-height:1.52!important}
+  .inner-page .about-scope{margin-bottom:50px!important}
+  .inner-page .about-scope h2{font-size:29px!important;line-height:1.05!important}
+  .inner-page .about-scope>div{gap:7px!important;margin-top:18px!important}
+  .inner-page .about-scope span{padding:12px 13px!important;border-radius:13px!important;font-size:12.5px!important;line-height:1.4!important}
+  .inner-page .about-scope svg{width:15px!important;height:15px!important;flex:0 0 15px!important}
+
+  /* Pricing */
+  .inner-page .pricing-models{gap:8px!important;margin-bottom:48px!important}
+  .inner-page .pricing-models article{padding:17px!important;border-radius:16px!important}
+  .inner-page .pricing-models h2{font-size:21px!important;margin-bottom:9px!important}
+  .inner-page .pricing-models p{font-size:13px!important;line-height:1.52!important}
+  .inner-page .pricing-models ul{margin-top:14px!important}
+  .inner-page .pricing-models li{font-size:12.5px!important;line-height:1.42!important}
+  .inner-page .pricing-clarity{padding-block:22px!important;margin-bottom:44px!important;gap:16px!important}
+  .inner-page .pricing-clarity h2{font-size:29px!important;line-height:1.05!important}
+  .inner-page .pricing-factors{gap:7px!important}
+  .inner-page .pricing-factors span{padding:11px 12px!important;border-radius:12px!important;font-size:12.5px!important}
+  .inner-page .pricing-note{padding:17px!important;margin-bottom:48px!important;border-radius:16px!important;gap:8px!important}
+  .inner-page .pricing-note strong{font-size:14px!important}
+  .inner-page .pricing-note p{font-size:13px!important;line-height:1.55!important}
+
+  /* Contact */
+  .inner-page .contact-grid{gap:9px!important;margin-bottom:18px!important}
+  .inner-page .contact-primary,
+  .inner-page .contact-scope{padding:20px 18px!important;border-radius:18px!important}
+  .inner-page .contact-icon{width:42px!important;height:42px!important;border-radius:13px!important;margin-bottom:20px!important}
+  .inner-page .contact-primary h2,
+  .inner-page .contact-scope h2,
+  .inner-page .contact-seo-copy h2{font-size:27px!important;line-height:1.05!important;margin:12px 0!important}
+  .inner-page .contact-primary>p:not(.section-index),
+  .inner-page .contact-scope>p:not(.section-index),
+  .inner-page .contact-seo-copy>p{font-size:13.5px!important;line-height:1.58!important}
+  .inner-page .contact-main-link{font-size:20px!important;margin:20px 0 16px!important}
+  .inner-page .contact-scope ul{gap:9px!important;margin:18px 0 20px!important}
+  .inner-page .contact-scope li{font-size:13px!important}
+  .inner-page .contact-process{gap:8px!important;margin-bottom:50px!important}
+  .inner-page .contact-process>div{padding:17px!important;border-radius:16px!important}
+  .inner-page .contact-process h3{font-size:20px!important;margin:0 0 8px!important}
+  .inner-page .contact-process p{font-size:13px!important;line-height:1.5!important}
+  .inner-page .contact-seo-copy{padding-top:22px!important;padding-bottom:58px!important}
+
+  /* FAQ */
+  .inner-page .faq-list{gap:8px!important;margin-bottom:54px!important}
+  .inner-page .faq-list details{border-radius:16px!important}
+  .inner-page .faq-list summary{grid-template-columns:1fr 20px!important;padding:17px 16px!important;gap:10px!important}
+  .inner-page .faq-list summary h2{font-size:18px!important;line-height:1.22!important}
+  .inner-page .faq-list details>div{padding:0 16px 18px!important}
+  .inner-page .faq-list details p{font-size:13.5px!important;line-height:1.58!important}
+  .inner-page .faq-topic-links{padding-bottom:58px!important}
+  .inner-page .faq-topic-links h2{font-size:28px!important}
+  .inner-page .faq-topic-links>div{gap:7px!important;margin-top:20px!important}
+  .inner-page .faq-topic-links a{padding:14px 15px!important;border-radius:13px!important;font-size:12.5px!important}
+
+  /* References */
+  .inner-page .reference-showcase{gap:18px!important;margin-bottom:58px!important}
+  .inner-page .reference-case{padding:11px!important;border-radius:19px!important;gap:16px!important}
+  .inner-page .reference-browser{border-radius:14px!important}
+  .inner-page .reference-browser>div{height:30px!important}
+  .inner-page .reference-copy{padding:5px 4px 9px!important}
+  .inner-page .reference-copy h2{font-size:29px!important;margin:12px 0 9px!important}
+  .inner-page .reference-copy p{font-size:13.5px!important;line-height:1.55!important}
+  .inner-page .reference-copy a{padding:11px 14px!important;font-size:11.5px!important;margin-top:12px!important}
+  .inner-page .reference-directory{padding-block:54px!important}
+  .inner-page .reference-directory>div:first-child{gap:14px!important;margin-bottom:24px!important}
+  .inner-page .reference-directory h2{font-size:30px!important;line-height:1.04!important}
+  .inner-page .directory-grid a{min-height:112px!important;padding:16px!important}
+  .inner-page .directory-grid strong{font-size:17px!important}
+  .inner-page .directory-grid em{font-size:11.5px!important}
+}
+
+@media (max-width: 390px){
+  .inner-page .inner-hero h1,
+  .inner-page .about-hero h1,
+  .inner-page .pricing-hero h1,
+  .inner-page .references-hero h1,
+  .inner-page .contact-hero h1,
+  .inner-page .faq-hero h1{font-size:33px!important}
+  .inner-page .service-detail-card h2{font-size:23px!important}
+  .inner-page .service-cta h2,
+  .inner-page .about-manifesto h2,
+  .inner-page .about-scope h2,
+  .inner-page .pricing-clarity h2{font-size:27px!important}
+}
