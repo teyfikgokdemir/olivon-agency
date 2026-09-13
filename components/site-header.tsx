@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ikasMenuItems, serviceGroups } from "@/lib/site-data";
 
 export function SiteHeader() {
@@ -15,10 +15,34 @@ export function SiteHeader() {
     setIkasOpen(false);
   };
 
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") close();
+    };
+
+    const onResize = () => {
+      if (window.innerWidth > 900) close();
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open]);
+
   return (
     <header className="site-header">
       <nav className="nav shell" aria-label="Ana menü">
-        <a className="brand" href="/" aria-label="Olivon ana sayfa">
+        <a className="brand" href="/" aria-label="Olivon ana sayfa" onClick={close}>
           <span className="brand-mark">O</span><span>OLIVON</span>
         </a>
 
@@ -48,26 +72,45 @@ export function SiteHeader() {
 
         <a className="nav-cta" href="/iletisim">Projenizi konuşalım</a>
 
-        <button className="menu-button" onClick={() => setOpen(value => !value)} aria-label={open ? "Menüyü kapat" : "Menüyü aç"} aria-expanded={open}>
+        <button
+          className="menu-button"
+          type="button"
+          onClick={() => setOpen(value => !value)}
+          aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
+          aria-expanded={open}
+          aria-controls="olivon-mobile-menu"
+        >
           {open ? <X /> : <Menu />}
         </button>
       </nav>
 
       {open && (
-        <div className="mobile-menu" role="dialog" aria-label="Mobil menü">
-          <button className="mobile-accordion-trigger" onClick={() => setServicesOpen(value => !value)} aria-expanded={servicesOpen}>
-            Hizmetler <ChevronDown size={18} />
+        <div id="olivon-mobile-menu" className="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobil menü">
+          <button
+            className="mobile-accordion-trigger"
+            type="button"
+            onClick={() => setServicesOpen(value => !value)}
+            aria-expanded={servicesOpen}
+            aria-controls="olivon-mobile-services"
+          >
+            Hizmetler <ChevronDown className={servicesOpen ? "is-open" : ""} size={18} />
           </button>
           {servicesOpen && (
-            <div className="mobile-submenu">
+            <div id="olivon-mobile-services" className="mobile-submenu">
               {serviceGroups.map(service => <a onClick={close} href={service.href} key={service.slug}>{service.title}</a>)}
             </div>
           )}
 
-          <button className="mobile-accordion-trigger" onClick={() => setIkasOpen(value => !value)} aria-expanded={ikasOpen}>
-            ikas <ChevronDown size={18} />
+          <button
+            className="mobile-accordion-trigger"
+            type="button"
+            onClick={() => setIkasOpen(value => !value)}
+            aria-expanded={ikasOpen}
+            aria-controls="olivon-mobile-ikas"
+          >
+            ikas <ChevronDown className={ikasOpen ? "is-open" : ""} size={18} />
           </button>
-          {ikasOpen && <div className="mobile-submenu">{ikasMenuItems.map(item => <a onClick={close} href={`/ikas#${item.slug}`} key={item.slug}>{item.label}</a>)}</div>}
+          {ikasOpen && <div id="olivon-mobile-ikas" className="mobile-submenu">{ikasMenuItems.map(item => <a onClick={close} href={`/ikas#${item.slug}`} key={item.slug}>{item.label}</a>)}</div>}
 
           <a onClick={close} href="/referanslar">Referanslar</a>
           <a onClick={close} href="/blog">Blog</a>
