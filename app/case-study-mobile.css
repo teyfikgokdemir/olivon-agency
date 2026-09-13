@@ -1,0 +1,30 @@
+/* Case study detail mobile refinement — compact, proof-led, consistent with homepage. */
+@media (max-width: 760px){
+  .case-page .case-hero{padding-top:60px!important;padding-bottom:28px!important}
+  .case-page .case-hero h1{font-size:clamp(33px,9.2vw,42px)!important;line-height:1.02!important;letter-spacing:-.047em!important;margin:12px 0 14px!important}
+  .case-page .case-hero h1 em{display:block;margin-top:8px;font-size:.72em;line-height:1.12!important;letter-spacing:-.035em!important}
+  .case-page .case-hero>p:last-child{font-size:14px!important;line-height:1.55!important;max-width:100%!important}
+
+  .case-page .case-visual{margin-bottom:34px!important}
+  .case-page .case-visual img{aspect-ratio:1.55/1!important;max-height:none!important;border-radius:17px!important}
+  .case-page .case-visual a{display:inline-flex!important;margin-top:10px!important;padding:10px 13px!important;font-size:11.5px!important}
+
+  .case-page .case-story{grid-template-columns:1fr!important;gap:8px!important;margin-top:0!important;margin-bottom:42px!important}
+  .case-page .case-story article{padding:17px!important;border-radius:16px!important;min-height:0!important}
+  .case-page .case-story h2{font-size:21px!important;line-height:1.08!important;margin:0 0 10px!important}
+  .case-page .case-story p{font-size:13px!important;line-height:1.55!important;margin:0!important}
+  .case-page .case-story ul{gap:8px!important}
+  .case-page .case-story li{font-size:12.5px!important;line-height:1.45!important}
+  .case-page .case-story svg{width:15px!important;height:15px!important;flex:0 0 15px!important}
+
+  .case-page .case-tech{padding:20px 0!important;margin-bottom:44px!important}
+  .case-page .case-tech>div{gap:6px!important;margin-top:14px!important}
+  .case-page .case-tech span{padding:7px 9px!important;font-size:10.5px!important;line-height:1.2!important}
+}
+
+@media (max-width: 390px){
+  .case-page .case-hero h1{font-size:31px!important}
+  .case-page .case-hero h1 em{font-size:.7em}
+  .case-page .case-story h2{font-size:20px!important}
+  .case-page .case-visual img{aspect-ratio:1.45/1!important}
+}
