@@ -1,4 +1,4 @@
-/* Olivon orb identity: favicon-derived mark for header + hero sunrise */
+/* Olivon orb identity: favicon-derived mark for header + animated hero sunrise */
 .site-header .brand{gap:12px!important}
 .site-header .brand-mark{
   position:relative!important;width:38px!important;height:38px!important;flex:0 0 38px!important;
@@ -18,37 +18,50 @@ main:not(.inner-page) .service-number{display:none!important}
 main:not(.inner-page) .value-programs-intro .section-index{font-size:0!important}
 main:not(.inner-page) .value-programs-intro .section-index::after{content:"ÇALIŞMA MODELİ";font-size:12px;letter-spacing:.16em;color:#b9aca3;font-weight:700}
 
-/* Hero orb becomes a sunrise: one entrance rise + a low horizon glow. */
+/* Use the hero's upper negative space as a moving dawn horizon. */
 body main:not(.inner-page) .hero-stage-photo::before,
-body main:not(.inner-page) .hero-stage-photo::after{content:"";position:absolute;pointer-events:none;border-radius:50%;z-index:2}
+body main:not(.inner-page) .hero-stage-photo::after{content:"";position:absolute;pointer-events:none;border-radius:50%;z-index:2;will-change:transform,opacity}
 body main:not(.inner-page) .hero-stage-photo::before{
-  width:520px;height:150px;left:50%;top:34px;transform:translateX(-50%);border-radius:50%;
-  background:radial-gradient(ellipse at center,rgba(255,105,79,.22) 0%,rgba(184,68,50,.09) 38%,rgba(255,107,81,0) 72%);
-  filter:blur(18px);opacity:.7;animation:olivonDawnGlow 7s ease-in-out infinite alternate;z-index:1
+  width:430px;height:145px;left:43%;top:56px;border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(255,108,80,.22) 0%,rgba(186,69,52,.09) 40%,rgba(255,107,81,0) 74%);
+  filter:blur(19px);opacity:.5;z-index:1;
+  animation:olivonDawnDrift 10s cubic-bezier(.45,.05,.3,1) infinite;
 }
 body main:not(.inner-page) .hero-stage-photo::after{
-  width:112px;height:112px;left:50%;top:48px;
-  background:radial-gradient(circle at 30% 24%,rgba(255,224,197,.98) 0 4%,rgba(255,153,119,.97) 12%,transparent 31%),radial-gradient(circle at 34% 28%,#ff846d 0%,#dc5948 42%,#7e2d27 72%,#211314 100%);
-  box-shadow:inset -16px -18px 34px rgba(18,8,10,.4),inset 12px 14px 24px rgba(255,181,149,.2),0 0 58px rgba(255,107,81,.25),0 30px 110px rgba(255,87,60,.18);
-  animation:olivonSunrise 2.4s cubic-bezier(.18,.78,.22,1) both;
+  width:92px;height:92px;left:43%;top:72px;
+  background:radial-gradient(circle at 30% 24%,rgba(255,226,201,.99) 0 4%,rgba(255,155,121,.98) 12%,transparent 31%),radial-gradient(circle at 34% 28%,#ff846d 0%,#dc5948 42%,#7e2d27 72%,#211314 100%);
+  box-shadow:inset -15px -17px 30px rgba(18,8,10,.4),inset 11px 13px 22px rgba(255,181,149,.2),0 0 52px rgba(255,107,81,.24),0 28px 94px rgba(255,87,60,.16);
+  animation:olivonSunDrift 10s cubic-bezier(.45,.05,.3,1) infinite;
 }
 
 @keyframes olivonOrbBreath{0%,100%{transform:scale(1);box-shadow:inset -8px -10px 18px rgba(18,8,10,.38),inset 7px 8px 17px rgba(255,172,142,.22),0 0 18px rgba(255,107,81,.16)}50%{transform:scale(1.045);box-shadow:inset -8px -10px 18px rgba(18,8,10,.38),inset 7px 8px 17px rgba(255,172,142,.26),0 0 30px rgba(255,107,81,.3)}}
 @keyframes olivonOrbSpin{to{transform:rotate(360deg)}}
-@keyframes olivonSunrise{0%{transform:translate(-50%,78px) scale(.78);opacity:0}45%{opacity:.96}100%{transform:translate(-50%,0) scale(1);opacity:.95}}
-@keyframes olivonDawnGlow{0%{opacity:.42;transform:translateX(-50%) scaleX(.88)}100%{opacity:.82;transform:translateX(-50%) scaleX(1.08)}}
+@keyframes olivonSunDrift{
+  0%{transform:translate(-50%,58px) scale(.82);opacity:.18}
+  18%{opacity:.72}
+  42%{transform:translate(-38%,-4px) scale(1);opacity:.96}
+  68%{transform:translate(-25%,-14px) scale(1.035);opacity:.94}
+  86%{opacity:.58}
+  100%{transform:translate(-10%,22px) scale(.88);opacity:.16}
+}
+@keyframes olivonDawnDrift{
+  0%{transform:translate(-52%,46px) scaleX(.78);opacity:.16}
+  35%{transform:translate(-45%,0) scaleX(1);opacity:.58}
+  68%{transform:translate(-31%,-8px) scaleX(1.08);opacity:.72}
+  100%{transform:translate(-16%,22px) scaleX(.82);opacity:.14}
+}
 
 @media(max-width:900px){
   .site-header .brand-mark{width:34px!important;height:34px!important;flex-basis:34px!important}
   .site-header .brand>span:last-child{font-size:14px!important;letter-spacing:.14em!important}
   main:not(.inner-page) .service-row{grid-template-columns:minmax(0,1fr) 46px!important}
-  body main:not(.inner-page) .hero-stage-photo::before{width:330px;height:112px;left:68%;top:22px;filter:blur(15px)}
-  body main:not(.inner-page) .hero-stage-photo::after{width:82px;height:82px;left:68%;top:38px;opacity:.88}
+  body main:not(.inner-page) .hero-stage-photo::before{width:270px;height:105px;left:69%;top:28px;filter:blur(15px)}
+  body main:not(.inner-page) .hero-stage-photo::after{width:70px;height:70px;left:69%;top:42px;opacity:.9}
 }
 @media(max-width:560px){
   .site-header .brand{gap:9px!important}.site-header .brand-mark{width:32px!important;height:32px!important;flex-basis:32px!important}.site-header .brand>span:last-child{font-size:13px!important;letter-spacing:.13em!important}
   main:not(.inner-page) .value-programs-intro .section-index::after{font-size:10px}
-  body main:not(.inner-page) .hero-stage-photo::before{width:220px;height:82px;left:72%;top:14px;opacity:.48;filter:blur(13px)}
-  body main:not(.inner-page) .hero-stage-photo::after{width:60px;height:60px;left:72%;top:24px;opacity:.82}
+  body main:not(.inner-page) .hero-stage-photo::before{width:190px;height:74px;left:77%;top:12px;opacity:.46;filter:blur(12px)}
+  body main:not(.inner-page) .hero-stage-photo::after{width:52px;height:52px;left:77%;top:22px;opacity:.82}
 }
 @media(prefers-reduced-motion:reduce){.site-header .brand-mark,.site-header .brand-mark::before,body main:not(.inner-page) .hero-stage-photo::before,body main:not(.inner-page) .hero-stage-photo::after{animation:none!important}}
