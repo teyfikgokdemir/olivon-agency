@@ -117,7 +117,6 @@ export default function Home() {
         <article><strong>Gerçek projeler</strong><p>Referanslarımızı canlı site bağlantıları ve yayınlanabilir vaka özetleriyle gösteririz.</p></article>
         <article><strong>Gerçek ölçüm</strong><p>CTA, form, WhatsApp ve kritik kullanıcı aksiyonlarını izinli GA4 olaylarıyla ölçeriz.</p></article>
       </section>
-
       <section className="services shell" id="cozumler">
         <div className="section-head">
           <div><p className="section-index">UZMANLIKLAR</p><h2>Her hizmetin ayrı çıktısı, tek bir ticari hedefi var.</h2></div>
@@ -207,12 +206,16 @@ export default function Home() {
         <div className="reference-panel">
           <span>YAYINLANABİLİR PROJE KANITI</span>
           <div className="featured-reference-grid">
-            {referenceProjects.filter(project => project.featured).map((project,index) => (
-              <a className="featured-reference-card" href={`/referanslar/${caseStudies[index].slug}`} key={project.domain}>
-                <img src={project.image} alt={`${project.name} web sitesi ekran görüntüsü`} loading="lazy" decoding="async" />
-                <span>{project.domain}</span><strong>{project.name}</strong>
-              </a>
-            ))}
+            {referenceProjects.filter(project => project.featured).map(project => {
+              const caseItem = caseStudies.find(item => item.domain === project.domain);
+              if (!caseItem) return null;
+              return (
+                <a className="featured-reference-card" href={`/referanslar/${caseItem.slug}`} key={project.domain}>
+                  <img src={project.image} alt={`${project.name} web sitesi ekran görüntüsü`} loading="lazy" decoding="async" />
+                  <span>{project.domain}</span><strong>{project.name}</strong>
+                </a>
+              );
+            })}
           </div>
           <a className="reference-page-link" href="/referanslar">Tüm referansları ve vaka çalışmalarını inceleyin <ArrowUpRight size={16} /></a>
         </div>
