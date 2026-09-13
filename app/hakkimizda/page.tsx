@@ -19,10 +19,20 @@ const principles = [
 ];
 
 export default function AboutPage() {
+  const pageUrl = `${SITE_URL}/hakkimizda`;
   const schema = {
-    "@context":"https://schema.org","@type":"AboutPage",name:"Olivon Hakkında",url:`${SITE_URL}/hakkimizda`,
-    about:{"@id":`${SITE_URL}/#organization`}
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${pageUrl}#webpage`,
+    name: "Olivon Hakkında",
+    url: pageUrl,
+    description: "Olivon'un çalışma modeli, uzmanlık alanları, kalite prensipleri ve dijital büyüme yaklaşımı.",
+    inLanguage: "tr-TR",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": `${SITE_URL}/#organization` },
+    mainEntity: { "@id": `${SITE_URL}/#organization` },
   };
+
   return <main className="inner-page about-page">
     <StructuredData data={[schema,breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Hakkımızda",path:"/hakkimizda"}])]} />
     <section className="inner-hero shell about-hero"><p className="section-index">OLIVON HAKKINDA</p><h1>Site yapan bir ekipten fazlası.<br/><em>Dijital sistemi birlikte kuran bir çalışma modeli.</em></h1><p>Olivon, Kayseri merkezli ve Türkiye genelinde çalışan bağımsız bir dijital büyüme stüdyosudur. Web, e-ticaret, görünürlük, otomasyon ve güvenlik kararlarını aynı ticari çerçevede ele alır.</p></section>
