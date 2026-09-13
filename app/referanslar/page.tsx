@@ -18,14 +18,46 @@ const brandMarkUrl = (domain: string) => `https://www.google.com/s2/favicons?dom
 export default function ReferencesPage() {
   const featured = referenceProjects.filter(project => project.featured);
   const rest = referenceProjects.filter(project => !project.featured);
+  const pageUrl = `${SITE_URL}/referanslar`;
+  const listId = `${pageUrl}#case-studies`;
+
   const pageSchema = {
-    "@context":"https://schema.org","@type":"CollectionPage",name:"Olivon Referanslar ve Vaka Çalışmaları",
-    url:`${SITE_URL}/referanslar`,description:"Olivon'un e-ticaret ve web projeleri ile seçili vaka çalışmaları."
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    name: "Olivon Referanslar ve Vaka Çalışmaları",
+    url: pageUrl,
+    description: "Olivon'un e-ticaret ve web projeleri ile seçili vaka çalışmaları.",
+    inLanguage: "tr-TR",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    about: { "@id": `${SITE_URL}/#organization` },
+    mainEntity: { "@id": listId },
+  };
+
+  const caseStudiesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": listId,
+    name: "Olivon vaka çalışmaları",
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    numberOfItems: caseStudies.length,
+    itemListElement: caseStudies.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: `${item.name} vaka çalışması`,
+      url: `${SITE_URL}/referanslar/${item.slug}`,
+      item: { "@id": `${SITE_URL}/referanslar/${item.slug}#case-study` },
+    })),
   };
 
   return (
     <main className="inner-page references-page">
-      <StructuredData data={[pageSchema,breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Referanslar",path:"/referanslar"}])]} />
+      <StructuredData data={[
+        pageSchema,
+        caseStudiesSchema,
+        breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Referanslar",path:"/referanslar"}]),
+      ]} />
       <section className="inner-hero shell references-hero">
         <p className="section-index">REFERANSLAR & VAKA ÇALIŞMALARI</p>
         <h1>Gerçek markalar.<br /><em>Doğrulanabilir dijital işler.</em></h1>
