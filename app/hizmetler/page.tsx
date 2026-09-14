@@ -17,6 +17,24 @@ export default function ServicesPage() {
   return (
     <main className="inner-page services-page">
       <StructuredData data={[schema,breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Hizmetler",path:"/hizmetler"}])]} />
+      <style>{`
+        .services-page-final-cta{
+          display:flex!important;
+          flex-direction:column!important;
+          align-items:center!important;
+          justify-content:center!important;
+          text-align:center!important;
+        }
+        .services-page-final-cta .section-index,
+        .services-page-final-cta h2{
+          text-align:center!important;
+          margin-left:auto!important;
+          margin-right:auto!important;
+        }
+        .services-page-final-cta h2{
+          max-width:1120px!important;
+        }
+      `}</style>
       <section className="inner-hero shell services-hero">
         <p className="section-index">HİZMETLER</p>
         <h1>Tek tek hizmet değil,<br /><em>birlikte çalışan sistemler.</em></h1>
@@ -32,7 +50,7 @@ export default function ServicesPage() {
           </article>
         ))}
       </section>
-      <section className="service-cta shell">
+      <section className="service-cta shell services-page-final-cta">
         <p className="section-index">DOĞRU BAŞLANGIÇ</p>
         <h2>İhtiyacınız analiz, yeniden kurulum veya sürekli destek olabilir. Önce kapsamı netleştirelim.</h2>
         <a href="/iletisim">Proje briefini gönderin <ArrowUpRight size={18} /></a>
