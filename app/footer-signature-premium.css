@@ -1,7 +1,8 @@
 /* Premium footer wordmark refinement. */
 .mega-footer .footer-signature{
-  align-items:end;
+  align-items:center;
   gap:28px;
+  padding-block:clamp(24px,2.5vw,36px);
 }
 .mega-footer .footer-signature-brand{
   display:flex;
@@ -12,22 +13,22 @@
 .mega-footer .footer-signature-word{
   display:inline-block;
   font-weight:900;
-  font-size:clamp(68px,12vw,168px);
-  line-height:.76;
+  font-size:clamp(62px,10.8vw,150px);
+  line-height:.86;
   letter-spacing:.035em;
   padding-right:.035em;
   color:transparent;
   background:linear-gradient(100deg,#f7eee8 0%,#f2d9cf 28%,#ff9a7e 56%,#d85a47 78%,#8f342b 100%);
   -webkit-background-clip:text;
   background-clip:text;
-  text-shadow:0 10px 42px rgba(255,107,81,.055);
-  opacity:.72;
+  text-shadow:0 10px 42px rgba(255,107,81,.045);
+  opacity:.45;
 }
 .mega-footer .footer-signature-orb{
   position:relative!important;
   flex:0 0 auto!important;
-  width:clamp(44px,5vw,72px)!important;
-  height:clamp(44px,5vw,72px)!important;
+  width:clamp(42px,4.6vw,66px)!important;
+  height:clamp(42px,4.6vw,66px)!important;
   overflow:hidden!important;
   border:0!important;
   border-radius:50%!important;
@@ -54,7 +55,8 @@
   pointer-events:none;
 }
 .mega-footer .footer-signature > small{
-  margin-bottom:20px;
+  margin:0;
+  align-self:center;
 }
 .mega-footer .footer-legal-mobile{display:none}
 
@@ -148,27 +150,28 @@
   .mega-footer .footer-signature{
     gap:12px;
     display:block;
+    padding-block:20px;
   }
   .mega-footer .footer-signature-brand{
     gap:11px;
     align-items:center;
   }
   .mega-footer .footer-signature-word{
-    font-size:18.2vw;
-    line-height:.84;
+    font-size:17vw;
+    line-height:.88;
     letter-spacing:.025em;
     white-space:nowrap;
-    opacity:.78;
+    opacity:.5;
   }
   .mega-footer .footer-signature-orb{
-    width:38px!important;
-    height:38px!important;
+    width:36px!important;
+    height:36px!important;
   }
   .mega-footer .footer-signature-orb::before{inset:5px}
   .mega-footer .footer-signature > small{
     display:block;
     text-align:left;
-    padding:14px 0 18px;
+    padding:12px 0 4px;
     margin:0;
     line-height:1.6;
   }
@@ -177,8 +180,8 @@
 @media(max-width:390px){
   .mega-footer .footer-grid{column-gap:16px!important}
   .mega-footer .footer-grid a{font-size:12.5px!important}
-  .mega-footer .footer-signature-word{font-size:17.5vw}
-  .mega-footer .footer-signature-orb{width:34px!important;height:34px!important}
+  .mega-footer .footer-signature-word{font-size:16.2vw}
+  .mega-footer .footer-signature-orb{width:32px!important;height:32px!important}
 }
 
 @media(prefers-reduced-motion:reduce){
