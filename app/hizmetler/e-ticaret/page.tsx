@@ -127,7 +127,7 @@ export default function EcommercePage(){return <main className="inner-page servi
 <section className="service-essentials shell" aria-labelledby="ecommerce-answers-title">
   <div className="service-essentials-head">
     <p className="section-index">E-TİCARET KARARLARI</p>
-    <h2 id="ecommerce-answers-title">Altyapı kararını tema görünümünün ötesinde ele alıyoruz.</h2>
+    <h2 id="ecommerce-answers-title">Altyapı kararını görünümün ötesinde ele alıyoruz.</h2>
     <p>Platform seçimi, taşıma planı, mobil UX, entegrasyon ve ölçüm birlikte düşünülmediğinde mağaza çalışır görünse bile operasyon ve dönüşüm tarafında sınır oluşabilir.</p>
   </div>
   <div className="service-essentials-grid">
