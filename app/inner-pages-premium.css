@@ -129,6 +129,36 @@
 .inner-page .section-head>p{font-size:15px!important;line-height:1.65!important}
 .inner-page .mega-footer{margin-top:0}
 
+/* Ecommerce editorial section heads — match the wide centered homepage hierarchy. */
+@media(min-width:1001px){
+  .ecommerce-page .service-essentials-head{
+    display:block!important;
+    max-width:1580px!important;
+    margin:0 auto!important;
+    text-align:center!important;
+  }
+  .ecommerce-page .service-essentials-head .section-index{
+    display:block!important;
+    margin:0 0 28px!important;
+    text-align:center!important;
+  }
+  .ecommerce-page .service-essentials-head h2{
+    max-width:1480px!important;
+    margin:0 auto!important;
+    font-size:clamp(46px,4.25vw,72px)!important;
+    line-height:1.01!important;
+    letter-spacing:-.055em!important;
+    text-wrap:balance!important;
+  }
+  .ecommerce-page .service-essentials-head>p:last-child{
+    max-width:1240px!important;
+    margin:30px auto 0!important;
+    font-size:clamp(17px,1.25vw,21px)!important;
+    line-height:1.62!important;
+    text-align:center!important;
+  }
+}
+
 @media(max-width:1000px){
   .inner-page .service-essentials-head,
   .inner-page .about-manifesto,
