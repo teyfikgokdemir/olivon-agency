@@ -61,18 +61,18 @@ export default function EcommercePage(){return <main className="inner-page servi
 ]} />
 <style>{`
   @media(min-width:1200px){
-    .ecommerce-page .service-detail-grid + .service-essentials .service-essentials-head{
+    .ecommerce-page .service-essentials-head{
       display:block!important;
       max-width:1700px!important;
       margin:0 auto!important;
       text-align:center!important;
     }
-    .ecommerce-page .service-detail-grid + .service-essentials .service-essentials-head .section-index{
+    .ecommerce-page .service-essentials-head .section-index{
       display:block!important;
       margin:0 0 24px!important;
       text-align:center!important;
     }
-    .ecommerce-page .service-detail-grid + .service-essentials .service-essentials-head h2{
+    .ecommerce-page .service-essentials-head h2{
       max-width:none!important;
       margin:0 auto!important;
       font-size:clamp(44px,3.45vw,60px)!important;
@@ -82,14 +82,23 @@ export default function EcommercePage(){return <main className="inner-page servi
       white-space:nowrap!important;
       text-wrap:nowrap!important;
     }
-    .ecommerce-page .service-detail-grid + .service-essentials .service-essentials-head>p:last-child{
-      max-width:none!important;
+    .ecommerce-page .service-essentials-head>p:last-child{
       margin:26px auto 0!important;
       font-size:clamp(16px,1.02vw,19px)!important;
       line-height:1.5!important;
       text-align:center!important;
+      text-wrap:balance!important;
+    }
+    .ecommerce-page .service-detail-grid + .service-essentials .service-essentials-head>p:last-child,
+    .ecommerce-page #ecommerce-answers-title + p{
+      max-width:none!important;
       white-space:nowrap!important;
       text-wrap:nowrap!important;
+    }
+    .ecommerce-page #platform-migration-title + p{
+      max-width:1540px!important;
+      white-space:normal!important;
+      text-wrap:balance!important;
     }
   }
 `}</style>
@@ -108,7 +117,7 @@ export default function EcommercePage(){return <main className="inner-page servi
   <div className="service-essentials-head">
     <p className="section-index">E-TİCARET KARARLARI</p>
     <h2 id="ecommerce-answers-title">Altyapı kararını tema görünümünden daha derinde ele alıyoruz.</h2>
-    <p>Platform seçimi, taşıma planı, mobil UX, entegrasyon ve ölçüm birlikte düşünülmediğinde mağaza çalışır görünse bile operasyon ve dönüşüm tarafında hızla sınır oluşabilir.</p>
+    <p>Platform seçimi, taşıma planı, mobil UX, entegrasyon ve ölçüm birlikte düşünülmediğinde mağaza çalışır görünse bile operasyon ve dönüşüm tarafında sınır oluşabilir.</p>
   </div>
   <div className="service-essentials-grid">
     {ecommerceFaq.map(item => <article key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></article>)}
