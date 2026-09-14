@@ -46,6 +46,45 @@
 .inner-page .service-cta{padding:40px 44px!important;margin-bottom:86px!important;border-radius:26px!important}
 .inner-page .service-cta h2{font-size:clamp(32px,3.5vw,52px)!important;line-height:1.04!important;margin:16px 0 24px!important;max-width:880px!important}
 
+/* Shared scope blocks used by ikas, security and other service pages. */
+@media(min-width:1001px){
+  .inner-page .service-essentials[aria-label="Hizmet kapsamı ve çalışma modeli"] .service-essentials-head{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    max-width:1700px!important;
+    margin:0 auto!important;
+    text-align:center!important;
+    gap:0!important;
+  }
+  .inner-page .service-essentials[aria-label="Hizmet kapsamı ve çalışma modeli"] .service-essentials-head .section-index{
+    margin:0 0 24px!important;
+    text-align:center!important;
+  }
+  .inner-page .service-essentials[aria-label="Hizmet kapsamı ve çalışma modeli"] .service-essentials-head h2{
+    width:fit-content!important;
+    max-width:100%!important;
+    margin:0 auto!important;
+    font-size:clamp(44px,3.45vw,60px)!important;
+    line-height:1!important;
+    letter-spacing:-.052em!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+    text-wrap:nowrap!important;
+  }
+  .inner-page .service-essentials[aria-label="Hizmet kapsamı ve çalışma modeli"] .service-essentials-head>p:last-child{
+    width:auto!important;
+    max-width:1540px!important;
+    margin:26px auto 0!important;
+    font-size:clamp(16px,1.02vw,19px)!important;
+    line-height:1.55!important;
+    text-align:center!important;
+    text-wrap:balance!important;
+  }
+}
+
 /* About / pricing / trust pages */
 .inner-page .about-manifesto,
 .inner-page .pricing-clarity{gap:42px!important;padding-block:38px!important;margin-bottom:70px!important}
@@ -118,7 +157,25 @@
 .inner-page .reference-copy h2{font-size:clamp(28px,3vw,44px)!important;margin:10px 0 12px!important}
 .inner-page .reference-copy p{font-size:14.5px!important;line-height:1.6!important}
 .inner-page .reference-directory{padding-block:70px!important}
-.inner-page .reference-directory>div:first-child h2{font-size:clamp(32px,3.4vw,50px)!important;line-height:1.04!important}
+.inner-page .reference-directory>div:first-child{
+  width:100%!important;
+  max-width:1700px!important;
+  margin:0 auto 34px!important;
+  text-align:center!important;
+}
+.inner-page .reference-directory>div:first-child .section-index{
+  margin-bottom:24px!important;
+  text-align:center!important;
+}
+.inner-page .reference-directory>div:first-child h2{
+  width:fit-content!important;
+  max-width:100%!important;
+  margin:0 auto!important;
+  font-size:clamp(32px,3.4vw,50px)!important;
+  line-height:1.04!important;
+  text-align:center!important;
+  text-wrap:balance!important;
+}
 .inner-page .directory-grid{gap:10px!important}
 .inner-page .directory-grid a{min-height:150px!important;padding:18px!important;border-radius:16px!important}
 
