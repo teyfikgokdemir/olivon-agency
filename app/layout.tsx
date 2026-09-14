@@ -7,7 +7,6 @@ import { organizationSchema, websiteSchema } from "@/lib/seo";
 import "./globals.css";
 import "./elite-pages.css";
 import "./services-v2.css";
-import "./references-v2.css";
 import "./contact-faq.css";
 import "./home-trust-fix.css";
 import "./mobile-qa.css";
@@ -20,7 +19,6 @@ import "./footer-signature-premium.css";
 import "./visibility-system.css";
 import "./inner-pages-premium.css";
 import "./inner-pages-mobile-final.css";
-import "./case-study-mobile.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
