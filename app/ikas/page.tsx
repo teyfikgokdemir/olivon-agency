@@ -33,6 +33,13 @@ export default function IkasPage(){
       serviceSchema("ikas kurulum ve destek","ikas mağaza kurulumu, tema, ürün-kategori, POS, kargo, ERP, pazaryeri ve e-ihracat desteği.","/ikas"),
       breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"ikas",path:"/ikas"}])
     ]}/>
+    <style>{`
+      @media(min-width:1001px){
+        .ikas-final-cta{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+        .ikas-final-cta .section-index{text-align:center!important}
+        .ikas-final-cta h2{width:100%!important;max-width:none!important;margin:16px auto 24px!important;font-size:clamp(34px,2.45vw,44px)!important;line-height:1.05!important;text-align:center!important;white-space:nowrap!important;text-wrap:nowrap!important}
+      }
+    `}</style>
     <section className="inner-hero shell services-hero"><p className="section-index">OLIVON × İKAS</p><h1>ikas mağazanızı kurmuyoruz sadece.<br/><em>Satışa hazır hale getiriyoruz.</em></h1><p>Yeni kurulumdan mevcut mağaza check-up’ına; ürün yapısı, görsel, entegrasyon ve operasyon tarafını birlikte ele alıyoruz.</p></section>
     <section className="service-detail-grid shell">{services.map(service=><article className="service-detail-card" id={service.slug} key={service.slug}><h2>{service.title}</h2><p>{service.text}</p><ul><li><CheckCircle2 size={16}/>ikas proje kapsamına göre uygulanır</li></ul></article>)}</section>
     <ServiceEssentials
@@ -41,7 +48,7 @@ export default function IkasPage(){
       process={["İhtiyaç ve operasyon analizi","Mağaza mimarisi ve içerik","Kurulum/entegrasyon","Test, yayın ve destek planı"]}
       fitNote="Kapsam; ürün hacmi, entegrasyon sayısı ve özel geliştirme ihtiyacına göre belirlenir. Tek paket yerine açık teslim listesiyle ilerleriz."
     />
-    <section className="service-cta shell"><p className="section-index">İKAS PROJENİZ</p><h2>Yeni mağaza, yeniden yapılandırma veya mevcut mağaza check-up'ı için doğru kapsamı çıkaralım.</h2><a href="/iletisim">ikas projesini konuşalım <ArrowUpRight size={18}/></a></section>
+    <section className="service-cta shell ikas-final-cta"><p className="section-index">İKAS PROJENİZ</p><h2>Yeni mağaza, yeniden yapılandırma veya check-up için doğru kapsamı çıkaralım.</h2><a href="/iletisim">ikas projesini konuşalım <ArrowUpRight size={18}/></a></section>
     <SiteFooter/>
   </main>;
 }
