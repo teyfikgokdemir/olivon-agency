@@ -80,14 +80,14 @@ export default function EcommercePage(){return <main className="inner-page servi
     }
     .ecommerce-page .service-essentials-head h2{
       display:block!important;
-      width:fit-content!important;
-      max-width:100%!important;
+      width:auto!important;
+      max-width:1500px!important;
       margin:0 auto!important;
       padding:0!important;
-      justify-self:auto!important;
-      font-size:clamp(44px,3.45vw,60px)!important;
-      line-height:1!important;
-      letter-spacing:-.052em!important;
+      align-self:center!important;
+      font-size:clamp(38px,2.75vw,50px)!important;
+      line-height:1.02!important;
+      letter-spacing:-.045em!important;
       text-align:center!important;
       white-space:nowrap!important;
       text-wrap:nowrap!important;
@@ -119,7 +119,7 @@ export default function EcommercePage(){return <main className="inner-page servi
 <section className="service-essentials shell" aria-labelledby="platform-migration-title">
   <div className="service-essentials-head">
     <p className="section-index">PLATFORM DEĞİŞİMİ</p>
-    <h2 id="platform-migration-title">Mevcut altyapınız ne olursa olsun, hedef sisteme kontrollü geçiş.</h2>
+    <h2 id="platform-migration-title">Altyapınız ne olursa olsun, kontrollü geçiş.</h2>
     <p>ikas, Shopify, WooCommerce, IdeaSoft, Ticimax, T-Soft ve diğer e-ticaret sistemleri arasında geçişi yalnızca ürünleri içe aktarmak olarak görmüyoruz. Veri bütünlüğü, eski ve yeni URL’ler, organik görünürlük, ödeme ve kargo akışları, entegrasyonlar ve yayın sonrası kontroller aynı geçiş planının parçalarıdır.</p>
   </div>
   <div className="service-duration"><strong>Özel hizmet:</strong> Veri, SEO ve entegrasyon katmanlarını içeren kapsamlı geçiş modeli için <a href="/hizmetler/platform-tasima">e-ticaret platform taşıma hizmetini</a> inceleyin.</div>
@@ -127,7 +127,7 @@ export default function EcommercePage(){return <main className="inner-page servi
 <section className="service-essentials shell" aria-labelledby="ecommerce-answers-title">
   <div className="service-essentials-head">
     <p className="section-index">E-TİCARET KARARLARI</p>
-    <h2 id="ecommerce-answers-title">Altyapı kararını tema görünümünden daha derinde ele alıyoruz.</h2>
+    <h2 id="ecommerce-answers-title">Altyapı kararını tema görünümünün ötesinde ele alıyoruz.</h2>
     <p>Platform seçimi, taşıma planı, mobil UX, entegrasyon ve ölçüm birlikte düşünülmediğinde mağaza çalışır görünse bile operasyon ve dönüşüm tarafında sınır oluşabilir.</p>
   </div>
   <div className="service-essentials-grid">
