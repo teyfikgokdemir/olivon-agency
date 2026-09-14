@@ -12,15 +12,16 @@
 .mega-footer .footer-signature-word{
   display:inline-block;
   font-weight:900;
-  font-size:clamp(72px,13.6vw,188px);
-  line-height:.72;
+  font-size:clamp(68px,12vw,168px);
+  line-height:.76;
   letter-spacing:.035em;
   padding-right:.035em;
   color:transparent;
   background:linear-gradient(100deg,#f7eee8 0%,#f2d9cf 28%,#ff9a7e 56%,#d85a47 78%,#8f342b 100%);
   -webkit-background-clip:text;
   background-clip:text;
-  text-shadow:0 10px 42px rgba(255,107,81,.07);
+  text-shadow:0 10px 42px rgba(255,107,81,.055);
+  opacity:.72;
 }
 .mega-footer .footer-signature-orb{
   position:relative!important;
@@ -133,10 +134,11 @@
     align-items:center;
   }
   .mega-footer .footer-signature-word{
-    font-size:20vw;
-    line-height:.82;
+    font-size:18.2vw;
+    line-height:.84;
     letter-spacing:.025em;
     white-space:nowrap;
+    opacity:.78;
   }
   .mega-footer .footer-signature-orb{
     width:38px!important;
@@ -155,7 +157,7 @@
 @media(max-width:390px){
   .mega-footer .footer-grid{column-gap:16px!important}
   .mega-footer .footer-grid a{font-size:12.5px!important}
-  .mega-footer .footer-signature-word{font-size:19vw}
+  .mega-footer .footer-signature-word{font-size:17.5vw}
   .mega-footer .footer-signature-orb{width:34px!important;height:34px!important}
 }
 
