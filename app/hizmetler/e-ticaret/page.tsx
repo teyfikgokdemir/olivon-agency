@@ -63,18 +63,24 @@ export default function EcommercePage(){return <main className="inner-page servi
   @media(min-width:1200px){
     .ecommerce-page .service-essentials-head{
       display:block!important;
+      width:100%!important;
       max-width:1700px!important;
       margin:0 auto!important;
       text-align:center!important;
     }
     .ecommerce-page .service-essentials-head .section-index{
       display:block!important;
+      width:100%!important;
       margin:0 0 24px!important;
       text-align:center!important;
     }
     .ecommerce-page .service-essentials-head h2{
-      max-width:none!important;
-      margin:0 auto!important;
+      display:block!important;
+      width:100%!important;
+      max-width:100%!important;
+      margin:0!important;
+      padding:0!important;
+      justify-self:stretch!important;
       font-size:clamp(44px,3.45vw,60px)!important;
       line-height:1!important;
       letter-spacing:-.052em!important;
