@@ -58,6 +58,13 @@ export default function ReferencesPage() {
         caseStudiesSchema,
         breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Referanslar",path:"/referanslar"}]),
       ]} />
+      <style>{`
+        @media(min-width:1001px){
+          .references-page .reference-directory-head{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;width:100%!important;max-width:none!important;margin:0 auto 38px!important;text-align:center!important}
+          .references-page .reference-directory-head .section-index{margin:0 0 22px!important;text-align:center!important}
+          .references-page .reference-directory-head h2{width:100%!important;max-width:none!important;margin:0 auto!important;font-size:clamp(36px,2.8vw,48px)!important;line-height:1.04!important;letter-spacing:-.04em!important;text-align:center!important;white-space:nowrap!important;text-wrap:nowrap!important}
+        }
+      `}</style>
       <section className="inner-hero shell references-hero">
         <p className="section-index">REFERANSLAR & VAKA ÇALIŞMALARI</p>
         <h1>Gerçek markalar.<br /><em>Doğrulanabilir dijital işler.</em></h1>
@@ -110,7 +117,7 @@ export default function ReferencesPage() {
       </section>
 
       <section className="reference-directory shell">
-        <div><p className="section-index">DİĞER ÇALIŞMALAR</p><h2>Farklı sektörlerde web, e-ticaret ve marka deneyimi projeleri.</h2></div>
+        <div className="reference-directory-head"><p className="section-index">DİĞER ÇALIŞMALAR</p><h2>Farklı sektörlerde web, e-ticaret ve marka deneyimi projeleri.</h2></div>
         <div className="directory-grid">
           {rest.map(project => {
             const caseItem = caseStudies.find(item => item.domain === project.domain);
