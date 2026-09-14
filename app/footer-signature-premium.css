@@ -58,6 +58,26 @@
 }
 .mega-footer .footer-legal-mobile{display:none}
 
+/* Desktop editorial hierarchy: preserve the existing system while avoiding 3–4 line section headings. */
+@media(min-width:1001px){
+  body .inner-page .service-essentials-head{
+    grid-template-columns:minmax(0,.58fr) minmax(560px,1.42fr)!important;
+    column-gap:clamp(34px,4.5vw,72px)!important;
+  }
+  body .inner-page .service-essentials-head h2{
+    font-size:clamp(34px,3vw,49px)!important;
+    line-height:1.01!important;
+    max-width:820px!important;
+    justify-self:center;
+    text-wrap:balance;
+  }
+  body .inner-page .service-essentials-grid h3{
+    font-size:clamp(20px,1.55vw,23px)!important;
+    line-height:1.08!important;
+    text-wrap:balance;
+  }
+}
+
 @media(max-width:900px){
   .mega-footer .footer-signature-word{
     letter-spacing:.03em;
