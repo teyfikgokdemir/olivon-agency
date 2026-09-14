@@ -129,33 +129,35 @@
 .inner-page .section-head>p{font-size:15px!important;line-height:1.65!important}
 .inner-page .mega-footer{margin-top:0}
 
-/* Ecommerce editorial section heads — match the wide centered homepage hierarchy. */
+/* Ecommerce editorial section heads — wide, centered, compact line count. */
 @media(min-width:1001px){
   .ecommerce-page .service-essentials-head{
     display:block!important;
-    max-width:1580px!important;
+    max-width:1700px!important;
     margin:0 auto!important;
     text-align:center!important;
   }
   .ecommerce-page .service-essentials-head .section-index{
     display:block!important;
-    margin:0 0 28px!important;
+    margin:0 0 24px!important;
     text-align:center!important;
   }
   .ecommerce-page .service-essentials-head h2{
-    max-width:1480px!important;
+    max-width:none!important;
     margin:0 auto!important;
-    font-size:clamp(46px,4.25vw,72px)!important;
-    line-height:1.01!important;
-    letter-spacing:-.055em!important;
-    text-wrap:balance!important;
+    font-size:clamp(42px,3.6vw,62px)!important;
+    line-height:1!important;
+    letter-spacing:-.052em!important;
+    white-space:nowrap!important;
+    text-wrap:nowrap!important;
   }
   .ecommerce-page .service-essentials-head>p:last-child{
-    max-width:1240px!important;
-    margin:30px auto 0!important;
-    font-size:clamp(17px,1.25vw,21px)!important;
-    line-height:1.62!important;
+    max-width:1540px!important;
+    margin:26px auto 0!important;
+    font-size:clamp(16px,1.05vw,19px)!important;
+    line-height:1.55!important;
     text-align:center!important;
+    text-wrap:balance!important;
   }
 }
 
