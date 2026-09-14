@@ -3,7 +3,7 @@ import { articles } from "@/lib/articles";
 import { caseStudies } from "@/lib/case-studies";
 
 const base = "https://olivon.com.tr";
-const updated = "2026-09-13";
+const updated = "2026-09-14";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/hizmetler`, lastModified: updated, changeFrequency: "monthly", priority: 0.95 },
     { url: `${base}/ikas`, lastModified: updated, changeFrequency: "monthly", priority: 0.95 },
     { url: `${base}/hizmetler/e-ticaret`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/hizmetler/platform-tasima`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/hizmetler/web-tasarim`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/hizmetler/seo-geo-aeo-aio`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/hizmetler/ai-otomasyon`, lastModified: updated, changeFrequency: "monthly", priority: 0.85 },
