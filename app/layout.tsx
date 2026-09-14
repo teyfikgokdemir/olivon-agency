@@ -9,8 +9,6 @@ import "./elite-pages.css";
 import "./services-v2.css";
 import "./references-v2.css";
 import "./contact-faq.css";
-import "./blog-index-v2.css";
-import "./blog-v2.css";
 import "./home-trust-fix.css";
 import "./mobile-qa.css";
 import "./home-programs.css";
