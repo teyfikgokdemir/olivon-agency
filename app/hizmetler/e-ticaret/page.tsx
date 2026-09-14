@@ -59,6 +59,30 @@ export default function EcommercePage(){return <main className="inner-page servi
   breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Hizmetler",path:"/hizmetler"},{name:"E-ticaret",path:"/hizmetler/e-ticaret"}]),
   faqSchema
 ]} />
+<style>{`
+  .ecommerce-page .service-essentials-head{
+    display:block!important;
+    max-width:1180px;
+  }
+  .ecommerce-page .service-essentials-head .section-index{
+    display:block;
+    margin:0 0 18px!important;
+  }
+  .ecommerce-page .service-essentials-head h2{
+    max-width:1040px!important;
+    margin:0!important;
+    text-wrap:balance;
+  }
+  .ecommerce-page .service-essentials-head>p:last-child{
+    max-width:900px!important;
+    margin:22px 0 0!important;
+    color:#b8aca5!important;
+  }
+  @media(max-width:760px){
+    .ecommerce-page .service-essentials-head .section-index{margin-bottom:14px!important}
+    .ecommerce-page .service-essentials-head>p:last-child{margin-top:16px!important}
+  }
+`}</style>
 <section className="inner-hero shell services-hero"><p className="section-index">E-TİCARET SİSTEMLERİ</p><h1>Mağaza kurmak değil,<br/><em>satın alma sistemi kurmak.</em></h1><p>Yerli ve global e-ticaret altyapılarında vitrini, operasyonu, entegrasyonları, platform geçişini ve ölçümü aynı ticari sistem içinde ele alıyoruz.</p></section>
 <section className="service-detail-grid shell">{layers.map(item=><article className="service-detail-card" key={item[0]}><h2>{item[0]}</h2><p>{item[1]}</p><ul><li><CheckCircle2 size={16}/>SaaS · açık kaynak · özel altyapılar</li></ul></article>)}</section>
 <ServiceEssentials audience={["Yeni e-ticaret mağazası kuracak markalar","Mevcut mağazasını yeniden yapılandıracak ekipler","Farklı bir e-ticaret altyapısına geçiş planlayan markalar","Pazaryeri bağımlılığını azaltıp kendi satış kanalını kurmak isteyen işletmeler"]} deliverables={["Platform ve bilgi mimarisi","Kategori/ürün ve satın alma akışı","Platform taşıma ve veri eşleştirme planı","Ödeme, kargo, ERP ve pazaryeri entegrasyon planı","GA4 ve temel dönüşüm ölçümü"]} process={["Teşhis ve platform kararı","Mimari, tasarım ve içerik","Geliştirme, veri taşıma ve entegrasyon","Test, yayın ve gelişim planı"]} fitNote="Sadece en ucuz paket fiyatını arayan projelerden çok, satış operasyonunu, platform mimarisini ve müşteri deneyimini birlikte geliştirmek isteyen markalar için uygundur."/>
