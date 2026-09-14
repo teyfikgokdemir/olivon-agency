@@ -60,27 +60,37 @@ export default function EcommercePage(){return <main className="inner-page servi
   faqSchema
 ]} />
 <style>{`
-  .ecommerce-page .service-essentials-head{
-    display:block!important;
-    max-width:1180px;
-  }
-  .ecommerce-page .service-essentials-head .section-index{
-    display:block;
-    margin:0 0 18px!important;
-  }
-  .ecommerce-page .service-essentials-head h2{
-    max-width:1040px!important;
-    margin:0!important;
-    text-wrap:balance;
-  }
-  .ecommerce-page .service-essentials-head>p:last-child{
-    max-width:900px!important;
-    margin:22px 0 0!important;
-    color:#b8aca5!important;
-  }
-  @media(max-width:760px){
-    .ecommerce-page .service-essentials-head .section-index{margin-bottom:14px!important}
-    .ecommerce-page .service-essentials-head>p:last-child{margin-top:16px!important}
+  @media(min-width:1200px){
+    .ecommerce-page .service-detail-grid + .service-essentials .service-essentials-head{
+      display:block!important;
+      max-width:1700px!important;
+      margin:0 auto!important;
+      text-align:center!important;
+    }
+    .ecommerce-page .service-detail-grid + .service-essentials .service-essentials-head .section-index{
+      display:block!important;
+      margin:0 0 24px!important;
+      text-align:center!important;
+    }
+    .ecommerce-page .service-detail-grid + .service-essentials .service-essentials-head h2{
+      max-width:none!important;
+      margin:0 auto!important;
+      font-size:clamp(44px,3.45vw,60px)!important;
+      line-height:1!important;
+      letter-spacing:-.052em!important;
+      text-align:center!important;
+      white-space:nowrap!important;
+      text-wrap:nowrap!important;
+    }
+    .ecommerce-page .service-detail-grid + .service-essentials .service-essentials-head>p:last-child{
+      max-width:none!important;
+      margin:26px auto 0!important;
+      font-size:clamp(16px,1.02vw,19px)!important;
+      line-height:1.5!important;
+      text-align:center!important;
+      white-space:nowrap!important;
+      text-wrap:nowrap!important;
+    }
   }
 `}</style>
 <section className="inner-hero shell services-hero"><p className="section-index">E-TİCARET SİSTEMLERİ</p><h1>Mağaza kurmak değil,<br/><em>satın alma sistemi kurmak.</em></h1><p>Yerli ve global e-ticaret altyapılarında vitrini, operasyonu, entegrasyonları, platform geçişini ve ölçümü aynı ticari sistem içinde ele alıyoruz.</p></section>
