@@ -3,9 +3,9 @@ export const serviceGroups = [
     slug: "e-ticaret-sistemleri",
     href: "/hizmetler/e-ticaret",
     title: "E-ticaret sistemleri",
-    intro: "Shopify, ikas ve WooCommerce altyapılarında satışa hazır, yönetilebilir ve büyümeye açık mağazalar kurarız.",
+    intro: "Shopify, ikas ve WooCommerce altyapılarında satışa hazır, yönetilebilir ve büyümeye açık mağazalar kurar; gerektiğinde platformlar arası geçişi veri ve SEO kaybını azaltacak şekilde yönetiriz.",
     image: "/images/services/e-ticaret-sistemleri.webp?v=20260910-2",
-    items: ["Platform seçimi", "Tema kurulumu ve düzenleme", "Ödeme, kargo ve pazaryeri entegrasyonu", "Kategori ve ürün mimarisi"],
+    items: ["Platform seçimi", "ikas · Shopify · WooCommerce platform taşıma", "Pazaryerinden kendi e-ticaret sitesine geçiş", "Ödeme, kargo, ERP ve pazaryeri entegrasyonu", "Kategori ve ürün mimarisi"],
   },
   {
     slug: "ikas-kurulum-destek",
