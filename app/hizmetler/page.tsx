@@ -32,9 +32,9 @@ export default function ServicesPage() {
           margin-right:auto!important;
         }
         .services-page-final-cta h2{
-          max-width:980px!important;
-          font-size:clamp(34px,3.25vw,52px)!important;
-          line-height:1.03!important;
+          max-width:1380px!important;
+          font-size:clamp(30px,2.45vw,42px)!important;
+          line-height:1.05!important;
           text-wrap:balance!important;
         }
       `}</style>
@@ -55,7 +55,7 @@ export default function ServicesPage() {
       </section>
       <section className="service-cta shell services-page-final-cta">
         <p className="section-index">DOĞRU BAŞLANGIÇ</p>
-        <h2>İhtiyacınız analiz, yeniden kurulum veya sürekli destek olabilir. Önce kapsamı netleştirelim.</h2>
+        <h2>İhtiyacınız analiz, yeniden kurulum veya sürekli destek olabilir.<br />Önce kapsamı netleştirelim.</h2>
         <a href="/iletisim">Proje briefini gönderin <ArrowUpRight size={18} /></a>
       </section>
       <SiteFooter />
