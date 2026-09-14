@@ -37,7 +37,7 @@ export default function IkasPage(){
       @media(min-width:1001px){
         .ikas-final-cta{display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
         .ikas-final-cta .section-index{text-align:center!important}
-        .ikas-final-cta h2{width:auto!important;max-width:100%!important;margin:16px auto 24px!important;font-size:clamp(32px,2.2vw,40px)!important;line-height:1.05!important;text-align:center!important;white-space:nowrap!important;text-wrap:nowrap!important}
+        .ikas-final-cta h2{width:100%!important;max-width:1180px!important;margin:16px auto 24px!important;font-size:clamp(32px,2.15vw,40px)!important;line-height:1.08!important;text-align:center!important;white-space:normal!important;text-wrap:balance!important}
       }
     `}</style>
     <section className="inner-hero shell services-hero"><p className="section-index">OLIVON × İKAS</p><h1>ikas mağazanızı kurmuyoruz sadece.<br/><em>Satışa hazır hale getiriyoruz.</em></h1><p>Yeni kurulumdan mevcut mağaza check-up’ına; ürün yapısı, görsel, entegrasyon ve operasyon tarafını birlikte ele alıyoruz.</p></section>
@@ -48,7 +48,7 @@ export default function IkasPage(){
       process={["İhtiyaç ve operasyon analizi","Mağaza mimarisi ve içerik","Kurulum/entegrasyon","Test, yayın ve destek planı"]}
       fitNote="Kapsam; ürün hacmi, entegrasyon sayısı ve özel geliştirme ihtiyacına göre belirlenir. Tek paket yerine açık teslim listesiyle ilerleriz."
     />
-    <section className="service-cta shell ikas-final-cta"><p className="section-index">İKAS PROJENİZ</p><h2>Yeni mağaza veya check-up için doğru kapsamı çıkaralım.</h2><a href="/iletisim">ikas projesini konuşalım <ArrowUpRight size={18}/></a></section>
+    <section className="service-cta shell ikas-final-cta"><p className="section-index">İKAS PROJENİZ</p><h2>Yeni mağaza veya check-up için doğru kapsamı birlikte çıkaralım.</h2><a href="/iletisim">ikas projesini konuşalım <ArrowUpRight size={18}/></a></section>
     <SiteFooter/>
   </main>;
 }
