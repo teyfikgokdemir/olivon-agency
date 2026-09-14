@@ -6,12 +6,12 @@ import { ServiceEssentials } from "@/components/service-essentials";
 import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "E-Ticaret Platform Taşıma | ikas, Shopify & WooCommerce Geçişi",
-  description: "ikas, Shopify ve WooCommerce arasında ürün, kategori, müşteri, sipariş, SEO URL, yönlendirme ve entegrasyonları kontrollü biçimde taşıyoruz. Pazaryerinden kendi e-ticaret sitenize geçişi de planlıyoruz.",
+  title: "E-Ticaret Platform Taşıma & Migration | Olivon",
+  description: "ikas, Shopify, WooCommerce, IdeaSoft, Ticimax, T-Soft, OpenCart, PrestaShop ve diğer altyapılar arasında veri, SEO, URL ve entegrasyon kaybını azaltan kontrollü e-ticaret geçişi.",
   alternates: { canonical: "/hizmetler/platform-tasima" },
   openGraph: {
-    title: "E-Ticaret Platform Taşıma | Olivon",
-    description: "ikas, Shopify, WooCommerce ve pazaryeri operasyonlarından yeni e-ticaret altyapısına veri ve SEO kaybını azaltan kontrollü geçiş.",
+    title: "E-Ticaret Platform Taşıma & Migration | Olivon",
+    description: "Yerli ve global e-ticaret altyapıları ile pazaryerlerinden yeni satış sistemine kontrollü veri, içerik, SEO ve entegrasyon geçişi.",
     url: "/hizmetler/platform-tasima",
     type: "website",
   },
@@ -19,16 +19,20 @@ export const metadata: Metadata = {
 
 const migrationScenarios = [
   {
-    title: "ikas’tan Shopify veya WooCommerce’e geçiş",
-    text: "Mevcut mağazadaki ürün, kategori, varyant, görsel ve içerik yapısını hedef platforma göre yeniden kurar; ödeme, kargo ve operasyon bağlantılarını yeni mimariye taşırız.",
+    title: "Yerli e-ticaret altyapıları arasında geçiş",
+    text: "ikas, IdeaSoft, Ticimax, T-Soft, PlatinMarket ve benzeri sistemler arasında ürün, kategori, varyant, görsel, içerik ve operasyon verilerini hedef platformun veri modeline göre yeniden eşleştiririz.",
   },
   {
-    title: "Shopify veya WooCommerce’den ikas’a geçiş",
-    text: "Ürün kataloğu, kategori ağacı, temel içerikler, URL planı ve entegrasyon ihtiyaçlarını ikas yapısına uyarlayarak geçiş sürecini kontrollü biçimde yönetiriz.",
+    title: "Global veya açık kaynak altyapılara geçiş",
+    text: "Shopify, WooCommerce, OpenCart, PrestaShop, Magento/Adobe Commerce, BigCommerce, Wix eCommerce ve benzeri yapılara veya bu sistemlerden farklı bir altyapıya geçişi teknik kapsamına göre planlarız.",
   },
   {
     title: "Pazaryerinden kendi e-ticaret sitenize geçiş",
-    text: "Trendyol, Hepsiburada, Amazon, N11 ve benzeri kanallarda satış yapan ancak kendi sitesi olmayan markalar için ürün kataloğunu bağımsız satış kanalına dönüştürecek e-ticaret altyapısını kurarız.",
+    text: "Trendyol, Hepsiburada, Amazon, N11, Pazarama, Çiçeksepeti, Etsy ve benzeri kanallarda satış yapan ancak kendi sitesi olmayan markalar için ürün kataloğunu bağımsız satış kanalına dönüştürecek e-ticaret altyapısını kurarız.",
+  },
+  {
+    title: "Özel yazılımdan hazır altyapıya veya tersine geçiş",
+    text: "API, veri tabanı, dışa aktarma dosyaları ve mevcut operasyon akışları incelenerek özel yazılım ile SaaS veya açık kaynak sistemler arasındaki geçişin teknik yapılabilirliğini çıkarırız.",
   },
   {
     title: "Mevcut siteyi kapatmadan yeniden platformlama",
@@ -38,24 +42,28 @@ const migrationScenarios = [
 
 const migrationFaq = [
   {
+    question: "Hangi e-ticaret platformları arasında taşıma yapıyorsunuz?",
+    answer: "ikas, Shopify, WooCommerce, IdeaSoft, Ticimax, T-Soft, PlatinMarket, OpenCart, PrestaShop, Magento/Adobe Commerce ve benzeri sistemleri değerlendiriyoruz. BigCommerce, Wix eCommerce, özel yazılım ve daha az yaygın altyapılarda ise önce API, veri dışa aktarma ve hedef sistemin içe aktarma olanaklarını inceliyoruz."
+  },
+  {
     question: "E-ticaret platformu değiştirirken ürünler ve görseller taşınabilir mi?",
-    answer: "Evet. Kaynak platformun dışa aktarma imkânlarına ve veri kalitesine bağlı olarak ürün adı, açıklama, SKU, barkod, fiyat, stok, varyant, kategori ve görseller hedef platforma uyarlanabilir. Taşıma öncesinde alan eşleştirme ve veri temizliği yapılması gerekir.",
+    answer: "Evet. Kaynak platformun dışa aktarma imkânlarına ve veri kalitesine bağlı olarak ürün adı, açıklama, SKU, barkod, fiyat, stok, varyant, kategori ve görseller hedef platforma uyarlanabilir. Taşıma öncesinde alan eşleştirme ve veri temizliği yapılması gerekir."
   },
   {
     question: "Platform değişiminde Google sıralamaları kaybolur mu?",
-    answer: "Yanlış URL değişiklikleri ve eksik yönlendirmeler organik görünürlük kaybına yol açabilir. Bu nedenle eski ve yeni URL’ler eşleştirilir, gerekli 301 yönlendirmeleri planlanır, canonical, sitemap, robots, metadata ve index durumu yayın öncesi ve sonrası kontrol edilir.",
+    answer: "Yanlış URL değişiklikleri ve eksik yönlendirmeler organik görünürlük kaybına yol açabilir. Bu nedenle eski ve yeni URL’ler eşleştirilir, gerekli 301 yönlendirmeleri planlanır, canonical, sitemap, robots, metadata ve index durumu yayın öncesi ve sonrası kontrol edilir."
   },
   {
     question: "Pazaryerindeki ürünler kendi web siteme taşınabilir mi?",
-    answer: "Uygun veri kaynağı veya dışa aktarım bulunduğunda ürün kataloğu yeni e-ticaret sitesine aktarılabilir. Ancak pazaryeri içeriğini birebir kopyalamak yerine kategori, ürün içeriği, marka dili, SEO ve satın alma deneyimini bağımsız mağazaya göre yeniden düzenlemek daha doğru sonuç verir.",
+    answer: "Uygun veri kaynağı, entegrasyon veya dışa aktarım bulunduğunda ürün kataloğu yeni e-ticaret sitesine aktarılabilir. Ancak pazaryeri içeriğini birebir kopyalamak yerine kategori, ürün içeriği, marka dili, SEO ve satın alma deneyimini bağımsız mağazaya göre yeniden düzenlemek daha doğru sonuç verir."
   },
   {
-    question: "ikas, Shopify ve WooCommerce arasında hangisine geçmeliyim?",
-    answer: "Karar ürün sayısı, entegrasyonlar, operasyon ekibi, özelleştirme ihtiyacı, toplam sahip olma maliyeti, içerik yönetimi ve büyüme planına göre verilmelidir. Taşıma projesinden önce mevcut darboğazları ve hedef mimariyi birlikte değerlendiririz.",
+    question: "Hangi platforma geçmem gerektiğini de belirliyor musunuz?",
+    answer: "Evet. Karar ürün sayısı, entegrasyonlar, operasyon ekibi, özelleştirme ihtiyacı, toplam sahip olma maliyeti, içerik yönetimi, B2B/B2C yapısı, e-ihracat hedefi ve büyüme planına göre verilmelidir. Taşıma projesinden önce mevcut darboğazları ve hedef mimariyi birlikte değerlendiririz."
   },
   {
     question: "Müşteri ve sipariş verileri de taşınır mı?",
-    answer: "Kaynak ve hedef platformların API, dışa aktarma ve veri modeli izin verdiği ölçüde müşteri ve sipariş geçmişi için taşıma kapsamı belirlenebilir. KVKK, veri minimizasyonu ve operasyonel gereklilikler ayrıca değerlendirilir.",
+    answer: "Kaynak ve hedef platformların API, dışa aktarma ve veri modeli izin verdiği ölçüde müşteri ve sipariş geçmişi için taşıma kapsamı belirlenebilir. KVKK, veri minimizasyonu ve operasyonel gereklilikler ayrıca değerlendirilir."
   },
 ];
 
@@ -76,7 +84,7 @@ export default function PlatformMigrationPage() {
         data={[
           serviceSchema(
             "E-ticaret platform taşıma",
-            "ikas, Shopify, WooCommerce ve pazaryeri operasyonlarından yeni e-ticaret altyapısına kontrollü veri, içerik, SEO ve entegrasyon geçişi.",
+            "Yerli, global, açık kaynak ve özel e-ticaret altyapıları ile pazaryerlerinden yeni satış sistemine kontrollü veri, içerik, SEO ve entegrasyon geçişi.",
             "/hizmetler/platform-tasima"
           ),
           breadcrumbSchema([
@@ -92,7 +100,7 @@ export default function PlatformMigrationPage() {
       <section className="inner-hero shell services-hero">
         <p className="section-index">E-TİCARET PLATFORM TAŞIMA</p>
         <h1>Altyapıyı değiştirin.<br /><em>Veriyi, görünürlüğü ve satışı kaybetmeyin.</em></h1>
-        <p>ikas, Shopify ve WooCommerce arasında geçişleri; ürün verisi, kategori mimarisi, SEO URL’leri, yönlendirmeler, entegrasyonlar ve yayın kontrolüyle birlikte yönetiyoruz. Yalnızca pazaryerinde satış yapan markalar için de bağımsız e-ticaret sitesine geçiş planlıyoruz.</p>
+        <p>ikas, Shopify, WooCommerce, IdeaSoft, Ticimax, T-Soft ve diğer yerli, global veya açık kaynak e-ticaret sistemleri arasında geçişleri; ürün verisi, kategori mimarisi, SEO URL’leri, yönlendirmeler, entegrasyonlar ve yayın kontrolüyle birlikte yönetiyoruz. Yalnızca pazaryerinde satış yapan markalar için de bağımsız e-ticaret sitesine geçiş planlıyoruz.</p>
       </section>
 
       <section className="service-detail-grid shell" aria-label="Platform taşıma senaryoları">
@@ -112,9 +120,10 @@ export default function PlatformMigrationPage() {
       <ServiceEssentials
         audience={[
           "Mevcut e-ticaret altyapısından memnun olmayan markalar",
-          "ikas, Shopify veya WooCommerce arasında geçiş planlayan ekipler",
+          "Yerli, global veya açık kaynak sistemler arasında geçiş planlayan ekipler",
           "Sadece pazaryerinde satış yapıp kendi e-ticaret kanalını kurmak isteyen işletmeler",
-          "Platform değiştirirken organik trafik ve operasyon kaybını azaltmak isteyen markalar",
+          "Özel yazılımdan hazır altyapıya veya hazır altyapıdan özel sisteme geçmek isteyen markalar",
+          "Platform değiştirirken organik trafik ve operasyon kaybını azaltmak isteyen ekipler",
         ]}
         deliverables={[
           "Kaynak-hedef veri alanı ve kapsam analizi",
@@ -131,7 +140,7 @@ export default function PlatformMigrationPage() {
           "SEO yönlendirmeleri ve entegrasyon kurulumu",
           "Test, yayın ve yayın sonrası kontrol",
         ]}
-        fitNote="Bu hizmet yalnızca CSV içe aktarma işi değildir. Platform değişikliğini veri bütünlüğü, satış operasyonu, kullanıcı deneyimi ve organik görünürlük açısından birlikte yönetmek isteyen markalar için tasarlanmıştır."
+        fitNote="Bu hizmet yalnızca CSV içe aktarma işi değildir. Platform değişikliğini veri bütünlüğü, satış operasyonu, kullanıcı deneyimi ve organik görünürlük açısından birlikte yönetmek isteyen markalar için tasarlanmıştır. Kaynak veya hedef sistem listede olmasa bile teknik imkânları inceleyerek taşımanın kapsamını belirleyebiliriz."
       />
 
       <section className="service-essentials shell" aria-labelledby="migration-seo-title">
