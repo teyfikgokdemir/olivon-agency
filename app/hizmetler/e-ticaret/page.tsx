@@ -53,7 +53,7 @@ const faqSchema = {
   })),
 };
 
-export default function EcommercePage(){return <main className="inner-page services-page">
+export default function EcommercePage(){return <main className="inner-page services-page ecommerce-page">
 <StructuredData data={[
   serviceSchema("E-ticaret sistemleri","Yerli ve global e-ticaret altyapılarında kurulum, platform taşıma, entegrasyon ve dönüşüm hizmetleri.","/hizmetler/e-ticaret"),
   breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Hizmetler",path:"/hizmetler"},{name:"E-ticaret",path:"/hizmetler/e-ticaret"}]),
