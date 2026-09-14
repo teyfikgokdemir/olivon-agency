@@ -32,7 +32,10 @@ export default function ServicesPage() {
           margin-right:auto!important;
         }
         .services-page-final-cta h2{
-          max-width:1120px!important;
+          max-width:980px!important;
+          font-size:clamp(34px,3.25vw,52px)!important;
+          line-height:1.03!important;
+          text-wrap:balance!important;
         }
       `}</style>
       <section className="inner-hero shell services-hero">
