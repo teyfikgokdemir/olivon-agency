@@ -62,25 +62,29 @@ export default function EcommercePage(){return <main className="inner-page servi
 <style>{`
   @media(min-width:1200px){
     .ecommerce-page .service-essentials-head{
-      display:block!important;
+      display:flex!important;
+      flex-direction:column!important;
+      align-items:center!important;
+      justify-content:center!important;
       width:100%!important;
       max-width:1700px!important;
       margin:0 auto!important;
       text-align:center!important;
+      gap:0!important;
     }
     .ecommerce-page .service-essentials-head .section-index{
       display:block!important;
-      width:100%!important;
+      width:auto!important;
       margin:0 0 24px!important;
       text-align:center!important;
     }
     .ecommerce-page .service-essentials-head h2{
       display:block!important;
-      width:100%!important;
+      width:fit-content!important;
       max-width:100%!important;
-      margin:0!important;
+      margin:0 auto!important;
       padding:0!important;
-      justify-self:stretch!important;
+      justify-self:auto!important;
       font-size:clamp(44px,3.45vw,60px)!important;
       line-height:1!important;
       letter-spacing:-.052em!important;
@@ -89,6 +93,7 @@ export default function EcommercePage(){return <main className="inner-page servi
       text-wrap:nowrap!important;
     }
     .ecommerce-page .service-essentials-head>p:last-child{
+      width:auto!important;
       margin:26px auto 0!important;
       font-size:clamp(16px,1.02vw,19px)!important;
       line-height:1.5!important;
