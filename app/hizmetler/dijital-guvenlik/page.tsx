@@ -37,12 +37,20 @@ const faqSchema = {
 };
 
 export default function SecurityPage() {
-  return <main className="inner-page services-page">
+  return <main className="inner-page services-page security-page">
     <StructuredData data={[
       serviceSchema("Dijital güvenlik","Cloudflare, WAF, DDoS, bot kontrolü, erişim güvenliği ve web sürekliliği hizmetleri.","/hizmetler/dijital-guvenlik"),
       breadcrumbSchema([{name:"Ana Sayfa",path:"/"},{name:"Hizmetler",path:"/hizmetler"},{name:"Dijital güvenlik",path:"/hizmetler/dijital-guvenlik"}]),
       faqSchema,
     ]}/>
+    <style>{`
+      @media(min-width:1001px){
+        .security-page .service-detail-grid + .service-essentials .service-essentials-head{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;width:100%!important;max-width:1700px!important;margin:0 auto!important;text-align:center!important;gap:0!important}
+        .security-page .service-detail-grid + .service-essentials .service-essentials-head .section-index{margin:0 0 24px!important;text-align:center!important}
+        .security-page .service-detail-grid + .service-essentials .service-essentials-head h2{width:fit-content!important;max-width:100%!important;margin:0 auto!important;font-size:clamp(44px,3.45vw,60px)!important;line-height:1!important;letter-spacing:-.052em!important;text-align:center!important;white-space:nowrap!important;text-wrap:nowrap!important}
+        .security-page .service-detail-grid + .service-essentials .service-essentials-head>p:last-child{max-width:1540px!important;margin:26px auto 0!important;font-size:clamp(16px,1.02vw,19px)!important;line-height:1.55!important;text-align:center!important;text-wrap:balance!important}
+      }
+    `}</style>
     <section className="inner-hero shell services-hero"><p className="section-index">DİJİTAL GÜVENLİK</p><h1>Güven, tasarımdan önce<br/><em>altyapıda başlar.</em></h1><p>Web ve e-ticaret varlıklarında güvenliği yalnızca saldırı engelleme değil; erişim, trafik yönetimi, performans ve satış sürekliliği olarak ele alıyoruz.</p></section>
     <section className="service-detail-grid shell">{layers.map(item=><article className="service-detail-card" key={item[0]}><h2>{item[0]}</h2><p>{item[1]}</p><ul><li><CheckCircle2 size={16}/>Cloudflare odaklı katmanlı yaklaşım</li></ul></article>)}</section>
     <ServiceEssentials audience={["E-ticaret sitesinde bot veya kötü trafik sorunu yaşayan markalar","Cloudflare güvenlik ayarlarını profesyonelce yapılandırmak isteyen ekipler","Yönetim erişimi ve satış sürekliliğini güçlendirmek isteyen işletmeler"]} deliverables={["Risk ve trafik yüzeyi analizi","WAF, DDoS ve bot kural planı","Erişim güvenliği ve SSL kontrolü","İzleme ve süreklilik kontrol listesi"]} process={["Mevcut yapı ve risk analizi","Kural ve erişim tasarımı","Kontrollü uygulama","Test, izleme ve iyileştirme"]} fitNote="Güvenlik hiçbir zaman mutlak garanti değildir. Amaç riski azaltmak, görünürlüğü artırmak ve kesinti veya ihlal etkisini sınırlandıran katmanlı bir yapı kurmaktır."/>
