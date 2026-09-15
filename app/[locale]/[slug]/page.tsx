@@ -7,16 +7,28 @@ import { isLocale, locales, marketContent, type Locale } from "@/lib/i18n";
 import { intlPageKeys, intlPages, localizedPath, pageKeyFromSlug, type IntlPageKey } from "@/lib/intl-pages";
 import { SITE_URL } from "@/lib/seo";
 
+const trEquivalent: Record<IntlPageKey, string> = {
+  services: "/hizmetler",
+  ecommerce: "/hizmetler/e-ticaret",
+  search: "/hizmetler/seo-geo-aeo-aio",
+  web: "/hizmetler/web-tasarim",
+  security: "/hizmetler/dijital-guvenlik",
+  work: "/referanslar",
+  faq: "/sss",
+  contact: "/iletisim",
+};
+
 export function generateStaticParams() {
   return locales.flatMap(locale => intlPageKeys.map(key => ({ locale, slug: intlPages[locale][key].slug })));
 }
 
 function alternatesFor(key: IntlPageKey) {
   return {
-    "en": localizedPath("en", key),
+    "tr-TR": trEquivalent[key],
+    en: localizedPath("en", key),
     "de-DE": localizedPath("de", key),
     "fr-FR": localizedPath("fr", key),
-    "x-default": "/",
+    "x-default": trEquivalent[key],
   };
 }
 
@@ -56,6 +68,7 @@ export default async function IntlLanding({ params }: { params: Promise<{ locale
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${SITE_URL}${canonical}#breadcrumb`,
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Olivon", item: `${SITE_URL}/${locale}` },
       { "@type": "ListItem", position: 2, name: page.title, item: `${SITE_URL}${canonical}` },
@@ -86,6 +99,7 @@ export default async function IntlLanding({ params }: { params: Promise<{ locale
   const faq = page.faq?.length ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": `${SITE_URL}${canonical}#faq`,
     mainEntity: page.faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })),
   } : null;
 
