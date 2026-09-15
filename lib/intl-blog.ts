@@ -5,17 +5,17 @@ import { intlTrendArticles } from "@/lib/intl-trend-articles";
 export type IntlBlogArticle = IntlArticle & { image: string; group: string };
 
 const imageByGroup = {
-  "generative-search-2026": "/images/blog/intl/ai-generative-search.webp",
-  "ai-citation-measurement": "/images/blog/intl/search-visibility.webp",
-  "grounding-citation-ready-content": "/images/blog/intl/security.webp",
-  "freshness-indexnow-sitemaps": "/images/blog/intl/freshness-indexing.webp",
-  "product-structured-data-ai-commerce": "/images/blog/intl/structured-data.webp",
-  "agentic-commerce-readiness": "/images/blog/intl/ai-agents.webp",
-  "duplicate-content-ai-search": "/images/blog/intl/content-pruning-canonical.webp",
-  "cross-border-commerce": "/images/blog/intl/ecommerce.webp",
-  "international-seo": "/images/blog/intl/global-seo-hreflang.webp",
-  "commerce-platforms": "/images/blog/intl/platform-selection.webp",
-  "ai-search-visibility": "/images/blog/intl/localization.webp",
+  "generative-search-2026": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-ai-generative-search.webp?v=1789515758",
+  "ai-citation-measurement": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-search-visibility.webp?v=1789515816",
+  "grounding-citation-ready-content": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-security.webp?v=1789515789",
+  "freshness-indexnow-sitemaps": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-freshness-indexing.webp?v=1789515844",
+  "product-structured-data-ai-commerce": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-structured-data.webp?v=1789515780",
+  "agentic-commerce-readiness": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-ai-agents.webp?v=1789515806",
+  "duplicate-content-ai-search": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-content-pruning-canonical.webp?v=1789515798",
+  "cross-border-commerce": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-ecommerce.webp?v=1789515770",
+  "international-seo": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-global-seo-hreflang.webp?v=1789515748",
+  "commerce-platforms": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-platform-selection.webp?v=1789515836",
+  "ai-search-visibility": "https://cdn.shopify.com/s/files/1/0823/7144/4990/files/olivon-localization.webp?v=1789515825",
 } as const;
 
 const legacyGroups = [
