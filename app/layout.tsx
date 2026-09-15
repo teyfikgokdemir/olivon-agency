@@ -27,42 +27,29 @@ import "./i18n.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
-  title: {
-    default: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
-    template: "%s | Olivon",
-  },
+  title: { default: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri", template: "%s | Olivon" },
   description: "Türkiye'deki markalar için premium web tasarım, e-ticaret, SEO, GEO, otomasyon ve dijital güvenlik çözümleri.",
-  alternates: {
-    canonical: "/",
-    languages: { "tr-TR": "/", en: "/en", "de-DE": "/de", "fr-FR": "/fr", "x-default": "/" },
-  },
+  alternates: { canonical: "/", languages: { "tr-TR": "/", en: "/en", "de-DE": "/de", "fr-FR": "/fr", "x-default": "/" } },
   applicationName: "Olivon",
   authors: [{ name: "Olivon", url: "https://olivon.com.tr" }],
   creator: "Olivon",
   publisher: "Olivon",
   formatDetection: { email: false, address: false, telephone: false },
-  openGraph: {
-    type: "website",
-    locale: "tr_TR",
-    siteName: "Olivon",
-    title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
-    description: "Web, e-ticaret, SEO, GEO, AEO, AIO, otomasyon, dijital reklam ve güvenlik hizmetlerini tek büyüme sistemi içinde yönetin.",
-    url: "https://olivon.com.tr",
-    images: [{ url: "/images/olivon-og.webp", width: 1200, height: 630, alt: "Olivon dijital büyüme stüdyosu" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri",
-    description: "Web, e-ticaret, görünürlük, otomasyon, reklam ve güvenlik için bütünleşik dijital büyüme sistemi.",
-    images: ["/images/olivon-og.webp"],
-  },
+  openGraph: { type:"website", locale:"tr_TR", siteName:"Olivon", title:"Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri", description:"Web, e-ticaret, SEO, GEO, AEO, AIO, otomasyon, dijital reklam ve güvenlik hizmetlerini tek büyüme sistemi içinde yönetin.", url:"https://olivon.com.tr", images:[{url:"/images/olivon-og.webp",width:1200,height:630,alt:"Olivon dijital büyüme stüdyosu"}] },
+  twitter: { card:"summary_large_image", title:"Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri", description:"Web, e-ticaret, görünürlük, otomasyon, reklam ve güvenlik için bütünleşik dijital büyüme sistemi.", images:["/images/olivon-og.webp"] },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr">
+    <html lang="tr" suppressHydrationWarning>
       <body className="antialiased">
+        <Script id="olivon-document-language" strategy="beforeInteractive">{`
+          (function(){
+            var first=(location.pathname.split('/').filter(Boolean)[0]||'tr').toLowerCase();
+            document.documentElement.lang=(first==='en'||first==='de'||first==='fr')?first:'tr';
+          })();
+        `}</Script>
         <StructuredData data={[organizationSchema, websiteSchema]} />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-VJ2PP2LG1N" strategy="afterInteractive" />
         <Script id="olivon-ga4" strategy="afterInteractive">{`
@@ -80,9 +67,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             if (/wa\\.me|whatsapp/i.test(href)) eventName = 'whatsapp_click';
             else if (href.indexOf('mailto:') === 0) eventName = 'email_click';
             else if (href.indexOf('tel:') === 0) eventName = 'phone_click';
-            else if (href === '/iletisim' || href.indexOf('/iletisim?') === 0 || /\/(en|de|fr)#contact/.test(href)) eventName = 'contact_cta_click';
-            else if (href.indexOf('/referanslar') === 0) eventName = 'case_study_click';
-            else if (href.indexOf('/hizmetler/') === 0 || href === '/hizmetler') eventName = 'service_detail_click';
+            else if (href === '/iletisim' || href.indexOf('/iletisim?') === 0 || /^\/(en\/contact|de\/kontakt|fr\/contact)(\?|#|$)/.test(href)) eventName = 'contact_cta_click';
+            else if (href.indexOf('/referanslar') === 0 || /^\/(en\/work|de\/referenzen|fr\/realisations)/.test(href)) eventName = 'case_study_click';
+            else if (href.indexOf('/hizmetler/') === 0 || href === '/hizmetler' || /^\/(en|de|fr)\//.test(href)) eventName = 'service_detail_click';
             if (!eventName) return;
             window.gtag('event', eventName, { link_url: href, link_text: (link.textContent || '').trim().slice(0, 80) });
           }, { passive: true });
