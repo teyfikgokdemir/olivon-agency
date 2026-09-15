@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { FallingCapsules } from "@/components/falling-capsules";
 import { FeaturedCasesController } from "@/components/featured-cases-controller";
 import { FloatingActions } from "@/components/floating-actions";
 import { MotionController } from "@/components/motion-controller";
@@ -23,7 +22,6 @@ import "./visibility-system.css";
 import "./inner-pages-premium.css";
 import "./inner-pages-mobile-final.css";
 import "./motion-premium.css";
-import "./falling-capsules-grounded.css";
 import "./featured-cases-flow.css";
 
 export const metadata: Metadata = {
@@ -103,7 +101,6 @@ export default function RootLayout({
         <SiteHeader />
         <MotionController />
         <FeaturedCasesController />
-        <FallingCapsules />
         {children}
         <FloatingActions />
       </body>
