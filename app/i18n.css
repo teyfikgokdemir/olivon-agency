@@ -40,9 +40,11 @@ main[data-locale] .faq-list details{display:block!important;width:100%!important
 main[data-locale] .faq-list summary{display:block!important;width:100%!important;max-width:none!important;min-width:0!important;min-height:0!important;height:auto!important;margin:0!important;padding:21px 4px!important;grid-template-columns:none!important;cursor:pointer!important;font-size:clamp(18px,1.55vw,23px)!important;font-weight:600!important;line-height:1.28!important;white-space:normal!important;word-break:normal!important;overflow-wrap:normal!important;text-wrap:pretty!important}
 main[data-locale] .faq-list summary::marker{color:var(--coral)}
 main[data-locale] .faq-list details>p{display:block!important;width:auto!important;max-width:980px!important;margin:0!important;padding:0 4px 24px!important;color:#aaa09a!important;font-size:15px!important;line-height:1.72!important;white-space:normal!important;word-break:normal!important;overflow-wrap:normal!important}
-main[data-locale] .localized-contact{padding-top:clamp(72px,7vw,110px)!important;padding-bottom:clamp(82px,9vw,138px)!important}
-main[data-locale] .localized-contact h2{max-width:980px!important;font-size:clamp(36px,4vw,62px)!important;line-height:1.04!important;text-wrap:balance!important}
-main[data-locale] .localized-contact>p:not(.section-index){max-width:820px!important;margin-left:0!important;font-size:17px!important;line-height:1.65!important}
+main[data-locale] .localized-contact{padding-top:clamp(72px,7vw,110px)!important;padding-bottom:clamp(82px,9vw,138px)!important;text-align:center!important}
+main[data-locale] .localized-contact .section-index{margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+main[data-locale] .localized-contact h2{max-width:980px!important;margin-left:auto!important;margin-right:auto!important;font-size:clamp(36px,4vw,62px)!important;line-height:1.04!important;text-wrap:balance!important;text-align:center!important}
+main[data-locale] .localized-contact>p:not(.section-index){max-width:820px!important;margin-left:auto!important;margin-right:auto!important;font-size:17px!important;line-height:1.65!important;text-align:center!important}
+main[data-locale] .localized-contact .hero-actions{justify-content:center!important}
 
 /* Localized footer: protect long German/French copy from overflow. */
 main[data-locale] .mega-footer{overflow:hidden}
