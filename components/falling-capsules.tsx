@@ -4,16 +4,18 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 const capsules = [
-  { label: "WORKFLOW", tone: "coral", x: "4%", y: "76%", delay: 160, rotate: -2, width: 142 },
-  { label: "WEB TASARIM", tone: "cream", x: "18%", y: "79%", delay: 410, rotate: 0, width: 158 },
-  { label: "E-TİCARET", tone: "dark", x: "34%", y: "76%", delay: 690, rotate: -1, width: 146 },
-  { label: "SEO", tone: "coral", x: "49%", y: "80%", delay: 980, rotate: 1, width: 106 },
-  { label: "SHOPIFY", tone: "cream", x: "61%", y: "75%", delay: 1260, rotate: -1, width: 132 },
-  { label: "İKAS", tone: "dark", x: "74%", y: "80%", delay: 1540, rotate: 1, width: 104 },
-  { label: "GEO", tone: "coral", x: "84%", y: "75%", delay: 1810, rotate: -2, width: 106 },
-  { label: "AI", tone: "cream", x: "27%", y: "57%", delay: 2090, rotate: 0, width: 92 },
-  { label: "GÜVENLİK", tone: "dark", x: "66%", y: "56%", delay: 2360, rotate: -1, width: 138 },
-  { label: "STRATEJİ", tone: "coral", x: "2.5%", y: "48%", delay: 2600, rotate: -88, width: 126 },
+  { label: "WORDPRESS", mark: "W", tone: "dark", x: "6%", y: "76%", delay: 160, rotate: -3, width: 142 },
+  { label: "WEB TASARIM", mark: "UX", tone: "cream", x: "18%", y: "84%", delay: 360, rotate: 1, width: 156 },
+  { label: "WOOCOMMERCE", mark: "WOO", tone: "coral", x: "31%", y: "73%", delay: 570, rotate: -2, width: 166 },
+  { label: "SEO", mark: "S", tone: "dark", x: "44%", y: "85%", delay: 790, rotate: 2, width: 106 },
+  { label: "SHOPIFY", logo: "/partners/shopify.svg", tone: "cream", x: "54%", y: "74%", delay: 1010, rotate: -2, width: 140 },
+  { label: "İKAS", logo: "/partners/ikas.svg", tone: "dark", x: "66%", y: "84%", delay: 1230, rotate: 2, width: 108 },
+  { label: "GOOGLE ADS", mark: "G", tone: "coral", x: "75%", y: "73%", delay: 1460, rotate: -2, width: 144 },
+  { label: "META", mark: "∞", tone: "cream", x: "86%", y: "84%", delay: 1680, rotate: 2, width: 112 },
+  { label: "CLOUDFLARE", mark: "CF", tone: "dark", x: "12%", y: "58%", delay: 1910, rotate: -2, width: 146 },
+  { label: "E-TİCARET", mark: "ET", tone: "coral", x: "35%", y: "58%", delay: 2130, rotate: 2, width: 132 },
+  { label: "AI", mark: "AI", tone: "cream", x: "61%", y: "57%", delay: 2350, rotate: -2, width: 98 },
+  { label: "GÜVENLİK", mark: "SH", tone: "dark", x: "79%", y: "57%", delay: 2570, rotate: 2, width: 136 },
 ] as const;
 
 export function FallingCapsules() {
@@ -62,7 +64,12 @@ export function FallingCapsules() {
               ["--capsule-rotate" as string]: `${capsule.rotate}deg`,
             }}
           >
-            {capsule.label}
+            {"logo" in capsule ? (
+              <img className="falling-capsule-logo" src={capsule.logo} alt="" />
+            ) : (
+              <span className="falling-capsule-mark">{capsule.mark}</span>
+            )}
+            <span className="falling-capsule-label">{capsule.label}</span>
           </span>
         ))}
       </div>
