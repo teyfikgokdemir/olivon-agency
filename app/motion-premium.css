@@ -94,19 +94,19 @@
   body.motion-hero-entered .hero-stage-photo img { transform: translate3d(0, var(--olivon-hero-parallax), 0) scale(1.015); }
 
   .falling-showcase {
-    margin-top: 18px;
-    margin-bottom: 24px;
+    margin-top: 14px;
+    margin-bottom: 22px;
   }
   .falling-showcase-frame {
     position: relative;
-    height: clamp(320px, 34vw, 470px);
-    max-height: calc(100svh - 150px);
+    height: clamp(300px, 31vw, 420px);
+    max-height: calc(100svh - 170px);
     overflow: hidden;
     border-radius: 24px;
     background: #16110e;
     box-shadow:
-      inset 0 0 0 1px rgba(245,234,220,.09),
-      0 18px 60px rgba(0,0,0,.18);
+      inset 0 0 0 1px rgba(245,234,220,.1),
+      0 18px 58px rgba(0,0,0,.16);
   }
   .falling-showcase-image {
     position: absolute;
@@ -114,16 +114,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 58%;
-    transform: scale(1.018);
-    filter: saturate(.9) brightness(.8) contrast(1.02);
+    object-position: center 60%;
+    transform: scale(1.014);
+    filter: saturate(.9) brightness(.8) contrast(1.03);
   }
   .falling-showcase-shade {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(16,12,10,.08) 0%, rgba(16,12,10,.1) 48%, rgba(16,12,10,.52) 100%),
-      linear-gradient(90deg, rgba(13,10,8,.18) 0%, transparent 18%, transparent 82%, rgba(13,10,8,.15) 100%);
+      linear-gradient(180deg, rgba(16,12,10,.06) 0%, rgba(16,12,10,.08) 48%, rgba(16,12,10,.5) 100%),
+      linear-gradient(90deg, rgba(13,10,8,.2) 0%, transparent 18%, transparent 82%, rgba(13,10,8,.16) 100%);
     pointer-events: none;
   }
   .falling-capsules {
@@ -135,28 +135,58 @@
   }
   .falling-capsule {
     position: absolute;
-    min-height: 44px;
-    padding: 0 20px;
+    min-height: 42px;
+    padding: 0 16px 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(246,237,226,.25);
+    font-size: 11px;
+    font-weight: 760;
+    letter-spacing: .045em;
+    white-space: nowrap;
+    box-shadow:
+      0 10px 24px rgba(8,7,6,.16),
+      inset 0 1px 0 rgba(255,255,255,.08);
+    opacity: 0;
+    transform: translate3d(0, -520px, 0) rotate(calc(var(--capsule-rotate) * -1.1)) scale(.988);
+    animation: olivon-capsule-drop 2550ms cubic-bezier(.18,.78,.2,1) var(--capsule-delay) forwards;
+    will-change: transform, opacity;
+  }
+  .falling-capsule--coral { background: #d96f55; color: #17120f; border-color: rgba(232,126,99,.72); }
+  .falling-capsule--cream { background: #f1e6d8; color: #17120f; border-color: rgba(23,18,15,.16); }
+  .falling-capsule--dark { background: rgba(23,18,15,.96); color: #f5eadc; border-color: rgba(245,234,220,.14); }
+  .falling-capsule-mark,
+  .falling-capsule-logo {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    border-radius: 999px;
+  }
+  .falling-capsule-mark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 999px;
-    border: 1px solid rgba(246,237,226,.28);
-    font-size: 12px;
-    font-weight: 760;
-    letter-spacing: .055em;
-    white-space: nowrap;
-    box-shadow:
-      0 10px 24px rgba(8,7,6,.18),
-      inset 0 1px 0 rgba(255,255,255,.08);
-    opacity: 0;
-    transform: translate3d(0, -560px, 0) rotate(calc(var(--capsule-rotate) * -1.15)) scale(.985);
-    animation: olivon-capsule-drop 2500ms cubic-bezier(.18,.78,.2,1) var(--capsule-delay) forwards;
-    will-change: transform, opacity;
+    font-size: 8px;
+    line-height: 1;
+    font-weight: 850;
+    letter-spacing: -.02em;
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.16);
   }
-  .falling-capsule--coral { background: #d96f55; color: #17120f; border-color: rgba(232,126,99,.7); }
-  .falling-capsule--cream { background: #f1e6d8; color: #17120f; border-color: rgba(23,18,15,.18); }
-  .falling-capsule--dark { background: rgba(23,18,15,.95); color: #f5eadc; border-color: rgba(245,234,220,.15); }
+  .falling-capsule--cream .falling-capsule-mark,
+  .falling-capsule--coral .falling-capsule-mark {
+    background: rgba(23,18,15,.08);
+    border-color: rgba(23,18,15,.1);
+  }
+  .falling-capsule-logo {
+    object-fit: contain;
+    padding: 3px;
+    background: rgba(255,255,255,.9);
+  }
+  .falling-capsule-label { transform: translateY(.5px); }
 
   .motion-section { position: relative; }
   .motion-section::after {
@@ -182,10 +212,10 @@
     to { opacity: 1; transform: translateY(0); }
   }
   @keyframes olivon-capsule-drop {
-    0% { opacity: 0; transform: translate3d(0, -560px, 0) rotate(calc(var(--capsule-rotate) * -1.15)) scale(.985); }
+    0% { opacity: 0; transform: translate3d(0, -520px, 0) rotate(calc(var(--capsule-rotate) * -1.1)) scale(.988); }
     50% { opacity: 1; }
-    78% { transform: translate3d(0, 8px, 0) rotate(calc(var(--capsule-rotate) * 1.025)) scale(1.002); }
-    90% { transform: translate3d(0, -3px, 0) rotate(calc(var(--capsule-rotate) * .99)) scale(1); }
+    78% { transform: translate3d(0, 7px, 0) rotate(calc(var(--capsule-rotate) * 1.02)) scale(1.002); }
+    90% { transform: translate3d(0, -2px, 0) rotate(calc(var(--capsule-rotate) * .995)) scale(1); }
     100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(var(--capsule-rotate)) scale(1); }
   }
 }
@@ -201,20 +231,27 @@
   .button:hover { transform: none; }
 
   .falling-showcase {
-    margin-top: 14px;
-    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-bottom: 18px;
   }
   .falling-showcase-frame {
-    height: clamp(300px, 76vw, 410px);
-    max-height: calc(100svh - 130px);
+    height: clamp(280px, 72vw, 380px);
+    max-height: calc(100svh - 140px);
     border-radius: 20px;
   }
   .falling-capsule {
-    min-height: 36px;
-    padding: 0 13px;
-    font-size: 9px;
-    transform: translate3d(0, -420px, 0) rotate(calc(var(--capsule-rotate) * -1.08)) scale(.99);
-    animation-duration: 2200ms;
+    min-height: 34px;
+    padding: 0 10px 0 7px;
+    gap: 6px;
+    font-size: 8px;
+    transform: translate3d(0, -390px, 0) rotate(calc(var(--capsule-rotate) * -1.05)) scale(.99);
+    animation-duration: 2250ms;
+  }
+  .falling-capsule-mark,
+  .falling-capsule-logo {
+    width: 19px;
+    height: 19px;
+    flex-basis: 19px;
   }
   .falling-capsule:nth-child(n+8) { display: none; }
 }
