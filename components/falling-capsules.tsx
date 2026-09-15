@@ -4,15 +4,16 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 const capsules = [
-  { label: "WORKFLOW", tone: "coral", x: "7%", y: "72%", delay: 180, rotate: -7, width: 156 },
-  { label: "WEB TASARIM", tone: "cream", x: "21%", y: "80%", delay: 430, rotate: 1, width: 172 },
-  { label: "E-TİCARET", tone: "dark", x: "36%", y: "68%", delay: 710, rotate: -2, width: 158 },
-  { label: "SEO", tone: "coral", x: "48%", y: "81%", delay: 990, rotate: 3, width: 116 },
-  { label: "SHOPIFY", tone: "cream", x: "60%", y: "70%", delay: 1270, rotate: -2, width: 142 },
-  { label: "İKAS", tone: "dark", x: "73%", y: "80%", delay: 1550, rotate: 2, width: 110 },
-  { label: "GEO", tone: "coral", x: "84%", y: "69%", delay: 1830, rotate: -5, width: 112 },
-  { label: "AI", tone: "cream", x: "22%", y: "52%", delay: 2110, rotate: 5, width: 102 },
-  { label: "GÜVENLİK", tone: "dark", x: "67%", y: "51%", delay: 2390, rotate: -4, width: 150 },
+  { label: "WORKFLOW", tone: "coral", x: "4%", y: "76%", delay: 160, rotate: -2, width: 142 },
+  { label: "WEB TASARIM", tone: "cream", x: "18%", y: "79%", delay: 410, rotate: 0, width: 158 },
+  { label: "E-TİCARET", tone: "dark", x: "34%", y: "76%", delay: 690, rotate: -1, width: 146 },
+  { label: "SEO", tone: "coral", x: "49%", y: "80%", delay: 980, rotate: 1, width: 106 },
+  { label: "SHOPIFY", tone: "cream", x: "61%", y: "75%", delay: 1260, rotate: -1, width: 132 },
+  { label: "İKAS", tone: "dark", x: "74%", y: "80%", delay: 1540, rotate: 1, width: 104 },
+  { label: "GEO", tone: "coral", x: "84%", y: "75%", delay: 1810, rotate: -2, width: 106 },
+  { label: "AI", tone: "cream", x: "27%", y: "57%", delay: 2090, rotate: 0, width: 92 },
+  { label: "GÜVENLİK", tone: "dark", x: "66%", y: "56%", delay: 2360, rotate: -1, width: 138 },
+  { label: "STRATEJİ", tone: "coral", x: "2.5%", y: "48%", delay: 2600, rotate: -88, width: 126 },
 ] as const;
 
 export function FallingCapsules() {
