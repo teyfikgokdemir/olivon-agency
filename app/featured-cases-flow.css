@@ -2,25 +2,37 @@
   .featured-reference-grid.featured-cases-flow {
     position: relative;
     display: block;
-    min-height: clamp(420px, 48vw, 660px);
+    min-height: clamp(300px, 31vw, 420px);
+    max-height: calc(100svh - 230px);
+    max-width: 1080px;
+    margin: 0 auto;
     overflow: hidden;
     isolation: isolate;
+    border-radius: 24px;
+    padding: 10px;
+    background: rgba(245,234,220,.025);
+    box-shadow:
+      inset 0 0 0 1px rgba(245,234,220,.08),
+      0 22px 70px rgba(0,0,0,.12);
   }
 
   .featured-reference-grid.featured-cases-flow .featured-reference-card {
     position: absolute;
-    inset: 0;
+    inset: 10px;
     display: grid;
-    grid-template-rows: 1fr auto auto;
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    overflow: hidden;
+    border-radius: 18px;
     opacity: 0;
     pointer-events: none;
-    transform: translate3d(8%, 0, 0) scale(.985);
-    filter: blur(8px);
+    transform: translate3d(7%, 0, 0) scale(.988);
+    filter: blur(7px);
     transition:
-      opacity 760ms cubic-bezier(.22,1,.36,1),
-      transform 900ms cubic-bezier(.22,1,.36,1),
-      filter 760ms cubic-bezier(.22,1,.36,1);
+      opacity 880ms cubic-bezier(.22,1,.36,1),
+      transform 1080ms cubic-bezier(.22,1,.36,1),
+      filter 880ms cubic-bezier(.22,1,.36,1);
     z-index: 1;
+    box-shadow: inset 0 0 0 1px rgba(245,234,220,.07);
   }
 
   .featured-reference-grid.featured-cases-flow .featured-reference-card.is-case-active {
@@ -33,8 +45,8 @@
 
   .featured-reference-grid.featured-cases-flow .featured-reference-card.is-case-leaving {
     opacity: 0;
-    transform: translate3d(-7%, 0, 0) scale(.99);
-    filter: blur(6px);
+    transform: translate3d(-6%, 0, 0) scale(.992);
+    filter: blur(5px);
     z-index: 2;
   }
 
@@ -43,44 +55,90 @@
     height: 100%;
     min-height: 0;
     object-fit: cover;
-    transition: transform 4.8s cubic-bezier(.2,.7,.2,1);
+    object-position: center top;
+    transition: transform 6.4s cubic-bezier(.2,.7,.2,1);
   }
 
   .featured-reference-grid.featured-cases-flow .featured-reference-card.is-case-active img {
-    transform: scale(1.025);
+    transform: scale(1.018);
+  }
+
+  .featured-reference-grid.featured-cases-flow .featured-reference-card > span,
+  .featured-reference-grid.featured-cases-flow .featured-reference-card > strong {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .featured-reference-grid.featured-cases-flow .featured-reference-card > span {
+    padding-top: 10px;
+    font-size: 11px;
+    opacity: .62;
+  }
+
+  .featured-reference-grid.featured-cases-flow .featured-reference-card > strong {
+    padding-top: 3px;
+    padding-bottom: 12px;
+    font-size: clamp(17px, 1.6vw, 22px);
+  }
+
+  .featured-reference-grid.featured-cases-flow::before {
+    content: "01 / 03";
+    position: absolute;
+    right: 24px;
+    top: 22px;
+    z-index: 7;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(13,10,8,.72);
+    border: 1px solid rgba(245,234,220,.12);
+    color: rgba(245,234,220,.8);
+    font-size: 10px;
+    letter-spacing: .12em;
+    pointer-events: none;
   }
 
   .featured-reference-grid.featured-cases-flow::after {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 8px;
     height: 2px;
-    z-index: 5;
-    background: linear-gradient(90deg, currentColor 0 33%, transparent 33% 100%);
-    opacity: .12;
+    z-index: 7;
+    background: linear-gradient(90deg, rgba(217,111,85,.8) 0 33%, rgba(245,234,220,.08) 33% 100%);
     pointer-events: none;
   }
 }
 
 @media (max-width: 900px) {
   .featured-reference-grid.featured-cases-flow {
-    min-height: 470px;
+    min-height: 330px;
+    max-height: calc(100svh - 210px);
+    padding: 7px;
+    border-radius: 20px;
   }
 
   .featured-reference-grid.featured-cases-flow .featured-reference-card {
-    transform: translate3d(5%, 0, 0) scale(.99);
+    inset: 7px;
+    border-radius: 15px;
+    transform: translate3d(5%, 0, 0) scale(.992);
   }
 
   .featured-reference-grid.featured-cases-flow .featured-reference-card.is-case-leaving {
     transform: translate3d(-5%, 0, 0) scale(.995);
+  }
+
+  .featured-reference-grid.featured-cases-flow::before {
+    right: 16px;
+    top: 15px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .featured-reference-grid.featured-cases-flow {
     display: grid;
+    max-width: 1080px;
+    margin: 0 auto;
   }
 
   .featured-reference-grid.featured-cases-flow .featured-reference-card:not(:first-child) {
