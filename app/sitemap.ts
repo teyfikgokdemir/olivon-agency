@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/articles";
 import { caseStudies } from "@/lib/case-studies";
-import { intlPageKeys, localizedPath, type IntlPageKey } from "@/lib/intl-pages";
+import { intlArticles } from "@/lib/intl-articles";
+import { intlPageKeys, intlPages, localizedPath, type IntlPageKey } from "@/lib/intl-pages";
 import { locales } from "@/lib/i18n";
 
 const base = "https://olivon.com.tr";
@@ -13,6 +14,14 @@ const languageAlternates = {
   "de-DE": `${base}/de`,
   "fr-FR": `${base}/fr`,
   "x-default": `${base}/`,
+};
+
+const blogAlternates = {
+  "tr-TR": `${base}/blog`,
+  en: `${base}/en/blog`,
+  "de-DE": `${base}/de/blog`,
+  "fr-FR": `${base}/fr/blog`,
+  "x-default": `${base}/blog`,
 };
 
 const trEquivalent: Record<IntlPageKey, string> = {
@@ -49,7 +58,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/fiyatlandirma`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/iletisim`, lastModified: updated, changeFrequency: "monthly", priority: 0.85, alternates: { languages: alternatesFor("contact") } },
     { url: `${base}/sss`, lastModified: updated, changeFrequency: "monthly", priority: 0.8, alternates: { languages: alternatesFor("faq") } },
-    { url: `${base}/blog`, lastModified: updated, changeFrequency: "weekly", priority: 0.82 },
+    { url: `${base}/blog`, lastModified: updated, changeFrequency: "weekly", priority: 0.82, alternates: { languages: blogAlternates } },
+    { url: `${base}/en/blog`, lastModified: updated, changeFrequency: "weekly", priority: 0.8, alternates: { languages: blogAlternates } },
+    { url: `${base}/de/blog`, lastModified: updated, changeFrequency: "weekly", priority: 0.8, alternates: { languages: blogAlternates } },
+    { url: `${base}/fr/blog`, lastModified: updated, changeFrequency: "weekly", priority: 0.8, alternates: { languages: blogAlternates } },
     { url: `${base}/gizlilik-politikasi`, lastModified: updated, changeFrequency: "yearly", priority: 0.2 },
     { url: `${base}/kvkk`, lastModified: updated, changeFrequency: "yearly", priority: 0.2 },
     { url: `${base}/cerez-politikasi`, lastModified: updated, changeFrequency: "yearly", priority: 0.2 },
@@ -65,7 +77,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   })));
 
   const caseRoutes: MetadataRoute.Sitemap = caseStudies.map(item => ({ url:`${base}/referanslar/${item.slug}`, lastModified:updated, changeFrequency:"monthly", priority:0.82 }));
+  const localizedCaseRoutes: MetadataRoute.Sitemap = locales.flatMap(locale => caseStudies.map(item => ({ url:`${base}/${locale}/${intlPages[locale].work.slug}/${item.slug}`, lastModified:updated, changeFrequency:"monthly" as const, priority:0.8 })));
   const articleRoutes: MetadataRoute.Sitemap = articles.map(article => ({ url:`${base}/blog/${article.slug}`, lastModified:article.dateISO, changeFrequency:"monthly", priority:0.76 }));
+  const localizedArticleRoutes: MetadataRoute.Sitemap = locales.flatMap(locale => intlArticles[locale].map(article => ({ url:`${base}/${locale}/blog/${article.slug}`, lastModified:article.dateISO, changeFrequency:"monthly" as const, priority:0.74 })));
 
-  return [...staticRoutes, ...localizedRoutes, ...caseRoutes, ...articleRoutes];
+  return [...staticRoutes, ...localizedRoutes, ...caseRoutes, ...localizedCaseRoutes, ...articleRoutes, ...localizedArticleRoutes];
 }
