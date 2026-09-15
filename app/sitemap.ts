@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/articles";
 import { caseStudies } from "@/lib/case-studies";
-import { intlArticles } from "@/lib/intl-articles";
+import { allIntlArticles, localizedArticleAlternates } from "@/lib/intl-blog";
 import { intlPageKeys, intlPages, localizedPath, type IntlPageKey } from "@/lib/intl-pages";
 import { locales } from "@/lib/i18n";
 
@@ -79,7 +79,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const caseRoutes: MetadataRoute.Sitemap = caseStudies.map(item => ({ url:`${base}/referanslar/${item.slug}`, lastModified:updated, changeFrequency:"monthly", priority:0.82 }));
   const localizedCaseRoutes: MetadataRoute.Sitemap = locales.flatMap(locale => caseStudies.map(item => ({ url:`${base}/${locale}/${intlPages[locale].work.slug}/${item.slug}`, lastModified:updated, changeFrequency:"monthly" as const, priority:0.8 })));
   const articleRoutes: MetadataRoute.Sitemap = articles.map(article => ({ url:`${base}/blog/${article.slug}`, lastModified:article.dateISO, changeFrequency:"monthly", priority:0.76 }));
-  const localizedArticleRoutes: MetadataRoute.Sitemap = locales.flatMap(locale => intlArticles[locale].map(article => ({ url:`${base}/${locale}/blog/${article.slug}`, lastModified:article.dateISO, changeFrequency:"monthly" as const, priority:0.74 })));
+  const localizedArticleRoutes: MetadataRoute.Sitemap = locales.flatMap(locale => allIntlArticles[locale].map(article => ({
+    url:`${base}/${locale}/blog/${article.slug}`,
+    lastModified:article.dateISO,
+    changeFrequency:"monthly" as const,
+    priority:0.76,
+    alternates:{ languages:Object.fromEntries(Object.entries(localizedArticleAlternates(article.group)).map(([key,path])=>[key,`${base}${path}`])) },
+  })));
 
   return [...staticRoutes, ...localizedRoutes, ...caseRoutes, ...localizedCaseRoutes, ...articleRoutes, ...localizedArticleRoutes];
 }
