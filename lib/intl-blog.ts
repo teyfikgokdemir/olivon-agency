@@ -1,6 +1,7 @@
 import type { Locale } from "@/lib/i18n";
 import { intlArticles, type IntlArticle } from "@/lib/intl-articles";
 import { intlTrendArticles } from "@/lib/intl-trend-articles";
+import { intlExtraArticles } from "@/lib/intl-extra-articles";
 
 export type IntlBlogArticle = IntlArticle & { image: string; group: string };
 
@@ -37,6 +38,7 @@ const publicationDates = [
   "2026-02-24",
   "2026-01-29",
   "2025-12-11",
+  "2025-11-14",
 ] as const;
 
 function displayDate(locale: Locale, iso: string) {
@@ -67,6 +69,7 @@ function baseFor(locale: Locale): IntlBlogArticle[] {
         group,
       };
     }),
+    ...intlExtraArticles[locale],
   ];
 }
 
