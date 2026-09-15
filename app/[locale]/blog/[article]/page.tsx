@@ -11,7 +11,7 @@ const backLabel: Record<Locale,string>={en:"All insights",de:"Alle Insights",fr:
 const ctaLabel: Record<Locale,{title:string;text:string;button:string}>={
   en:{title:"Need this applied to your own stack?",text:"We can turn the principle into a scoped migration, SEO, commerce or web implementation plan.",button:"Start a project"},
   de:{title:"Soll das auf Ihr eigenes System angewendet werden?",text:"Wir übersetzen die Prinzipien in einen klaren Migrations-, SEO-, Commerce- oder Web-Projektumfang.",button:"Projekt besprechen"},
-  fr:{title:"Vous voulez appliquer cette méthode à votre propre système ?",text:"Nous pouvons transformer ces principes en einen périmètre clair pour une migration, le SEO, l’e-commerce ou le web.",button:"Parler du projet"},
+  fr:{title:"Vous voulez appliquer cette méthode à votre propre système ?",text:"Nous pouvons transformer ces principes en un périmètre clair pour une migration, le SEO, l’e-commerce ou le web.",button:"Parler du projet"},
 };
 
 export function generateStaticParams(){return locales.flatMap(locale=>allIntlArticles[locale].map(article=>({locale,article:article.slug})));}
