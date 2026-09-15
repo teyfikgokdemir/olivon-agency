@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, Check } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
+import { LocalizedWork } from "@/components/localized-work";
 import { StructuredData } from "@/components/structured-data";
 import { isLocale, locales, marketContent, type Locale } from "@/lib/i18n";
 import { intlPageKeys, intlPages, localizedPath, pageKeyFromSlug, type IntlPageKey } from "@/lib/intl-pages";
@@ -12,36 +13,9 @@ const trEquivalent: Record<IntlPageKey, string> = {
 };
 
 const displayTitles: Record<Locale, Record<IntlPageKey, string>> = {
-  en: {
-    services: "Digital growth, connected.",
-    ecommerce: "Commerce built across borders.",
-    search: "One visibility system.",
-    web: "Web design with commercial depth.",
-    security: "Security without friction.",
-    work: "Selected work.",
-    faq: "Frequently asked questions.",
-    contact: "Start with the problem.",
-  },
-  de: {
-    services: "Digitales Wachstum, klar verbunden.",
-    ecommerce: "E-Commerce ohne Migrationschaos.",
-    search: "Ein System für Sichtbarkeit.",
-    web: "Webdesign mit Substanz.",
-    security: "Sicherheit ohne Reibung.",
-    work: "Ausgewählte Projekte.",
-    faq: "Häufige Fragen.",
-    contact: "Erst das Problem verstehen.",
-  },
-  fr: {
-    services: "La croissance digitale, connectée.",
-    ecommerce: "Le commerce au-delà des frontières.",
-    search: "Un seul système de visibilité.",
-    web: "Un web design qui convertit.",
-    security: "Sécuriser sans freiner.",
-    work: "Réalisations sélectionnées.",
-    faq: "Questions fréquentes.",
-    contact: "Commencer par le besoin.",
-  },
+  en: { services:"Digital growth, connected.", ecommerce:"Commerce built across borders.", search:"One visibility system.", web:"Web design with commercial depth.", security:"Security without friction.", work:"Selected work.", faq:"Frequently asked questions.", contact:"Start with the problem." },
+  de: { services:"Digitales Wachstum, klar verbunden.", ecommerce:"E-Commerce ohne Migrationschaos.", search:"Ein System für Sichtbarkeit.", web:"Webdesign mit Substanz.", security:"Sicherheit ohne Reibung.", work:"Ausgewählte Projekte.", faq:"Häufige Fragen.", contact:"Erst das Problem verstehen." },
+  fr: { services:"La croissance digitale, connectée.", ecommerce:"Le commerce au-delà des frontières.", search:"Un seul système de visibilité.", web:"Un web design qui convertit.", security:"Sécuriser sans freiner.", work:"Réalisations sélectionnées.", faq:"Questions fréquentes.", contact:"Commencer par le besoin." },
 };
 
 export function generateStaticParams() { return locales.flatMap(locale => intlPageKeys.map(key => ({ locale, slug: intlPages[locale][key].slug }))); }
@@ -85,7 +59,7 @@ export default async function IntlLanding({ params }: { params: Promise<{ locale
     <main data-locale={locale} lang={marketContent[locale].htmlLang}>
       <StructuredData data={[webPage,breadcrumb,...(service?[service]:[]),...(faq?[faq]:[])]}/>
       <section className="page-hero shell"><p className="eyebrow"><span/> {page.kicker}</p><h1>{displayTitle}</h1><p className="lead">{page.lead}</p><div className="hero-actions"><a className="button primary" href={localizedPath(locale,"contact")}>{marketContent[locale].primary} <ArrowUpRight size={18}/></a>{key!=="services"&&<a className="button ghost" href={localizedPath(locale,"services")}>{marketContent[locale].nav.services}</a>}</div></section>
-      {page.sections.length>0&&<section className="services shell intl-detail-grid" aria-label={page.title}><div className="service-list">{page.sections.map(section=><article className="service-row" key={section.title}><span><h2>{section.title}</h2><p>{section.text}</p>{section.bullets&&<ul>{section.bullets.map(item=><li key={item}><Check size={15}/>{item}</li>)}</ul>}</span></article>)}</div></section>}
+      {key==="work" ? <LocalizedWork locale={locale}/> : page.sections.length>0&&<section className="services shell intl-detail-grid" aria-label={page.title}><div className="service-list">{page.sections.map(section=><article className="service-row" key={section.title}><span><h2>{section.title}</h2><p>{section.text}</p>{section.bullets&&<ul>{section.bullets.map(item=><li key={item}><Check size={15}/>{item}</li>)}</ul>}</span></article>)}</div></section>}
       {page.faq?.length?<section className="faq shell" aria-labelledby="intl-faq-title"><div className="section-head"><div><h2 id="intl-faq-title">{key==="faq"?displayTitle:"FAQ"}</h2></div></div><div className="faq-list">{page.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></section>:null}
       <section className="manifesto shell localized-contact"><p className="section-index">OLIVON</p><h2>{marketContent[locale].ctaTitle}</h2><p>{marketContent[locale].ctaText}</p><div className="hero-actions"><a className="button primary" href={localizedPath(locale,"contact")}>{marketContent[locale].primary} <ArrowUpRight size={18}/></a></div></section>
       <SiteFooter/>
