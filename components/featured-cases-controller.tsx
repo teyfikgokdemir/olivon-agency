@@ -14,12 +14,17 @@ export function FeaturedCasesController() {
     let active = 0;
     let timer: number | undefined;
 
+    const updatePosition = () => {
+      grid.dataset.casePosition = `${String(active + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
+    };
+
     grid.classList.add("featured-cases-flow");
     cards.forEach((card, index) => {
       card.dataset.caseIndex = String(index);
       card.classList.toggle("is-case-active", index === 0);
       card.setAttribute("aria-hidden", index === 0 ? "false" : "true");
     });
+    updatePosition();
 
     const show = (next: number) => {
       const current = active;
@@ -33,12 +38,13 @@ export function FeaturedCasesController() {
       nextCard.classList.add("is-case-active");
       nextCard.setAttribute("aria-hidden", "false");
       active = next;
-      window.setTimeout(() => currentCard.classList.remove("is-case-leaving"), 900);
+      updatePosition();
+      window.setTimeout(() => currentCard.classList.remove("is-case-leaving"), 1150);
     };
 
     const start = () => {
       if (reduceMotion || timer) return;
-      timer = window.setInterval(() => show((active + 1) % cards.length), 4800);
+      timer = window.setInterval(() => show((active + 1) % cards.length), 6500);
     };
 
     const stop = () => {
@@ -60,6 +66,7 @@ export function FeaturedCasesController() {
       grid.removeEventListener("focusin", stop);
       grid.removeEventListener("focusout", start);
       grid.classList.remove("featured-cases-flow");
+      delete grid.dataset.casePosition;
       cards.forEach((card) => {
         card.classList.remove("is-case-active", "is-case-leaving");
         card.removeAttribute("aria-hidden");
