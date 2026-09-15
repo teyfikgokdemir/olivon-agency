@@ -23,6 +23,7 @@ import "./visibility-system.css";
 import "./inner-pages-premium.css";
 import "./inner-pages-mobile-final.css";
 import "./motion-premium.css";
+import "./falling-capsules-grounded.css";
 import "./featured-cases-flow.css";
 
 export const metadata: Metadata = {
