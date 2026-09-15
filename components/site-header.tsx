@@ -60,7 +60,7 @@ export function SiteHeader() {
           {locale ? (
             <div className="nav-dropdown">
               <a className="nav-dropdown-trigger" href={servicesHref}>{labels.services} <ChevronDown size={14}/></a>
-              <div className="nav-panel services-panel" style={{ top: "100%" }}>
+              <div className="nav-panel services-panel" style={{ top: "calc(100% - 8px)" }}>
                 {localServiceKeys.map(key => <a href={localizedPath(locale,key)} key={key}><strong>{intlPages[locale][key].title}</strong><span>{intlPages[locale][key].metaDescription}</span></a>)}
               </div>
             </div>
