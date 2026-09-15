@@ -4,11 +4,29 @@ import { intlTrendArticles } from "@/lib/intl-trend-articles";
 
 export type IntlBlogArticle = IntlArticle & { image: string; group: string };
 
-const legacyImages = [
-  "/images/services/e-ticaret-sistemleri.webp",
+const neutralImages = [
   "/images/services/seo-geo-aeo-aio.webp",
-  "/images/blog/platform-secimi.webp",
-  "/images/blog/ai-arama-gorunurlugu.webp",
+  "/images/services/web-tasarim-gelistirme.webp",
+  "/images/services/dijital-guvenlik.webp",
+  "/images/services/e-ticaret-sistemleri.webp",
+  "/images/services/dijital-reklam-marka.webp",
+] as const;
+
+const trendNeutralImages = [
+  neutralImages[0],
+  neutralImages[1],
+  neutralImages[0],
+  neutralImages[2],
+  neutralImages[3],
+  neutralImages[4],
+  neutralImages[1],
+] as const;
+
+const legacyNeutralImages = [
+  neutralImages[3],
+  neutralImages[0],
+  neutralImages[1],
+  neutralImages[4],
 ] as const;
 
 const legacyGroups = [
@@ -42,6 +60,20 @@ function displayDate(locale: Locale, iso: string) {
   }).format(date);
 }
 
+function baseFor(locale: Locale): IntlBlogArticle[] {
+  return [
+    ...intlTrendArticles[locale].map((article, index) => ({
+      ...article,
+      image: trendNeutralImages[index] ?? neutralImages[0],
+    })),
+    ...intlArticles[locale].map((article, index) => ({
+      ...article,
+      image: legacyNeutralImages[index] ?? neutralImages[0],
+      group: legacyGroups[index] ?? article.slug,
+    })),
+  ];
+}
+
 function applySchedule(locale: Locale, articles: IntlBlogArticle[]) {
   return articles.map((article, index) => {
     const dateISO = publicationDates[index] ?? publicationDates[publicationDates.length - 1];
@@ -49,25 +81,10 @@ function applySchedule(locale: Locale, articles: IntlBlogArticle[]) {
   });
 }
 
-const baseArticles: Record<Locale, IntlBlogArticle[]> = {
-  en: [
-    ...intlTrendArticles.en,
-    ...intlArticles.en.map((article, index) => ({ ...article, image: legacyImages[index] ?? legacyImages[0], group: legacyGroups[index] ?? article.slug })),
-  ],
-  de: [
-    ...intlTrendArticles.de,
-    ...intlArticles.de.map((article, index) => ({ ...article, image: legacyImages[index] ?? legacyImages[0], group: legacyGroups[index] ?? article.slug })),
-  ],
-  fr: [
-    ...intlTrendArticles.fr,
-    ...intlArticles.fr.map((article, index) => ({ ...article, image: legacyImages[index] ?? legacyImages[0], group: legacyGroups[index] ?? article.slug })),
-  ],
-};
-
 export const allIntlArticles: Record<Locale, IntlBlogArticle[]> = {
-  en: applySchedule("en", baseArticles.en),
-  de: applySchedule("de", baseArticles.de),
-  fr: applySchedule("fr", baseArticles.fr),
+  en: applySchedule("en", baseFor("en")),
+  de: applySchedule("de", baseFor("de")),
+  fr: applySchedule("fr", baseFor("fr")),
 };
 
 export function allIntlArticleBySlug(locale: Locale, slug: string) {
