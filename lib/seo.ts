@@ -9,17 +9,27 @@ export const organizationSchema = {
   logo: `${SITE_URL}/favicon.svg`,
   image: `${SITE_URL}/images/olivon-og.webp`,
   email: "info@olivon.com.tr",
-  contactPoint: { "@type": "ContactPoint", contactType: "sales", email: "info@olivon.com.tr", availableLanguage: ["tr"] },
-  description: "Web tasarım, e-ticaret, ikas, SEO, GEO, AEO, AIO, AI otomasyon ve dijital güvenlik alanlarında çalışan dijital büyüme stüdyosu.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    email: "info@olivon.com.tr",
+    availableLanguage: ["tr", "en", "de", "fr"],
+  },
+  description: "Olivon is a digital growth studio for web design, e-commerce, SEO, GEO, AEO, AIO, AI automation and digital security, serving brands in Türkiye and international markets.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Kayseri",
     addressCountry: "TR",
   },
-  areaServed: { "@type": "Country", name: "Türkiye" },
+  areaServed: [
+    { "@type": "Country", name: "Türkiye" },
+    { "@type": "Country", name: "Germany" },
+    { "@type": "Country", name: "France" },
+    { "@type": "AdministrativeArea", name: "Europe" },
+  ],
   knowsAbout: [
-    "Web tasarım",
-    "E-ticaret",
+    "Web design",
+    "E-commerce",
     "ikas",
     "Shopify",
     "WooCommerce",
@@ -27,9 +37,11 @@ export const organizationSchema = {
     "GEO",
     "AEO",
     "AIO",
-    "Yapay zekâ otomasyonu",
-    "Dijital güvenlik",
+    "AI automation",
+    "Digital security",
     "Cloudflare",
+    "Cross-border e-commerce",
+    "E-commerce migration",
   ],
 };
 
@@ -39,7 +51,7 @@ export const websiteSchema = {
   "@id": `${SITE_URL}/#website`,
   url: SITE_URL,
   name: "Olivon",
-  inLanguage: "tr-TR",
+  inLanguage: ["tr-TR", "en", "de-DE", "fr-FR"],
   publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
