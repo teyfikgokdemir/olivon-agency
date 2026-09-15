@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { FallingCapsules } from "@/components/falling-capsules";
 import { FloatingActions } from "@/components/floating-actions";
 import { MotionController } from "@/components/motion-controller";
 import { SiteHeader } from "@/components/site-header";
@@ -98,6 +99,7 @@ export default function RootLayout({
         <Script src="https://teyfikgokdemir.com/cansu-source-beacon.js" data-site="olivon-agency" strategy="afterInteractive" />
         <SiteHeader />
         <MotionController />
+        <FallingCapsules />
         {children}
         <FloatingActions />
       </body>
