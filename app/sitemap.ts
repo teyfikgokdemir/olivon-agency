@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/articles";
 import { caseStudies } from "@/lib/case-studies";
-import { intlPageKeys, intlPages, localizedPath, type IntlPageKey } from "@/lib/intl-pages";
+import { intlPageKeys, localizedPath, type IntlPageKey } from "@/lib/intl-pages";
 import { locales } from "@/lib/i18n";
 
 const base = "https://olivon.com.tr";
@@ -12,17 +12,11 @@ const languageAlternates = {
   en: `${base}/en`,
   "de-DE": `${base}/de`,
   "fr-FR": `${base}/fr`,
+  "x-default": `${base}/`,
 };
 
 const trEquivalent: Record<IntlPageKey, string> = {
-  services: "/hizmetler",
-  ecommerce: "/hizmetler/e-ticaret",
-  search: "/hizmetler/seo-geo-aeo-aio",
-  web: "/hizmetler/web-tasarim",
-  security: "/hizmetler/dijital-guvenlik",
-  work: "/referanslar",
-  faq: "/sss",
-  contact: "/iletisim",
+  services: "/hizmetler", ecommerce: "/hizmetler/e-ticaret", search: "/hizmetler/seo-geo-aeo-aio", web: "/hizmetler/web-tasarim", security: "/hizmetler/dijital-guvenlik", work: "/referanslar", faq: "/sss", contact: "/iletisim",
 };
 
 function alternatesFor(key: IntlPageKey) {
@@ -31,6 +25,7 @@ function alternatesFor(key: IntlPageKey) {
     en: `${base}${localizedPath("en", key)}`,
     "de-DE": `${base}${localizedPath("de", key)}`,
     "fr-FR": `${base}${localizedPath("fr", key)}`,
+    "x-default": `${base}${trEquivalent[key]}`,
   };
 }
 
@@ -69,19 +64,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: alternatesFor(key) },
   })));
 
-  const caseRoutes: MetadataRoute.Sitemap = caseStudies.map(item => ({
-    url: `${base}/referanslar/${item.slug}`,
-    lastModified: updated,
-    changeFrequency: "monthly",
-    priority: 0.82,
-  }));
-
-  const articleRoutes: MetadataRoute.Sitemap = articles.map(article => ({
-    url: `${base}/blog/${article.slug}`,
-    lastModified: article.dateISO,
-    changeFrequency: "monthly",
-    priority: 0.76,
-  }));
+  const caseRoutes: MetadataRoute.Sitemap = caseStudies.map(item => ({ url:`${base}/referanslar/${item.slug}`, lastModified:updated, changeFrequency:"monthly", priority:0.82 }));
+  const articleRoutes: MetadataRoute.Sitemap = articles.map(article => ({ url:`${base}/blog/${article.slug}`, lastModified:article.dateISO, changeFrequency:"monthly", priority:0.76 }));
 
   return [...staticRoutes, ...localizedRoutes, ...caseRoutes, ...articleRoutes];
 }
