@@ -79,47 +79,7 @@ export function SiteHeader() {
   const faqLabel = locale === "de" ? "FAQ" : locale === "fr" ? "FAQ" : locale === "en" ? "FAQ" : "SSS";
 
   const mobileMenu = open ? (
-    <div
-      role="presentation"
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 5000,
-        background: "#0b0908",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          height: 76,
-          minHeight: 76,
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "0 20px",
-          borderBottom: "1px solid rgba(255,239,228,.09)",
-          background: "#0b0908",
-        }}
-      >
-        <a className="brand" href={home} aria-label="Olivon" onClick={close}>
-          <span className="brand-mark">O</span>
-          <span>OLIVON</span>
-        </a>
-        <button
-          className="menu-button"
-          type="button"
-          onClick={close}
-          aria-label={locale ? "Close menu" : "Menüyü kapat"}
-          aria-expanded="true"
-          aria-controls="olivon-mobile-menu"
-          style={{ display: "grid", placeItems: "center" }}
-        >
-          <X />
-        </button>
-      </div>
-
+    <>
       <div
         id="olivon-mobile-menu"
         className="mobile-menu"
@@ -127,28 +87,25 @@ export function SiteHeader() {
         aria-modal="true"
         aria-label="Mobile menu"
         style={{
-          position: "relative",
-          inset: "auto",
-          top: 0,
+          position: "fixed",
+          top: 76,
           left: 0,
-          right: "auto",
-          bottom: "auto",
-          width: "100%",
+          right: 0,
+          bottom: 0,
+          width: "100vw",
           maxWidth: "none",
           minWidth: 0,
           height: "calc(100dvh - 76px)",
-          minHeight: 0,
           margin: 0,
           transform: "none",
           borderRadius: 0,
-          flex: "1 1 auto",
+          zIndex: 4000,
           overflowY: "auto",
           overflowX: "hidden",
           overscrollBehavior: "contain",
           WebkitOverflowScrolling: "touch",
           touchAction: "pan-y",
           paddingBottom: "calc(36px + env(safe-area-inset-bottom))",
-          background: "#0b0908",
         }}
       >
         <button
@@ -164,14 +121,10 @@ export function SiteHeader() {
           <div id="olivon-mobile-services" className="mobile-submenu">
             {locale
               ? localServiceKeys.map(key => (
-                  <a onClick={close} href={localizedPath(locale, key)} key={key}>
-                    {intlPages[locale][key].title}
-                  </a>
+                  <a onClick={close} href={localizedPath(locale, key)} key={key}>{intlPages[locale][key].title}</a>
                 ))
               : serviceGroups.map(service => (
-                  <a onClick={close} href={service.href} key={service.slug}>
-                    {service.title}
-                  </a>
+                  <a onClick={close} href={service.href} key={service.slug}>{service.title}</a>
                 ))}
           </div>
         )}
@@ -189,9 +142,7 @@ export function SiteHeader() {
             {ikasOpen && (
               <div id="olivon-mobile-ikas" className="mobile-submenu">
                 {ikasMenuItems.map(item => (
-                  <a onClick={close} href={`/ikas#${item.slug}`} key={item.slug}>
-                    {item.label}
-                  </a>
+                  <a onClick={close} href={`/ikas#${item.slug}`} key={item.slug}>{item.label}</a>
                 ))}
               </div>
             )}
@@ -203,12 +154,41 @@ export function SiteHeader() {
         <a onClick={close} href={contactHref}>{labels.contact}</a>
         <LanguageSwitcher />
       </div>
-    </div>
+
+      <button
+        type="button"
+        onClick={close}
+        aria-label={locale ? "Close menu" : "Menüyü kapat"}
+        style={{
+          position: "fixed",
+          top: 0,
+          right: 0,
+          width: 76,
+          height: 76,
+          zIndex: 5002,
+          border: 0,
+          padding: 0,
+          margin: 0,
+          background: "transparent",
+          color: "transparent",
+          cursor: "pointer",
+        }}
+      >
+        <span style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0 0 0 0)" }}>Close menu</span>
+      </button>
+    </>
   ) : null;
 
   return (
     <>
-      <header className="site-header" style={{ backdropFilter: "none", WebkitBackdropFilter: "none" }}>
+      <header
+        className="site-header"
+        style={{
+          backdropFilter: "none",
+          WebkitBackdropFilter: "none",
+          zIndex: open ? 5001 : undefined,
+        }}
+      >
         <nav className="nav shell" aria-label={locale ? "Main navigation" : "Ana menü"}>
           <a className="brand" href={home} aria-label="Olivon" onClick={close}>
             <span className="brand-mark">O</span><span>OLIVON</span>
@@ -257,12 +237,13 @@ export function SiteHeader() {
           <button
             className="menu-button"
             type="button"
-            onClick={() => setOpen(true)}
-            aria-label={locale ? "Open menu" : "Menüyü aç"}
+            onClick={() => setOpen(value => !value)}
+            aria-label={open ? (locale ? "Close menu" : "Menüyü kapat") : (locale ? "Open menu" : "Menüyü aç")}
             aria-expanded={open}
             aria-controls="olivon-mobile-menu"
+            style={{ position: "relative", zIndex: open ? 5001 : undefined }}
           >
-            <Menu />
+            {open ? <X /> : <Menu />}
           </button>
         </nav>
       </header>
