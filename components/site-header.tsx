@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { marketContent, locales, type Locale } from "@/lib/i18n";
@@ -25,33 +25,20 @@ export function SiteHeader() {
     close();
   }, [pathname]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!open) return;
 
     const root = document.documentElement;
     const body = document.body;
-    const scrollY = window.scrollY;
-    const scrollbarWidth = Math.max(0, window.innerWidth - root.clientWidth);
-
     const previousRootOverflow = root.style.overflow;
     const previousBodyOverflow = body.style.overflow;
-    const previousOverscroll = body.style.overscrollBehavior;
-    const previousPosition = body.style.position;
-    const previousTop = body.style.top;
-    const previousLeft = body.style.left;
-    const previousRight = body.style.right;
-    const previousWidth = body.style.width;
-    const previousPaddingRight = body.style.paddingRight;
+    const previousRootOverscroll = root.style.overscrollBehavior;
+    const previousBodyOverscroll = body.style.overscrollBehavior;
 
     root.style.overflow = "hidden";
     body.style.overflow = "hidden";
+    root.style.overscrollBehavior = "none";
     body.style.overscrollBehavior = "none";
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.left = "0";
-    body.style.right = "0";
-    body.style.width = "100%";
-    if (scrollbarWidth > 0) body.style.paddingRight = `${scrollbarWidth}px`;
 
     const onKeyDown = (event: KeyboardEvent) => event.key === "Escape" && close();
     const onResize = () => window.innerWidth > 900 && close();
@@ -61,16 +48,10 @@ export function SiteHeader() {
     return () => {
       root.style.overflow = previousRootOverflow;
       body.style.overflow = previousBodyOverflow;
-      body.style.overscrollBehavior = previousOverscroll;
-      body.style.position = previousPosition;
-      body.style.top = previousTop;
-      body.style.left = previousLeft;
-      body.style.right = previousRight;
-      body.style.width = previousWidth;
-      body.style.paddingRight = previousPaddingRight;
+      root.style.overscrollBehavior = previousRootOverscroll;
+      body.style.overscrollBehavior = previousBodyOverscroll;
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("resize", onResize);
-      window.scrollTo(0, scrollY);
     };
   }, [open]);
 
@@ -126,6 +107,26 @@ export function SiteHeader() {
           willChange: "transform, opacity",
         }}
       >
+        <button
+          type="button"
+          onClick={close}
+          aria-label={locale ? "Close menu" : "Menüyü kapat"}
+          style={{
+            position: "sticky",
+            top: 0,
+            alignSelf: "flex-end",
+            zIndex: 3,
+            width: 44,
+            height: 44,
+            display: "grid",
+            placeItems: "center",
+            borderRadius: "50%",
+            border: "1px solid rgba(255,239,228,.16)",
+            background: "rgba(11,9,8,.92)",
+            color: "#fff",
+            marginBottom: 12,
+          }}
+        ><X size={20}/></button>
         <button className="mobile-accordion-trigger" type="button" onClick={() => setServicesOpen(value => !value)} aria-expanded={servicesOpen} aria-controls="olivon-mobile-services">{labels.services} <ChevronDown className={servicesOpen ? "is-open" : ""} size={18}/></button>
         {servicesOpen && <div id="olivon-mobile-services" className="mobile-submenu">{locale ? localServiceKeys.map(key => <a onClick={close} href={localizedPath(locale,key)} key={key}>{intlPages[locale][key].title}</a>) : serviceGroups.map(service => <a onClick={close} href={service.href} key={service.slug}>{service.title}</a>)}</div>}
         {!locale && <><button className="mobile-accordion-trigger" type="button" onClick={() => setIkasOpen(value => !value)} aria-expanded={ikasOpen} aria-controls="olivon-mobile-ikas">ikas <ChevronDown className={ikasOpen ? "is-open" : ""} size={18}/></button>{ikasOpen && <div id="olivon-mobile-ikas" className="mobile-submenu">{ikasMenuItems.map(item => <a onClick={close} href={`/ikas#${item.slug}`} key={item.slug}>{item.label}</a>)}</div>}</>}
