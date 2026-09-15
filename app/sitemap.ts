@@ -3,11 +3,21 @@ import { articles } from "@/lib/articles";
 import { caseStudies } from "@/lib/case-studies";
 
 const base = "https://olivon.com.tr";
-const updated = "2026-09-14";
+const updated = "2026-09-16";
+
+const languageAlternates = {
+  "tr-TR": `${base}/`,
+  en: `${base}/en`,
+  "de-DE": `${base}/de`,
+  "fr-FR": `${base}/fr`,
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: base, lastModified: updated, changeFrequency: "weekly", priority: 1 },
+    { url: base, lastModified: updated, changeFrequency: "weekly", priority: 1, alternates: { languages: languageAlternates } },
+    { url: `${base}/en`, lastModified: updated, changeFrequency: "weekly", priority: 0.92, alternates: { languages: languageAlternates } },
+    { url: `${base}/de`, lastModified: updated, changeFrequency: "weekly", priority: 0.92, alternates: { languages: languageAlternates } },
+    { url: `${base}/fr`, lastModified: updated, changeFrequency: "weekly", priority: 0.92, alternates: { languages: languageAlternates } },
     { url: `${base}/hizmetler`, lastModified: updated, changeFrequency: "monthly", priority: 0.95 },
     { url: `${base}/ikas`, lastModified: updated, changeFrequency: "monthly", priority: 0.95 },
     { url: `${base}/hizmetler/e-ticaret`, lastModified: updated, changeFrequency: "monthly", priority: 0.9 },
