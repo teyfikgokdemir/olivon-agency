@@ -23,6 +23,22 @@
 .related-articles strong{font-size:22px;line-height:1.1;letter-spacing:-.03em;margin-top:8px}
 .related-articles em{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-style:normal;font-size:11px;color:rgba(247,242,237,.45)}
 
+/* Localized article refinement only — does not affect Turkish blog routes. */
+main[data-locale] .article-detail{padding-top:72px;padding-bottom:88px}
+main[data-locale] .article-detail>.article-back{display:inline-flex;margin:0 0 42px;color:rgba(247,242,237,.62);text-decoration:none;font-size:14px;font-weight:650;letter-spacing:.01em;transition:color .2s ease}
+main[data-locale] .article-detail>.article-back:hover{color:var(--coral-soft)}
+main[data-locale] .article-detail>.section-index{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+main[data-locale] .article-detail>h1{max-width:1040px;font-size:clamp(46px,5.25vw,78px);line-height:1.01;margin-bottom:24px;text-wrap:balance}
+main[data-locale] .article-detail>.article-lead{max-width:800px;font-size:20px;line-height:1.65;margin-bottom:14px}
+main[data-locale] .article-detail>.article-meta{margin:0 0 34px;color:rgba(247,242,237,.42);font-size:13px;letter-spacing:.04em}
+main[data-locale] .article-detail>.article-hero-image{margin-top:0;margin-bottom:68px}
+main[data-locale] .article-detail>section{max-width:780px;margin-left:auto;margin-right:auto;margin-bottom:48px}
+main[data-locale] .article-detail>section h2{font-size:clamp(28px,2.4vw,38px);line-height:1.08;margin-bottom:16px;text-wrap:balance}
+main[data-locale] .article-detail>section p{font-size:18px;line-height:1.8;color:rgba(247,242,237,.72);margin:0 0 18px}
+main[data-locale] .article-detail>section ul{margin:22px 0 8px;padding:0;list-style:none;display:grid;gap:10px}
+main[data-locale] .article-detail>section li{position:relative;padding:13px 16px 13px 34px;border:1px solid rgba(255,239,228,.08);border-radius:14px;background:rgba(255,255,255,.018);color:rgba(247,242,237,.72);line-height:1.5}
+main[data-locale] .article-detail>section li::before{content:"";position:absolute;left:15px;top:21px;width:6px;height:6px;border-radius:999px;background:var(--coral-soft)}
+
 @media(max-width:800px){
   .article-detail{padding-top:38px;padding-bottom:48px}
   .article-detail>h1{font-size:clamp(42px,11vw,64px)}
@@ -30,4 +46,11 @@
   .article-hero-image,.article-inline-image{aspect-ratio:1.55/1;border-radius:18px}
   .related-articles>div{grid-template-columns:1fr}
   .related-articles>div>a:hover{transform:none}
+  main[data-locale] .article-detail{padding-top:42px;padding-bottom:58px}
+  main[data-locale] .article-detail>.article-back{margin-bottom:30px}
+  main[data-locale] .article-detail>h1{font-size:clamp(38px,10vw,58px)}
+  main[data-locale] .article-detail>.article-lead{font-size:17px;line-height:1.62}
+  main[data-locale] .article-detail>.article-hero-image{margin-bottom:44px}
+  main[data-locale] .article-detail>section{margin-bottom:38px}
+  main[data-locale] .article-detail>section p{font-size:16px;line-height:1.72}
 }
