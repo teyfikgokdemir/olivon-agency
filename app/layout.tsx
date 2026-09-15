@@ -23,6 +23,7 @@ import "./inner-pages-premium.css";
 import "./inner-pages-mobile-final.css";
 import "./motion-premium.css";
 import "./featured-cases-flow.css";
+import "./i18n.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
@@ -31,7 +32,10 @@ export const metadata: Metadata = {
     template: "%s | Olivon",
   },
   description: "Türkiye'deki markalar için premium web tasarım, e-ticaret, SEO, GEO, otomasyon ve dijital güvenlik çözümleri.",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: { "tr-TR": "/", en: "/en", "de-DE": "/de", "fr-FR": "/fr", "x-default": "/" },
+  },
   applicationName: "Olivon",
   authors: [{ name: "Olivon", url: "https://olivon.com.tr" }],
   creator: "Olivon",
@@ -52,51 +56,37 @@ export const metadata: Metadata = {
     description: "Web, e-ticaret, görünürlük, otomasyon, reklam ve güvenlik için bütünleşik dijital büyüme sistemi.",
     images: ["/images/olivon-og.webp"],
   },
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="tr">
       <body className="antialiased">
         <StructuredData data={[organizationSchema, websiteSchema]} />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-VJ2PP2LG1N" strategy="afterInteractive" />
-        <Script id="olivon-ga4" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-VJ2PP2LG1N');
-          `}
-        </Script>
-        <Script id="olivon-conversion-events" strategy="afterInteractive">
-          {`
-            document.addEventListener('click', function(event) {
-              var link = event.target && event.target.closest ? event.target.closest('a') : null;
-              if (!link || typeof window.gtag !== 'function') return;
-              var href = link.getAttribute('href') || '';
-              var eventName = '';
-              if (/wa\.me|whatsapp/i.test(href)) eventName = 'whatsapp_click';
-              else if (href.indexOf('mailto:') === 0) eventName = 'email_click';
-              else if (href.indexOf('tel:') === 0) eventName = 'phone_click';
-              else if (href === '/iletisim' || href.indexOf('/iletisim?') === 0) eventName = 'contact_cta_click';
-              else if (href.indexOf('/referanslar') === 0) eventName = 'case_study_click';
-              else if (href.indexOf('/hizmetler/') === 0 || href === '/hizmetler') eventName = 'service_detail_click';
-              if (!eventName) return;
-              window.gtag('event', eventName, {
-                link_url: href,
-                link_text: (link.textContent || '').trim().slice(0, 80)
-              });
-            }, { passive: true });
-          `}
-        </Script>
+        <Script id="olivon-ga4" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VJ2PP2LG1N');
+        `}</Script>
+        <Script id="olivon-conversion-events" strategy="afterInteractive">{`
+          document.addEventListener('click', function(event) {
+            var link = event.target && event.target.closest ? event.target.closest('a') : null;
+            if (!link || typeof window.gtag !== 'function') return;
+            var href = link.getAttribute('href') || '';
+            var eventName = '';
+            if (/wa\\.me|whatsapp/i.test(href)) eventName = 'whatsapp_click';
+            else if (href.indexOf('mailto:') === 0) eventName = 'email_click';
+            else if (href.indexOf('tel:') === 0) eventName = 'phone_click';
+            else if (href === '/iletisim' || href.indexOf('/iletisim?') === 0 || /\/(en|de|fr)#contact/.test(href)) eventName = 'contact_cta_click';
+            else if (href.indexOf('/referanslar') === 0) eventName = 'case_study_click';
+            else if (href.indexOf('/hizmetler/') === 0 || href === '/hizmetler') eventName = 'service_detail_click';
+            if (!eventName) return;
+            window.gtag('event', eventName, { link_url: href, link_text: (link.textContent || '').trim().slice(0, 80) });
+          }, { passive: true });
+        `}</Script>
         <Script src="https://teyfikgokdemir.com/cansu-source-beacon.js" data-site="olivon-agency" strategy="afterInteractive" />
         <SiteHeader />
         <MotionController />
