@@ -11,7 +11,7 @@ const backLabel: Record<Locale,string>={en:"All insights",de:"Alle Insights",fr:
 const ctaLabel: Record<Locale,{title:string;text:string;button:string}>={
   en:{title:"Need this applied to your own stack?",text:"We can turn the principle into a scoped migration, SEO, commerce or web implementation plan.",button:"Start a project"},
   de:{title:"Soll das auf Ihr eigenes System angewendet werden?",text:"Wir übersetzen die Prinzipien in einen klaren Migrations-, SEO-, Commerce- oder Web-Projektumfang.",button:"Projekt besprechen"},
-  fr:{title:"Vous voulez appliquer cette méthode à votre propre système ?",text:"Nous pouvons transformer ces principes en un périmètre clair pour une migration, le SEO, l’e-commerce ou le web.",button:"Parler du projet"},
+  fr:{title:"Vous voulez appliquer cette méthode à votre propre système ?",text:"Nous pouvons transformer ces principes en einen périmètre clair pour une migration, le SEO, l’e-commerce ou le web.",button:"Parler du projet"},
 };
 
 export function generateStaticParams(){return locales.flatMap(locale=>allIntlArticles[locale].map(article=>({locale,article:article.slug})));}
@@ -39,11 +39,14 @@ export default async function LocalizedArticle({params}:{params:Promise<{locale:
   const cta=ctaLabel[locale];
   return <main data-locale={locale} lang={marketContent[locale].htmlLang} className="inner-page">
     <StructuredData data={[articleSchema,webPage,breadcrumb]}/>
-    <article className="article-page shell">
+    <article className="article-detail shell">
       <a className="article-back" href={`/${locale}/blog`}>← {backLabel[locale]}</a>
-      <header className="article-header"><span>{article.category}</span><h1>{article.title}</h1><p>{article.excerpt}</p><small>{article.date} · {article.readingTime}</small></header>
+      <p className="section-index">{article.category}</p>
+      <h1>{article.title}</h1>
+      <p className="article-lead">{article.excerpt}</p>
+      <p className="article-meta">{article.date} · {article.readingTime}</p>
       <img className="article-hero-image" src={article.image} alt={article.title} decoding="async"/>
-      <div className="article-body">{article.sections.map(section=><section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}{section.bullets&&<ul>{section.bullets.map(item=><li key={item}>{item}</li>)}</ul>}</section>)}</div>
+      {article.sections.map(section=><section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}{section.bullets&&<ul>{section.bullets.map(item=><li key={item}>{item}</li>)}</ul>}</section>)}
     </article>
     <section className="manifesto shell localized-contact"><p className="section-index">OLIVON</p><h2>{cta.title}</h2><p>{cta.text}</p><div className="hero-actions"><a className="button primary" href={`/${locale}/${locale==='de'?'kontakt':'contact'}`}>{cta.button} <ArrowUpRight size={18}/></a></div></section>
     <SiteFooter/>
