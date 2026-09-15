@@ -4,30 +4,19 @@ import { intlTrendArticles } from "@/lib/intl-trend-articles";
 
 export type IntlBlogArticle = IntlArticle & { image: string; group: string };
 
-const neutralImages = [
-  "/images/services/seo-geo-aeo-aio.webp",
-  "/images/services/web-tasarim-gelistirme.webp",
-  "/images/services/dijital-guvenlik.webp",
-  "/images/services/e-ticaret-sistemleri.webp",
-  "/images/services/dijital-reklam-marka.webp",
-] as const;
-
-const trendNeutralImages = [
-  neutralImages[0],
-  neutralImages[1],
-  neutralImages[0],
-  neutralImages[2],
-  neutralImages[3],
-  neutralImages[4],
-  neutralImages[1],
-] as const;
-
-const legacyNeutralImages = [
-  neutralImages[3],
-  neutralImages[0],
-  neutralImages[1],
-  neutralImages[4],
-] as const;
+const imageByGroup = {
+  "generative-search-2026": "/images/blog/intl/ai-generative-search.webp",
+  "ai-citation-measurement": "/images/blog/intl/search-visibility.webp",
+  "grounding-citation-ready-content": "/images/blog/intl/security.webp",
+  "freshness-indexnow-sitemaps": "/images/blog/intl/freshness-indexing.webp",
+  "product-structured-data-ai-commerce": "/images/blog/intl/structured-data.webp",
+  "agentic-commerce-readiness": "/images/blog/intl/ai-agents.webp",
+  "duplicate-content-ai-search": "/images/blog/intl/content-pruning-canonical.webp",
+  "cross-border-commerce": "/images/blog/intl/ecommerce.webp",
+  "international-seo": "/images/blog/intl/global-seo-hreflang.webp",
+  "commerce-platforms": "/images/blog/intl/platform-selection.webp",
+  "ai-search-visibility": "/images/blog/intl/localization.webp",
+} as const;
 
 const legacyGroups = [
   "cross-border-commerce",
@@ -60,17 +49,24 @@ function displayDate(locale: Locale, iso: string) {
   }).format(date);
 }
 
+function imageFor(group: string, fallback: string) {
+  return imageByGroup[group as keyof typeof imageByGroup] ?? fallback;
+}
+
 function baseFor(locale: Locale): IntlBlogArticle[] {
   return [
-    ...intlTrendArticles[locale].map((article, index) => ({
+    ...intlTrendArticles[locale].map(article => ({
       ...article,
-      image: trendNeutralImages[index] ?? neutralImages[0],
+      image: imageFor(article.group, article.image),
     })),
-    ...intlArticles[locale].map((article, index) => ({
-      ...article,
-      image: legacyNeutralImages[index] ?? neutralImages[0],
-      group: legacyGroups[index] ?? article.slug,
-    })),
+    ...intlArticles[locale].map((article, index) => {
+      const group = legacyGroups[index] ?? article.slug;
+      return {
+        ...article,
+        image: imageFor(group, article.image),
+        group,
+      };
+    }),
   ];
 }
 
