@@ -7,6 +7,7 @@
   --olivon-motion-fast: 420ms;
   --olivon-motion-base: 720ms;
   --olivon-motion-slow: 980ms;
+  --olivon-hero-parallax: 0px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -44,7 +45,6 @@
     filter: blur(4px);
   }
 
-  /* CTSEG-inspired controlled fall-in: premium rather than bouncy. */
   body.motion-ready [data-motion="drop"] {
     transform: translate3d(0, -54px, 0) scale(.975);
     filter: blur(6px);
@@ -55,6 +55,34 @@
     transform: translate3d(0, 0, 0) scale(1);
     filter: blur(0);
   }
+
+  .site-header {
+    transition:
+      transform 520ms var(--olivon-motion-soft),
+      box-shadow 520ms ease,
+      border-color 520ms ease,
+      background-color 520ms ease;
+  }
+
+  body.motion-scrolled .site-header {
+    transform: translateY(-1px);
+  }
+
+  .mobile-menu {
+    transform-origin: top center;
+    animation: olivon-menu-in 360ms var(--olivon-motion-soft) both;
+  }
+
+  .mobile-menu > * {
+    animation: olivon-menu-item-in 480ms var(--olivon-motion-soft) both;
+  }
+
+  .mobile-menu > *:nth-child(2) { animation-delay: 30ms; }
+  .mobile-menu > *:nth-child(3) { animation-delay: 55ms; }
+  .mobile-menu > *:nth-child(4) { animation-delay: 80ms; }
+  .mobile-menu > *:nth-child(5) { animation-delay: 105ms; }
+  .mobile-menu > *:nth-child(6) { animation-delay: 130ms; }
+  .mobile-menu > *:nth-child(7) { animation-delay: 155ms; }
 
   .button,
   .service-row,
@@ -75,13 +103,37 @@
 
   .service-row:hover,
   .value-program:hover {
+    transform: translateY(-5px);
+  }
+
+  .home-proof article:hover,
+  .ikas-grid article:hover,
+  .visibility-pillar:hover {
     transform: translateY(-4px);
+  }
+
+  .service-row h3,
+  .value-program h3,
+  .home-proof strong,
+  .ikas-grid h3,
+  .visibility-pillar h3 {
+    transition: transform var(--olivon-motion-fast) var(--olivon-motion-soft);
+  }
+
+  .service-row:hover h3,
+  .value-program:hover h3,
+  .home-proof article:hover strong,
+  .ikas-grid article:hover h3,
+  .visibility-pillar:hover h3 {
+    transform: translateX(3px);
   }
 
   .service-row .service-arrow,
   .value-program .value-program-arrow,
   .section-inline-cta svg,
-  .button svg {
+  .button svg,
+  .nav-dropdown-trigger svg,
+  .mobile-accordion-trigger svg {
     transition: transform var(--olivon-motion-fast) var(--olivon-motion-soft);
   }
 
@@ -92,13 +144,89 @@
     transform: translate3d(4px, -4px, 0);
   }
 
+  .nav-dropdown:hover .nav-dropdown-trigger svg {
+    transform: rotate(180deg);
+  }
+
+  .nav-panel {
+    transform-origin: top center;
+    transition:
+      opacity 300ms var(--olivon-motion-soft),
+      transform 360ms var(--olivon-motion-soft),
+      visibility 300ms ease;
+  }
+
+  .nav-dropdown:not(:hover) .nav-panel {
+    transform: translateY(-8px) scale(.985);
+  }
+
+  .nav-dropdown:hover .nav-panel {
+    transform: translateY(0) scale(1);
+  }
+
+  .hero-stage-photo {
+    overflow: hidden;
+  }
+
   .hero-stage-photo img {
-    transform: scale(1.035);
+    transform: translate3d(0, var(--olivon-hero-parallax), 0) scale(1.035);
     transition: transform 1600ms var(--olivon-motion-soft);
+    will-change: transform;
   }
 
   body.motion-hero-entered .hero-stage-photo img {
-    transform: scale(1);
+    transform: translate3d(0, var(--olivon-hero-parallax), 0) scale(1.015);
+  }
+
+  .motion-section {
+    position: relative;
+  }
+
+  .motion-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    pointer-events: none;
+    background: currentColor;
+    opacity: .08;
+    transition: width 1100ms var(--olivon-motion-ease);
+  }
+
+  .motion-section:has(.is-inview)::after {
+    width: 100%;
+  }
+
+  @keyframes olivon-menu-in {
+    from { opacity: 0; transform: translateY(-12px) scale(.99); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes olivon-menu-item-in {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  body.motion-ready [data-motion="drop"] {
+    transform: translate3d(0, -30px, 0) scale(.985);
+  }
+
+  body.motion-ready [data-motion="reveal"] {
+    transform: translate3d(0, 22px, 0);
+    filter: blur(3px);
+  }
+
+  .service-row:hover,
+  .value-program:hover,
+  .home-proof article:hover,
+  .ikas-grid article:hover,
+  .visibility-pillar:hover,
+  .button:hover {
+    transform: none;
   }
 }
 
