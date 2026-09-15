@@ -22,6 +22,10 @@ export function SiteHeader() {
   const close = () => { setOpen(false); setServicesOpen(false); setIkasOpen(false); };
 
   useEffect(() => {
+    close();
+  }, [pathname]);
+
+  useEffect(() => {
     if (!open) return;
     const root = document.documentElement;
     const previousRootOverflow = root.style.overflow;
@@ -79,7 +83,21 @@ export function SiteHeader() {
         <button className="menu-button" type="button" onClick={() => setOpen(value => !value)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="olivon-mobile-menu">{open ? <X/> : <Menu/>}</button>
       </nav>
 
-      {open && <div id="olivon-mobile-menu" className="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile menu">
+      {open && <div
+        id="olivon-mobile-menu"
+        className="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile menu"
+        style={{
+          overflowY: "auto",
+          overflowX: "hidden",
+          overscrollBehavior: "contain",
+          WebkitOverflowScrolling: "touch",
+          touchAction: "pan-y",
+          paddingBottom: "calc(36px + env(safe-area-inset-bottom))",
+        }}
+      >
         <button className="mobile-accordion-trigger" type="button" onClick={() => setServicesOpen(value => !value)} aria-expanded={servicesOpen} aria-controls="olivon-mobile-services">{labels.services} <ChevronDown className={servicesOpen ? "is-open" : ""} size={18}/></button>
         {servicesOpen && <div id="olivon-mobile-services" className="mobile-submenu">{locale ? localServiceKeys.map(key => <a onClick={close} href={localizedPath(locale,key)} key={key}>{intlPages[locale][key].title}</a>) : serviceGroups.map(service => <a onClick={close} href={service.href} key={service.slug}>{service.title}</a>)}</div>}
         {!locale && <><button className="mobile-accordion-trigger" type="button" onClick={() => setIkasOpen(value => !value)} aria-expanded={ikasOpen} aria-controls="olivon-mobile-ikas">ikas <ChevronDown className={ikasOpen ? "is-open" : ""} size={18}/></button>{ikasOpen && <div id="olivon-mobile-ikas" className="mobile-submenu">{ikasMenuItems.map(item => <a onClick={close} href={`/ikas#${item.slug}`} key={item.slug}>{item.label}</a>)}</div>}</>}
