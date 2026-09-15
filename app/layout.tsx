@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { FloatingActions } from "@/components/floating-actions";
+import { MotionController } from "@/components/motion-controller";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
@@ -19,6 +20,7 @@ import "./footer-signature-premium.css";
 import "./visibility-system.css";
 import "./inner-pages-premium.css";
 import "./inner-pages-mobile-final.css";
+import "./motion-premium.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://olivon.com.tr"),
@@ -94,7 +96,10 @@ export default function RootLayout({
           `}
         </Script>
         <Script src="https://teyfikgokdemir.com/cansu-source-beacon.js" data-site="olivon-agency" strategy="afterInteractive" />
-        <SiteHeader />{children}<FloatingActions />
+        <SiteHeader />
+        <MotionController />
+        {children}
+        <FloatingActions />
       </body>
     </html>
   );
