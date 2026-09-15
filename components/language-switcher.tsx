@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { localeNames, locales, type Locale } from "@/lib/i18n";
-import { intlPageKeys, intlPages, localizedPath, pageKeyFromSlug, type IntlPageKey } from "@/lib/intl-pages";
+import { intlPageKeys, localizedPath, pageKeyFromSlug, type IntlPageKey } from "@/lib/intl-pages";
 
 const trByKey: Record<IntlPageKey, string> = {
   services: "/hizmetler",
@@ -32,8 +32,11 @@ export function LanguageSwitcher() {
   const pathname = usePathname();
   const active = currentLocale(pathname);
   const pageKey = keyForPath(pathname);
+  const parts = pathname.split("/").filter(Boolean);
+  const isBlog = pathname === "/blog" || (locales.includes(parts[0] as Locale) && parts[1] === "blog");
 
   const hrefFor = (locale: Locale | "tr") => {
+    if (isBlog) return locale === "tr" ? "/blog" : `/${locale}/blog`;
     if (pageKey) return locale === "tr" ? trByKey[pageKey] : localizedPath(locale, pageKey);
     if (locale === "tr") return "/";
     return `/${locale}`;
@@ -42,13 +45,7 @@ export function LanguageSwitcher() {
   return (
     <div className="language-switcher" aria-label="Language selection">
       {(["tr", ...locales] as const).map(locale => (
-        <a
-          href={hrefFor(locale)}
-          key={locale}
-          className={locale === active ? "is-active" : undefined}
-          hrefLang={locale === "tr" ? "tr" : locale}
-          aria-current={locale === active ? "page" : undefined}
-        >
+        <a href={hrefFor(locale)} key={locale} className={locale === active ? "is-active" : undefined} hrefLang={locale === "tr" ? "tr" : locale} aria-current={locale === active ? "page" : undefined}>
           {localeNames[locale]}
         </a>
       ))}
