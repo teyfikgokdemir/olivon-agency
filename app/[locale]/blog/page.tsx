@@ -40,7 +40,7 @@ export default async function LocalizedBlog({params}:{params:Promise<{locale:str
   return <main data-locale={locale} lang={marketContent[locale].htmlLang} className="inner-page">
     <StructuredData data={[schema,itemList]}/>
     <section className="inner-hero shell"><p className="section-index">{copy.kicker}</p><h1>{copy.title}</h1><p>{copy.intro}</p></section>
-    <section className="article-grid shell">{articles.map(article=><a href={`/${locale}/blog/${article.slug}`} className="article-card" key={article.slug}><img src={article.image} alt={article.title} loading="lazy" decoding="async"/><span>{article.category}</span><h2>{article.title}</h2><p>{article.excerpt}</p><em>{article.date} · {article.readingTime} <ArrowUpRight/></em></a>)}</section>
+    <section className="article-grid shell">{articles.map(article=><a href={`/${locale}/blog/${article.slug}`} className="article-card" key={article.slug}><img src={article.image} alt={article.title} loading="lazy" decoding="async" style={{height:"clamp(220px,20vw,300px)",aspectRatio:"auto",objectFit:"cover"}}/><span>{article.category}</span><h2>{article.title}</h2><p>{article.excerpt}</p><em>{article.date} · {article.readingTime} <ArrowUpRight/></em></a>)}</section>
     <SiteFooter/>
   </main>;
 }
