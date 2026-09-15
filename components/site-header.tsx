@@ -81,6 +81,44 @@ export function SiteHeader() {
   const mobileMenu = open ? (
     <>
       <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 76,
+          zIndex: 5001,
+          background: "#0b0908",
+          borderBottom: "1px solid rgba(255,239,228,.09)",
+        }}
+      >
+        <div
+          className="nav shell"
+          style={{
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <a className="brand" href={home} aria-label="Olivon" onClick={close}>
+            <span className="brand-mark">O</span><span>OLIVON</span>
+          </a>
+          <button
+            className="menu-button"
+            type="button"
+            onClick={close}
+            aria-label={locale ? "Close menu" : "Menüyü kapat"}
+            aria-expanded="true"
+            aria-controls="olivon-mobile-menu"
+            style={{ display: "grid", placeItems: "center" }}
+          >
+            <X />
+          </button>
+        </div>
+      </div>
+
+      <div
         id="olivon-mobile-menu"
         className="mobile-menu"
         role="dialog"
@@ -99,7 +137,7 @@ export function SiteHeader() {
           margin: 0,
           transform: "none",
           borderRadius: 0,
-          zIndex: 4000,
+          zIndex: 5000,
           overflowY: "auto",
           overflowX: "hidden",
           overscrollBehavior: "contain",
@@ -154,28 +192,6 @@ export function SiteHeader() {
         <a onClick={close} href={contactHref}>{labels.contact}</a>
         <LanguageSwitcher />
       </div>
-
-      <button
-        type="button"
-        onClick={close}
-        aria-label={locale ? "Close menu" : "Menüyü kapat"}
-        style={{
-          position: "fixed",
-          top: 0,
-          right: 0,
-          width: 76,
-          height: 76,
-          zIndex: 5002,
-          border: 0,
-          padding: 0,
-          margin: 0,
-          background: "transparent",
-          color: "transparent",
-          cursor: "pointer",
-        }}
-      >
-        <span style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clip: "rect(0 0 0 0)" }}>Close menu</span>
-      </button>
     </>
   ) : null;
 
@@ -186,7 +202,7 @@ export function SiteHeader() {
         style={{
           backdropFilter: "none",
           WebkitBackdropFilter: "none",
-          zIndex: open ? 5001 : undefined,
+          visibility: open ? "hidden" : undefined,
         }}
       >
         <nav className="nav shell" aria-label={locale ? "Main navigation" : "Ana menü"}>
@@ -237,13 +253,12 @@ export function SiteHeader() {
           <button
             className="menu-button"
             type="button"
-            onClick={() => setOpen(value => !value)}
-            aria-label={open ? (locale ? "Close menu" : "Menüyü kapat") : (locale ? "Open menu" : "Menüyü aç")}
+            onClick={() => setOpen(true)}
+            aria-label={locale ? "Open menu" : "Menüyü aç"}
             aria-expanded={open}
             aria-controls="olivon-mobile-menu"
-            style={{ position: "relative", zIndex: open ? 5001 : undefined }}
           >
-            {open ? <X /> : <Menu />}
+            <Menu />
           </button>
         </nav>
       </header>
