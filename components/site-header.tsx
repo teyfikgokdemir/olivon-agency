@@ -27,23 +27,46 @@ export function SiteHeader() {
 
   useEffect(() => {
     if (!open) return;
+
     const root = document.documentElement;
+    const body = document.body;
+    const scrollY = window.scrollY;
+
     const previousRootOverflow = root.style.overflow;
-    const previousBodyOverflow = document.body.style.overflow;
-    const previousOverscroll = document.body.style.overscrollBehavior;
+    const previousBodyOverflow = body.style.overflow;
+    const previousOverscroll = body.style.overscrollBehavior;
+    const previousPosition = body.style.position;
+    const previousTop = body.style.top;
+    const previousLeft = body.style.left;
+    const previousRight = body.style.right;
+    const previousWidth = body.style.width;
+
     root.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-    document.body.style.overscrollBehavior = "none";
+    body.style.overflow = "hidden";
+    body.style.overscrollBehavior = "none";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+
     const onKeyDown = (event: KeyboardEvent) => event.key === "Escape" && close();
     const onResize = () => window.innerWidth > 900 && close();
     window.addEventListener("keydown", onKeyDown);
     window.addEventListener("resize", onResize);
+
     return () => {
       root.style.overflow = previousRootOverflow;
-      document.body.style.overflow = previousBodyOverflow;
-      document.body.style.overscrollBehavior = previousOverscroll;
+      body.style.overflow = previousBodyOverflow;
+      body.style.overscrollBehavior = previousOverscroll;
+      body.style.position = previousPosition;
+      body.style.top = previousTop;
+      body.style.left = previousLeft;
+      body.style.right = previousRight;
+      body.style.width = previousWidth;
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("resize", onResize);
+      window.scrollTo(0, scrollY);
     };
   }, [open]);
 
