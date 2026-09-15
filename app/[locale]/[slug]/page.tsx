@@ -11,6 +11,39 @@ const trEquivalent: Record<IntlPageKey, string> = {
   services: "/hizmetler", ecommerce: "/hizmetler/e-ticaret", search: "/hizmetler/seo-geo-aeo-aio", web: "/hizmetler/web-tasarim", security: "/hizmetler/dijital-guvenlik", work: "/referanslar", faq: "/sss", contact: "/iletisim",
 };
 
+const displayTitles: Record<Locale, Record<IntlPageKey, string>> = {
+  en: {
+    services: "Digital growth, connected.",
+    ecommerce: "Commerce built across borders.",
+    search: "One visibility system.",
+    web: "Web design with commercial depth.",
+    security: "Security without friction.",
+    work: "Selected work.",
+    faq: "Frequently asked questions.",
+    contact: "Start with the problem.",
+  },
+  de: {
+    services: "Digitales Wachstum, klar verbunden.",
+    ecommerce: "E-Commerce ohne Migrationschaos.",
+    search: "Ein System für Sichtbarkeit.",
+    web: "Webdesign mit Substanz.",
+    security: "Sicherheit ohne Reibung.",
+    work: "Ausgewählte Projekte.",
+    faq: "Häufige Fragen.",
+    contact: "Erst das Problem verstehen.",
+  },
+  fr: {
+    services: "La croissance digitale, connectée.",
+    ecommerce: "Le commerce au-delà des frontières.",
+    search: "Un seul système de visibilité.",
+    web: "Un web design qui convertit.",
+    security: "Sécuriser sans freiner.",
+    work: "Réalisations sélectionnées.",
+    faq: "Questions fréquentes.",
+    contact: "Commencer par le besoin.",
+  },
+};
+
 export function generateStaticParams() { return locales.flatMap(locale => intlPageKeys.map(key => ({ locale, slug: intlPages[locale][key].slug }))); }
 
 function alternatesFor(key: IntlPageKey) {
@@ -41,6 +74,7 @@ export default async function IntlLanding({ params }: { params: Promise<{ locale
   const key = pageKeyFromSlug(locale, slug);
   if (!key) notFound();
   const page = intlPages[locale][key];
+  const displayTitle = displayTitles[locale][key];
   const canonical = localizedPath(locale, key);
   const breadcrumb = { "@context":"https://schema.org", "@type":"BreadcrumbList", "@id":`${SITE_URL}${canonical}#breadcrumb`, itemListElement:[{"@type":"ListItem",position:1,name:"Olivon",item:`${SITE_URL}/${locale}`},{"@type":"ListItem",position:2,name:page.title,item:`${SITE_URL}${canonical}`}] };
   const webPage = { "@context":"https://schema.org", "@type":"WebPage", "@id":`${SITE_URL}${canonical}#webpage`, url:`${SITE_URL}${canonical}`, name:page.metaTitle, description:page.metaDescription, inLanguage:marketContent[locale].htmlLang, isPartOf:{"@id":`${SITE_URL}/#website`}, about:{"@id":`${SITE_URL}/#organization`}, breadcrumb:{"@id":`${SITE_URL}${canonical}#breadcrumb`} };
@@ -50,9 +84,9 @@ export default async function IntlLanding({ params }: { params: Promise<{ locale
   return (
     <main data-locale={locale} lang={marketContent[locale].htmlLang}>
       <StructuredData data={[webPage,breadcrumb,...(service?[service]:[]),...(faq?[faq]:[])]}/>
-      <section className="page-hero shell"><p className="eyebrow"><span/> {page.kicker}</p><h1>{page.title}</h1><p className="lead">{page.lead}</p><div className="hero-actions"><a className="button primary" href={localizedPath(locale,"contact")}>{marketContent[locale].primary} <ArrowUpRight size={18}/></a>{key!=="services"&&<a className="button ghost" href={localizedPath(locale,"services")}>{marketContent[locale].nav.services}</a>}</div></section>
+      <section className="page-hero shell"><p className="eyebrow"><span/> {page.kicker}</p><h1>{displayTitle}</h1><p className="lead">{page.lead}</p><div className="hero-actions"><a className="button primary" href={localizedPath(locale,"contact")}>{marketContent[locale].primary} <ArrowUpRight size={18}/></a>{key!=="services"&&<a className="button ghost" href={localizedPath(locale,"services")}>{marketContent[locale].nav.services}</a>}</div></section>
       {page.sections.length>0&&<section className="services shell intl-detail-grid" aria-label={page.title}><div className="service-list">{page.sections.map(section=><article className="service-row" key={section.title}><span><h2>{section.title}</h2><p>{section.text}</p>{section.bullets&&<ul>{section.bullets.map(item=><li key={item}><Check size={15}/>{item}</li>)}</ul>}</span></article>)}</div></section>}
-      {page.faq?.length?<section className="faq shell" aria-labelledby="intl-faq-title"><div className="section-head"><div><p className="section-index">FAQ</p><h2 id="intl-faq-title">{key==="faq"?page.title:"FAQ"}</h2></div></div><div className="faq-list">{page.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></section>:null}
+      {page.faq?.length?<section className="faq shell" aria-labelledby="intl-faq-title"><div className="section-head"><div><p className="section-index">FAQ</p><h2 id="intl-faq-title">{key==="faq"?displayTitle:"FAQ"}</h2></div></div><div className="faq-list">{page.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></section>:null}
       <section className="manifesto shell localized-contact"><p className="section-index">OLIVON</p><h2>{marketContent[locale].ctaTitle}</h2><p>{marketContent[locale].ctaText}</p><div className="hero-actions"><a className="button primary" href={localizedPath(locale,"contact")}>{marketContent[locale].primary} <ArrowUpRight size={18}/></a></div></section>
       <SiteFooter/>
     </main>
