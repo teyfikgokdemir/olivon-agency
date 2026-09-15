@@ -82,7 +82,7 @@
   }
 
   .featured-reference-grid.featured-cases-flow::before {
-    content: "01 / 03";
+    content: attr(data-case-position);
     position: absolute;
     right: 24px;
     top: 22px;
