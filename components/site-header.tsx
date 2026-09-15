@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { marketContent, locales, type Locale } from "@/lib/i18n";
@@ -25,12 +25,13 @@ export function SiteHeader() {
     close();
   }, [pathname]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!open) return;
 
     const root = document.documentElement;
     const body = document.body;
     const scrollY = window.scrollY;
+    const scrollbarWidth = Math.max(0, window.innerWidth - root.clientWidth);
 
     const previousRootOverflow = root.style.overflow;
     const previousBodyOverflow = body.style.overflow;
@@ -40,6 +41,7 @@ export function SiteHeader() {
     const previousLeft = body.style.left;
     const previousRight = body.style.right;
     const previousWidth = body.style.width;
+    const previousPaddingRight = body.style.paddingRight;
 
     root.style.overflow = "hidden";
     body.style.overflow = "hidden";
@@ -49,6 +51,7 @@ export function SiteHeader() {
     body.style.left = "0";
     body.style.right = "0";
     body.style.width = "100%";
+    if (scrollbarWidth > 0) body.style.paddingRight = `${scrollbarWidth}px`;
 
     const onKeyDown = (event: KeyboardEvent) => event.key === "Escape" && close();
     const onResize = () => window.innerWidth > 900 && close();
@@ -64,6 +67,7 @@ export function SiteHeader() {
       body.style.left = previousLeft;
       body.style.right = previousRight;
       body.style.width = previousWidth;
+      body.style.paddingRight = previousPaddingRight;
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("resize", onResize);
       window.scrollTo(0, scrollY);
@@ -119,6 +123,7 @@ export function SiteHeader() {
           WebkitOverflowScrolling: "touch",
           touchAction: "pan-y",
           paddingBottom: "calc(36px + env(safe-area-inset-bottom))",
+          willChange: "transform, opacity",
         }}
       >
         <button className="mobile-accordion-trigger" type="button" onClick={() => setServicesOpen(value => !value)} aria-expanded={servicesOpen} aria-controls="olivon-mobile-services">{labels.services} <ChevronDown className={servicesOpen ? "is-open" : ""} size={18}/></button>
