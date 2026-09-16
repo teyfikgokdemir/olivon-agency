@@ -86,6 +86,8 @@ export default function ContactPage() {
         <h2>Web, e-ticaret ve görünürlük projelerinde tek merkezden ilerleyin.</h2>
         <p>Olivon; Kayseri merkezli olarak Türkiye genelinde web tasarım ve geliştirme, e-ticaret altyapısı kurulumu, ikas partner hizmetleri, Shopify ve WooCommerce projeleri, SEO, GEO, AEO, AIO, yapay zekâ arama görünürlüğü ve dijital güvenlik çözümleri sunar. Projenin yalnızca yayına alınmasını değil; yönetilebilir, ölçülebilir ve büyümeye hazır hale gelmesini hedefleriz.</p>
         <div className="contact-links">
+          <a href="/kayseri-web-tasarim">Kayseri web tasarım</a>
+          <a href="/kayseri-e-ticaret">Kayseri e-ticaret</a>
           <a href="/ikas">ikas hizmetleri</a>
           <a href="/hizmetler/e-ticaret">E-ticaret sistemleri</a>
           <a href="/hizmetler/web-tasarim">Web tasarım</a>
