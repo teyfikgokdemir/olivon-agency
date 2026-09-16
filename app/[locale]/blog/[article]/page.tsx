@@ -33,7 +33,8 @@ export default async function LocalizedArticle({params}:{params:Promise<{locale:
   const article=allIntlArticleBySlug(locale,slug);
   if(!article) notFound();
   const canonical=`/${locale}/blog/${article.slug}`;
-  const articleSchema={"@context":"https://schema.org","@type":"Article","@id":`${SITE_URL}${canonical}#article`,headline:article.title,description:article.excerpt,datePublished:article.dateISO,dateModified:article.dateISO,inLanguage:marketContent[locale].htmlLang,image:`${SITE_URL}${article.image}`,mainEntityOfPage:{"@id":`${SITE_URL}${canonical}#webpage`},publisher:{"@id":`${SITE_URL}/#organization`},author:{"@id":`${SITE_URL}/#organization`}};
+  const imageUrl=article.image.startsWith("http://")||article.image.startsWith("https://")?article.image:`${SITE_URL}${article.image}`;
+  const articleSchema={"@context":"https://schema.org","@type":"Article","@id":`${SITE_URL}${canonical}#article`,headline:article.title,description:article.excerpt,datePublished:article.dateISO,dateModified:article.dateISO,inLanguage:marketContent[locale].htmlLang,image:imageUrl,mainEntityOfPage:{"@id":`${SITE_URL}${canonical}#webpage`},publisher:{"@id":`${SITE_URL}/#organization`},author:{"@id":`${SITE_URL}/#organization`}};
   const webPage={"@context":"https://schema.org","@type":"WebPage","@id":`${SITE_URL}${canonical}#webpage`,url:`${SITE_URL}${canonical}`,name:article.title,description:article.excerpt,inLanguage:marketContent[locale].htmlLang,isPartOf:{"@id":`${SITE_URL}/#website`}};
   const breadcrumb={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"Olivon",item:`${SITE_URL}/${locale}`},{"@type":"ListItem",position:2,name:"Insights",item:`${SITE_URL}/${locale}/blog`},{"@type":"ListItem",position:3,name:article.title,item:`${SITE_URL}${canonical}`}]};
   const cta=ctaLabel[locale];
