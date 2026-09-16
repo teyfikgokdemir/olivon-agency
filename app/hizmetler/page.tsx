@@ -8,7 +8,10 @@ import { serviceGroups } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Dijital Ajans Hizmetleri | Web, E-Ticaret, SEO, AI & Güvenlik",
   description: "Web tasarım, e-ticaret, ikas, Shopify, WooCommerce, SEO, GEO, AEO, AIO, AI otomasyon, dijital reklam ve güvenlik hizmetlerini tek büyüme sistemi altında inceleyin.",
-  alternates: { canonical: "/hizmetler" },
+  alternates: {
+    canonical: "/hizmetler",
+    languages: { "tr-TR": "/hizmetler", en: "/en/services", "de-DE": "/de/leistungen", "fr-FR": "/fr/expertises", "x-default": "/hizmetler" },
+  },
   openGraph: { title: "Olivon Hizmetleri | Dijital Büyüme Sistemleri", description: "Web, e-ticaret, görünürlük, otomasyon ve güvenlik hizmetleri.", url: "/hizmetler", type: "website" },
 };
 
