@@ -8,7 +8,10 @@ import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Dijital Büyüme Blogu | E-Ticaret, SEO, AI ve Web Rehberleri",
   description: "Shopify, ikas, WooCommerce, e-ticaret kârlılığı, SEO, GEO, AEO, AIO, yapay zekâ görünürlüğü, web deneyimi ve güvenlik üzerine uygulanabilir rehberler.",
-  alternates: { canonical: "/blog" },
+  alternates: {
+    canonical: "/blog",
+    languages: { "tr-TR": "/blog", en: "/en/blog", "de-DE": "/de/blog", "fr-FR": "/fr/blog", "x-default": "/blog" },
+  },
   openGraph: { title: "Olivon Blog | E-Ticaret, SEO, AI ve Web", description: "Dijital kararlar için uygulanabilir rehberler.", url: "/blog", type: "website" },
 };
 
