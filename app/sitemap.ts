@@ -38,6 +38,16 @@ function alternatesFor(key: IntlPageKey) {
   };
 }
 
+function caseAlternates(caseSlug: string) {
+  return {
+    "tr-TR": `${base}/referanslar/${caseSlug}`,
+    en: `${base}/en/${intlPages.en.work.slug}/${caseSlug}`,
+    "de-DE": `${base}/de/${intlPages.de.work.slug}/${caseSlug}`,
+    "fr-FR": `${base}/fr/${intlPages.fr.work.slug}/${caseSlug}`,
+    "x-default": `${base}/referanslar/${caseSlug}`,
+  };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: updated, changeFrequency: "weekly", priority: 1, alternates: { languages: languageAlternates } },
@@ -78,8 +88,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: alternatesFor(key) },
   })));
 
-  const caseRoutes: MetadataRoute.Sitemap = caseStudies.map(item => ({ url:`${base}/referanslar/${item.slug}`, lastModified:updated, changeFrequency:"monthly", priority:0.82 }));
-  const localizedCaseRoutes: MetadataRoute.Sitemap = locales.flatMap(locale => caseStudies.map(item => ({ url:`${base}/${locale}/${intlPages[locale].work.slug}/${item.slug}`, lastModified:updated, changeFrequency:"monthly" as const, priority:0.8 })));
+  const caseRoutes: MetadataRoute.Sitemap = caseStudies.map(item => ({
+    url:`${base}/referanslar/${item.slug}`,
+    lastModified:updated,
+    changeFrequency:"monthly",
+    priority:0.82,
+    alternates:{languages:caseAlternates(item.slug)},
+  }));
+  const localizedCaseRoutes: MetadataRoute.Sitemap = locales.flatMap(locale => caseStudies.map(item => ({
+    url:`${base}/${locale}/${intlPages[locale].work.slug}/${item.slug}`,
+    lastModified:updated,
+    changeFrequency:"monthly" as const,
+    priority:0.8,
+    alternates:{languages:caseAlternates(item.slug)},
+  })));
   const articleRoutes: MetadataRoute.Sitemap = articles.map(article => ({ url:`${base}/blog/${article.slug}`, lastModified:article.dateISO, changeFrequency:"monthly", priority:0.76 }));
   const localizedArticleRoutes: MetadataRoute.Sitemap = locales.flatMap(locale => allIntlArticles[locale].map(article => ({
     url:`${base}/${locale}/blog/${article.slug}`,
