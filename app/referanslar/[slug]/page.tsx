@@ -14,14 +14,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const item = caseStudies.find(entry => entry.slug === slug);
   if (!item) return {};
+  const trPath = `/referanslar/${item.slug}`;
   return {
     title: `${item.name} Vaka Çalışması | E-Ticaret Projesi`,
     description: `${item.name} için gerçekleştirilen ${item.category.toLocaleLowerCase("tr-TR")} odaklı e-ticaret çalışmasının problem, kapsam, sonuç ve teknoloji özeti.`,
-    alternates: { canonical: `/referanslar/${item.slug}` },
+    alternates: {
+      canonical: trPath,
+      languages: {
+        "tr-TR": trPath,
+        en: `/en/work/${item.slug}`,
+        "de-DE": `/de/referenzen/${item.slug}`,
+        "fr-FR": `/fr/realisations/${item.slug}`,
+        "x-default": trPath,
+      },
+    },
     openGraph: {
       title: `${item.name} | Olivon Vaka Çalışması`,
       description: item.summary,
-      url: `/referanslar/${item.slug}`,
+      url: trPath,
       ...(item.image ? { images: [{ url: item.image.split("?")[0], alt: `${item.name} e-ticaret projesi` }] } : {}),
     },
   };
@@ -101,6 +111,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     <section className="case-story shell">
       <article><h2>Başlangıç problemi</h2><p>{item.challenge}</p></article>
       <article><h2>Yapılan çalışma</h2><ul>{item.work.map(x=><li key={x}><CheckCircle2 size={16}/>{x}</li>)}</ul></article>
+      <article><h2>Teslim edilen kapsam</h2><ul>{item.deliverables.map(x=><li key={x}><CheckCircle2 size={16}/>{x}</li>)}</ul></article>
       <article><h2>Ortaya çıkan sonuç</h2><p>{item.outcome}</p></article>
       <article><h2>Kanıt & şeffaflık</h2><p>{item.evidence}</p></article>
     </section>
