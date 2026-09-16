@@ -8,7 +8,7 @@ import { breadcrumbSchema, SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "İletişim | Web Tasarım, E-Ticaret, SEO & ikas Projeleri",
   description: "Web tasarım, e-ticaret, ikas kurulum, Shopify, WooCommerce, SEO, GEO, AEO, AIO ve dijital güvenlik projeleriniz için Olivon ile iletişime geçin.",
-  alternates: { canonical: "/iletisim" },
+  alternates: { canonical: "/iletisim", languages: { "tr-TR": "/iletisim", en: "/en/contact", "de-DE": "/de/kontakt", "fr-FR": "/fr/contact", "x-default": "/iletisim" } },
   openGraph: {
     title: "Olivon ile İletişim | Dijital Büyüme Projenizi Konuşalım",
     description: "Web, e-ticaret, ikas, SEO, AI görünürlüğü ve dijital güvenlik projenizi Olivon ile değerlendirin.",
