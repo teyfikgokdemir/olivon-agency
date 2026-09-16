@@ -9,7 +9,10 @@ import { caseStudies } from "@/lib/case-studies";
 export const metadata: Metadata = {
   title: "Referanslar & Vaka Çalışmaları | E-Ticaret ve Web Projeleri",
   description: "Olivon'un e-ticaret, web tasarım ve dijital deneyim projelerini; seçili vaka çalışmalarında problem, kapsam, sonuç ve canlı site bağlantılarıyla inceleyin.",
-  alternates: { canonical: "/referanslar" },
+  alternates: {
+    canonical: "/referanslar",
+    languages: { "tr-TR": "/referanslar", en: "/en/work", "de-DE": "/de/referenzen", "fr-FR": "/fr/realisations", "x-default": "/referanslar" },
+  },
   openGraph: { title: "Olivon Referanslar & Vaka Çalışmaları", description: "Gerçek markalar için geliştirilen e-ticaret ve web projeleri.", url: "/referanslar", type: "website" },
 };
 
@@ -76,7 +79,7 @@ export default function ReferencesPage() {
           <div className="reference-logo-group">
             {referenceProjects.map(project => (
               <a className="reference-logo-item" href={project.url} target="_blank" rel="noreferrer" key={`primary-${project.domain}`}>
-                <span className="reference-logo-mark"><img src={brandMarkUrl(project.domain)} alt="" width="34" height="34" loading="lazy" /></span>
+                <span className="reference-logo-mark"><img src={brandMarkUrl(project.domain)} alt={`${project.name} logosu`} width="34" height="34" loading="lazy" /></span>
                 <strong>{project.name}</strong>
               </a>
             ))}
@@ -102,7 +105,7 @@ export default function ReferencesPage() {
                 <img src={project.image} alt={`${project.name} e-ticaret sitesi ekran görüntüsü`} loading="lazy" decoding="async" />
               </div>
               <div className="reference-copy">
-                <span className="reference-brand-mark"><img src={brandMarkUrl(project.domain)} alt="" width="42" height="42" loading="lazy" /></span>
+                <span className="reference-brand-mark"><img src={brandMarkUrl(project.domain)} alt={`${project.name} logosu`} width="42" height="42" loading="lazy" /></span>
                 <span>{project.category}</span>
                 <h2>{project.name}</h2>
                 <p>{project.scope}</p>
@@ -125,7 +128,7 @@ export default function ReferencesPage() {
             return (
               <a href={href} target={caseItem ? undefined : "_blank"} rel={caseItem ? undefined : "noreferrer"} key={project.domain}>
                 <div className="directory-brand-line">
-                  <span className="directory-brand-mark"><img src={brandMarkUrl(project.domain)} alt="" width="32" height="32" loading="lazy" /></span>
+                  <span className="directory-brand-mark"><img src={brandMarkUrl(project.domain)} alt={`${project.name} logosu`} width="32" height="32" loading="lazy" /></span>
                   <span className="directory-category">{project.category}</span>
                 </div>
                 <strong>{project.name}</strong>
