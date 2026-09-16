@@ -37,6 +37,16 @@ const labels:Record<Locale,{challenge:string;work:string;outcome:string;evidence
 
 export function generateStaticParams(){return locales.flatMap(locale=>caseStudies.map(item=>({locale,slug:intlPages[locale].work.slug,case:item.slug})));}
 
+function caseAlternates(caseSlug:string){
+  return {
+    "tr-TR":`/referanslar/${caseSlug}`,
+    en:`/en/${intlPages.en.work.slug}/${caseSlug}`,
+    "de-DE":`/de/${intlPages.de.work.slug}/${caseSlug}`,
+    "fr-FR":`/fr/${intlPages.fr.work.slug}/${caseSlug}`,
+    "x-default":`/referanslar/${caseSlug}`,
+  };
+}
+
 export async function generateMetadata({params}:{params:Promise<{locale:string;slug:string;case:string}>}):Promise<Metadata>{
   const {locale:raw,slug,case:caseSlug}=await params;
   if(!isLocale(raw)) return {};
@@ -46,7 +56,7 @@ export async function generateMetadata({params}:{params:Promise<{locale:string;s
   const localized=text[locale][caseSlug];
   if(!item||!localized) return {};
   const canonical=`/${locale}/${slug}/${caseSlug}`;
-  return {title:`${item.name} | ${intlPages[locale].work.metaTitle}`,description:localized.summary,alternates:{canonical},openGraph:{type:"article",siteName:"Olivon",locale:marketContent[locale].ogLocale,title:item.name,description:localized.summary,url:`${SITE_URL}${canonical}`,images:item.image?[{url:item.image,alt:item.name}]:undefined},other:{"content-language":marketContent[locale].htmlLang}};
+  return {title:`${item.name} | ${intlPages[locale].work.metaTitle}`,description:localized.summary,alternates:{canonical,languages:caseAlternates(caseSlug)},openGraph:{type:"article",siteName:"Olivon",locale:marketContent[locale].ogLocale,title:item.name,description:localized.summary,url:`${SITE_URL}${canonical}`,images:item.image?[{url:item.image,alt:item.name}]:undefined},other:{"content-language":marketContent[locale].htmlLang}};
 }
 
 export default async function LocalizedCase({params}:{params:Promise<{locale:string;slug:string;case:string}>}){
