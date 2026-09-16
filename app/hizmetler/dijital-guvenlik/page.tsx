@@ -8,7 +8,7 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Dijital Güvenlik | Cloudflare, WAF, DDoS & Bot Koruması",
   description: "Cloudflare, WAF, DDoS koruması, bot yönetimi, erişim politikaları, SSL ve izleme katmanlarıyla web ve e-ticaret altyapınızı güçlendirin.",
-  alternates: { canonical: "/hizmetler/dijital-guvenlik" },
+  alternates: { canonical: "/hizmetler/dijital-guvenlik", languages: { "tr-TR": "/hizmetler/dijital-guvenlik", en: "/en/digital-security", "de-DE": "/de/sicherheit", "fr-FR": "/fr/securite-digitale", "x-default": "/hizmetler/dijital-guvenlik" } },
   openGraph: { title: "Web & E-Ticaret Güvenliği | Olivon", description: "Satış sürekliliğini koruyan Cloudflare odaklı güvenlik ve trafik yönetimi.", url: "/hizmetler/dijital-guvenlik", type: "website" },
 };
 
