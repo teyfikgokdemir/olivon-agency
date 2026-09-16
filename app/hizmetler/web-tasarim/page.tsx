@@ -8,7 +8,7 @@ import { breadcrumbSchema,serviceSchema } from "@/lib/seo";
 export const metadata:Metadata={
   title:"Web Tasarım Ajansı | Kurumsal Web & Dönüşüm Odaklı Geliştirme",
   description:"Kurumsal web sitesi, landing page, mobil UX, Core Web Vitals, teknik SEO ve dönüşüm odaklı özel web tasarım ve geliştirme hizmetleri.",
-  alternates:{canonical:"/hizmetler/web-tasarim"},
+  alternates:{canonical:"/hizmetler/web-tasarim",languages:{"tr-TR":"/hizmetler/web-tasarim",en:"/en/web-design","de-DE":"/de/webdesign","fr-FR":"/fr/web-design","x-default":"/hizmetler/web-tasarim"}},
   openGraph:{title:"Web Tasarım & Geliştirme | Olivon",description:"Marka algısı, mobil deneyim, performans ve dönüşümü aynı web sisteminde birleştiren özel web projeleri.",url:"/hizmetler/web-tasarim",type:"website"}
 };
 
