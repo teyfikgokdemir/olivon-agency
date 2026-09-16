@@ -8,7 +8,7 @@ import { breadcrumbSchema,serviceSchema } from "@/lib/seo";
 export const metadata:Metadata={
   title:"SEO, GEO, AEO & AIO | Google ve AI Arama Görünürlüğü",
   description:"Teknik SEO, içerik mimarisi, entity sinyalleri, yapılandırılmış veri ve konu otoritesiyle Google ve yapay zekâ destekli aramalarda bulunabilirliği güçlendirin.",
-  alternates:{canonical:"/hizmetler/seo-geo-aeo-aio"},
+  alternates:{canonical:"/hizmetler/seo-geo-aeo-aio",languages:{"tr-TR":"/hizmetler/seo-geo-aeo-aio",en:"/en/seo-geo-aeo-aio","de-DE":"/de/seo-geo-aeo-aio","fr-FR":"/fr/seo-geo-aeo-aio","x-default":"/hizmetler/seo-geo-aeo-aio"}},
   openGraph:{title:"SEO, GEO, AEO & AIO | Olivon",description:"Google ve AI destekli aramalarda daha anlaşılır, taranabilir ve güvenilir dijital varlıklar.",url:"/hizmetler/seo-geo-aeo-aio",type:"website"}
 };
 
