@@ -8,7 +8,7 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "E-Ticaret Ajansı | Kurulum, Entegrasyon & Platform Taşıma",
   description: "ikas, Shopify, WooCommerce, IdeaSoft, Ticimax, T-Soft ve diğer e-ticaret altyapılarında kurulum, platform taşıma, entegrasyon, SEO ve dönüşüm mimarisi.",
-  alternates: { canonical: "/hizmetler/e-ticaret" },
+  alternates: { canonical: "/hizmetler/e-ticaret", languages: { "tr-TR": "/hizmetler/e-ticaret", en: "/en/cross-border-ecommerce", "de-DE": "/de/e-commerce-migration", "fr-FR": "/fr/e-commerce-international", "x-default": "/hizmetler/e-ticaret" } },
   openGraph:{title:"E-Ticaret Sistemleri | Kurulum & Platform Taşıma",description:"Yerli ve global e-ticaret altyapılarında kurulumdan platform geçişine ve satış operasyonuna kadar uçtan uca sistem tasarımı.",url:"/hizmetler/e-ticaret",type:"website"}
 };
 
