@@ -53,6 +53,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/hizmetler/ai-otomasyon`, lastModified: updated, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/hizmetler/dijital-reklam`, lastModified: updated, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/hizmetler/dijital-guvenlik`, lastModified: updated, changeFrequency: "monthly", priority: 0.85, alternates: { languages: alternatesFor("security") } },
+    { url: `${base}/kayseri-web-tasarim`, lastModified: updated, changeFrequency: "monthly", priority: 0.84 },
+    { url: `${base}/kayseri-e-ticaret`, lastModified: updated, changeFrequency: "monthly", priority: 0.84 },
     { url: `${base}/referanslar`, lastModified: updated, changeFrequency: "monthly", priority: 0.9, alternates: { languages: alternatesFor("work") } },
     { url: `${base}/hakkimizda`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/fiyatlandirma`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
