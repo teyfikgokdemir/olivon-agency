@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { CookieConsent } from "@/components/cookie-consent";
 import { FeaturedCasesController } from "@/components/featured-cases-controller";
 import { FloatingActions } from "@/components/floating-actions";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { MotionController } from "@/components/motion-controller";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
@@ -51,35 +53,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           })();
         `}</Script>
         <StructuredData data={[organizationSchema, websiteSchema]} />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-VJ2PP2LG1N" strategy="afterInteractive" />
-        <Script id="olivon-ga4" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-VJ2PP2LG1N');
-        `}</Script>
-        <Script id="olivon-conversion-events" strategy="afterInteractive">{`
-          document.addEventListener('click', function(event) {
-            var link = event.target && event.target.closest ? event.target.closest('a') : null;
-            if (!link || typeof window.gtag !== 'function') return;
-            var href = link.getAttribute('href') || '';
-            var eventName = '';
-            if (/wa\\.me|whatsapp/i.test(href)) eventName = 'whatsapp_click';
-            else if (href.indexOf('mailto:') === 0) eventName = 'email_click';
-            else if (href.indexOf('tel:') === 0) eventName = 'phone_click';
-            else if (href === '/iletisim' || href.indexOf('/iletisim?') === 0 || /^\/(en\/contact|de\/kontakt|fr\/contact)(\?|#|$)/.test(href)) eventName = 'contact_cta_click';
-            else if (href.indexOf('/referanslar') === 0 || /^\/(en\/work|de\/referenzen|fr\/realisations)/.test(href)) eventName = 'case_study_click';
-            else if (href.indexOf('/hizmetler/') === 0 || href === '/hizmetler' || /^\/(en|de|fr)\//.test(href)) eventName = 'service_detail_click';
-            if (!eventName) return;
-            window.gtag('event', eventName, { link_url: href, link_text: (link.textContent || '').trim().slice(0, 80) });
-          }, { passive: true });
-        `}</Script>
+        <GoogleAnalytics />
         <Script src="https://teyfikgokdemir.com/cansu-source-beacon.js" data-site="olivon-agency" strategy="afterInteractive" />
         <SiteHeader />
         <MotionController />
         <FeaturedCasesController />
         {children}
         <FloatingActions />
+        <CookieConsent />
       </body>
     </html>
   );
