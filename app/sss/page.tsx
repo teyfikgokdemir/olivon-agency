@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Sık Sorulan Sorular | Web, E-Ticaret, ikas, SEO, Reklam & AI",
   description: "Web sitesi, e-ticaret, ikas, Shopify, WooCommerce, SEO, GEO, AEO, AIO, dijital reklam, güvenlik, süre, fiyat ve proje kapsamı hakkında gerçek müşteri sorularına net yanıtlar.",
-  alternates: { canonical: "/sss" },
+  alternates: { canonical: "/sss", languages: { "tr-TR": "/sss", en: "/en/faq", "de-DE": "/de/faq", "fr-FR": "/fr/faq", "x-default": "/sss" } },
   openGraph: {
     title: "Olivon SSS | Web, E-Ticaret, ikas, SEO, Reklam ve AI",
     description: "Web ve e-ticaret projelerinde fiyat, süre, altyapı seçimi, görünürlük, reklam, güvenlik ve destek hakkında karar öncesi sorular.",
