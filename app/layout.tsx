@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { CansuSourceBeacon } from "@/components/cansu-source-beacon";
 import { CookieConsent } from "@/components/cookie-consent";
 import { FeaturedCasesController } from "@/components/featured-cases-controller";
 import { FloatingActions } from "@/components/floating-actions";
@@ -54,7 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         `}</Script>
         <StructuredData data={[organizationSchema, websiteSchema]} />
         <GoogleAnalytics />
-        <Script src="https://teyfikgokdemir.com/cansu-source-beacon.js" data-site="olivon-agency" strategy="afterInteractive" />
+        <CansuSourceBeacon />
         <SiteHeader />
         <MotionController />
         <FeaturedCasesController />
