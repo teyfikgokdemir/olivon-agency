@@ -17,10 +17,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Use Node.js 22
-        uses: actions/setup-node@v4
+        uses:
+          actions/setup-node@v4
         with:
           node-version: "22"
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
+      - name: Guard Next.js security baseline
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          import assert from 'node:assert/strict';
+          const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+          const raw = String(pkg.dependencies?.next || '').replace(/^[^0-9]*/, '');
+          const version = raw.split('.').map(Number);
+          const minimum = [16, 3, 3];
+          const safe = version.some((part, index) => part > minimum[index] && version.slice(0, index).every((value, i) => value === minimum[i])) || version.every((part, index) => part === minimum[index]);
+          assert.ok(safe, `Next.js ${raw || '(missing)'} is below the required security baseline 16.3.3.`);
+          NODE
       - name: Build
         run: npm run build
