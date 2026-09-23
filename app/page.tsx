@@ -102,6 +102,15 @@ export default function Home() {
               decoding="async"
             />
           </picture>
+          <span className="campaign-installment-badge" aria-hidden="true">
+            <span className="campaign-installment-orbit" />
+            <span className="campaign-installment-card">
+              <small>YENİ AVANTAJ</small>
+              <strong><b>6</b> TAKSİT</strong>
+              <em>VADE FARKSIZ</em>
+            </span>
+            <span className="campaign-installment-shine" />
+          </span>
         </a>
       </section>
 
