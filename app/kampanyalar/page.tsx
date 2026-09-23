@@ -5,22 +5,22 @@ import { StructuredData } from "@/components/structured-data";
 import { SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Kampanyalar | ikas E-Ticaret Kampanyaları ve Olivon Avantajları",
-  description: "Olivon kampanyalarını inceleyin. İlk 15 kişiye özel ikas kampanyasında 3 ay ek lisans, profesyonel tasarım hizmeti ve domain hediyesi.",
+  title: "ikas Kampanyası | 3 Ay Ek Lisans, Tasarım, Domain ve 6 Taksit",
+  description: "İlk 15 kişiye özel Olivon × ikas kampanyası: 3 ay ek lisans, profesyonel tasarım, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit.",
   alternates: { canonical: "/kampanyalar" },
   openGraph: {
     type: "website",
     locale: "tr_TR",
     siteName: "Olivon",
-    title: "Olivon Kampanyaları | ikas İlk 15 Kişiye Özel",
-    description: "İlk 15 kişiye özel: 3 ay ek ikas lisansı, profesyonel tasarım ve domain hediyesi.",
+    title: "Olivon × ikas Kampanyası | İlk 15 Kişiye 4 Avantaj",
+    description: "İlk 15 kişiye özel: 3 ay ek ikas lisansı, profesyonel tasarım, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit.",
     url: `${SITE_URL}/kampanyalar`,
     images: [{ url: "/images/campaigns/olivon-ikas-kampanya-desktop.webp", width: 2048, height: 768, alt: "Olivon ikas kampanyası" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Olivon Kampanyaları | ikas İlk 15 Kişiye Özel",
-    description: "3 ay ek ikas lisansı, profesyonel tasarım ve domain hediyesi.",
+    title: "Olivon × ikas Kampanyası | İlk 15 Kişiye 4 Avantaj",
+    description: "3 ay ek ikas lisansı, profesyonel tasarım, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit.",
     images: ["/images/campaigns/olivon-ikas-kampanya-desktop.webp"],
   },
 };
@@ -37,6 +37,7 @@ const faqs = [
   ["Kampanyada hangi avantajlar var?", "3 ay ek ikas lisansı, profesyonel tasarım hizmeti, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit kampanya kapsamındaki ana avantajlardır."],
   ["Başvuru nasıl yapılır?", "Kampanya sayfasındaki WhatsApp butonundan Olivon ekibine ulaşarak proje ve mağaza ihtiyacınızı iletebilirsiniz."],
   ["Kontenjan sınırlı mı?", "Evet. Kampanya ilk 15 uygun başvuru ile sınırlıdır."],
+  ["Vade farksız 6 taksit nasıl uygulanıyor?", "Vade farksız 6 taksit avantajı uygun ödeme yöntemlerinde geçerlidir. Ödeme yöntemi ve uygulanabilirlik başvuru sırasında netleştirilir."],
 ];
 
 export default function CampaignsPage() {
@@ -46,7 +47,7 @@ export default function CampaignsPage() {
     "@id": `${SITE_URL}/kampanyalar#webpage`,
     url: `${SITE_URL}/kampanyalar`,
     name: "Olivon Kampanyaları",
-    description: "Olivon e-ticaret ve ikas kampanyaları.",
+    description: "Olivon × ikas kampanyası: İlk 15 uygun başvuru için 3 ay ek lisans, profesyonel tasarım, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit.",
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": `${SITE_URL}/#organization` },
     inLanguage: "tr-TR",
@@ -55,11 +56,15 @@ export default function CampaignsPage() {
       name: "Olivon × ikas İlk 15 Kişiye Özel Kampanya",
       description: "İlk 15 uygun başvuruya 3 ay ek ikas lisansı, profesyonel tasarım hizmeti, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit avantajı.",
       url: `${SITE_URL}/kampanyalar#ikas-ilk-15`,
+      category: "E-ticaret kampanyası",
+      areaServed: { "@type": "Country", name: "Türkiye" },
+      eligibleRegion: { "@type": "Country", name: "Türkiye" },
       itemOffered: {
         "@type": "Service",
         name: "ikas e-ticaret mağaza kurulum ve tasarım hizmeti",
         provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: { "@type": "Country", name: "Türkiye" },
+        audience: { "@type": "BusinessAudience", audienceType: "E-ticaret mağazası kurmak isteyen işletmeler" },
       },
     },
   };
@@ -111,7 +116,7 @@ export default function CampaignsPage() {
         <div className="campaign-detail-copy">
           <div>
             <p className="campaign-status"><span /> AKTİF KAMPANYA · İLK 15 KİŞİ</p>
-            <h2>ikas&apos;ta dev kampanya: <em>3 ayrı hediye</em></h2>
+            <h2>ikas&apos;ta dev kampanya: <em>4 ayrı avantaj</em></h2>
             <p>Yeni ikas mağazasını Olivon ile kurmak isteyen ilk 15 uygun başvuru için 3 ay ek lisans, profesyonel tasarım hizmeti, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit avantajı sunuluyor.</p>
           </div>
           <a className="button primary campaign-whatsapp" href="https://wa.me/905013484838?text=Merhaba%20Olivon%2C%20%C4%B0KAS%20kampanyas%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20ve%20ba%C5%9Fvurmak%20istiyorum." target="_blank" rel="noreferrer">

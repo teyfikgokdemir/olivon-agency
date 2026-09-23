@@ -95,7 +95,7 @@ export default function Home() {
             />
             <img
               src="/images/campaigns/olivon-ikas-kampanya-desktop.webp"
-              alt="Olivon ikas dev kampanya: İlk 15 kişiye 3 ay ek lisans, profesyonel tasarım ve domain hediyesi."
+              alt="Olivon ikas dev kampanya: İlk 15 kişiye 3 ay ek lisans, profesyonel tasarım, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit."
               width="2048"
               height="768"
               fetchPriority="high"
