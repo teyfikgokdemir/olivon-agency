@@ -80,7 +80,7 @@ export default function CampaignsPage() {
       <section className="campaigns-intro shell">
         <p className="section-index">OLIVON KAMPANYALARI</p>
         <h1>E-ticaret yatırımını <em>daha avantajlı</em> başlat.</h1>
-        <p>Aktif kampanyaları, kapsamlarını ve başvuru koşullarını tek yerde yayınlıyoruz. Kampanya detaylarını görsel kadar gerçek HTML içerikle de açıklıyoruz.</p>
+        <p>İlk 15 kişiye özel ikas kampanyasında 3 ay ek lisans, profesyonel tasarım hizmeti ve domain hediyesi. Kontenjan dolmadan avantajlı e-ticaret kurulumuna başvurun.</p>
       </section>
 
       <section className="campaign-detail shell" id="ikas-ilk-15">
