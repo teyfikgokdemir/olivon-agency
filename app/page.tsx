@@ -88,14 +88,20 @@ export default function Home() {
       <StructuredData data={pageSchema} />
       <section className="campaign-image-hero" aria-label="Olivon ikas kampanyası">
         <a href="/iletisim?kampanya=ikas" aria-label="Olivon ikas kampanyasına başvur">
-          <img
-            src="/images/campaigns/olivon-ikas-campaign.webp"
-            alt="Olivon ikas dev kampanya: İlk 15 kişiye 3 ay ek lisans, profesyonel tasarım ve domain hediyesi."
-            width="2048"
-            height="768"
-            fetchPriority="high"
-            decoding="async"
-          />
+          <picture>
+            <source
+              media="(max-width: 760px)"
+              srcSet="/images/campaigns/olivon-ikas-kampanya-mobile.webp"
+            />
+            <img
+              src="/images/campaigns/olivon-ikas-kampanya-desktop.webp"
+              alt="Olivon ikas dev kampanya: İlk 15 kişiye 3 ay ek lisans, profesyonel tasarım ve domain hediyesi."
+              width="2048"
+              height="768"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
         </a>
       </section>
 

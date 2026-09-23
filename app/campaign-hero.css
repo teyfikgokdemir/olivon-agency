@@ -15,9 +15,13 @@
   box-shadow: 0 24px 70px rgba(0,0,0,.34);
 }
 
+.campaign-image-hero picture,
 .campaign-image-hero img {
   display: block;
   width: 100%;
+}
+
+.campaign-image-hero img {
   height: auto;
   aspect-ratio: 8 / 3;
   object-fit: cover;
@@ -32,5 +36,12 @@
     border-left: 0;
     border-right: 0;
     border-radius: 0;
+  }
+
+  .campaign-image-hero img {
+    aspect-ratio: auto;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
