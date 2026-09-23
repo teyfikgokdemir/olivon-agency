@@ -82,6 +82,15 @@ export default function CampaignsPage() {
         <p className="section-index">OLIVON KAMPANYALARI</p>
         <h1>E-ticaret yatırımını <em>daha avantajlı</em> başlat.</h1>
         <p>İlk 15 kişiye özel ikas kampanyasında 3 ay ek lisans, profesyonel tasarım hizmeti, domain hediyesi ve vade farksız 6 taksit avantajı. Kontenjan dolmadan avantajlı e-ticaret kurulumuna başvurun.</p>
+        <span className="campaign-installment-badge campaign-installment-badge--page" aria-hidden="true">
+          <span className="campaign-installment-orbit" />
+          <span className="campaign-installment-card">
+            <small>YENİ AVANTAJ</small>
+            <strong><b>6</b> TAKSİT</strong>
+            <em>VADE FARKSIZ</em>
+          </span>
+          <span className="campaign-installment-shine" />
+        </span>
       </section>
 
       <section className="campaign-detail shell" id="ikas-ilk-15">

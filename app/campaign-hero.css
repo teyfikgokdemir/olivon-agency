@@ -50,8 +50,8 @@
 
 .campaign-installment-badge {
   position: absolute;
-  top: clamp(18px, 2.1vw, 34px);
-  right: clamp(18px, 2.2vw, 38px);
+  top: 58%;
+  right: 18.2%;
   z-index: 3;
   display: grid;
   place-items: center;
@@ -195,5 +195,31 @@
   .campaign-installment-orbit,
   .campaign-installment-shine {
     animation: none;
+  }
+}
+
+
+.campaign-installment-badge--page {
+  top: 50%;
+  right: clamp(10px, 2.2vw, 26px);
+  width: clamp(138px, 11vw, 180px);
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1180px) {
+  .campaign-installment-badge--page {
+    right: 8px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 760px) {
+  .campaign-installment-badge--page {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 138px;
+    margin: 24px auto 0;
+    transform: none;
   }
 }

@@ -1,4 +1,5 @@
 .campaigns-intro {
+  position: relative;
   padding-top: clamp(38px, 5vw, 72px);
   padding-bottom: clamp(28px, 4vw, 52px);
   text-align: center;
@@ -233,5 +234,21 @@
   .campaign-whatsapp {
     width: 100%;
     justify-content: center;
+  }
+}
+
+
+@media (min-width: 761px) {
+  .campaigns-intro {
+    padding-right: clamp(170px, 15vw, 230px);
+    padding-left: clamp(170px, 15vw, 230px);
+  }
+
+  .campaigns-intro h1 {
+    max-width: 1040px;
+  }
+
+  .campaigns-intro > p:last-of-type {
+    max-width: 760px;
   }
 }
