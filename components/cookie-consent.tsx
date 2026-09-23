@@ -52,7 +52,7 @@ export function CookieConsent() {
           <div>
             <p className="cookie-kicker">GİZLİLİK TERCİHLERİ</p>
             <h2>Dijital deneyiminiz, sizin kontrolünüzde.</h2>
-            <p>Zorunlu çerezler sitenin çalışmasını sağlar. Analitik ve pazarlama çerezleri yalnızca izninizle kullanılır.</p>
+            <p>Zorunlu çerezler sitenin çalışmasını sağlar. Analitik veya pazarlama depolaması yalnızca izninizle açılır; izin verilmediğinde ölçüm sinyalleri çerezsiz ve kısıtlı şekilde işlenebilir.</p>
           </div>
           <div className="cookie-actions">
             <button onClick={() => save("all")}>Tümünü kabul et</button>
@@ -60,12 +60,6 @@ export function CookieConsent() {
             <button onClick={() => setPanel(true)}>Tercihleri yönet</button>
           </div>
         </aside>
-      )}
-
-      {!banner && (
-        <button className="cookie-reopen" aria-label="Çerez tercihlerini aç" onClick={() => setPanel(true)}>
-          <Cookie />
-        </button>
       )}
 
       <Dialog open={panel} onOpenChange={setPanel}>

@@ -49,7 +49,6 @@ function loadGa() {
 }
 
 function track(name: string, params: Record<string, unknown> = {}) {
-  if (!getConsent().analytics) return;
   ensureGtag();
   window.gtag?.("event", name, params);
 }
@@ -84,14 +83,11 @@ export function GoogleAnalytics() {
     const onConsentChange = (event: Event) => {
       const consent = (event as CustomEvent<ConsentState>).detail || getConsent();
       applyConsent(consent);
-      if (consent.analytics) {
-        window.setTimeout(() => track("page_view", {
-          page_title: document.title,
-          page_location: window.location.href,
-          page_path: window.location.pathname + window.location.search,
-          consent_activation: true,
-        }), 0);
-      }
+      window.setTimeout(() => track("consent_update", {
+        analytics_storage: consent.analytics ? "granted" : "denied",
+        ad_storage: consent.marketing ? "granted" : "denied",
+        page_path: window.location.pathname + window.location.search,
+      }), 0);
     };
 
     const onCustomEvent = (event: Event) => {
@@ -128,7 +124,6 @@ export function GoogleAnalytics() {
   }, []);
 
   useEffect(() => {
-    if (!getConsent().analytics) return;
     const timer = window.setTimeout(() => track("page_view", {
       page_title: document.title,
       page_location: window.location.href,
