@@ -26,7 +26,7 @@ export const referenceProjects = [
     scope: "E-ticaret kurgu, görsel düzen, alışveriş yolculuğu",
     featured: true,
   },
-  { name: "Ramazan Bozkurt", domain: "recepbozkurt.com", url: "https://recepbozkurt.com/", category: "E-ticaret", scope: "WooCommerce tabanlı uçtan uca e-ticaret altyapısı, ürün ve satış akışı" },
+  { name: "Ramazan Bozkurt", domain: "ramazanbozkurt.com", url: "https://ramazanbozkurt.com/", category: "E-ticaret", scope: "WooCommerce tabanlı uçtan uca e-ticaret altyapısı, ürün ve satış akışı" },
   { name: "Sporfit Korse", domain: "sporfitkorse.com", url: "https://sporfitkorse.com/", category: "Korse & spor ürünleri", scope: "E-ticaret ve satış altyapısı" },
   { name: "Velista", domain: "velista.com.tr", url: "https://velista.com.tr/", category: "Moda", scope: "E-ticaret ve ürün deneyimi" },
   { name: "Hiranur", domain: "hiranur.com.tr", url: "https://hiranur.com.tr/", category: "Moda & perakende", scope: "Web/e-ticaret düzenleme" },
