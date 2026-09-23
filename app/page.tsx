@@ -86,43 +86,17 @@ export default function Home() {
   return (
     <main>
       <StructuredData data={pageSchema} />
-      <section className="ikas-campaign-hero" aria-labelledby="ikas-campaign-title">
-        <div className="ikas-campaign-glow" aria-hidden="true" />
-        <div className="ikas-campaign-inner">
-          <div className="ikas-campaign-brand">
-            <strong>Olivon</strong>
-            <span aria-hidden="true">×</span>
-            <strong className="ikas-wordmark">ikas</strong>
-          </div>
-
-          <div className="ikas-campaign-copy">
-            <p className="ikas-campaign-kicker">SINIRLI KONTENJAN · SADECE İLK 15 KİŞİ</p>
-            <h2 id="ikas-campaign-title"><span>İKAS&apos;TA</span> DEV KAMPANYA</h2>
-            <p className="ikas-campaign-lead">E-ticaret yolculuğuna Olivon ayrıcalığıyla başla.</p>
-          </div>
-
-          <div className="ikas-campaign-benefits" aria-label="Kampanya avantajları">
-            <article>
-              <span className="ikas-campaign-no">01</span>
-              <div><small>HEDİYE</small><strong>3 AY EK LİSANS</strong></div>
-            </article>
-            <article>
-              <span className="ikas-campaign-no">02</span>
-              <div><small>HEDİYE</small><strong>PROFESYONEL TASARIM</strong></div>
-            </article>
-            <article>
-              <span className="ikas-campaign-no">03</span>
-              <div><small>HEDİYE</small><strong>DOMAIN</strong></div>
-            </article>
-          </div>
-
-          <div className="ikas-campaign-footer">
-            <div className="ikas-campaign-note"><span /> İlk 15 başvuruyla sınırlıdır.</div>
-            <a className="ikas-campaign-cta" href="/iletisim?kampanya=ikas">Hemen Başvur <ArrowUpRight size={18} /></a>
-          </div>
-        </div>
-        <div className="ikas-campaign-orb ikas-campaign-orb-one" aria-hidden="true" />
-        <div className="ikas-campaign-orb ikas-campaign-orb-two" aria-hidden="true" />
+      <section className="campaign-image-hero" aria-label="Olivon ikas kampanyası">
+        <a href="/iletisim?kampanya=ikas" aria-label="Olivon ikas kampanyasına başvur">
+          <img
+            src="/images/campaigns/olivon-ikas-campaign.webp"
+            alt="Olivon ikas dev kampanya: İlk 15 kişiye 3 ay ek lisans, profesyonel tasarım ve domain hediyesi."
+            width="2048"
+            height="768"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </a>
       </section>
 
       <section className="hero shell" id="top">
