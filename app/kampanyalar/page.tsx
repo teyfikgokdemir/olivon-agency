@@ -29,11 +29,12 @@ const benefits = [
   { icon: Gift, title: "3 ay ek ikas lisansı", text: "Kampanya kapsamındaki uygun yeni başvurularda 3 ay ek lisans avantajı." },
   { icon: Paintbrush, title: "Profesyonel tasarım hizmeti", text: "Marka dili, vitrin, banner ve temel mağaza görsel düzenlemeleri Olivon tarafından hazırlanır." },
   { icon: Globe2, title: "Domain hediyesi", text: "Yeni mağaza kurulumu için uygun alan adı kampanya kapsamında hediye edilir." },
+  { icon: Check, title: "Vade farksız 6 taksit", text: "Uygun ödeme yöntemlerinde kampanya kapsamında vade farkı olmadan 6 taksit imkânı sunulur." },
 ];
 
 const faqs = [
   ["Kampanya kimler için geçerli?", "Kampanya yeni ikas mağazası kurmak isteyen ve Olivon üzerinden başvuran ilk 15 uygun müşteri için planlanmıştır."],
-  ["Kampanyada hangi avantajlar var?", "3 ay ek ikas lisansı, profesyonel tasarım hizmeti ve domain hediyesi kampanya kapsamındaki ana avantajlardır."],
+  ["Kampanyada hangi avantajlar var?", "3 ay ek ikas lisansı, profesyonel tasarım hizmeti, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit kampanya kapsamındaki ana avantajlardır."],
   ["Başvuru nasıl yapılır?", "Kampanya sayfasındaki WhatsApp butonundan Olivon ekibine ulaşarak proje ve mağaza ihtiyacınızı iletebilirsiniz."],
   ["Kontenjan sınırlı mı?", "Evet. Kampanya ilk 15 uygun başvuru ile sınırlıdır."],
 ];
@@ -52,7 +53,7 @@ export default function CampaignsPage() {
     mainEntity: {
       "@type": "Offer",
       name: "Olivon × ikas İlk 15 Kişiye Özel Kampanya",
-      description: "İlk 15 uygun başvuruya 3 ay ek ikas lisansı, profesyonel tasarım hizmeti ve domain hediyesi.",
+      description: "İlk 15 uygun başvuruya 3 ay ek ikas lisansı, profesyonel tasarım hizmeti, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit avantajı.",
       url: `${SITE_URL}/kampanyalar#ikas-ilk-15`,
       itemOffered: {
         "@type": "Service",
@@ -80,7 +81,7 @@ export default function CampaignsPage() {
       <section className="campaigns-intro shell">
         <p className="section-index">OLIVON KAMPANYALARI</p>
         <h1>E-ticaret yatırımını <em>daha avantajlı</em> başlat.</h1>
-        <p>İlk 15 kişiye özel ikas kampanyasında 3 ay ek lisans, profesyonel tasarım hizmeti ve domain hediyesi. Kontenjan dolmadan avantajlı e-ticaret kurulumuna başvurun.</p>
+        <p>İlk 15 kişiye özel ikas kampanyasında 3 ay ek lisans, profesyonel tasarım hizmeti, domain hediyesi ve vade farksız 6 taksit avantajı. Kontenjan dolmadan avantajlı e-ticaret kurulumuna başvurun.</p>
       </section>
 
       <section className="campaign-detail shell" id="ikas-ilk-15">
@@ -102,7 +103,7 @@ export default function CampaignsPage() {
           <div>
             <p className="campaign-status"><span /> AKTİF KAMPANYA · İLK 15 KİŞİ</p>
             <h2>ikas&apos;ta dev kampanya: <em>3 ayrı hediye</em></h2>
-            <p>Yeni ikas mağazasını Olivon ile kurmak isteyen ilk 15 uygun başvuru için 3 ay ek lisans, profesyonel tasarım hizmeti ve domain hediyesi sunuluyor.</p>
+            <p>Yeni ikas mağazasını Olivon ile kurmak isteyen ilk 15 uygun başvuru için 3 ay ek lisans, profesyonel tasarım hizmeti, domain hediyesi ve uygun ödeme yöntemlerinde vade farksız 6 taksit avantajı sunuluyor.</p>
           </div>
           <a className="button primary campaign-whatsapp" href="https://wa.me/905013484838?text=Merhaba%20Olivon%2C%20%C4%B0KAS%20kampanyas%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20ve%20ba%C5%9Fvurmak%20istiyorum." target="_blank" rel="noreferrer">
             WhatsApp&apos;tan başvur <ArrowUpRight size={18} />
