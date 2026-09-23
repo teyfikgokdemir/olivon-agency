@@ -68,6 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/referanslar`, lastModified: updated, changeFrequency: "monthly", priority: 0.9, alternates: { languages: alternatesFor("work") } },
     { url: `${base}/hakkimizda`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/fiyatlandirma`, lastModified: updated, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/kampanyalar`, lastModified: "2026-09-23", changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/iletisim`, lastModified: updated, changeFrequency: "monthly", priority: 0.85, alternates: { languages: alternatesFor("contact") } },
     { url: `${base}/sss`, lastModified: updated, changeFrequency: "monthly", priority: 0.8, alternates: { languages: alternatesFor("faq") } },
     { url: `${base}/blog`, lastModified: updated, changeFrequency: "weekly", priority: 0.82, alternates: { languages: blogAlternates } },

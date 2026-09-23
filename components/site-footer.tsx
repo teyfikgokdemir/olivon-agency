@@ -56,7 +56,7 @@ export function SiteFooter() {
       <div className="shell footer-grid">
         <div className="footer-brand"><div className="footer-brand-lockup"><span className="brand-mark">O</span><strong>OLIVON</strong></div><p>Strateji, tasarım, e-ticaret, görünürlük, otomasyon ve güvenliği tek sistemde buluşturan bağımsız dijital büyüme stüdyosu.</p><div className="footer-partners"><img src="/partners/shopify.svg" alt="Shopify çözüm ortağı" loading="lazy"/><img src="/partners/ikas.svg" alt="ikas çözüm ortağı" loading="lazy"/></div></div>
         <div className="footer-column footer-services"><h3>Uzmanlıklar</h3>{trServices.map(([label,href]) => <a href={href} key={href}>{label}</a>)}</div>
-        <div className="footer-column footer-discover"><h3>Keşfedin</h3><a href="/hakkimizda">Hakkımızda</a><a href="/referanslar">Vaka çalışmaları</a><a href="/fiyatlandirma">Fiyatlandırma yaklaşımı</a><a href="/blog">Blog</a><a href="/sss">SSS</a><a href="/iletisim">İletişim</a></div>
+        <div className="footer-column footer-discover"><h3>Keşfedin</h3><a href="/hakkimizda">Hakkımızda</a><a href="/referanslar">Vaka çalışmaları</a><a href="/fiyatlandirma">Fiyatlandırma yaklaşımı</a><a href="/kampanyalar">Kampanyalar</a><a href="/blog">Blog</a><a href="/sss">SSS</a><a href="/iletisim">İletişim</a></div>
         <div className="footer-column footer-legal-desktop"><h3>Yasal</h3>{legalLinks.map(([label,href]) => <a href={href} key={href}>{label}</a>)}</div>
       </div>
       <div className="shell footer-premium-band"><div><span>E-TİCARET</span><strong>ikas, Shopify & WooCommerce</strong></div><div><span>GÜVENLİK</span><strong>Cloudflare odaklı güvenlik</strong></div><div><span>TÜRKİYE</span><strong>Kayseri merkezli, ulusal çalışma</strong></div></div>
