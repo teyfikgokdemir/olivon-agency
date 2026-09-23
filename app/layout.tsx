@@ -10,6 +10,7 @@ import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import "./globals.css";
+import "./campaign-hero.css";
 import "./elite-pages.css";
 import "./services-v2.css";
 import "./contact-faq.css";

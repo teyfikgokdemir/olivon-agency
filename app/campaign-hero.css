@@ -1,0 +1,315 @@
+.ikas-campaign-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(calc(100% - 32px), 1840px);
+  margin: 18px auto 0;
+  border: 1px solid rgba(205, 255, 76, 0.18);
+  border-radius: 28px;
+  color: #f7f7f1;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(163, 255, 69, 0.24), transparent 27%),
+    radial-gradient(circle at 66% 110%, rgba(32, 126, 62, 0.28), transparent 38%),
+    linear-gradient(118deg, #07100b 0%, #07130d 46%, #0c2214 100%);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+}
+
+.ikas-campaign-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(90deg, #000, transparent 78%);
+}
+
+.ikas-campaign-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(190px, .45fr) minmax(360px, 1.2fr) minmax(480px, 1.3fr);
+  grid-template-areas:
+    "brand copy benefits"
+    "brand footer benefits";
+  gap: 24px 38px;
+  align-items: center;
+  min-height: 360px;
+  padding: clamp(34px, 4vw, 62px);
+}
+
+.ikas-campaign-brand {
+  grid-area: brand;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: clamp(24px, 2.1vw, 40px);
+  letter-spacing: -0.04em;
+}
+
+.ikas-campaign-brand > span {
+  color: rgba(255,255,255,.38);
+  font-weight: 300;
+}
+
+.ikas-campaign-brand strong:first-child {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.ikas-wordmark {
+  color: #d6ff55;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.ikas-campaign-copy {
+  grid-area: copy;
+  align-self: end;
+}
+
+.ikas-campaign-kicker {
+  margin: 0 0 12px;
+  color: #d6ff55;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.ikas-campaign-copy h2 {
+  margin: 0;
+  max-width: 720px;
+  color: #fff;
+  font-size: clamp(42px, 5.2vw, 86px);
+  line-height: .9;
+  letter-spacing: -.065em;
+  font-weight: 800;
+}
+
+.ikas-campaign-copy h2 span {
+  display: block;
+  color: #d6ff55;
+  font-size: .53em;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+.ikas-campaign-lead {
+  margin: 18px 0 0;
+  max-width: 620px;
+  color: rgba(255,255,255,.72);
+  font-size: clamp(16px, 1.35vw, 22px);
+  line-height: 1.5;
+}
+
+.ikas-campaign-benefits {
+  grid-area: benefits;
+  display: grid;
+  gap: 10px;
+}
+
+.ikas-campaign-benefits article {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 16px;
+  align-items: center;
+  min-height: 84px;
+  padding: 15px 20px;
+  border: 1px solid rgba(214,255,85,.22);
+  border-radius: 18px;
+  background: linear-gradient(105deg, rgba(214,255,85,.10), rgba(255,255,255,.035));
+  backdrop-filter: blur(12px);
+}
+
+.ikas-campaign-benefits article:nth-child(2) {
+  transform: translateX(18px);
+}
+
+.ikas-campaign-no {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(214,255,85,.32);
+  border-radius: 50%;
+  color: #d6ff55;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ikas-campaign-benefits article div {
+  display: grid;
+  gap: 4px;
+}
+
+.ikas-campaign-benefits small {
+  color: rgba(214,255,85,.75);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.ikas-campaign-benefits strong {
+  color: #fff;
+  font-size: clamp(16px, 1.25vw, 21px);
+  letter-spacing: -.02em;
+}
+
+.ikas-campaign-footer {
+  grid-area: footer;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ikas-campaign-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,.62);
+  font-size: 13px;
+}
+
+.ikas-campaign-note span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d6ff55;
+  box-shadow: 0 0 20px rgba(214,255,85,.85);
+}
+
+.ikas-campaign-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 999px;
+  color: #08100b;
+  background: #d6ff55;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.ikas-campaign-cta:hover {
+  transform: translateY(-2px);
+  background: #e4ff8a;
+  box-shadow: 0 14px 34px rgba(171,255,79,.18);
+}
+
+.ikas-campaign-orb {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(.1px);
+}
+
+.ikas-campaign-orb-one {
+  top: -92px;
+  right: 17%;
+  width: 210px;
+  height: 210px;
+  background: radial-gradient(circle at 35% 30%, #d6ff55 0 6%, #63b53d 25%, #0b2d16 72%);
+  opacity: .48;
+  box-shadow: 0 0 100px rgba(139,255,75,.14);
+}
+
+.ikas-campaign-orb-two {
+  right: -70px;
+  bottom: -110px;
+  width: 290px;
+  height: 290px;
+  border: 1px solid rgba(214,255,85,.22);
+  opacity: .35;
+}
+
+@media (max-width: 1180px) {
+  .ikas-campaign-inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "brand brand"
+      "copy benefits"
+      "footer benefits";
+  }
+  .ikas-campaign-benefits article:nth-child(2) { transform: none; }
+}
+
+@media (max-width: 760px) {
+  .ikas-campaign-hero {
+    width: calc(100% - 20px);
+    margin-top: 10px;
+    border-radius: 22px;
+  }
+
+  .ikas-campaign-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas: "brand" "copy" "benefits" "footer";
+    gap: 26px;
+    min-height: 0;
+    padding: 28px 22px 24px;
+  }
+
+  .ikas-campaign-brand {
+    align-self: auto;
+    font-size: 28px;
+  }
+
+  .ikas-campaign-kicker {
+    font-size: 10px;
+    letter-spacing: .11em;
+  }
+
+  .ikas-campaign-copy h2 {
+    font-size: clamp(44px, 15vw, 64px);
+  }
+
+  .ikas-campaign-lead {
+    margin-top: 14px;
+    font-size: 15px;
+  }
+
+  .ikas-campaign-benefits article {
+    min-height: 70px;
+    grid-template-columns: 44px 1fr;
+    padding: 12px 14px;
+    border-radius: 15px;
+  }
+
+  .ikas-campaign-no {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ikas-campaign-benefits strong {
+    font-size: 15px;
+  }
+
+  .ikas-campaign-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .ikas-campaign-cta {
+    width: 100%;
+  }
+
+  .ikas-campaign-orb-one {
+    top: 84px;
+    right: -74px;
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ikas-campaign-cta { transition: none; }
+}
