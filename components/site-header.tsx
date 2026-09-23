@@ -187,6 +187,7 @@ export function SiteHeader() {
           </>
         )}
         <a onClick={close} href={workHref}>{labels.references}</a>
+        {!locale && <a onClick={close} href="/kampanyalar">Kampanyalar</a>}
         <a onClick={close} href={faqHref}>{faqLabel}</a>
         <a onClick={close} href={securityHref}>{labels.security}</a>
         <a onClick={close} href={contactHref}>{labels.contact}</a>
@@ -243,6 +244,7 @@ export function SiteHeader() {
               </div>
             )}
             <a href={workHref}>{labels.references}</a>
+            {!locale && <a href="/kampanyalar">Kampanyalar</a>}
             <a href={faqHref}>{faqLabel}</a>
             <a href={securityHref}>{labels.security}</a>
           </div>
