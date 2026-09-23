@@ -87,7 +87,7 @@ export default function Home() {
     <main>
       <StructuredData data={pageSchema} />
       <section className="campaign-image-hero" aria-label="Olivon ikas kampanyası">
-        <a href="/iletisim?kampanya=ikas" aria-label="Olivon ikas kampanyasına başvur">
+        <a href="https://wa.me/905013484838?text=Merhaba%20Olivon%2C%20%C4%B0KAS%20kampanyas%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20ve%20ba%C5%9Fvurmak%20istiyorum." target="_blank" rel="noreferrer" aria-label="Olivon ikas kampanyası için WhatsApp üzerinden başvur">
           <picture>
             <source
               media="(max-width: 760px)"
