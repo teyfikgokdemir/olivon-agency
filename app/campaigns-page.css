@@ -101,9 +101,9 @@
 
 .campaign-benefit-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
 }
 
 .campaign-benefit-grid article,
@@ -114,7 +114,29 @@
 }
 
 .campaign-benefit-grid article {
-  padding: 28px;
+  position: relative;
+  min-height: 190px;
+  padding: 30px 32px;
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.campaign-benefit-grid article::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -55px;
+  bottom: -70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214,255,85,.12), transparent 68%);
+  pointer-events: none;
+}
+
+.campaign-benefit-grid article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(214,255,85,.22);
+  background: linear-gradient(145deg, rgba(214,255,85,.05), rgba(255,255,255,.016));
 }
 
 .campaign-benefit-grid svg {
@@ -124,8 +146,9 @@
 }
 
 .campaign-benefit-grid h3 {
-  margin: 22px 0 9px;
-  font-size: 22px;
+  margin: 24px 0 9px;
+  font-size: clamp(22px, 2vw, 29px);
+  letter-spacing: -.025em;
 }
 
 .campaign-benefit-grid p,
@@ -178,18 +201,45 @@
 
 .campaign-faq-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
   margin-top: 34px;
 }
 
 .campaign-faq-grid article {
-  padding: 26px;
+  position: relative;
+  min-height: 188px;
+  padding: 28px;
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+.campaign-faq-grid article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, #d6ff55, transparent);
+}
+
+.campaign-faq-grid article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,.16);
 }
 
 .campaign-faq-grid h3 {
-  margin: 0 0 10px;
-  font-size: 19px;
+  margin: 4px 0 12px;
+  font-size: 20px;
+  line-height: 1.22;
+  letter-spacing: -.02em;
+}
+
+@media (max-width: 1100px) {
+  .campaign-faq-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 860px) {

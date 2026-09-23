@@ -38,6 +38,7 @@ const faqs = [
   ["Başvuru nasıl yapılır?", "Kampanya sayfasındaki WhatsApp butonundan Olivon ekibine ulaşarak proje ve mağaza ihtiyacınızı iletebilirsiniz."],
   ["Kontenjan sınırlı mı?", "Evet. Kampanya ilk 15 uygun başvuru ile sınırlıdır."],
   ["Vade farksız 6 taksit nasıl uygulanıyor?", "Vade farksız 6 taksit avantajı uygun ödeme yöntemlerinde geçerlidir. Ödeme yöntemi ve uygulanabilirlik başvuru sırasında netleştirilir."],
+  ["Profesyonel tasarım hizmeti neleri kapsıyor?", "Tasarım kapsamı mağazanın ihtiyaçlarına göre netleştirilir; temel vitrin, banner, görsel düzen ve marka uyarlamaları proje başlangıcında planlanır."],
 ];
 
 export default function CampaignsPage() {
