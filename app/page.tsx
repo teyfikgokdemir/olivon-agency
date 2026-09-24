@@ -1,5 +1,6 @@
 import { ArrowUpRight, ShieldCheck, Sparkles } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
+import { AgencyBrandFilm } from "@/components/agency-brand-film";
 import { StructuredData } from "@/components/structured-data";
 import { referenceProjects } from "@/lib/references";
 import { caseStudies } from "@/lib/case-studies";
@@ -129,6 +130,8 @@ export default function Home() {
         </div>
         <div className="hero-foot"><span>STRATEJİ</span><span>TASARIM</span><span>TEKNOLOJİ</span><span>GÜVENLİK</span></div>
       </section>
+
+      <AgencyBrandFilm />
 
       <section className="platform-strip" aria-label="Çalışılan platform ve ekosistemler">
         <div className="platform-track">{[...platforms, ...platforms].map((platform, i) => <span key={platform + i}>{platform}</span>)}</div>
