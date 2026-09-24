@@ -3,6 +3,7 @@ import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { StructuredData } from "@/components/structured-data";
 import { ServiceEssentials } from "@/components/service-essentials";
+import { EcommerceBrandFilm } from "@/components/ecommerce-brand-film";
 import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -114,6 +115,7 @@ export default function EcommercePage(){return <main className="inner-page servi
   }
 `}</style>
 <section className="inner-hero shell services-hero"><p className="section-index">E-TİCARET SİSTEMLERİ</p><h1>Mağaza kurmak değil,<br/><em>satın alma sistemi kurmak.</em></h1><p>Yerli ve global e-ticaret altyapılarında vitrini, operasyonu, entegrasyonları, platform geçişini ve ölçümü aynı ticari sistem içinde ele alıyoruz.</p></section>
+<EcommerceBrandFilm />
 <section className="service-detail-grid shell">{layers.map(item=><article className="service-detail-card" key={item[0]}><h2>{item[0]}</h2><p>{item[1]}</p><ul><li><CheckCircle2 size={16}/>SaaS · açık kaynak · özel altyapılar</li></ul></article>)}</section>
 <ServiceEssentials audience={["Yeni e-ticaret mağazası kuracak markalar","Mevcut mağazasını yeniden yapılandıracak ekipler","Farklı bir e-ticaret altyapısına geçiş planlayan markalar","Pazaryeri bağımlılığını azaltıp kendi satış kanalını kurmak isteyen işletmeler"]} deliverables={["Platform ve bilgi mimarisi","Kategori/ürün ve satın alma akışı","Platform taşıma ve veri eşleştirme planı","Ödeme, kargo, ERP ve pazaryeri entegrasyon planı","GA4 ve temel dönüşüm ölçümü"]} process={["Teşhis ve platform kararı","Mimari, tasarım ve içerik","Geliştirme, veri taşıma ve entegrasyon","Test, yayın ve gelişim planı"]} fitNote="En ucuz paketi değil; satış operasyonu, platform mimarisi ve müşteri deneyimini birlikte geliştirmek isteyen markalar için uygundur."/>
 <section className="service-essentials shell" aria-labelledby="platform-migration-title">
