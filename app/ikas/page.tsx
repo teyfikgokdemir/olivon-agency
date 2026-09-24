@@ -3,6 +3,7 @@ import { ArrowUpRight,CheckCircle2 } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { StructuredData } from "@/components/structured-data";
 import { ServiceEssentials } from "@/components/service-essentials";
+import { EcommerceBrandFilm } from "@/components/ecommerce-brand-film";
 import { breadcrumbSchema,serviceSchema } from "@/lib/seo";
 
 export const metadata:Metadata={
@@ -41,6 +42,7 @@ export default function IkasPage(){
       }
     `}</style>
     <section className="inner-hero shell services-hero"><p className="section-index">OLIVON × İKAS</p><h1>ikas mağazanızı kurmuyoruz sadece.<br/><em>Satışa hazır hale getiriyoruz.</em></h1><p>Yeni kurulumdan mevcut mağaza check-up’ına; ürün yapısı, görsel, entegrasyon ve operasyon tarafını birlikte ele alıyoruz.</p></section>
+    <EcommerceBrandFilm />
     <section className="service-detail-grid shell">{services.map(service=><article className="service-detail-card" id={service.slug} key={service.slug}><h2>{service.title}</h2><p>{service.text}</p><ul><li><CheckCircle2 size={16}/>ikas proje kapsamına göre uygulanır</li></ul></article>)}</section>
     <ServiceEssentials
       audience={["Yeni ikas mağazası kuracak markalar","Mevcut ikas mağazasını yeniden düzenleyecek işletmeler","POS, kargo, ERP veya pazaryeri entegrasyonu ihtiyacı olan ekipler"]}
