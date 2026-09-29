@@ -37,5 +37,7 @@ jobs:
           const safe = version.some((part, index) => part > minimum[index] && version.slice(0, index).every((value, i) => value === minimum[i])) || version.every((part, index) => part === minimum[index]);
           assert.ok(safe, `Next.js ${raw || '(missing)'} is below the required security baseline 16.3.3.`);
           NODE
+      - name: Analytics checks
+        run: npm run check:analytics
       - name: Build
         run: npm run build
