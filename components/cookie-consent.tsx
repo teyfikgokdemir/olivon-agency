@@ -21,6 +21,7 @@ export function CookieConsent() {
         return;
       }
       const stored = JSON.parse(raw) as Partial<Consent>;
+      if (stored.analytics === true && localStorage.getItem("qct-recording-consent-v1") !== "granted") setBanner(true);
       setAnalytics(stored.analytics === true);
       setMarketing(stored.marketing === true);
     } catch {
@@ -36,23 +37,24 @@ export function CookieConsent() {
           ? { analytics: false, marketing: false }
           : { analytics, marketing };
 
-    localStorage.setItem("olivon-cookie-consent", JSON.stringify(value));
+    try { localStorage.setItem("olivon-cookie-consent", JSON.stringify(value)); localStorage.setItem("qct-recording-consent-v1", value.analytics ? "granted" : "denied"); } catch {}
     setAnalytics(value.analytics);
     setMarketing(value.marketing);
-    window.dispatchEvent(new CustomEvent("olivon-consent-change", { detail: value }));
+    window.dispatchEvent(new CustomEvent("olivon-consent-change", { detail: { ...value, recording: value.analytics } }));
     setBanner(false);
     setPanel(false);
   }
 
   return (
     <>
+      <button type="button" style={{ display: "block", margin: "12px auto", minHeight: 44, padding: "8px 16px", background: "transparent", color: "inherit", textDecoration: "underline", cursor: "pointer" }} onClick={() => setPanel(true)}>Çerez tercihleri</button>
       {banner && (
         <aside className="cookie-banner" aria-label="Çerez bildirimi">
           <div className="cookie-symbol"><Cookie /></div>
           <div>
             <p className="cookie-kicker">GİZLİLİK TERCİHLERİ</p>
             <h2>Dijital deneyiminiz, sizin kontrolünüzde.</h2>
-            <p>Zorunlu çerezler sitenin çalışmasını sağlar. Analitik veya pazarlama depolaması yalnızca izninizle açılır; izin verilmediğinde ölçüm sinyalleri çerezsiz ve kısıtlı şekilde işlenebilir.</p>
+            <p>Zorunlu çerezler sitenin çalışmasını sağlar. Analitik veya pazarlama depolaması yalnızca izninizle açılır; izin verilmediğinde ölçüm sinyalleri çerezsiz ve kısıtlı şekilde işlenebilir. GA4 ve Clarity kabul veya ret durumunda çalışır. Ret durumunda ölçüm çerezsiz ve sınırlıdır. Kabul, analitik çerezlerini ve Google Tag Manager’ı etkinleştirir. Clarity metinleri maskeler.</p>
           </div>
           <div className="cookie-actions">
             <button onClick={() => save("all")}>Tümünü kabul et</button>
@@ -70,7 +72,7 @@ export function CookieConsent() {
           </DialogHeader>
           <div className="cookie-options">
             <div><span><strong>Zorunlu</strong><small>Güvenlik ve temel site işlevleri</small></span><em>Her zaman açık</em></div>
-            <div><span><strong>Analitik</strong><small>Anonim kullanım ve performans ölçümü</small></span><Switch checked={analytics} onCheckedChange={setAnalytics} aria-label="Analitik çerezler" /></div>
+            <div><span><strong>Analitik</strong><small>Kullanım ölçümü, maskelenmiş oturum kayıtları ve ısı haritaları</small></span><Switch checked={analytics} onCheckedChange={setAnalytics} aria-label="Analitik çerezler" /></div>
             <div><span><strong>Pazarlama</strong><small>Kampanya ve dönüşüm ölçümü</small></span><Switch checked={marketing} onCheckedChange={setMarketing} aria-label="Pazarlama çerezleri" /></div>
           </div>
           <div className="dialog-actions">

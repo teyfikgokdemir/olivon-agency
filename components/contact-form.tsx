@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [started, setStarted] = useState(false);
 
   function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,8 +25,8 @@ export function ContactForm() {
     ];
     window.dispatchEvent(new CustomEvent("olivon-analytics-event", {
       detail: {
-        name: "generate_lead",
-        params: { lead_source: "contact_form", service, page_path: window.location.pathname },
+        name: "email_draft_open",
+        params: { lead_source: "contact_form" },
       },
     }));
     window.location.href = `mailto:info@olivon.com.tr?subject=${encodeURIComponent("Olivon proje talebi")}&body=${encodeURIComponent(lines.join("\n"))}`;
@@ -33,7 +34,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="lead-form" onSubmit={submit}>
+    <form className="lead-form" onSubmit={submit} onInput={() => { if (!started) { setStarted(true); window.dispatchEvent(new CustomEvent("olivon-analytics-event", { detail: { name: "form_start", params: { form_name: "contact_brief" } } })); } }}>
       <div className="form-head"><p className="section-index">PROJE BRIEFİ</p><h2>İlk değerlendirme için kısa brief.</h2><p>Yedi temel bilgiyle ihtiyacı ve doğru başlangıç noktasını netleştiriyoruz. Form, e-posta uygulamanızda doldurduğunuz bilgilerle yeni mesaj oluşturur; veriler bu site üzerinde saklanmaz.</p></div>
       <div className="form-grid">
         <label><span>Marka / firma *</span><input name="company" required autoComplete="organization" /></label>
