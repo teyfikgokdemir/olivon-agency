@@ -39,7 +39,7 @@ main:not(.inner-page) .home-proof article {
   outline: 0 !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: flex-end !important;
+  justify-content: center !important;
   overflow: hidden !important;
   transition: transform .28s ease, border-color .28s ease, background .28s ease, box-shadow .28s ease !important;
 }
