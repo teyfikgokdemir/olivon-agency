@@ -21,6 +21,11 @@ export const marketContent = {
     manifestoKicker: "BUILT FOR GROWTH",
     manifestoTitle: "Not a translated website. A market-ready digital operation.",
     manifesto: "From Shopify and ikas to WooCommerce, we connect commerce architecture, localized customer journeys, technical SEO, AI search visibility, analytics and security so every market launch has a commercial foundation.",
+    proof: [
+      ["Clear scope", "Before quoting, we define deliverables, assumptions and what is excluded."],
+      ["Real projects", "We present references with live links and publishable case-study summaries."],
+      ["Real measurement", "We track CTA, form, WhatsApp and other critical user actions through consent-aware GA4 events."],
+    ],
     servicesKicker: "CAPABILITIES",
     servicesTitle: "One commercial goal. Specialist delivery across the stack.",
     services: [
@@ -57,6 +62,11 @@ export const marketContent = {
     manifestoKicker: "FÜR DEN MARKT GEBAUT",
     manifestoTitle: "Keine wortwörtliche Übersetzung. Ein digitaler Auftritt, der lokal funktioniert.",
     manifesto: "Wir verbinden klare Informationsarchitektur, schnelle Commerce-Technik, strukturierte Migration, Datenschutz-orientierte Umsetzung, technische SEO-Grundlagen und messbare Customer Journeys – mit besonderem Fokus auf Verlässlichkeit und Transparenz.",
+    proof: [
+      ["Klarer Leistungsumfang", "Vor dem Angebot definieren wir Lieferumfang, Annahmen und ausdrücklich ausgeschlossene Leistungen."],
+      ["Echte Projekte", "Referenzen zeigen wir mit Live-Links und veröffentlichbaren Case-Study-Zusammenfassungen."],
+      ["Saubere Messung", "CTA-, Formular-, WhatsApp- und weitere kritische Nutzeraktionen messen wir über einwilligungsbewusste GA4-Events."],
+    ],
     servicesKicker: "LEISTUNGEN",
     servicesTitle: "Technische Präzision trifft kommerzielle Klarheit.",
     services: [
@@ -93,6 +103,11 @@ export const marketContent = {
     manifestoKicker: "PENSÉ POUR LE MARCHÉ",
     manifestoTitle: "Pas une simple traduction. Une expérience de marque réellement localisée.",
     manifesto: "Nous adaptons le message, l’architecture de contenu, le parcours d’achat, la visibilité organique et les signaux de confiance aux attentes locales, puis nous les relions à une infrastructure e-commerce, analytics et sécurité cohérente.",
+    proof: [
+      ["Périmètre clair", "Avant toute proposition, nous définissons les livrables, les hypothèses et les éléments explicitement exclus."],
+      ["Projets réels", "Nos références sont présentées avec des liens en ligne et des résumés de cas publiables."],
+      ["Mesure réelle", "Nous suivons les CTA, formulaires, WhatsApp et autres actions critiques via des événements GA4 respectueux du consentement."],
+    ],
     servicesKicker: "EXPERTISES",
     servicesTitle: "Une vision commerciale, plusieurs expertises coordonnées.",
     services: [
