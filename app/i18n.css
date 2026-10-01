@@ -95,3 +95,55 @@ main[data-locale] .footer-premium-band strong{overflow-wrap:break-word}
   main[data-locale] .localized-contact h2{font-size:clamp(32px,9.5vw,44px)!important}
   .language-switcher{max-width:100%}
 }
+
+
+/* Localized homepage headings: keep long EN/DE/FR copy inside the shell. */
+main[data-locale] .services .section-head{
+  display:block!important;
+  width:100%!important;
+  min-width:0!important;
+  margin-bottom:clamp(44px,5vw,68px)!important;
+}
+main[data-locale] .services .section-head>div{
+  width:100%!important;
+  min-width:0!important;
+}
+main[data-locale] .services .section-head h2{
+  display:block!important;
+  width:100%!important;
+  max-width:1180px!important;
+  font-size:clamp(38px,4.35vw,68px)!important;
+  line-height:1.02!important;
+  letter-spacing:-.05em!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  text-wrap:balance!important;
+}
+main[data-locale] .services .service-row{
+  grid-template-columns:minmax(0,1fr) 60px!important;
+}
+main[data-locale] .services .service-row>span:first-child{
+  min-width:0!important;
+}
+main[data-locale] .services .service-row h3,
+main[data-locale] .services .service-row p{
+  max-width:100%!important;
+  white-space:normal!important;
+  overflow-wrap:break-word!important;
+}
+@media(max-width:900px){
+  main[data-locale] .services .section-head h2{
+    font-size:clamp(36px,7vw,54px)!important;
+  }
+}
+@media(max-width:560px){
+  main[data-locale] .services .section-head h2{
+    font-size:clamp(32px,9vw,44px)!important;
+    line-height:1.05!important;
+  }
+  main[data-locale] .services .service-row{
+    grid-template-columns:minmax(0,1fr) 48px!important;
+  }
+}
