@@ -19,8 +19,8 @@ main:not(.inner-page) .manifesto:has(+ .home-proof) {
 main:not(.inner-page) .home-proof {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: clamp(14px, 1.35vw, 22px) !important;
-  padding: 0 !important;
+  gap: clamp(18px, 1.7vw, 28px) !important;
+  padding: 12px 0 !important;
   margin-top: 0 !important;
   margin-bottom: 104px !important;
   border: 0 !important;
@@ -35,7 +35,7 @@ main:not(.inner-page) .home-proof article {
   background:
     radial-gradient(circle at 88% 10%, rgba(255, 126, 94, .08), transparent 34%),
     linear-gradient(145deg, rgba(255,255,255,.028), rgba(255,255,255,.010)) !important;
-  box-shadow: 0 18px 48px rgba(0,0,0,.18) !important;
+  box-shadow: none !important;
   outline: 0 !important;
   display: flex !important;
   flex-direction: column !important;
@@ -44,22 +44,13 @@ main:not(.inner-page) .home-proof article {
   transition: transform .28s ease, border-color .28s ease, background .28s ease, box-shadow .28s ease !important;
 }
 
-main:not(.inner-page) .home-proof article::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 auto 0 0 !important;
-  width: 2px !important;
-  background: linear-gradient(180deg, transparent 8%, rgba(255, 126, 94, .72) 48%, transparent 92%) !important;
-  opacity: .65 !important;
-}
-
 @media (hover:hover) {
   main:not(.inner-page) .home-proof article:hover {
     transform: translateY(-4px) !important;
     background:
       radial-gradient(circle at 88% 10%, rgba(255, 126, 94, .11), transparent 36%),
       linear-gradient(145deg, rgba(255,255,255,.038), rgba(255,255,255,.014)) !important;
-    box-shadow: 0 24px 58px rgba(0,0,0,.24) !important;
+    box-shadow: none !important;
   }
 }
 
@@ -237,7 +228,7 @@ main:not(.inner-page) .closing {
 
   main:not(.inner-page) .home-proof {
     grid-template-columns: 1fr !important;
-    gap: 14px !important;
+    gap: 16px !important;
     margin-bottom: 72px !important;
   }
 
@@ -245,7 +236,7 @@ main:not(.inner-page) .closing {
     min-height: auto !important;
     padding: 28px 24px !important;
     border: 0 !important;
-    box-shadow: 0 14px 34px rgba(0,0,0,.16) !important;
+    box-shadow: none !important;
   }
 
   main:not(.inner-page) .process .section-head {
