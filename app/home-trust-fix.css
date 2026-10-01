@@ -12,6 +12,10 @@ main:not(.inner-page) .work-preview {
 }
 
 /* Proof cards: premium separated card treatment, no framing rails. */
+main:not(.inner-page) .manifesto:has(+ .home-proof) {
+  border-bottom: 0 !important;
+}
+
 main:not(.inner-page) .home-proof {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -26,7 +30,7 @@ main:not(.inner-page) .home-proof article {
   position: relative !important;
   min-height: 205px !important;
   padding: 34px 34px 32px !important;
-  border: 1px solid rgba(255, 239, 228, .10) !important;
+  border: 0 !important;
   border-radius: 22px !important;
   background:
     radial-gradient(circle at 88% 10%, rgba(255, 126, 94, .08), transparent 34%),
@@ -53,7 +57,6 @@ main:not(.inner-page) .home-proof article::before {
 @media (hover:hover) {
   main:not(.inner-page) .home-proof article:hover {
     transform: translateY(-4px) !important;
-    border-color: rgba(255, 154, 126, .24) !important;
     background:
       radial-gradient(circle at 88% 10%, rgba(255, 126, 94, .11), transparent 36%),
       linear-gradient(145deg, rgba(255,255,255,.038), rgba(255,255,255,.014)) !important;
