@@ -36,6 +36,15 @@ function loadBeacon() {
     events.async = true;
     document.body.appendChild(events);
   }
+
+  if (!document.getElementById("olivon-cansu-umami")) {
+    const umami = document.createElement("script");
+    umami.id = "olivon-cansu-umami";
+    umami.src = "https://teyfikgokdemir.com/cansu-umami-loader.js";
+    umami.dataset.site = "olivon-agency";
+    umami.async = true;
+    document.body.appendChild(umami);
+  }
 }
 
 export function CansuSourceBeacon() {
