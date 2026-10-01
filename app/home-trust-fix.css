@@ -11,29 +11,56 @@ main:not(.inner-page) .work-preview {
   padding-bottom: 46px !important;
 }
 
-/* Proof strip: restore a deliberate three-column editorial layout. */
+/* Proof cards: premium separated card treatment, no framing rails. */
 main:not(.inner-page) .home-proof {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 0 !important;
+  gap: clamp(14px, 1.35vw, 22px) !important;
   padding: 0 !important;
   margin-top: 0 !important;
-  margin-bottom: 96px !important;
-  border-top: 1px solid var(--line) !important;
-  border-bottom: 1px solid var(--line) !important;
+  margin-bottom: 104px !important;
+  border: 0 !important;
 }
 
 main:not(.inner-page) .home-proof article {
-  min-height: 190px !important;
+  position: relative !important;
+  min-height: 205px !important;
   padding: 34px 34px 32px !important;
-  border-right: 1px solid var(--line) !important;
+  border: 1px solid rgba(255, 239, 228, .10) !important;
+  border-radius: 22px !important;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(255, 126, 94, .08), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,.028), rgba(255,255,255,.010)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.035),
+    0 18px 48px rgba(0,0,0,.18) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: flex-end !important;
+  overflow: hidden !important;
+  transition: transform .28s ease, border-color .28s ease, background .28s ease, box-shadow .28s ease !important;
 }
 
-main:not(.inner-page) .home-proof article:last-child {
-  border-right: 0 !important;
+main:not(.inner-page) .home-proof article::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 auto 0 0 !important;
+  width: 2px !important;
+  background: linear-gradient(180deg, transparent 8%, rgba(255, 126, 94, .72) 48%, transparent 92%) !important;
+  opacity: .65 !important;
+}
+
+@media (hover:hover) {
+  main:not(.inner-page) .home-proof article:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(255, 154, 126, .24) !important;
+    background:
+      radial-gradient(circle at 88% 10%, rgba(255, 126, 94, .11), transparent 36%),
+      linear-gradient(145deg, rgba(255,255,255,.038), rgba(255,255,255,.014)) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.045),
+      0 24px 58px rgba(0,0,0,.24) !important;
+  }
 }
 
 main:not(.inner-page) .home-proof strong {
@@ -42,7 +69,7 @@ main:not(.inner-page) .home-proof strong {
   color: var(--foreground) !important;
   font-size: 20px !important;
   line-height: 1.15 !important;
-  letter-spacing: -.02em !important;
+  letter-spacing: -.025em !important;
 }
 
 main:not(.inner-page) .home-proof p {
@@ -50,7 +77,7 @@ main:not(.inner-page) .home-proof p {
   max-width: 360px !important;
   color: #aaa09a !important;
   font-size: 15px !important;
-  line-height: 1.6 !important;
+  line-height: 1.65 !important;
 }
 
 /* Process: harden the heading area against legacy global heading rules. */
