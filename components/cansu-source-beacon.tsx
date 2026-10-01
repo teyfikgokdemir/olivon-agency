@@ -3,7 +3,8 @@
 import { useEffect } from "react";
 
 type ConsentState = { analytics?: boolean };
-const SCRIPT_ID = "olivon-cansu-source-beacon";
+const SOURCE_SCRIPT_ID = "olivon-cansu-source-beacon";
+const EVENTS_SCRIPT_ID = "olivon-cansu-events";
 
 function analyticsAllowed() {
   try {
@@ -16,13 +17,25 @@ function analyticsAllowed() {
 }
 
 function loadBeacon() {
-  if (!analyticsAllowed() || document.getElementById(SCRIPT_ID)) return;
-  const script = document.createElement("script");
-  script.id = SCRIPT_ID;
-  script.src = "https://teyfikgokdemir.com/cansu-source-beacon.js";
-  script.dataset.site = "olivon-agency";
-  script.async = true;
-  document.body.appendChild(script);
+  if (!analyticsAllowed()) return;
+
+  if (!document.getElementById(SOURCE_SCRIPT_ID)) {
+    const source = document.createElement("script");
+    source.id = SOURCE_SCRIPT_ID;
+    source.src = "https://teyfikgokdemir.com/cansu-source-beacon.js";
+    source.dataset.site = "olivon-agency";
+    source.async = true;
+    document.body.appendChild(source);
+  }
+
+  if (!document.getElementById(EVENTS_SCRIPT_ID)) {
+    const events = document.createElement("script");
+    events.id = EVENTS_SCRIPT_ID;
+    events.src = "https://teyfikgokdemir.com/cansu-events.js";
+    events.dataset.site = "olivon-agency";
+    events.async = true;
+    document.body.appendChild(events);
+  }
 }
 
 export function CansuSourceBeacon() {
