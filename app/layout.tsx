@@ -47,6 +47,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="tr" suppressHydrationWarning>
+      <head>
+        <link rel="ai-catalog" href="/.well-known/ai-catalog.json" type="application/ai-catalog+json" />
+        <link rel="ard" href="/.well-known/ard.json" type="application/ai-catalog+json" />
+        <link rel="preload" as="image" href="/images/campaigns/olivon-ikas-kampanya-mobile.webp" media="(max-width: 760px)" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/campaigns/olivon-ikas-kampanya-desktop.webp" media="(min-width: 761px)" fetchPriority="high" />
+      </head>
       <body className="antialiased">
         <Script id="olivon-document-language" strategy="beforeInteractive">{`
           (function(){
