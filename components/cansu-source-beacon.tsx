@@ -24,7 +24,7 @@ function loadBeacon() {
   if (!document.getElementById(SOURCE_SCRIPT_ID)) {
     const source = document.createElement("script");
     source.id = SOURCE_SCRIPT_ID;
-    source.src = "https://teyfikgokdemir.com/cansu-source-beacon.js";
+    source.src = "https://cansu.teyfikgokdemir.com/cansu-source-beacon.js";
     source.dataset.site = "olivon-agency";
     source.async = true;
     document.body.appendChild(source);
@@ -33,7 +33,7 @@ function loadBeacon() {
   if (!document.getElementById(EVENTS_SCRIPT_ID)) {
     const events = document.createElement("script");
     events.id = EVENTS_SCRIPT_ID;
-    events.src = "https://teyfikgokdemir.com/cansu-events.js";
+    events.src = "https://cansu.teyfikgokdemir.com/cansu-events.js";
     events.dataset.site = "olivon-agency";
     events.async = true;
     document.body.appendChild(events);
@@ -42,7 +42,7 @@ function loadBeacon() {
   if (!document.getElementById("olivon-cansu-umami")) {
     const umami = document.createElement("script");
     umami.id = "olivon-cansu-umami";
-    umami.src = "https://teyfikgokdemir.com/cansu-umami-loader.js";
+    umami.src = "https://cansu.teyfikgokdemir.com/cansu-umami-loader.js";
     umami.dataset.site = "olivon-agency";
     umami.async = true;
     document.body.appendChild(umami);
