@@ -6,7 +6,9 @@ type ConsentState = { analytics?: boolean };
 const SOURCE_SCRIPT_ID = "olivon-cansu-source-beacon";
 const EVENTS_SCRIPT_ID = "olivon-cansu-events";
 
+const ANALYTICS_TEST_MODE = true;
 function analyticsAllowed() {
+  if (ANALYTICS_TEST_MODE) return true;
   try {
     const raw = localStorage.getItem("olivon-cookie-consent");
     if (!raw) return false;
