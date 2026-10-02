@@ -36,11 +36,23 @@ export function FeaturedCasesController() {
       grid.dataset.casePosition = `${String(active + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
     };
 
+    const setCardActive = (card: HTMLElement, isActive: boolean) => {
+      card.classList.toggle("is-case-active", isActive);
+      if (isActive) {
+        card.removeAttribute("aria-hidden");
+        card.removeAttribute("tabindex");
+        card.removeAttribute("inert");
+      } else {
+        card.setAttribute("aria-hidden", "true");
+        card.setAttribute("tabindex", "-1");
+        card.setAttribute("inert", "");
+      }
+    };
+
     grid.classList.add("featured-cases-flow");
     cards.forEach((card, index) => {
       card.dataset.caseIndex = String(index);
-      card.classList.toggle("is-case-active", index === 0);
-      card.setAttribute("aria-hidden", index === 0 ? "false" : "true");
+      setCardActive(card, index === 0);
     });
     updatePosition();
 
@@ -54,10 +66,9 @@ export function FeaturedCasesController() {
       const nextCard = cards[normalized];
       currentCard.classList.remove("is-case-active");
       currentCard.classList.add("is-case-leaving");
-      currentCard.setAttribute("aria-hidden", "true");
+      setCardActive(currentCard, false);
       nextCard.classList.remove("is-case-leaving");
-      nextCard.classList.add("is-case-active");
-      nextCard.setAttribute("aria-hidden", "false");
+      setCardActive(nextCard, true);
       active = normalized;
       updatePosition();
       window.setTimeout(() => currentCard.classList.remove("is-case-leaving"), 1150);
@@ -106,6 +117,8 @@ export function FeaturedCasesController() {
       cards.forEach((card) => {
         card.classList.remove("is-case-active", "is-case-leaving");
         card.removeAttribute("aria-hidden");
+        card.removeAttribute("tabindex");
+        card.removeAttribute("inert");
         delete card.dataset.caseIndex;
       });
     };
