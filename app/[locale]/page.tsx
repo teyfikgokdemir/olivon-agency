@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: content.metaTitle,
     description: content.metaDescription,
     alternates: { canonical: `/${locale}`, languages: { "tr-TR": "/", en: "/en", "de-DE": "/de", "fr-FR": "/fr", "x-default": "/" } },
-    openGraph: { type:"website", locale:content.ogLocale, siteName:"Olivon", title:content.metaTitle, description:content.metaDescription, url:`${SITE_URL}/${locale}`, images:[{url:"/images/olivon-og.webp",width:1200,height:630,alt:"Olivon digital growth studio"}] },
-    twitter: { card:"summary_large_image", title:content.metaTitle, description:content.metaDescription, images:["/images/olivon-og.webp"] },
+    openGraph: { type:"website", locale:content.ogLocale, siteName:"Olivon", title:content.metaTitle, description:content.metaDescription, url:`${SITE_URL}/${locale}`, images:[{url:"/images/olivon-og.jpg",width:1200,height:630,alt:"Olivon digital growth studio"}] },
+    twitter: { card:"summary_large_image", title:content.metaTitle, description:content.metaDescription, images:["/images/olivon-og.jpg"] },
     other: { "content-language": content.htmlLang },
   };
 }

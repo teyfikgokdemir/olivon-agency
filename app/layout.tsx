@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   creator: "Olivon",
   publisher: "Olivon",
   formatDetection: { email: false, address: false, telephone: false },
-  openGraph: { type:"website", locale:"tr_TR", siteName:"Olivon", title:"Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri", description:"Web, e-ticaret, SEO, GEO, AEO, AIO, otomasyon, dijital reklam ve güvenlik hizmetlerini tek büyüme sistemi içinde yönetin.", url:"https://olivon.com.tr", images:[{url:"/images/olivon-og.webp",width:1200,height:630,alt:"Olivon dijital büyüme stüdyosu"}] },
-  twitter: { card:"summary_large_image", title:"Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri", description:"Web, e-ticaret, görünürlük, otomasyon, reklam ve güvenlik için bütünleşik dijital büyüme sistemi.", images:["/images/olivon-og.webp"] },
+  openGraph: { type:"website", locale:"tr_TR", siteName:"Olivon", title:"Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri", description:"Web, e-ticaret, SEO, GEO, AEO, AIO, otomasyon, dijital reklam ve güvenlik hizmetlerini tek büyüme sistemi içinde yönetin.", url:"https://olivon.com.tr", images:[{url:"/images/olivon-og.jpg",width:1200,height:630,alt:"Olivon dijital büyüme stüdyosu"}] },
+  twitter: { card:"summary_large_image", title:"Olivon | Dijital Büyüme, E-Ticaret ve Web Teknolojileri", description:"Web, e-ticaret, görünürlük, otomasyon, reklam ve güvenlik için bütünleşik dijital büyüme sistemi.", images:["/images/olivon-og.jpg"] },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 

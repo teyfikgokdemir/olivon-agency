@@ -7,7 +7,7 @@ export const organizationSchema = {
   name: "Olivon",
   url: SITE_URL,
   logo: `${SITE_URL}/favicon.svg`,
-  image: `${SITE_URL}/images/olivon-og.webp`,
+  image: `${SITE_URL}/images/olivon-og.jpg`,
   email: "info@olivon.com.tr",
   contactPoint: {
     "@type": "ContactPoint",

@@ -35,8 +35,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: page.metaTitle,
     description: page.metaDescription,
     alternates: { canonical, languages: alternatesFor(key) },
-    openGraph: { type:"website", siteName:"Olivon", locale:marketContent[locale].ogLocale, title:page.metaTitle, description:page.metaDescription, url:`${SITE_URL}${canonical}`, images:[{url:"/images/olivon-og.webp",width:1200,height:630,alt:"Olivon digital growth studio"}] },
-    twitter: { card:"summary_large_image", title:page.metaTitle, description:page.metaDescription, images:["/images/olivon-og.webp"] },
+    openGraph: { type:"website", siteName:"Olivon", locale:marketContent[locale].ogLocale, title:page.metaTitle, description:page.metaDescription, url:`${SITE_URL}${canonical}`, images:[{url:"/images/olivon-og.jpg",width:1200,height:630,alt:"Olivon digital growth studio"}] },
+    twitter: { card:"summary_large_image", title:page.metaTitle, description:page.metaDescription, images:["/images/olivon-og.jpg"] },
     other: { "content-language": marketContent[locale].htmlLang },
   };
 }
